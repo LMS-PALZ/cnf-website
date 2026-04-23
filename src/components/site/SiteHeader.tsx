@@ -1,0 +1,104 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import { ButtonLink } from "@/components/ui/ButtonLink";
+import { mainNav, site } from "@/lib/site";
+import { fontDisplay } from "@/lib/fonts";
+
+function NavLink({ href, label }: { href: string; label: string }) {
+  const pathname = usePathname();
+  const active = pathname === href || (href !== "/" && pathname.startsWith(href));
+
+  return (
+    <Link
+      className={`rounded-md px-2.5 py-2 text-sm font-medium tracking-tight transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-primary lg:text-[15px] ${
+        active ? "text-cnf-primary" : "text-cnf-muted hover:text-cnf-primary"
+      }`}
+      href={href}
+    >
+      {label}
+    </Link>
+  );
+}
+
+export function SiteHeader() {
+  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  return (
+    <header className="sticky top-0 z-40 border-b border-cnf-border bg-white">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+        <Link
+          href="/"
+          className="flex shrink-0 items-center gap-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-primary"
+        >
+          <span className="sr-only">{site.name}, home</span>
+          <span
+            aria-hidden
+            className="flex h-10 w-10 items-center justify-center rounded-sm bg-cnf-primary text-sm font-bold tracking-tight text-white"
+          >
+            CN
+          </span>
+          <span
+            aria-hidden
+            className={`${fontDisplay.className} hidden text-lg font-semibold leading-tight text-cnf-primary sm:block sm:max-w-[200px] md:max-w-none md:text-xl`}
+          >
+            {site.name}
+          </span>
+        </Link>
+
+        <nav
+          aria-label="Primary"
+          className="hidden flex-1 flex-wrap items-center justify-center gap-1 lg:flex xl:gap-0"
+        >
+          {mainNav.map((item) => (
+            <NavLink key={item.href} href={item.href} label={item.label} />
+          ))}
+        </nav>
+
+        <div className="hidden shrink-0 items-center lg:flex">
+          <ButtonLink href="/donate" variant="accent">
+            Donate
+          </ButtonLink>
+        </div>
+
+        <div className="flex items-center gap-2 lg:hidden">
+          <ButtonLink className="!min-h-10 !px-3 !py-2 !text-sm" href="/donate" variant="accent">
+            Donate
+          </ButtonLink>
+          <button
+            type="button"
+            className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-md border border-cnf-border text-cnf-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-primary"
+            aria-expanded={open}
+            aria-controls="mobile-nav"
+            onClick={() => setOpen((v) => !v)}
+          >
+            <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
+            <span aria-hidden className="text-lg">
+              {open ? "✕" : "☰"}
+            </span>
+          </button>
+        </div>
+      </div>
+
+      {open ? (
+        <div className="border-t border-cnf-border bg-white lg:hidden" id="mobile-nav">
+          <nav
+            aria-label="Mobile primary"
+            className="mx-auto flex max-w-6xl flex-col px-4 py-3 sm:px-6"
+          >
+            {mainNav.map((item) => (
+              <NavLink key={item.href} href={item.href} label={item.label} />
+            ))}
+          </nav>
+        </div>
+      ) : null}
+    </header>
+  );
+}
