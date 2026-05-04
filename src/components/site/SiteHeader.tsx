@@ -44,9 +44,9 @@ export function SiteHeader() {
           <Image
             src="/CNFLogo.png"
             alt={site.name}
-            width={40}
-            height={40}
-            className="h-10 w-10"
+            width={96}
+            height={48}
+            className="h-12 w-24"
           />
         </Link>
 

@@ -34,9 +34,9 @@ export function SiteFooter() {
             <Image
               src="/CNFLogo.png"
               alt={site.name}
-              width={200}
-              height={50}
-              className="h-12 w-auto"
+              width={800}
+              height={80}
+              className="h-20 w-auto"
             />
             <p className="mt-4 max-w-xs text-sm leading-relaxed">{site.footerTagline}</p>
             <ul className="mt-6 flex flex-wrap gap-2">
