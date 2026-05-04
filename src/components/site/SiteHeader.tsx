@@ -15,7 +15,7 @@ function NavLink({ href, label }: { href: string; label: string }) {
 
   return (
     <Link
-      className={`rounded-md px-2.5 py-2 text-sm font-medium tracking-tight transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-primary lg:text-[15px] ${
+      className={`rounded-md px-2.5 py-2 text-base font-medium tracking-tight transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-primary lg:text-lg ${
         active ? "text-cnf-primary" : "text-cnf-muted hover:text-cnf-primary"
       }`}
       href={href}
@@ -52,7 +52,7 @@ export function SiteHeader() {
 
         <nav
           aria-label="Primary"
-          className="hidden flex-1 flex-wrap items-center justify-center gap-1 lg:flex xl:gap-0"
+          className="hidden flex-1 flex-wrap items-center justify-center gap-6 lg:flex"
         >
           {mainNav.map((item) => (
             <NavLink key={item.href} href={item.href} label={item.label} />
