@@ -6,7 +6,12 @@ import {
   BoxIcon,
   BriefcaseIcon,
   BuildingIcon,
+  ChartIcon,
+  ChatBubbleIcon,
+  CheckIcon,
   ClipboardIcon,
+  CopyIcon,
+  CreditCardIcon,
   DocumentIcon,
   DropletIcon,
   FoodIcon,
@@ -17,6 +22,7 @@ import {
   ImageOffIcon,
   InstagramIcon,
   LinkedInIcon,
+  LockIcon,
   MegaphoneIcon,
   MoneyBagIcon,
   MonitorIcon,
@@ -44,7 +50,12 @@ export type IconRegistryKey =
   | "box"
   | "briefcase"
   | "building"
+  | "chart"
+  | "chat-bubble"
+  | "check"
   | "clipboard"
+  | "copy"
+  | "credit-card"
   | "document"
   | "droplet"
   | "food"
@@ -55,6 +66,7 @@ export type IconRegistryKey =
   | "image-off"
   | "instagram"
   | "linkedin"
+  | "lock"
   | "megaphone"
   | "money-bag"
   | "monitor"
@@ -87,7 +99,12 @@ export const iconRegistry: Record<
   box: BoxIcon,
   briefcase: BriefcaseIcon,
   building: BuildingIcon,
+  chart: ChartIcon,
+  "chat-bubble": ChatBubbleIcon,
+  check: CheckIcon,
   clipboard: ClipboardIcon,
+  copy: CopyIcon,
+  "credit-card": CreditCardIcon,
   document: DocumentIcon,
   droplet: DropletIcon,
   food: FoodIcon,
@@ -98,6 +115,7 @@ export const iconRegistry: Record<
   "image-off": ImageOffIcon,
   instagram: InstagramIcon,
   linkedin: LinkedInIcon,
+  lock: LockIcon,
   megaphone: MegaphoneIcon,
   "money-bag": MoneyBagIcon,
   monitor: MonitorIcon,

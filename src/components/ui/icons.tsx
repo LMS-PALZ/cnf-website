@@ -334,6 +334,65 @@ export function PhoneIcon(props: IconProps) {
   );
 }
 
+export function LockIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} xmlns="http://www.w3.org/2000/svg" {...props}>
+      <rect x="4" y="11" width="16" height="10" rx="2" />
+      <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+      <circle cx="12" cy="16" r="1" fill="currentColor" />
+    </svg>
+  );
+}
+
+export function ChartIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path d="M3 21h18" />
+      <rect x="6" y="13" width="3" height="6" rx="0.5" />
+      <rect x="11" y="9" width="3" height="10" rx="0.5" />
+      <rect x="16" y="5" width="3" height="14" rx="0.5" />
+    </svg>
+  );
+}
+
+export function ChatBubbleIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+      <circle cx="9" cy="11.5" r="0.6" fill="currentColor" />
+      <circle cx="12" cy="11.5" r="0.6" fill="currentColor" />
+      <circle cx="15" cy="11.5" r="0.6" fill="currentColor" />
+    </svg>
+  );
+}
+
+export function CreditCardIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} xmlns="http://www.w3.org/2000/svg" {...props}>
+      <rect x="2" y="6" width="20" height="13" rx="2" />
+      <path d="M2 11h20" />
+      <path d="M6 16h4" />
+    </svg>
+  );
+}
+
+export function CopyIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} xmlns="http://www.w3.org/2000/svg" {...props}>
+      <rect x="9" y="9" width="11" height="11" rx="2" />
+      <path d="M5 15V5a2 2 0 0 1 2-2h10" />
+    </svg>
+  );
+}
+
+export function CheckIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path d="M20 6 9 17l-5-5" />
+    </svg>
+  );
+}
+
 /* ---------- Social icons (kept simple, brand-recognisable) ---------- */
 
 export function InstagramIcon(props: IconProps) {
