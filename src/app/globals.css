@@ -40,6 +40,54 @@
 
   /* Cream for light panels */
   --color-cnf-cream: #f4f6f3;
+
+  /* Pillar accents (Skills uses cnf-primary; Education + Humanitarian get their own) */
+  --color-cnf-pillar-skills: #0f2919;
+  --color-cnf-pillar-skills-soft: #e6efe9;
+  --color-cnf-pillar-education: #1f3a5f;
+  --color-cnf-pillar-education-soft: #e7ecf2;
+  --color-cnf-pillar-humanitarian: #8a3c2a;
+  --color-cnf-pillar-humanitarian-soft: #f4e6e2;
+
+  /* Dark scheme (hero left half, flagship band, final CTA band) */
+  --color-cnf-night: #0a1410;
+  --color-cnf-night-deep: #050b08;
+  --color-cnf-night-soft: #14241b;
+  --color-cnf-night-border: #1f3527;
+
+  /* Star/rating */
+  --color-cnf-star: #d9a441;
+}
+
+/* Subtle dot pattern used on the hero right panel */
+.cnf-dot-pattern {
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.08) 1.25px,
+    transparent 1.25px
+  );
+  background-size: 28px 28px;
+  background-position: 0 0;
+}
+
+/* Skeleton shimmer for placeholder loaders */
+@keyframes cnf-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.cnf-skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(15, 41, 25, 0.06) 0%,
+    rgba(15, 41, 25, 0.12) 50%,
+    rgba(15, 41, 25, 0.06) 100%
+  );
+  background-size: 200% 100%;
+  animation: cnf-shimmer 1.6s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
