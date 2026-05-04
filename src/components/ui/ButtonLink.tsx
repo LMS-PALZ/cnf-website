@@ -1,49 +1,58 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-
-type Variant = "primary" | "secondary" | "ghost" | "accent";
-
-const variants: Record<Variant, string> = {
-  primary:
-    "bg-cnf-primary text-white hover:bg-cnf-primary-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-accent",
-  accent:
-    "bg-cnf-accent text-cnf-accent-ink hover:bg-cnf-accent-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white",
-  secondary:
-    "border border-cnf-primary/25 bg-white text-cnf-primary hover:border-cnf-primary/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-primary",
-  ghost:
-    "text-cnf-primary hover:bg-cnf-primary/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-primary",
-};
+import { cn } from "@/lib/cn";
+import {
+  buttonBase,
+  buttonSizes,
+  buttonVariants,
+  type ButtonSize,
+  type ButtonVariant,
+} from "./buttonStyles";
 
 type Base = {
   children: ReactNode;
   className?: string;
-  variant?: Variant;
+  variant?: ButtonVariant;
+  size?: ButtonSize;
 };
 
 type LinkProps = Base & {
   href: string;
   external?: boolean;
+  ariaLabel?: string;
 };
 
+/**
+ * Anchor/Link variant of `Button`. Use for navigation. For form actions
+ * and triggers use `<Button>` instead.
+ */
 export function ButtonLink({
   href,
   children,
-  className = "",
+  className,
   variant = "primary",
+  size = "md",
   external,
+  ariaLabel,
 }: LinkProps) {
-  const cls = `inline-flex min-h-11 items-center justify-center rounded-md px-5 py-2.5 text-base font-semibold transition-colors ${variants[variant]} ${className}`;
+  const cls = cn(buttonBase, buttonVariants[variant], buttonSizes[size], className);
 
   if (external) {
     return (
-      <a className={cls} href={href} rel="noopener noreferrer" target="_blank">
+      <a
+        aria-label={ariaLabel}
+        className={cls}
+        href={href}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
         {children}
       </a>
     );
   }
 
   return (
-    <Link className={cls} href={href}>
+    <Link aria-label={ariaLabel} className={cls} href={href}>
       {children}
     </Link>
   );

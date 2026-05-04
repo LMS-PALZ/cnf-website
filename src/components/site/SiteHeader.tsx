@@ -69,7 +69,7 @@ export function SiteHeader() {
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
-          <ButtonLink className="!min-h-10 !px-3 !py-2 !text-sm" href="/donate" variant="accent">
+          <ButtonLink href="/donate" variant="accent" size="sm">
             Donate
           </ButtonLink>
           <button
