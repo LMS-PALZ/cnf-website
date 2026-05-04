@@ -83,3 +83,209 @@ export function PinIcon(props: IconProps) {
     </svg>
   );
 }
+
+export function MonitorIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} xmlns="http://www.w3.org/2000/svg" {...props}>
+      <rect x="3" y="4" width="18" height="13" rx="2" />
+      <path d="M9 21h6" />
+      <path d="M12 17v4" />
+    </svg>
+  );
+}
+
+export function ScissorsIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} xmlns="http://www.w3.org/2000/svg" {...props}>
+      <circle cx="6" cy="6" r="3" />
+      <circle cx="6" cy="18" r="3" />
+      <path d="M20 4 8.12 15.88" />
+      <path d="M14.47 14.48 20 20" />
+      <path d="M8.12 8.12 12 12" />
+    </svg>
+  );
+}
+
+export function StarIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path d="M12 2.5l2.95 6 6.55.95-4.75 4.6 1.12 6.5L12 17.5 6.13 20.55l1.12-6.5L2.5 9.45l6.55-.95L12 2.5z" />
+    </svg>
+  );
+}
+
+export function BriefcaseIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} xmlns="http://www.w3.org/2000/svg" {...props}>
+      <rect x="3" y="7" width="18" height="13" rx="2" />
+      <path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" />
+      <path d="M3 13h18" />
+    </svg>
+  );
+}
+
+export function DocumentIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
+      <path d="M14 3v6h6" />
+      <path d="M9 13h6" />
+      <path d="M9 17h6" />
+    </svg>
+  );
+}
+
+export function StethoscopeIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path d="M5 3v6a4 4 0 0 0 8 0V3" />
+      <path d="M9 13v3a5 5 0 0 0 10 0v-2" />
+      <circle cx="19" cy="11" r="2" />
+    </svg>
+  );
+}
+
+export function FoodIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path d="M3 11h18a8 8 0 0 1-8 8h-2a8 8 0 0 1-8-8z" />
+      <path d="M5 11V8a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v3" />
+      <path d="M2 21h20" />
+    </svg>
+  );
+}
+
+export function BabyIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} xmlns="http://www.w3.org/2000/svg" {...props}>
+      <circle cx="12" cy="9" r="4" />
+      <path d="M9.5 9.5h.01" />
+      <path d="M14.5 9.5h.01" />
+      <path d="M10 12c.5.5 1.5 1 2 1s1.5-.5 2-1" />
+      <path d="M5 21v-3a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v3" />
+    </svg>
+  );
+}
+
+export function GlobeIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} xmlns="http://www.w3.org/2000/svg" {...props}>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M3 12h18" />
+      <path d="M12 3a14 14 0 0 1 0 18" />
+      <path d="M12 3a14 14 0 0 0 0 18" />
+    </svg>
+  );
+}
+
+export function ImageOffIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} xmlns="http://www.w3.org/2000/svg" {...props}>
+      <rect x="3" y="3" width="18" height="18" rx="2" />
+      <circle cx="9" cy="9" r="1.5" />
+      <path d="m21 15-3.5-3.5L9 20" />
+      <path d="m3 21 18-18" />
+    </svg>
+  );
+}
+
+export function GraduationCapIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path d="m22 10-10-5L2 10l10 5 10-5z" />
+      <path d="M6 12v5c0 1 4 2 6 2s6-1 6-2v-5" />
+      <path d="M22 10v6" />
+    </svg>
+  );
+}
+
+export function RocketIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path d="M5 13c0 1.5 1 4 1 4l3-1c-.5-1.5-1-3.5-1-3.5l-3 .5z" />
+      <path d="M14 4c1 0 4 0 6 2 2 2 2 5 2 6-1 4-7 8-9 9l-2-2-3-3-2-2c1-2 5-8 8-10z" />
+      <circle cx="15" cy="9" r="1.5" />
+    </svg>
+  );
+}
+
+export function BuildingIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} xmlns="http://www.w3.org/2000/svg" {...props}>
+      <rect x="4" y="3" width="16" height="18" rx="1" />
+      <path d="M9 7h.01" />
+      <path d="M15 7h.01" />
+      <path d="M9 11h.01" />
+      <path d="M15 11h.01" />
+      <path d="M10 21v-4h4v4" />
+    </svg>
+  );
+}
+
+export function PillIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z" />
+      <path d="m8.5 8.5 7 7" />
+    </svg>
+  );
+}
+
+export function DropletIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path d="M12 2.7s-7 7.3-7 12a7 7 0 0 0 14 0c0-4.7-7-12-7-12z" />
+    </svg>
+  );
+}
+
+/* ---------- Social icons (kept simple, brand-recognisable) ---------- */
+
+export function InstagramIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} xmlns="http://www.w3.org/2000/svg" {...props}>
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" />
+    </svg>
+  );
+}
+
+export function YoutubeIcon(props: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.4 3.5 12 3.5 12 3.5s-7.4 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.2 0 12 0 12s0 3.8.5 5.8A3 3 0 0 0 2.6 19.9c2 .6 9.4.6 9.4.6s7.4 0 9.4-.6a3 3 0 0 0 2.1-2.1c.5-2 .5-5.8.5-5.8s0-3.8-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z" />
+    </svg>
+  );
+}
+
+export function XTwitterIcon(props: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path d="M18.244 2H21l-6.55 7.49L22 22h-6.78l-4.72-6.18L4.99 22H2.23l7.02-8.02L2 2h6.92l4.27 5.65L18.244 2zm-2.39 18h2.04L7.18 4H5l10.854 16z" />
+    </svg>
+  );
+}
+
+export function LinkedInIcon(props: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z" />
+    </svg>
+  );
+}
