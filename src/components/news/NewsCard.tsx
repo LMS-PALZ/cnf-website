@@ -41,10 +41,10 @@ export function NewsCard({ item }: Props) {
             {formatDate(item.date)}
           </time>
           <Link
-            className="font-semibold text-cnf-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-primary"
+            className="inline-flex items-center gap-1 font-semibold text-cnf-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-primary"
             href={`/news/${item.slug}`}
           >
-            Read →
+            Read <span aria-hidden>&rarr;</span>
           </Link>
         </div>
       </div>

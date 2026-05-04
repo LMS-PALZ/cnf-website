@@ -124,6 +124,15 @@ export const careersNewsletterSchema = z.object({
   email: z.string().trim().email("Enter a valid email"),
 });
 
+/* -------------------------------------------------------------------------- */
+/*  News mailing list signup — used by /news Stay Connected section           */
+/* -------------------------------------------------------------------------- */
+
+export const newsletterSchema = z.object({
+  name: nonEmpty("Name"),
+  email: z.string().trim().email("Enter a valid email"),
+});
+
 export const careersExpertiseValues = [
   "programme-management",
   "operations",
@@ -159,6 +168,7 @@ export type PartnershipInput = z.infer<typeof partnershipSchema>;
 export type VolunteerInput = z.infer<typeof volunteerSchema>;
 export type CareersNewsletterInput = z.infer<typeof careersNewsletterSchema>;
 export type CareersProfileInput = z.infer<typeof careersProfileSchema>;
+export type NewsletterInput = z.infer<typeof newsletterSchema>;
 
 /** Normalise optional string fields from JSON (empty string → undefined) */
 export function emptyToUndefined(

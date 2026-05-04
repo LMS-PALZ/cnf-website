@@ -6,7 +6,8 @@ export type SubmissionKind =
   | "partnership"
   | "volunteer"
   | "careers-newsletter"
-  | "careers-profile";
+  | "careers-profile"
+  | "newsletter";
 
 export async function appendSubmission(
   kind: SubmissionKind,
