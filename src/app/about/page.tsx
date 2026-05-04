@@ -136,8 +136,8 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="rounded-[2rem] border border-white/10 bg-cnf-night/80 p-1 shadow-2xl shadow-black/20 md:p-2">
-              <div className="grid gap-px rounded-[1.75rem] bg-white/10 sm:grid-cols-2">
+            <div className="rounded-[2rem] border border-white/10 bg-cnf-primary-soft shadow-2xl shadow-black/20">
+              <div className="grid grid-cols-2 divide-x divide-white/10 rounded-[1.75rem] border border-white/10 bg-cnf-primary-soft">
                 {[
                   {
                     value: "5,000+",
@@ -159,10 +159,10 @@ export default function AboutPage() {
                     label: "Free — in-person programmes",
                     detail: "All programmes at zero cost",
                   },
-                ].map((item) => (
+                ].map((item, index) => (
                   <div
                     key={item.value}
-                    className="group overflow-hidden rounded-[1.75rem] bg-cnf-night/75 p-6 transition-colors duration-300 hover:bg-cnf-night/60"
+                    className={`group rounded-none bg-cnf-primary/95 p-8 transition-colors duration-300 hover:bg-cnf-primary/90 ${index < 2 ? "border-b border-white/10" : ""}`}
                   >
                     <p className="text-4xl font-semibold text-cnf-accent">{item.value}</p>
                     <p className="mt-3 text-sm uppercase tracking-[0.18em] text-cnf-cream/70">{item.label}</p>
