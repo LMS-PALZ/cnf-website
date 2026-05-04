@@ -12,12 +12,23 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`,
   },
   description: site.description,
+  icons: {
+    icon: "/CNFLogo.png",
+  },
   openGraph: {
     type: "website",
     locale: "en_NG",
     siteName: site.name,
     title: `${site.name} — ${site.tagline}`,
     description: site.description,
+    images: [
+      {
+        url: "/CNFLogo.png",
+        width: 1200,
+        height: 630,
+        alt: site.name,
+      },
+    ],
   },
 };
 

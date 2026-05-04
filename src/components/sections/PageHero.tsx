@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import { Container } from "@/components/ui/Container";
 import { fontDisplay } from "@/lib/fonts";
 
 type Props = {
@@ -9,10 +8,15 @@ type Props = {
   children?: ReactNode;
 };
 
+/**
+ * Lighter (cream → white) page hero used by smaller pages like /about and
+ * /donate. Full-bleed background with edge-to-edge padding matching the
+ * dark heroes — internal text is constrained for prose readability.
+ */
 export function PageHero({ eyebrow, title, description, children }: Props) {
   return (
-    <section className="border-b border-cnf-primary/10 bg-gradient-to-b from-cnf-surface to-white py-16 md:py-24">
-      <Container>
+    <section className="border-b border-cnf-primary/10 bg-gradient-to-b from-cnf-surface to-white">
+      <div className="px-6 py-16 sm:px-10 md:px-14 md:py-20 lg:px-16 lg:py-24">
         {eyebrow ? (
           <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-cnf-primary">
             {eyebrow}
@@ -29,7 +33,7 @@ export function PageHero({ eyebrow, title, description, children }: Props) {
           </p>
         ) : null}
         {children ? <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">{children}</div> : null}
-      </Container>
+      </div>
     </section>
   );
 }

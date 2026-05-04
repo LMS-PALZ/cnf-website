@@ -14,6 +14,22 @@ export const site = {
   registrationLine: "CAC No. 7511818",
 } as const;
 
+/**
+ * Donate-page configuration. Bank details and Korapay URL are sourced
+ * from environment variables so the page can be deployed before finance
+ * has finalised the production bank account or payment integration.
+ */
+export const donateConfig = {
+  korapayUrl: process.env.NEXT_PUBLIC_KORAPAY_URL ?? "#",
+  bank: {
+    accountName:
+      process.env.NEXT_PUBLIC_DONATE_ACCOUNT_NAME ?? "Chiggy Nsofor Foundation",
+    accountNumber:
+      process.env.NEXT_PUBLIC_DONATE_ACCOUNT_NUMBER ?? "Add Account No.",
+    bankName: process.env.NEXT_PUBLIC_DONATE_BANK_NAME ?? "Add Bank Name",
+  },
+} as const;
+
 export type NavItem = { href: string; label: string };
 
 /** Primary navigation — labels aligned with foundation design; logo covers Home. */

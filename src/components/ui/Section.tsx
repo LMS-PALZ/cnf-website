@@ -11,7 +11,7 @@ type Props = {
   tone?: Tone;
   /** Vertical padding scale. `lg` matches the artifact section spacing. */
   padding?: Padding;
-  /** Override container width (defaults to max-w-6xl). */
+  /** Override container width (defaults to the page-level max width set by `Container`). */
   containerClassName?: string;
   /** Disable the inner Container if you need a full-bleed child layout. */
   bleed?: boolean;

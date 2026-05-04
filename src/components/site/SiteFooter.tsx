@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { site } from "@/lib/site";
@@ -30,9 +31,13 @@ export function SiteFooter() {
       <Container className="py-14 md:py-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <p className={`${fontDisplay.className} text-xl font-semibold text-cnf-footer-heading`}>
-              {site.name}
-            </p>
+            <Image
+              src="/CNFLogo.png"
+              alt={site.name}
+              width={800}
+              height={80}
+              className="h-20 w-auto"
+            />
             <p className="mt-4 max-w-xs text-sm leading-relaxed">{site.footerTagline}</p>
             <ul className="mt-6 flex flex-wrap gap-2">
               {social.map((s) => (

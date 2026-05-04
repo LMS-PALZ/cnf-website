@@ -1,9 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ButtonLink } from "@/components/ui/ButtonLink";
+import { Container } from "@/components/ui/Container";
 import { mainNav, site } from "@/lib/site";
 import { fontDisplay } from "@/lib/fonts";
 
@@ -13,7 +15,7 @@ function NavLink({ href, label }: { href: string; label: string }) {
 
   return (
     <Link
-      className={`rounded-md px-2.5 py-2 text-sm font-medium tracking-tight transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-primary lg:text-[15px] ${
+      className={`rounded-md px-2.5 py-2 text-base font-medium tracking-tight transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-primary lg:text-lg ${
         active ? "text-cnf-primary" : "text-cnf-muted hover:text-cnf-primary"
       }`}
       href={href}
@@ -33,29 +35,24 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-cnf-border bg-white">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+      <Container className="flex items-center justify-between gap-4 py-3">
         <Link
           href="/"
           className="flex shrink-0 items-center gap-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-primary"
         >
           <span className="sr-only">{site.name}, home</span>
-          <span
-            aria-hidden
-            className="flex h-10 w-10 items-center justify-center rounded-sm bg-cnf-primary text-sm font-bold tracking-tight text-white"
-          >
-            CN
-          </span>
-          <span
-            aria-hidden
-            className={`${fontDisplay.className} hidden text-lg font-semibold leading-tight text-cnf-primary sm:block sm:max-w-[200px] md:max-w-none md:text-xl`}
-          >
-            {site.name}
-          </span>
+          <Image
+            src="/CNFLogo.png"
+            alt={site.name}
+            width={96}
+            height={48}
+            className="h-12 w-24"
+          />
         </Link>
 
         <nav
           aria-label="Primary"
-          className="hidden flex-1 flex-wrap items-center justify-center gap-1 lg:flex xl:gap-0"
+          className="hidden flex-1 flex-wrap items-center justify-center gap-6 lg:flex"
         >
           {mainNav.map((item) => (
             <NavLink key={item.href} href={item.href} label={item.label} />
@@ -85,18 +82,17 @@ export function SiteHeader() {
             </span>
           </button>
         </div>
-      </div>
+      </Container>
 
       {open ? (
         <div className="border-t border-cnf-border bg-white lg:hidden" id="mobile-nav">
-          <nav
-            aria-label="Mobile primary"
-            className="mx-auto flex max-w-6xl flex-col px-4 py-3 sm:px-6"
-          >
-            {mainNav.map((item) => (
-              <NavLink key={item.href} href={item.href} label={item.label} />
-            ))}
-          </nav>
+          <Container as="div" className="py-3">
+            <nav aria-label="Mobile primary" className="flex flex-col">
+              {mainNav.map((item) => (
+                <NavLink key={item.href} href={item.href} label={item.label} />
+              ))}
+            </nav>
+          </Container>
         </div>
       ) : null}
     </header>

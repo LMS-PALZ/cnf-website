@@ -1,24 +1,42 @@
 import type { NewsCategory } from "@/data/news";
 
-/** Card top gradients aligned with foundation news designs */
+/**
+ * Solid background + ribbon styling per news category. Matches the
+ * artifact: bright mustard for Skill Development, deep teal-green for
+ * Healthcare, rust for Humanitarian Aid, and navy for Education.
+ *
+ * The ribbon (small uppercase pill) is rendered with a tinted version of
+ * the same hue so it stays legible on the card art.
+ */
 export const newsCategoryCardArt: Record<
   NewsCategory,
-  { gradient: string; icon: "tree" | "scope" | "cap" | "heart" | "pill" }
+  {
+    /** Solid Tailwind class for the card-art background. */
+    bg: string;
+    /** Background utility for the small uppercase category ribbon. */
+    ribbonBg: string;
+    /** Text colour for the ribbon. */
+    ribbonText: string;
+  }
 > = {
-  "humanitarian-aid": {
-    gradient: "bg-gradient-to-br from-[#5c3830] via-[#3d241c] to-[#1a0f0c]",
-    icon: "tree",
+  "skill-development": {
+    bg: "bg-[#a47b1c]",
+    ribbonBg: "bg-[#c79a35]",
+    ribbonText: "text-[#3a2a08]",
   },
   healthcare: {
-    gradient: "bg-gradient-to-br from-[#0f3d2e] via-[#0a281c] to-[#051812]",
-    icon: "scope",
+    bg: "bg-[#1f5c4d]",
+    ribbonBg: "bg-[#2f7e69]",
+    ribbonText: "text-white",
   },
-  "skill-development": {
-    gradient: "bg-gradient-to-br from-[#a3843a] via-[#7a5e2a] to-[#4a3618]",
-    icon: "cap",
+  "humanitarian-aid": {
+    bg: "bg-[#7a2e1c]",
+    ribbonBg: "bg-[#a04026]",
+    ribbonText: "text-white",
   },
   education: {
-    gradient: "bg-gradient-to-br from-[#1a4d36] via-[#123828] to-[#0c1f15]",
-    icon: "heart",
+    bg: "bg-[#1d3a5e]",
+    ribbonBg: "bg-[#2c5586]",
+    ribbonText: "text-white",
   },
 };
