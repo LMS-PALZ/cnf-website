@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Container } from "@/components/ui/Container";
 import { fontDisplay } from "@/lib/fonts";
 
 const anchorPills = [
@@ -20,7 +19,7 @@ export function GetInvolvedHero() {
       className="relative overflow-hidden bg-cnf-night"
     >
       <div aria-hidden className="cnf-dot-pattern absolute inset-0 opacity-20" />
-      <Container className="relative py-16 md:py-24">
+      <div className="relative px-6 py-16 sm:px-10 md:px-14 md:py-20 lg:px-16 lg:py-24">
         <nav
           aria-label="Breadcrumb"
           className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em]"
@@ -66,7 +65,7 @@ export function GetInvolvedHero() {
             </li>
           ))}
         </ul>
-      </Container>
+      </div>
     </section>
   );
 }

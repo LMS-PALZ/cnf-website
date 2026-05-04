@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ButtonLink } from "@/components/ui/ButtonLink";
+import { Container } from "@/components/ui/Container";
 import { mainNav, site } from "@/lib/site";
 import { fontDisplay } from "@/lib/fonts";
 
@@ -33,7 +34,7 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-cnf-border bg-white">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+      <Container className="flex items-center justify-between gap-4 py-3">
         <Link
           href="/"
           className="flex shrink-0 items-center gap-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-primary"
@@ -85,18 +86,17 @@ export function SiteHeader() {
             </span>
           </button>
         </div>
-      </div>
+      </Container>
 
       {open ? (
         <div className="border-t border-cnf-border bg-white lg:hidden" id="mobile-nav">
-          <nav
-            aria-label="Mobile primary"
-            className="mx-auto flex max-w-6xl flex-col px-4 py-3 sm:px-6"
-          >
-            {mainNav.map((item) => (
-              <NavLink key={item.href} href={item.href} label={item.label} />
-            ))}
-          </nav>
+          <Container as="div" className="py-3">
+            <nav aria-label="Mobile primary" className="flex flex-col">
+              {mainNav.map((item) => (
+                <NavLink key={item.href} href={item.href} label={item.label} />
+              ))}
+            </nav>
+          </Container>
         </div>
       ) : null}
     </header>
