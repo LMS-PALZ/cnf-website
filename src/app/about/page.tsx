@@ -1,89 +1,87 @@
-import { PageHero } from "@/components/sections/PageHero";
-import { ButtonLink } from "@/components/ui/ButtonLink";
-import { Container } from "@/components/ui/Container";
-import { fontDisplay } from "@/lib/fonts";
-import { pageMetadata } from "@/lib/metadata";
+import Founderpage from "./founder";
+import StoryPage from "./story";
+import Team from "./team";
+import CoreValues from "./values";
 
-export const metadata = pageMetadata(
-  "About — mission and impact",
-  "Mission, vision, and values of the Chiggy Nsofor Foundation, a Nigerian nonprofit advancing skills, education, and humanitarian aid.",
-);
+const stats = [
+  {
+    value: "5,000+",
+    title: "INDIVIDUALS REACHED",
+    subtitle: "Across 4 states, 9 communities",
+  },
+  {
+    value: "86%",
+    title: "ECONOMIC ACTIVATION",
+    subtitle: "SSU Programme graduates",
+  },
+  {
+    value: "2024",
+    title: "YEAR FOUNDED",
+    subtitle: "CAC Registered May 2024",
+  },
+  {
+    value: "100%",
+    title: "FREE – IN-PERSON PROGRAMMES",
+    subtitle: "All programs at zero cost",
+  },
+];
 
 export default function AboutPage() {
+
+
+
+
   return (
     <>
-      <PageHero
-        eyebrow="About CNF"
-        title="Mission, vision, and the communities we serve."
-        description="The Chiggy Nsofor Foundation exists to expand opportunity in Nigeria through practical skills training, stronger education ecosystems, and timely humanitarian support."
-      />
-
-      <section className="py-16 md:py-24">
-        <Container className="grid gap-12 md:grid-cols-2">
+      <section className="w-full bg-[#101C14] text-white py-25 px-6 md:px-16">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className={`${fontDisplay.className} text-2xl font-semibold text-cnf-ink`}>Mission</h2>
-            <p className="mt-4 text-base leading-relaxed text-cnf-muted">
-              Equip people and communities with the skills, learning conditions, and relief they need to
-              thrive — with transparency, local partnership, and dignity at the centre.
+            <h1 className="text-4xl md:text-6xl font-serif leading-tight mb-6">
+              Who We Are & <br />
+              Why We <span className="text-[#E8B94C]">Exist</span>
+            </h1>
+
+            <p className="text-[#7B8C82] max-w-lg leading-relaxed">
+              The Chiggy Nsofor Foundation was born from one simple belief:
+              that where you start in life should never determine where you end up.
+              We exist to close that gap — one skill, one community, one opportunity at a time.
             </p>
           </div>
-          <div>
-            <h2 className={`${fontDisplay.className} text-2xl font-semibold text-cnf-ink`}>Vision</h2>
-            <p className="mt-4 text-base leading-relaxed text-cnf-muted">
-              A Nigeria where young people can learn without barriers, earn with pride, and receive help
-              when hardship strikes — led by communities, supported by allies.
-            </p>
-          </div>
-        </Container>
-      </section>
 
-      <section className="border-y border-cnf-primary/10 bg-cnf-surface py-16 md:py-24">
-        <Container>
-          <h2 className={`${fontDisplay.className} text-2xl font-semibold text-cnf-ink`}>Values</h2>
-          <ul className="mt-6 grid gap-4 md:grid-cols-2">
-            {[
-              "Transparency in how funds are used and programmes are reported.",
-              "Community leadership — we listen first, then co-design solutions.",
-              "Dignity in every classroom, training hall, and relief line.",
-              "Learning culture inside the foundation: iterate, measure, improve.",
-            ].map((item) => (
-              <li
-                key={item}
-                className="rounded-lg border border-cnf-primary/10 bg-white p-5 text-base leading-relaxed text-cnf-muted"
+          <div className="grid grid-cols-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl">
+            {stats.map((item, index) => (
+              <div
+                key={index}
+                className=" p-6 flex flex-col justify-between min-h-[160px]"
               >
-                {item}
-              </li>
+                <h2 className="text-3xl md:text-4xl text-[#E8B94C] font-semibold">
+                  {item.value}
+                </h2>
+
+                <div className="mt-4">
+                  <p className="text-xs tracking-widest text-[#A0A4A1]">
+                    {item.title}
+                  </p>
+                  <p className="text-sm text-[#A0A4A1] mt-1">
+                    {item.subtitle}
+                  </p>
+                </div>
+              </div>
             ))}
-          </ul>
-        </Container>
-      </section>
-
-      <section id="team" className="scroll-mt-28 py-16 md:py-24">
-        <Container>
-          <h2 className={`${fontDisplay.className} text-2xl font-semibold text-cnf-ink`}>Our team</h2>
-          <p className="mt-4 max-w-3xl text-base leading-relaxed text-cnf-muted">
-            Leadership and programme profiles will be published here after the annual governance review.
-            For media enquiries in the meantime, use the contact details in the site footer.
-          </p>
-        </Container>
-      </section>
-
-      <section className="py-16 md:py-24">
-        <Container>
-          <h2 className={`${fontDisplay.className} text-2xl font-semibold text-cnf-ink`}>Impact</h2>
-          <p className="mt-4 max-w-3xl text-base leading-relaxed text-cnf-muted">
-            We publish qualitative stories and quantitative updates as programmes mature. If you are a
-            grantmaker or partner, request our latest deck through the partnerships inbox on the Get
-            Involved page.
-          </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <ButtonLink href="/projects">See projects by pillar</ButtonLink>
-            <ButtonLink href="/news" variant="secondary">
-              Read news and impact stories
-            </ButtonLink>
           </div>
-        </Container>
+        </div>
+
+        <div className="absolute right-0 bottom-0 w-[300px] h-[300px] bg-yellow-[#15311E] blur-[120px] rounded-full pointer-events-none"></div>
       </section>
+      <StoryPage />
+      <CoreValues />
+      <Founderpage />
+      <Team />
     </>
   );
 }
+
+
+
+
+
