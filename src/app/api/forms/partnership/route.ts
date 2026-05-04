@@ -2,7 +2,7 @@ import { NextRequest } from "next/server";
 import { notifyInbox } from "@/lib/email";
 import { jsonError, jsonFieldErrors, jsonOk } from "@/lib/forms/api-response";
 import { appendSubmission } from "@/lib/forms/persist";
-import { volunteerSchema } from "@/lib/forms/schemas";
+import { partnershipSchema } from "@/lib/forms/schemas";
 
 export async function POST(req: NextRequest) {
   let body: unknown;
@@ -12,51 +12,38 @@ export async function POST(req: NextRequest) {
     return jsonError("Invalid JSON body");
   }
 
-  const parsed = volunteerSchema.safeParse(body);
+  const parsed = partnershipSchema.safeParse(body);
   if (!parsed.success) {
     return jsonFieldErrors(parsed.error);
   }
 
   try {
     await appendSubmission(
-      "volunteer",
+      "partnership",
       parsed.data as unknown as Record<string, unknown>,
     );
   } catch (e) {
-    console.error("[forms/volunteer] persist", e);
+    console.error("[forms/partnership] persist", e);
     return jsonError("Could not save submission. Please try again later.", 500);
   }
 
-  const {
-    firstName,
-    lastName,
-    email,
-    phone,
-    city,
-    country,
-    volunteerArea,
-    priorExperience,
-    priorOrganisation,
-    leadershipOpenness,
-    idType,
-  } = parsed.data;
-
+  const { firstName, lastName, email, organisation, country, pillars, message, phone } =
+    parsed.data;
   const summary = [
-    "Volunteer application",
+    "Partnership enquiry",
     `Name: ${firstName} ${lastName}`,
     `Email: ${email}`,
     phone ? `Phone: ${phone}` : null,
-    `City: ${city}, ${country}`,
-    `Area: ${volunteerArea}`,
-    `Prior experience: ${priorExperience}`,
-    priorOrganisation ? `Prior organisation: ${priorOrganisation}` : null,
-    `Open to leadership: ${leadershipOpenness}`,
-    `ID type: ${idType}`,
+    `Organisation: ${organisation}`,
+    `Country: ${country}`,
+    `Pillars: ${pillars.join(", ")}`,
+    "",
+    message,
   ]
     .filter(Boolean)
     .join("\n");
 
-  await notifyInbox("New volunteer application (CNF website)", summary).catch(
+  await notifyInbox("New partnership enquiry (CNF website)", summary).catch(
     () => {},
   );
 

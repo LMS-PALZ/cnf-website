@@ -3,8 +3,10 @@ import {
   ArrowRightIcon,
   BabyIcon,
   BookIcon,
+  BoxIcon,
   BriefcaseIcon,
   BuildingIcon,
+  ClipboardIcon,
   DocumentIcon,
   DropletIcon,
   FoodIcon,
@@ -15,14 +17,21 @@ import {
   ImageOffIcon,
   InstagramIcon,
   LinkedInIcon,
+  MegaphoneIcon,
+  MoneyBagIcon,
   MonitorIcon,
+  PencilIcon,
+  PhoneIcon,
   PillIcon,
   PinIcon,
   RocketIcon,
   ScissorsIcon,
+  SparkleIcon,
   StarIcon,
   StethoscopeIcon,
+  TargetIcon,
   ToolsIcon,
+  UsersIcon,
   WaveIcon,
   XTwitterIcon,
   YoutubeIcon,
@@ -32,8 +41,10 @@ export type IconRegistryKey =
   | "arrow-right"
   | "baby"
   | "book"
+  | "box"
   | "briefcase"
   | "building"
+  | "clipboard"
   | "document"
   | "droplet"
   | "food"
@@ -44,14 +55,21 @@ export type IconRegistryKey =
   | "image-off"
   | "instagram"
   | "linkedin"
+  | "megaphone"
+  | "money-bag"
   | "monitor"
+  | "pencil"
+  | "phone"
   | "pill"
   | "pin"
   | "rocket"
   | "scissors"
+  | "sparkle"
   | "star"
   | "stethoscope"
+  | "target"
   | "tools"
+  | "users"
   | "wave"
   | "x-twitter"
   | "youtube";
@@ -66,8 +84,10 @@ export const iconRegistry: Record<
   "arrow-right": ArrowRightIcon,
   baby: BabyIcon,
   book: BookIcon,
+  box: BoxIcon,
   briefcase: BriefcaseIcon,
   building: BuildingIcon,
+  clipboard: ClipboardIcon,
   document: DocumentIcon,
   droplet: DropletIcon,
   food: FoodIcon,
@@ -78,14 +98,21 @@ export const iconRegistry: Record<
   "image-off": ImageOffIcon,
   instagram: InstagramIcon,
   linkedin: LinkedInIcon,
+  megaphone: MegaphoneIcon,
+  "money-bag": MoneyBagIcon,
   monitor: MonitorIcon,
+  pencil: PencilIcon,
+  phone: PhoneIcon,
   pill: PillIcon,
   pin: PinIcon,
   rocket: RocketIcon,
   scissors: ScissorsIcon,
+  sparkle: SparkleIcon,
   star: StarIcon,
   stethoscope: StethoscopeIcon,
+  target: TargetIcon,
   tools: ToolsIcon,
+  users: UsersIcon,
   wave: WaveIcon,
   "x-twitter": XTwitterIcon,
   youtube: YoutubeIcon,

@@ -3,8 +3,10 @@ import path from "node:path";
 
 export type SubmissionKind =
   | "donate-intent"
+  | "partnership"
   | "volunteer"
-  | "careers-interest";
+  | "careers-newsletter"
+  | "careers-profile";
 
 export async function appendSubmission(
   kind: SubmissionKind,

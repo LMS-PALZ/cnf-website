@@ -239,6 +239,101 @@ export function DropletIcon(props: IconProps) {
   );
 }
 
+export function MoneyBagIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path d="M9.5 6h5l1.7-2.3a.5.5 0 0 0-.4-.7H8.2a.5.5 0 0 0-.4.7L9.5 6z" />
+      <path d="M9.5 6c-1.6 1.5-5 4.5-5 9a6 6 0 0 0 6 6h3a6 6 0 0 0 6-6c0-4.5-3.4-7.5-5-9" />
+      <path d="M12 11v6" />
+      <path d="M14 13h-2.5a1.5 1.5 0 0 0 0 3h1a1.5 1.5 0 0 1 0 3H10" />
+    </svg>
+  );
+}
+
+export function BoxIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path d="m21 8-9-5-9 5 9 5 9-5z" />
+      <path d="M3 8v8l9 5 9-5V8" />
+      <path d="M12 13v8" />
+    </svg>
+  );
+}
+
+export function UsersIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+      <circle cx="9" cy="7" r="4" />
+      <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+    </svg>
+  );
+}
+
+export function MegaphoneIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path d="M3 11v2a2 2 0 0 0 2 2h1l3 4h2v-12h-2L6 11H5a2 2 0 0 0-2 0z" />
+      <path d="M11 7v10c5 0 9-2 9-5s-4-5-9-5z" />
+    </svg>
+  );
+}
+
+export function ClipboardIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} xmlns="http://www.w3.org/2000/svg" {...props}>
+      <rect x="6" y="4" width="12" height="16" rx="2" />
+      <path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1" />
+      <path d="M9 4h6v3H9z" />
+      <path d="M9 12h6" />
+      <path d="M9 16h4" />
+    </svg>
+  );
+}
+
+export function PencilIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path d="M12 20h9" />
+      <path d="M16.5 3.5a2.121 2.121 0 1 1 3 3L7 19l-4 1 1-4 12.5-12.5z" />
+    </svg>
+  );
+}
+
+export function SparkleIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path d="M12 3v4" />
+      <path d="M12 17v4" />
+      <path d="M3 12h4" />
+      <path d="M17 12h4" />
+      <path d="m6 6 2.5 2.5" />
+      <path d="m15.5 15.5 2.5 2.5" />
+      <path d="m6 18 2.5-2.5" />
+      <path d="m15.5 8.5 2.5-2.5" />
+    </svg>
+  );
+}
+
+export function TargetIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} xmlns="http://www.w3.org/2000/svg" {...props}>
+      <circle cx="12" cy="12" r="9" />
+      <circle cx="12" cy="12" r="5" />
+      <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+    </svg>
+  );
+}
+
+export function PhoneIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7a2 2 0 0 1 1.72 2.03z" />
+    </svg>
+  );
+}
+
 /* ---------- Social icons (kept simple, brand-recognisable) ---------- */
 
 export function InstagramIcon(props: IconProps) {
