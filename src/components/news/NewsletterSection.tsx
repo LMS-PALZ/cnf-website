@@ -36,7 +36,7 @@ export function NewsletterSection() {
             </p>
           </div>
 
-          <div className="lg:max-w-md lg:justify-self-end">
+          <div className="w-full lg:max-w-xl lg:justify-self-end">
             <NewsletterForm />
           </div>
         </div>

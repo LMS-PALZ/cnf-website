@@ -9,12 +9,13 @@ import { postJson } from "@/lib/api/post-json";
 import { type NewsletterInput, newsletterSchema } from "@/lib/forms/schemas";
 
 const inputClass =
-  "w-full rounded-md border border-white/15 bg-white/5 px-4 py-3 text-base text-white placeholder:text-white/50 focus:border-cnf-accent focus:outline-none focus:ring-2 focus:ring-cnf-accent/30";
+  "w-full rounded-md border border-white/15 bg-white/5 px-4 py-3 text-base text-white placeholder:text-white/55 focus:border-cnf-accent focus:outline-none focus:ring-2 focus:ring-cnf-accent/30";
 
 /**
- * Compact newsletter signup form designed to live on the dark-green
- * "Stay Connected" band on /news. Uses dark-on-green inputs and a
- * gold submit button.
+ * Compact newsletter signup designed to live on the dark-green "Stay
+ * Connected" band on /news. Layout matches the artifact: full name on
+ * a full-width row, then email + Subscribe button side-by-side on the
+ * second row, with the privacy notice below.
  */
 export function NewsletterForm() {
   const idPrefix = useId();
@@ -41,12 +42,13 @@ export function NewsletterForm() {
       toast.error(res.error);
       return;
     }
-    toast.success("Subscribed — thanks for joining the list.");
+    toast.success("Subscribed \u2014 thanks for joining the list.");
     reset();
   });
 
   return (
     <form noValidate onSubmit={onSubmit} className="space-y-3">
+      {/* Row 1 — full name (full width) */}
       <div>
         <label htmlFor={`${idPrefix}-name`} className="sr-only">
           Full name
@@ -67,37 +69,40 @@ export function NewsletterForm() {
         ) : null}
       </div>
 
-      <div>
-        <label htmlFor={`${idPrefix}-email`} className="sr-only">
-          Email address
-        </label>
-        <input
-          id={`${idPrefix}-email`}
-          type="email"
-          autoComplete="email"
-          placeholder="Your email address"
-          aria-invalid={errors.email ? true : undefined}
-          className={inputClass}
-          {...register("email")}
-        />
-        {errors.email?.message ? (
-          <p className="mt-1 text-xs font-medium text-cnf-accent" role="alert">
-            {errors.email.message}
-          </p>
-        ) : null}
+      {/* Row 2 — email + Subscribe button on a single row */}
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-start">
+        <div className="flex-1">
+          <label htmlFor={`${idPrefix}-email`} className="sr-only">
+            Email address
+          </label>
+          <input
+            id={`${idPrefix}-email`}
+            type="email"
+            autoComplete="email"
+            placeholder="Your email address"
+            aria-invalid={errors.email ? true : undefined}
+            className={inputClass}
+            {...register("email")}
+          />
+          {errors.email?.message ? (
+            <p className="mt-1 text-xs font-medium text-cnf-accent" role="alert">
+              {errors.email.message}
+            </p>
+          ) : null}
+        </div>
+
+        <Button
+          type="submit"
+          variant="accent"
+          size="lg"
+          className="sm:w-auto sm:shrink-0 sm:self-stretch"
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? "Subscribing\u2026" : "Subscribe to Updates"}
+        </Button>
       </div>
 
-      <Button
-        type="submit"
-        variant="accent"
-        size="lg"
-        className="w-full"
-        disabled={isSubmitting}
-      >
-        {isSubmitting ? "Subscribing\u2026" : "Subscribe to Updates"}
-      </Button>
-
-      <p className="text-xs text-white/65">
+      <p className="text-xs text-white/70">
         We respect your privacy. Unsubscribe at any time.
       </p>
     </form>

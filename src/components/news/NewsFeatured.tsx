@@ -1,7 +1,5 @@
 import Link from "next/link";
-import { newsCategoryCardArt } from "@/constants/news-card-styles";
 import type { NewsItem } from "@/data/news";
-import { NewsArtIcon } from "@/components/news/NewsArtIcon";
 import { fontDisplay } from "@/lib/fonts";
 
 type Props = { item: NewsItem };
@@ -15,27 +13,54 @@ function formatDate(iso: string) {
 }
 
 /**
- * Two-column "Latest" hero card. Coloured left half with a placeholder
- * photo + LATEST badge; white right half with the detail subtitle,
- * headline, excerpt, and date / Read row at the bottom.
+ * Faded camera-with-sparkle placeholder used on the LATEST featured
+ * card while real photography hasn't been supplied yet. Drawn inline so
+ * we don't need to ship a raster asset.
+ */
+function CameraPlaceholder() {
+  return (
+    <svg
+      aria-hidden
+      viewBox="0 0 96 80"
+      className="h-20 w-24 text-white/30 md:h-24 md:w-28"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M10 22h14l4-8h32l4 8h14a4 4 0 0 1 4 4v36a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V26a4 4 0 0 1 4-4Z" />
+      <circle cx="48" cy="44" r="14" />
+      <circle cx="48" cy="44" r="6" fill="currentColor" stroke="none" />
+      {/* Sparkle */}
+      <g className="text-[#f7c948]" stroke="currentColor" strokeWidth="2.5">
+        <path d="M76 14v10" />
+        <path d="M71 19h10" />
+        <path d="M73 16l6 6" />
+        <path d="M73 22l6-6" />
+      </g>
+    </svg>
+  );
+}
+
+/**
+ * Two-column "Latest" hero card. The left half is always painted with
+ * CNF brand green (regardless of category) and shows a camera + photo
+ * placeholder caption. The right half renders the editorial copy.
  */
 export function NewsFeatured({ item }: Props) {
-  const art = newsCategoryCardArt[item.category];
-
   return (
     <article className="overflow-hidden rounded-2xl border border-cnf-border bg-white shadow-sm">
       <div className="grid md:grid-cols-2">
-        {/* Left — coloured photo placeholder */}
-        <div
-          className={`relative flex min-h-[260px] flex-col p-6 md:min-h-[320px] md:p-8 ${art.gradient}`}
-        >
-          <span className="inline-flex w-fit items-center rounded-full bg-cnf-accent px-3 py-1 text-[10px] font-bold uppercase tracking-[0.22em] text-cnf-accent-ink">
+        {/* Left — solid brand-green photo placeholder */}
+        <div className="relative flex min-h-[260px] flex-col bg-[#1f6a3e] p-6 md:min-h-[320px] md:p-8">
+          <span className="inline-flex w-fit items-center rounded-md bg-cnf-accent px-3 py-1 text-[10px] font-bold uppercase tracking-[0.22em] text-cnf-accent-ink">
             Latest
           </span>
           <div className="flex flex-1 flex-col items-center justify-center gap-3">
-            <NewsArtIcon name={art.icon} className="text-white/30" />
-            <p className="text-center text-xs font-medium text-white/55">
-              Add programme photo here
+            <CameraPlaceholder />
+            <p className="text-center text-xs font-medium text-white/65">
+              {item.photoLabel ?? "Add programme photo here"}
             </p>
           </div>
         </div>
