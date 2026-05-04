@@ -222,7 +222,7 @@ export default function AboutPage() {
                 The Chiggy Nsofor Foundation did not begin in a boardroom. It began with a decision — to leave behind a successful international fintech career in Toronto and return home to Nigeria to answer a more pressing question: <strong>what happens to the millions of young Nigerians who never get a fair shot?</strong>
               </p>
               <p>
-                Nigeria has one of the highest youth unemployment rates in the world. According to the National Bureau of Statistics, over 53% of young Nigerians are unemployed or underemployed. Over 80% of graduates enter the workforce without the practical digital skills that today’s economy demands. For communities in the FCT, Nasarawa, Kaduna, and Plateau — these are not statistics. They are neighbours, family members, and neighbours' children.
+                Nigeria has one of the highest youth unemployment rates in the world. According to the National Bureau of Statistics, over 53% of young Nigerians are unemployed or underemployed. Over 80% of graduates enter the workforce without the practical digital skills that today&apos;s economy demands. For communities in the FCT, Nasarawa, Kaduna, and Plateau — these are not statistics. They are neighbours&apos; children.
               </p>
             </div>
             <div className="rounded-3xl border border-cnf-primary/10 bg-cnf-cream p-7">
@@ -420,7 +420,7 @@ export default function AboutPage() {
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cnf-primary">Global Alignment</p>
           <h2 className={`${fontDisplay.className} mt-6 text-4xl font-semibold text-cnf-ink`}>Our Work & the Sustainable Development Goals</h2>
           <p className="mt-4 max-w-3xl text-base leading-8 text-cnf-muted">
-            CNF's four programme pillars are directly aligned with three United Nations Sustainable Development Goals.
+            CNF&apos;s four programme pillars are directly aligned with three United Nations Sustainable Development Goals.
           </p>
 
           <div className="mt-10 grid gap-6 md:grid-cols-3">
@@ -445,7 +445,7 @@ export default function AboutPage() {
               <div>
                 <h3 className="text-3xl font-semibold">Believe in What We’re Building?</h3>
                 <p className="mt-4 max-w-2xl text-base leading-8 text-cnf-cream/80">
-                  Support CNF's work — through donations, partnerships, or volunteering — and help us reach 30,000 young Nigerians by 2030.
+                  Support CNF&apos;s work — through donations, partnerships, or volunteering — and help us reach 30,000 young Nigerians by 2030.
                 </p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row">
