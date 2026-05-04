@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -40,18 +41,13 @@ export function SiteHeader() {
           className="flex shrink-0 items-center gap-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-primary"
         >
           <span className="sr-only">{site.name}, home</span>
-          <span
-            aria-hidden
-            className="flex h-10 w-10 items-center justify-center rounded-sm bg-cnf-primary text-sm font-bold tracking-tight text-white"
-          >
-            CN
-          </span>
-          <span
-            aria-hidden
-            className={`${fontDisplay.className} hidden text-lg font-semibold leading-tight text-cnf-primary sm:block sm:max-w-[200px] md:max-w-none md:text-xl`}
-          >
-            {site.name}
-          </span>
+          <Image
+            src="/CNFLogo.png"
+            alt={site.name}
+            width={40}
+            height={40}
+            className="h-10 w-10"
+          />
         </Link>
 
         <nav
