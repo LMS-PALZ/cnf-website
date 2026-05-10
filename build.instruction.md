@@ -1,4 +1,4 @@
-# Chiggy Nsofor Foundation — Website Build Instruction (for Cursor / Any Next.js Repo)
+# Chiggy Nsofor Foundation: Website Build Instruction (for Cursor / Any Next.js Repo)
 
 **Purpose:** Hand this document to an AI or developer to **build a complete marketing + forms site** for the **Chiggy Nsofor Foundation (CNF)**. It is **not** tied to the Glantra e-commerce codebase; copy this file into a **new** Next.js project root (e.g. `BUILD.md` or `build.instruction.md`).
 
@@ -9,13 +9,13 @@
 | Order | URL (public artifact) | Inferred page / focus |
 |-------|------------------------|------------------------|
 | 1 | `.../e3993a2d-1dd1-450a-8b6e-ca5888a9c9fe` | **News & Impact Stories** |
-| 2 | `.../6d964dfa-88a7-4219-b7f6-e6824567c27b` | **Donate** — Support Nigerian Communities |
-| 3 | `.../901cca11-b956-49bd-b8fd-a0bebe8d9990` | **CNF Projects** — Impact Across **Three Pillars** |
+| 2 | `.../6d964dfa-88a7-4219-b7f6-e6824567c27b` | **Donate**: Support Nigerian Communities |
+| 3 | `.../901cca11-b956-49bd-b8fd-a0bebe8d9990` | **CNF Projects**: Impact Across **Three Pillars** |
 | 4 | `.../29edf286-79cb-4755-a840-cfb9aecd526c` | **Our Work** |
-| 5 | `.../0d2ab507-9c0c-4b38-afc7-df6efbf4f2ce` | **Skill Scale-Up Programme** — Free Youth Training in Nigeria |
-| 6 | `.../8cf95ce3-f934-4766-907b-4f19aadb797a` | **Home** — Skills, Education & Humanitarian Aid |
-| 7 | `.../762bc533-6d16-4389-ba09-808225b0a5c0` | **About** — Mission & Impact |
-| 8 | `.../2b93a69e-a336-4168-a353-bcff6e4ab9d6` | **Get Involved** — Partner, Volunteer, Careers |
+| 5 | `.../0d2ab507-9c0c-4b38-afc7-df6efbf4f2ce` | **Skill Scale-Up Programme**: Free Youth Training in Nigeria |
+| 6 | `.../8cf95ce3-f934-4766-907b-4f19aadb797a` | **Home**: Skills, Education & Humanitarian Aid |
+| 7 | `.../762bc533-6d16-4389-ba09-808225b0a5c0` | **About**: Mission & Impact |
+| 8 | `.../2b93a69e-a336-4168-a353-bcff6e4ab9d6` | **Get Involved**: Partner, Volunteer, Careers |
 
 ---
 
@@ -104,7 +104,7 @@ The **Projects** and **Home** artifacts refer to **three pillars**. **Standardiz
 - Overview of how CNF works (programme delivery, partners, volunteers).
 - Cards linking to **Projects** and **Skill Scale-Up**.
 
-### 5.4 CNF Projects — Three Pillars (`/projects`)
+### 5.4 CNF Projects: Three Pillars (`/projects`)
 
 - Page title: **CNF Projects** and subtitle **Impact Across Three Pillars** (per artifact 3).
 - **Three** distinct sections (anchor IDs: `skills`, `education`, `humanitarian` or `pillar-1` etc.).

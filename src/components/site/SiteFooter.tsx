@@ -3,53 +3,37 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { site } from "@/lib/site";
 import { fontDisplay } from "@/lib/fonts";
-
 const social = [
-  { label: "Instagram", href: "#" },
-  { label: "X (Twitter)", href: "#" },
-  { label: "LinkedIn", href: "#" },
-  { label: "YouTube", href: "#" },
+    { label: "Instagram", href: "#" },
+    { label: "X (Twitter)", href: "#" },
+    { label: "LinkedIn", href: "#" },
+    { label: "YouTube", href: "#" },
 ] as const;
-
 const workLinks = [
-  { href: "/projects#skills", label: "Skill Development" },
-  { href: "/projects#education", label: "Education" },
-  { href: "/projects#humanitarian", label: "Humanitarian Aid & Healthcare" },
-  { href: "/programmes/skill-scale-up", label: "SSU Programme" },
+    { href: "/projects#skills", label: "Skill Development" },
+    { href: "/projects#education", label: "Education" },
+    { href: "/projects#humanitarian", label: "Humanitarian Aid & Healthcare" },
+    { href: "/programmes/skill-scale-up", label: "SSU Programme" },
 ] as const;
-
 const orgLinks = [
-  { href: "/about", label: "About Us" },
-  { href: "/about#team", label: "Our Team" },
-  { href: "/news", label: "News" },
-  { href: "/get-involved#careers", label: "Careers" },
+    { href: "/about", label: "About Us" },
+    { href: "/about#team", label: "Our Team" },
+    { href: "/news", label: "News" },
+    { href: "/get-involved#careers", label: "Careers" },
 ] as const;
-
 export function SiteFooter() {
-  return (
-    <footer className="bg-cnf-footer-bg text-cnf-footer-muted">
+    return (<footer className="bg-cnf-primary text-cnf-footer-muted">
       <Container className="py-14 md:py-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <Image
-              src="/CNFLogo.png"
-              alt={site.name}
-              width={800}
-              height={80}
-              className="h-20 w-auto"
-            />
+            <Image src="/CNFLogo.png" alt={site.name} width={800} height={80} className="h-20 w-auto"/>
             <p className="mt-4 max-w-xs text-sm leading-relaxed">{site.footerTagline}</p>
             <ul className="mt-6 flex flex-wrap gap-2">
-              {social.map((s) => (
-                <li key={s.label}>
-                  <a
-                    className="inline-flex rounded-full bg-white/5 px-4 py-2 text-xs font-medium text-cnf-footer-muted transition-colors hover:bg-white/10 hover:text-cnf-footer-heading focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-accent"
-                    href={s.href}
-                  >
+              {social.map((s) => (<li key={s.label}>
+                  <a className="inline-flex rounded-full bg-white/5 px-4 py-2 text-xs font-medium text-cnf-footer-muted transition-colors hover:bg-white/10 hover:text-cnf-footer-heading focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-accent" href={s.href}>
                     {s.label}
                   </a>
-                </li>
-              ))}
+                </li>))}
             </ul>
           </div>
 
@@ -58,16 +42,11 @@ export function SiteFooter() {
               Our work
             </p>
             <ul className="mt-4 space-y-3 text-sm">
-              {workLinks.map((l) => (
-                <li key={l.href + l.label}>
-                  <Link
-                    className="hover:text-cnf-footer-heading focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-accent"
-                    href={l.href}
-                  >
+              {workLinks.map((l) => (<li key={l.href + l.label}>
+                  <Link className="hover:text-cnf-footer-heading focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-accent" href={l.href}>
                     {l.label}
                   </Link>
-                </li>
-              ))}
+                </li>))}
             </ul>
           </nav>
 
@@ -76,18 +55,13 @@ export function SiteFooter() {
               Organisation
             </p>
             <ul className="mt-4 space-y-3 text-sm">
-              {orgLinks.map((l) => (
-                <li key={l.href}>
-                  <Link
-                    className="hover:text-cnf-footer-heading focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-accent"
-                    href={l.href}
-                  >
+              {orgLinks.map((l) => (<li key={l.href}>
+                  <Link className="hover:text-cnf-footer-heading focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-accent" href={l.href}>
                     {l.label}
                   </Link>
-                </li>
-              ))}
+                </li>))}
               <li>
-                <span className="text-cnf-footer-muted/80">Annual report — coming soon</span>
+                <span className="text-cnf-footer-muted/80">Annual report, coming soon</span>
               </li>
             </ul>
           </nav>
@@ -98,18 +72,12 @@ export function SiteFooter() {
             </p>
             <ul className="mt-4 space-y-3 text-sm">
               <li>
-                <a
-                  className="hover:text-cnf-footer-heading focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-accent"
-                  href={`mailto:${site.contactEmail}`}
-                >
+                <a className="hover:text-cnf-footer-heading focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-accent" href={`mailto:${site.contactEmail}`}>
                   {site.contactEmail}
                 </a>
               </li>
               <li>
-                <a
-                  className="hover:text-cnf-footer-heading focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-accent"
-                  href={`tel:${site.phone.replace(/\s/g, "")}`}
-                >
+                <a className="hover:text-cnf-footer-heading focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-accent" href={`tel:${site.phone.replace(/\s/g, "")}`}>
                   {site.phone}
                 </a>
               </li>
@@ -123,14 +91,10 @@ export function SiteFooter() {
             © {new Date().getFullYear()} {site.name}. All rights reserved. {site.registrationLine}
           </p>
           <p>Registered NGO · Abuja, Nigeria</p>
-          <Link
-            className="underline-offset-4 hover:text-cnf-footer-heading hover:underline"
-            href="/privacy"
-          >
+          <Link className="underline-offset-4 hover:text-cnf-footer-heading hover:underline" href="/privacy">
             Privacy policy
           </Link>
         </div>
       </Container>
-    </footer>
-  );
+    </footer>);
 }

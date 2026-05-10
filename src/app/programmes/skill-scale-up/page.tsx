@@ -3,20 +3,10 @@ import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Container } from "@/components/ui/Container";
 import { fontDisplay } from "@/lib/fonts";
 import { pageMetadata } from "@/lib/metadata";
-
-export const metadata = pageMetadata(
-  "Skill Scale-Up — free youth training",
-  "Free youth training in Nigeria from the Chiggy Nsofor Foundation: digital skills, employability, and entrepreneurship foundations.",
-);
-
+export const metadata = pageMetadata("Skill Scale-Up, free youth training", "Free youth training in Nigeria from the Chiggy Nsofor Foundation: digital skills, employability, and entrepreneurship foundations.");
 export default function SkillScaleUpPage() {
-  return (
-    <>
-      <PageHero
-        eyebrow="Skill Scale-Up programme"
-        title="Free youth training in Nigeria."
-        description="Skill Scale-Up opens structured, mentor-supported learning for young people who want to grow their digital confidence, workplace readiness, and entrepreneurial thinking."
-      >
+    return (<>
+      <PageHero eyebrow="Skill Scale-Up programme" title="Free youth training in Nigeria." description="Skill Scale-Up opens structured, mentor-supported learning for young people who want to grow their digital confidence, workplace readiness, and entrepreneurial thinking.">
         <ButtonLink href="/get-involved#volunteer">Apply or volunteer</ButtonLink>
         <ButtonLink href="/projects#skills" variant="secondary">
           Back to skills pillar
@@ -34,7 +24,7 @@ export default function SkillScaleUpPage() {
           </p>
           <h2 className={`${fontDisplay.className} pt-10 text-2xl text-cnf-ink`}>Who it is for</h2>
           <p>
-            Young people aged roughly 16–30 who can commit to the full cohort schedule. Exact
+            Young people aged roughly 16-30 who can commit to the full cohort schedule. Exact
             eligibility, literacy prerequisites, and device requirements are confirmed at
             registration.
           </p>
@@ -54,7 +44,7 @@ export default function SkillScaleUpPage() {
           </p>
           <h2 className={`${fontDisplay.className} pt-10 text-2xl text-cnf-ink`}>How to apply</h2>
           <p>
-            Submit a volunteer or programme interest note through the Get Involved form — choose
+            Submit a volunteer or programme interest note through the Get Involved form, choose
             Skill Scale-Up in your message so the team can route it quickly.
           </p>
           <div className="flex flex-col gap-3 pt-8 sm:flex-row">
@@ -65,6 +55,5 @@ export default function SkillScaleUpPage() {
           </div>
         </Container>
       </section>
-    </>
-  );
+    </>);
 }

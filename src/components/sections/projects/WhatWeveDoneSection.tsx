@@ -1,5 +1,4 @@
 "use client";
-
 import { useId, useMemo, useState } from "react";
 import toast from "react-hot-toast";
 import { Section } from "@/components/ui/Section";
@@ -7,67 +6,30 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { filterTabs, projects, type ProjectFilter } from "@/data/projects/projects";
 import { ProjectCard } from "./ProjectCard";
 import { ProjectsFilterTabs } from "./ProjectsFilterTabs";
-
-/**
- * "What We've Done On the Ground" — pillar-filterable project grid.
- *
- * This is a Client Component because it owns the filter state. The section
- * heading, project data, and cards themselves are still rendered server-side
- * by the parent — we only move interactivity to the client where needed.
- *
- * Selecting a filter fires a `react-hot-toast` notification per the
- * project's "use react toast for notification" guideline.
- */
 export function WhatWeveDoneSection() {
-  const [active, setActive] = useState<ProjectFilter>("all");
-  const gridId = useId();
-
-  const visible = useMemo(
-    () => (active === "all" ? projects : projects.filter((p) => p.pillar === active)),
-    [active]
-  );
-
-  function handleChange(next: ProjectFilter) {
-    if (next === active) return;
-    setActive(next);
-    const label = filterTabs.find((t) => t.id === next)?.label ?? next;
-    toast.success(`Showing ${label}`, { id: "projects-filter" });
-  }
-
-  return (
-    <Section tone="cream" padding="lg" ariaLabelledBy="projects-grid-title">
-      <SectionHeader
-        id="projects-grid-title"
-        eyebrow="Our projects"
-        title="What We've Done"
-        titleAccent="On the Ground"
-        description="Every project below represents a real community, a real intervention, and a real outcome. Filter by pillar to explore."
-      />
+    const [active, setActive] = useState<ProjectFilter>("all");
+    const gridId = useId();
+    const visible = useMemo(() => (active === "all" ? projects : projects.filter((p) => p.pillar === active)), [active]);
+    function handleChange(next: ProjectFilter) {
+        if (next === active)
+            return;
+        setActive(next);
+        const label = filterTabs.find((t) => t.id === next)?.label ?? next;
+        toast.success(`Showing ${label}`, { id: "projects-filter" });
+    }
+    return (<Section tone="cream" padding="lg" ariaLabelledBy="projects-grid-title">
+      <SectionHeader id="projects-grid-title" eyebrow="Our projects" title="What We've Done" titleAccent="On the Ground" description="Every project below represents a real community, a real intervention, and a real outcome. Filter by pillar to explore."/>
 
       <div className="mt-8">
-        <ProjectsFilterTabs
-          active={active}
-          onChange={handleChange}
-          controlsId={gridId}
-        />
+        <ProjectsFilterTabs active={active} onChange={handleChange} controlsId={gridId}/>
       </div>
 
-      <div
-        id={gridId}
-        role="tabpanel"
-        aria-live="polite"
-        className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8"
-      >
-        {visible.map((project) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
+      <div id={gridId} role="tabpanel" aria-live="polite" className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+        {visible.map((project) => (<ProjectCard key={project.id} project={project}/>))}
       </div>
 
-      {visible.length === 0 ? (
-        <p className="mt-12 text-center text-sm text-cnf-muted">
-          No projects in this pillar yet — check back soon.
-        </p>
-      ) : null}
-    </Section>
-  );
+      {visible.length === 0 ? (<p className="mt-12 text-center text-sm text-cnf-muted">
+          No projects in this pillar yet, check back soon.
+        </p>) : null}
+    </Section>);
 }

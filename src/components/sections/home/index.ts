@@ -1,5 +1,4 @@
 export { HomeHero } from "./HomeHero";
-export { HomeHeroStats } from "./HomeHeroStats";
 export { WhoWeAreSection } from "./WhoWeAreSection";
 export { OurWorkSection } from "./OurWorkSection";
 export { FlagshipSection } from "./FlagshipSection";

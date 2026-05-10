@@ -5,28 +5,20 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { HandshakeIcon, HeartIcon, WaveIcon } from "@/components/ui/icons";
 import { joinOptions, type JoinOption } from "@/data/home/join-options";
 import { fontDisplay } from "@/lib/fonts";
-
 const Icon = {
-  heart: HeartIcon,
-  handshake: HandshakeIcon,
-  wave: WaveIcon,
+    heart: HeartIcon,
+    handshake: HandshakeIcon,
+    wave: WaveIcon,
 } as const;
-
-function JoinCard({ option }: { option: JoinOption }) {
-  const IconComponent = Icon[option.iconKey];
-  return (
-    <Card
-      tone="elevated"
-      padding="lg"
-      className="flex h-full flex-col items-center text-center"
-      as="article"
-    >
+function JoinCard({ option }: {
+    option: JoinOption;
+}) {
+    const IconComponent = Icon[option.iconKey];
+    return (<Card tone="elevated" padding="lg" className="flex h-full flex-col items-center text-center" as="article">
       <span className="flex h-14 w-14 items-center justify-center rounded-full bg-cnf-accent/15 text-cnf-accent">
-        <IconComponent className="h-7 w-7" />
+        <IconComponent className="h-7 w-7"/>
       </span>
-      <h3
-        className={`${fontDisplay.className} mt-5 text-2xl font-semibold leading-tight text-cnf-ink`}
-      >
+      <h3 className={`${fontDisplay.className} mt-5 text-2xl font-semibold leading-tight text-cnf-ink`}>
         {option.title}
       </h3>
       <p className="mt-3 max-w-sm text-sm leading-relaxed text-cnf-muted md:text-base">
@@ -37,29 +29,16 @@ function JoinCard({ option }: { option: JoinOption }) {
           {option.ctaLabel}
         </ButtonLink>
       </div>
-    </Card>
-  );
+    </Card>);
 }
-
-/** "Three Ways to Make a Difference" — donate / partner / volunteer cards. */
 export function JoinUsSection() {
-  return (
-    <Section tone="light" padding="lg" ariaLabelledBy="join-us-title">
-      <SectionHeader
-        id="join-us-title"
-        eyebrow="Join us"
-        title={
-          <>
+    return (<Section tone="light" padding="lg" ariaLabelledBy="join-us-title">
+      <SectionHeader id="join-us-title" eyebrow="Join us" title={<>
             Three Ways to <span className="text-cnf-accent">Make a Difference</span>
-          </>
-        }
-      />
+          </>}/>
 
       <div className="mt-10 grid gap-6 md:grid-cols-3 lg:gap-8">
-        {joinOptions.map((option) => (
-          <JoinCard key={option.id} option={option} />
-        ))}
+        {joinOptions.map((option) => (<JoinCard key={option.id} option={option}/>))}
       </div>
-    </Section>
-  );
+    </Section>);
 }

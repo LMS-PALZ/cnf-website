@@ -1,27 +1,11 @@
 import Link from "next/link";
 import { fontDisplay } from "@/lib/fonts";
-
-/**
- * Dark, full-bleed hero for the News page. Matches the visual treatment
- * used on Our Work / Projects / Get Involved / Donate so every page hero
- * shares the same edge-to-edge layout.
- */
 export function NewsHero() {
-  return (
-    <section
-      aria-labelledby="news-hero-title"
-      className="relative overflow-hidden bg-cnf-night"
-    >
-      <div aria-hidden className="cnf-dot-pattern absolute inset-0 opacity-20" />
+    return (<section aria-labelledby="news-hero-title" className="relative overflow-hidden bg-cnf-night">
+      <div aria-hidden className="cnf-dot-pattern absolute inset-0 opacity-20"/>
       <div className="relative px-6 py-16 sm:px-10 md:px-14 md:py-20 lg:px-16 lg:py-24">
-        <nav
-          aria-label="Breadcrumb"
-          className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em]"
-        >
-          <Link
-            href="/"
-            className="text-white/55 transition-colors hover:text-white"
-          >
+        <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em]">
+          <Link href="/" className="text-white/55 transition-colors hover:text-white">
             Home
           </Link>
           <span aria-hidden className="text-white/30">
@@ -30,10 +14,7 @@ export function NewsHero() {
           <span className="text-cnf-accent">News</span>
         </nav>
 
-        <h1
-          id="news-hero-title"
-          className={`${fontDisplay.className} mt-8 text-5xl font-semibold leading-[1.04] text-white md:text-6xl lg:text-7xl`}
-        >
+        <h1 id="news-hero-title" className={`${fontDisplay.className} mt-8 text-5xl font-semibold leading-[1.04] text-white md:text-6xl lg:text-7xl`}>
           Stories, Updates
           <br />
           &amp; <span className="text-cnf-accent">Impact.</span>
@@ -45,6 +26,5 @@ export function NewsHero() {
           and announcements.
         </p>
       </div>
-    </section>
-  );
+    </section>);
 }

@@ -1,54 +1,26 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/cn";
-
 type Props = {
-  id: string;
-  label: string;
-  hint?: string;
-  error?: string;
-  required?: boolean;
-  /** Visually hide the label (still readable to screen readers). */
-  hideLabel?: boolean;
-  children: ReactNode;
+    id: string;
+    label: string;
+    hint?: string;
+    error?: string;
+    required?: boolean;
+    hideLabel?: boolean;
+    children: ReactNode;
 };
-
-/**
- * Generic form field wrapper: label, optional hint, optional error.
- * The actual input is supplied via `children` so the same wrapper handles
- * inputs, textareas, selects, etc.
- */
-export function FormField({
-  id,
-  label,
-  hint,
-  error,
-  required,
-  hideLabel,
-  children,
-}: Props) {
-  return (
-    <div className="space-y-2">
-      <label
-        htmlFor={id}
-        className={cn(
-          "block text-sm font-semibold text-cnf-ink",
-          hideLabel && "sr-only"
-        )}
-      >
+export function FormField({ id, label, hint, error, required, hideLabel, children, }: Props) {
+    return (<div className="space-y-2">
+      <label htmlFor={id} className={cn("block text-sm font-semibold text-cnf-ink", hideLabel && "sr-only")}>
         {label}
-        {required ? (
-          <span aria-hidden className="ml-0.5 text-cnf-accent-hover">
+        {required ? (<span aria-hidden className="ml-0.5 text-cnf-accent-hover">
             *
-          </span>
-        ) : null}
+          </span>) : null}
       </label>
       {children}
       {hint ? <p className="text-sm text-cnf-muted">{hint}</p> : null}
-      {error ? (
-        <p className="text-sm font-medium text-red-700" role="alert">
+      {error ? (<p className="text-sm font-medium text-red-700" role="alert">
           {error}
-        </p>
-      ) : null}
-    </div>
-  );
+        </p>) : null}
+    </div>);
 }

@@ -2,15 +2,9 @@ import { Container } from "@/components/ui/Container";
 import { fontDisplay } from "@/lib/fonts";
 import { pageMetadata } from "@/lib/metadata";
 import { site } from "@/lib/site";
-
-export const metadata = pageMetadata(
-  "Privacy policy",
-  "How the Chiggy Nsofor Foundation website collects, uses, and retains personal data submitted through forms.",
-);
-
+export const metadata = pageMetadata("Privacy policy", "How the Chiggy Nsofor Foundation website collects, uses, and retains personal data submitted through forms.");
 export default function PrivacyPage() {
-  return (
-    <section className="py-16 md:py-24">
+    return (<section className="py-16 md:py-24">
       <Container className="max-w-3xl space-y-6 text-base leading-relaxed text-cnf-muted">
         <h1 className={`${fontDisplay.className} text-4xl font-semibold text-cnf-ink`}>Privacy policy</h1>
         <p>
@@ -44,6 +38,5 @@ export default function PrivacyPage() {
           consent.
         </p>
       </Container>
-    </section>
-  );
+    </section>);
 }

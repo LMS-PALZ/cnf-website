@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-/* Chiggy Nsofor Foundation — brand-aligned palette (news + global UI) */
 :root {
   --background: #ffffff;
   --foreground: #0c0f0d;
@@ -12,54 +11,45 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  /* Core brand */
-  --color-cnf-primary: #0f2919;
-  --color-cnf-primary-dark: #07140f;
-  --color-cnf-primary-soft: #1a3d2a;
+  --color-cnf-primary: #0b693a;
+  --color-cnf-primary-light: #39b54a;
+  --color-cnf-primary-soft: #ecf8ee;
 
-  /* Mustard gold — primary CTA (e.g. Donate) */
-  --color-cnf-accent: #c4a24a;
-  --color-cnf-accent-hover: #b08f3d;
-  --color-cnf-accent-ink: #0a0a0a;
+  --color-cnf-accent: #f49221;
+  --color-cnf-accent-hover: #d97d12;
+  --color-cnf-accent-light: #fcb900;
+  --color-cnf-accent-ink: #0c0f0d;
 
-  /* Surfaces & type */
-  --color-cnf-surface: #f6f7f4;
-  --color-cnf-muted: #5a6570;
+  --color-cnf-surface: #f5faf7;
+  --color-cnf-muted: #4d5c56;
   --color-cnf-ink: #0c0f0d;
-  --color-cnf-border: #e2e8e4;
+  --color-cnf-border: #d8e8df;
 
-  /* Footer */
-  --color-cnf-footer-bg: #0c140e;
+  --color-cnf-footer-bg: #0b693a;
   --color-cnf-footer-heading: #fdfdfd;
-  --color-cnf-footer-muted: #94a398;
+  --color-cnf-footer-muted: #c8e6d4;
 
-  /* News hero (forest → near-black) */
-  --color-cnf-hero-from: #0f2919;
-  --color-cnf-hero-via: #081a12;
-  --color-cnf-hero-to: #030705;
+  --color-cnf-hero-from: #39b54a;
+  --color-cnf-hero-via: #0b693a;
+  --color-cnf-hero-to: #0b693a;
 
-  /* Cream for light panels */
-  --color-cnf-cream: #f4f6f3;
+  --color-cnf-cream: #f6f9f7;
 
-  /* Pillar accents (Skills uses cnf-primary; Education + Humanitarian get their own) */
-  --color-cnf-pillar-skills: #0f2919;
-  --color-cnf-pillar-skills-soft: #e6efe9;
-  --color-cnf-pillar-education: #1f3a5f;
-  --color-cnf-pillar-education-soft: #e7ecf2;
-  --color-cnf-pillar-humanitarian: #8a3c2a;
-  --color-cnf-pillar-humanitarian-soft: #f4e6e2;
+  --color-cnf-pillar-skills: #39b54a;
+  --color-cnf-pillar-skills-soft: #ecf8ee;
+  --color-cnf-pillar-education: #0b693a;
+  --color-cnf-pillar-education-soft: #e5f2ea;
+  --color-cnf-pillar-humanitarian: #c97818;
+  --color-cnf-pillar-humanitarian-soft: #fdf5e8;
 
-  /* Dark scheme (hero left half, flagship band, final CTA band) */
-  --color-cnf-night: #0a1410;
-  --color-cnf-night-deep: #050b08;
-  --color-cnf-night-soft: #14241b;
-  --color-cnf-night-border: #1f3527;
+  --color-cnf-night: #0b693a;
+  --color-cnf-night-deep: #0b693a;
+  --color-cnf-night-soft: #39b54a;
+  --color-cnf-night-border: #39b54a;
 
-  /* Star/rating */
-  --color-cnf-star: #d9a441;
+  --color-cnf-star: #fcb900;
 }
 
-/* Subtle dot pattern used on the hero right panel */
 .cnf-dot-pattern {
   background-image: radial-gradient(
     rgba(255, 255, 255, 0.08) 1.25px,
@@ -69,7 +59,6 @@
   background-position: 0 0;
 }
 
-/* Skeleton shimmer for placeholder loaders */
 @keyframes cnf-shimmer {
   0% {
     background-position: -200% 0;
@@ -82,12 +71,86 @@
 .cnf-skeleton {
   background: linear-gradient(
     90deg,
-    rgba(15, 41, 25, 0.06) 0%,
-    rgba(15, 41, 25, 0.12) 50%,
-    rgba(15, 41, 25, 0.06) 100%
+    rgba(11, 105, 58, 0.06) 0%,
+    rgba(11, 105, 58, 0.12) 50%,
+    rgba(11, 105, 58, 0.06) 100%
   );
   background-size: 200% 100%;
   animation: cnf-shimmer 1.6s ease-in-out infinite;
+}
+
+@keyframes cnf-hero-page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(1.75rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cnf-hero-page-enter-once {
+  animation: cnf-hero-page-enter 0.95s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes cnf-hero-content-in {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cnf-hero-content-animate {
+  animation: cnf-hero-content-in 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.cnf-hero-content-animate-delay-1 {
+  animation-delay: 0.08s;
+}
+
+.cnf-hero-content-animate-delay-2 {
+  animation-delay: 0.16s;
+}
+
+.cnf-hero-content-animate-delay-3 {
+  animation-delay: 0.26s;
+}
+
+@keyframes cnf-hero-btn-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(244, 146, 33, 0.28);
+  }
+  50% {
+    transform: scale(1.04);
+    box-shadow: 0 6px 28px -4px rgba(244, 146, 33, 0.45);
+  }
+}
+
+@keyframes cnf-hero-btn-breathe-outline {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.08);
+  }
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 0 24px -2px rgba(255, 255, 255, 0.18);
+  }
+}
+
+.cnf-hero-btn-breathe {
+  animation: cnf-hero-btn-breathe 2.6s ease-in-out infinite;
+}
+
+.cnf-hero-btn-breathe-outline {
+  animation: cnf-hero-btn-breathe-outline 2.6s ease-in-out infinite 0.35s;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -98,6 +161,28 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .cnf-hero-page-enter-once {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .cnf-hero-btn-breathe,
+  .cnf-hero-btn-breathe-outline {
+    animation: none !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  .cnf-hero-content-animate,
+  .cnf-hero-content-animate-delay-1,
+  .cnf-hero-content-animate-delay-2,
+  .cnf-hero-content-animate-delay-3 {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
 

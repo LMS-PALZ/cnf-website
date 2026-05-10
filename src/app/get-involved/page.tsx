@@ -4,20 +4,13 @@ import { NotSureWhereSection } from "@/components/sections/get-involved/NotSureW
 import { PartnershipSection } from "@/components/sections/get-involved/PartnershipSection";
 import { VolunteerSection } from "@/components/sections/get-involved/VolunteerSection";
 import { pageMetadata } from "@/lib/metadata";
-
-export const metadata = pageMetadata(
-  "Get Involved — Partner, Volunteer, Careers",
-  "Partner with CNF, volunteer your skills, or register interest in careers — every contribution helps us reach more communities.",
-);
-
+export const metadata = pageMetadata("Get Involved, Partner, Volunteer, Careers", "Partner with CNF, volunteer your skills, or register interest in careers, every contribution helps us reach more communities.");
 export default function GetInvolvedPage() {
-  return (
-    <>
+    return (<>
       <GetInvolvedHero />
       <PartnershipSection />
       <VolunteerSection />
       <CareersSection />
       <NotSureWhereSection />
-    </>
-  );
+    </>);
 }
