@@ -1,6 +1,5 @@
 import { CtaBand } from "@/components/sections/shared/CtaBand";
 import { ButtonLink } from "@/components/ui/ButtonLink";
-import { HeartIcon } from "@/components/ui/icons";
 import { donateConfig } from "@/lib/site";
 export function EveryGiftCtaSection() {
     return (<CtaBand tone="dark" id="every-gift-cta-title" title={<>
@@ -12,7 +11,6 @@ export function EveryGiftCtaSection() {
           young person learning a skill, a child back in school, or a family
           with food on the table tonight.
         </>} actions={<ButtonLink href={donateConfig.korapayUrl} variant="accent" size="lg">
-          <HeartIcon className="h-4 w-4" aria-hidden/>
-          <span>Donate Now</span>
+          Donate Now
         </ButtonLink>}/>);
 }

@@ -46,8 +46,15 @@ export function SiteHeader() {
           </ButtonLink>
           <button type="button" className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-md border border-cnf-border text-cnf-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-primary" aria-expanded={open} aria-controls="mobile-nav" onClick={() => setOpen((v) => !v)}>
             <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
-            <span aria-hidden className="text-lg">
-              {open ? "✕" : "☰"}
+            <span aria-hidden className="relative block h-5 w-5">
+              {open ? (<>
+                  <span className="absolute left-0 top-2.5 block h-0.5 w-5 rotate-45 rounded-full bg-current"/>
+                  <span className="absolute left-0 top-2.5 block h-0.5 w-5 -rotate-45 rounded-full bg-current"/>
+                </>) : (<>
+                  <span className="absolute left-0 top-1 block h-0.5 w-5 rounded-full bg-current"/>
+                  <span className="absolute left-0 top-2.5 block h-0.5 w-5 rounded-full bg-current"/>
+                  <span className="absolute left-0 top-4 block h-0.5 w-5 rounded-full bg-current"/>
+                </>)}
             </span>
           </button>
         </div>

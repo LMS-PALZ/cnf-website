@@ -1,6 +1,6 @@
 import { cn } from "@/lib/cn";
 import { fontDisplay } from "@/lib/fonts";
-type Tone = "dark" | "light" | "primary" | "accent-on-dark";
+type Tone = "dark" | "light" | "primary" | "accent-on-dark" | "white";
 type Size = "sm" | "md" | "lg";
 type Props = {
     value: string;
@@ -14,12 +14,14 @@ const valueTone: Record<Tone, string> = {
     light: "text-cnf-primary",
     primary: "text-white",
     "accent-on-dark": "text-cnf-accent",
+    white: "text-white",
 };
 const labelTone: Record<Tone, string> = {
     dark: "text-white/55",
     light: "text-cnf-muted",
     primary: "text-white/70",
     "accent-on-dark": "text-white/70",
+    white: "text-white",
 };
 const sizeStyles: Record<Size, string> = {
     sm: "text-3xl md:text-4xl",

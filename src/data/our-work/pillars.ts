@@ -1,7 +1,5 @@
 export type PillarTheme = "skills" | "education" | "humanitarian";
-export type IconKey = "monitor" | "scissors" | "star" | "briefcase" | "document" | "tools" | "book" | "heart" | "stethoscope" | "food" | "baby" | "globe" | "handshake" | "wave";
 export type PillarFeature = {
-    iconKey: IconKey;
     title: string;
     description: string;
 };
@@ -37,27 +35,23 @@ export const ourWorkPillars: PillarBlockData[] = [
         pillarLabel: "Pillar one",
         theme: "skills",
         heading: "Skill Development",
-        subheading: "Skill Scale-Up & Mentorship",
+        subheading: "Mentorship & Skill Scale-Up",
         lead: "Our flagship Skill Scale-Up (SSU) Programme equips underserved Nigerian youth aged 15 to 30 with practical, future-ready skills, and the support to turn those skills into real income.",
         body: "Over 80% of Nigerian graduates enter the workforce without the digital skills today's economy demands. CNF's SSU Programme directly addresses this gap. The in-person programme is fully free; an online SSU tier with a ₦20,000 application fee is also available. Both are built around technical and character development, training participants across three tracks, Digital & Tech, Vocational Skills, and the Total Man Module, preparing them not just for jobs, but for sustainable livelihoods. What makes SSU different is what happens after training. Every graduate receives guaranteed post-training internship placement, startup support, and access to an alumni mentorship network. Our graduates don't just learn, they earn. The in-person SSU Programme is fully free to all participants. An online SSU tier is also available with a ₦20,000 application fee, making skills training accessible to Nigerians across the country, not just in Abuja.",
         features: [
             {
-                iconKey: "monitor",
                 title: "Digital & Tech Track",
                 description: "AI-assisted coding, prompt engineering, data analysis, web development, digital marketing, graphic design, photography.",
             },
             {
-                iconKey: "scissors",
                 title: "Vocational Skills Track",
                 description: "Catering, hair styling, makeup artistry, videography, and more.",
             },
             {
-                iconKey: "star",
                 title: "Total Man Module (Core, Weekly)",
                 description: "Character development, financial literacy, leadership, and entrepreneurship.",
             },
             {
-                iconKey: "heart",
                 title: "Post-Training Support",
                 description: "Guaranteed internship placement, alumni peer mentorship, and startup capital support.",
             },
@@ -86,22 +80,18 @@ export const ourWorkPillars: PillarBlockData[] = [
         body: "Across Nigeria, thousands of children are out of school, not because they lack ability or ambition, but because their families cannot afford fees, uniforms, or exam costs. CNF's Education pillar removes these barriers directly: enrolling out-of-school children in secondary schools, covering school fees and examination costs, distributing academic resources, and delivering civic education workshops that build engaged, aware citizens. We believe that every child who gets back into a classroom is one less child left behind, and one more future leader the country can count on.",
         features: [
             {
-                iconKey: "book",
                 title: "Out-of-School Re-enrolment",
                 description: "Three-year secondary school enrolment for children excluded due to financial constraints.",
             },
             {
-                iconKey: "document",
                 title: "School Fees & Examination Support",
                 description: "Direct payment of outstanding fees, WAEC, NECO, and other examination costs.",
             },
             {
-                iconKey: "briefcase",
                 title: "Academic Resources Distribution",
                 description: "Textbooks, stationery, and learning materials shared across partner schools.",
             },
             {
-                iconKey: "globe",
                 title: "Civic Education Workshops",
                 description: "Building civic awareness, legal literacy, and community engagement among students.",
             },
@@ -131,22 +121,18 @@ export const ourWorkPillars: PillarBlockData[] = [
         body: "No circumstance should determine whether a person eats today, receives medical attention, or has their child's hospital bill settled. CNF's Humanitarian Aid and Healthcare pillar delivers direct, tangible support to underserved individuals and families, from food relief and festive outreaches to full medical missions and hospital bill offset programmes. Our healthcare focus is particularly centred on those most at risk: pregnant women, young children, and communities with limited access to basic medical services. Through Project HEEM, CNF brings healthcare directly into these communities, because access should never be a privilege.",
         features: [
             {
-                iconKey: "food",
                 title: "Food Relief & Festive Outreaches",
                 description: "Prepared food items and relief packages distributed to underserved families and communities.",
             },
             {
-                iconKey: "stethoscope",
                 title: "Project HEEM, Medical Missions",
                 description: "Free general health check-ups, maternal care, nutritional support for children, and disease prevention in underserved communities.",
             },
             {
-                iconKey: "document",
                 title: "Hospital Bill Support",
                 description: "Direct offset of outstanding hospital bills for patients who cannot afford care.",
             },
             {
-                iconKey: "baby",
                 title: "Maternal & Child Health",
                 description: "Dedicated support for pregnant women and young children, the most at-risk members of any community.",
             },

@@ -7,7 +7,7 @@ export const flagshipStats: HeroStat[] = [
 ];
 export const impactStats: HeroStat[] = [
     { value: "4+", label: "States reached" },
-    { value: "5,000+", label: "Individuals reached" },
+    { value: "6,000+", label: "Individuals reached" },
     { value: "9", label: "Communities" },
-    { value: "4,000+", label: "Medical visits" },
+    { value: "4,000+", label: "Suppported Medically" },
 ];

@@ -15,6 +15,6 @@ export default function HomePage() {
 
       <JoinUsSection />
 
-      <ChangeCtaSection />
+      {/* <ChangeCtaSection /> */}
     </>);
 }

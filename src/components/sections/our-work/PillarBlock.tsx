@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Section } from "@/components/ui/Section";
-import { ArrowRightIcon } from "@/components/ui/icons";
 import { PillarFeatureRow } from "./PillarFeatureRow";
 import { PillarMediaCard } from "./PillarMediaCard";
 import { cn } from "@/lib/cn";
@@ -35,13 +34,13 @@ export function PillarBlock({ pillar, surface = "cream" }: Props) {
           </p>
 
           <div className="mt-8 grid gap-3">
-            {pillar.features.map((f) => (<PillarFeatureRow key={f.title} iconKey={f.iconKey} title={f.title} description={f.description} theme={pillar.theme}/>))}
+            {pillar.features.map((f) => (<PillarFeatureRow key={f.title} title={f.title} description={f.description}/>))}
           </div>
 
           <div className="mt-8">
             <Link href={pillar.cta.href} className={cn("inline-flex min-h-11 items-center justify-center gap-2 rounded-md px-5 py-2.5 text-base font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-accent", t.button)}>
               {pillar.cta.label}
-              <ArrowRightIcon className="h-4 w-4"/>
+              <span aria-hidden className="text-sm leading-none">&rarr;</span>
             </Link>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { BookIcon, GlobeIcon, HeartIcon, HandshakeIcon, ImageOffIcon, RocketIcon, StarIcon } from "@/components/ui/icons";
+import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Container } from "@/components/ui/Container";
 import { fontDisplay } from "@/lib/fonts";
@@ -72,27 +72,22 @@ const values = [
     {
         title: "Integrity",
         description: "We do the right thing, always. With our resources, our people, and our beneficiaries.",
-        icon: StarIcon,
     },
     {
         title: "Excellence",
         description: "We hold ourselves to the highest standard in everything we deliver, because the people we serve deserve nothing less.",
-        icon: BookIcon,
     },
     {
         title: "Possibility",
         description: "We believe no circumstance is permanent. We bring creative, forward-thinking solutions to challenges others have accepted as fixed.",
-        icon: RocketIcon,
     },
     {
         title: "People First",
         description: "We are stronger together, our team, our communities, our beneficiaries. No one is left behind, no one works alone.",
-        icon: HandshakeIcon,
     },
     {
         title: "Growth",
         description: "We don’t just serve, we build. Every programme is designed to leave people more capable, more confident, and more independent than we found them.",
-        icon: HeartIcon,
     },
 ];
 export default function AboutPage() {
@@ -188,19 +183,14 @@ export default function AboutPage() {
                 title: "Our Mission",
                 headline: "To Provide & To Build",
                 text: "To provide essential support and build lasting capacity in individuals and communities across Nigeria, creating pathways into opportunity for underserved people and communities.",
-                icon: BookIcon,
             },
             {
                 title: "Our Vision",
                 headline: "A Nigeria Where No One Is Left Behind",
                 text: "We envision a Nigeria where every underserved person, regardless of background, location, or circumstance, is given a genuine opportunity to live a better quality of life.",
-                icon: GlobeIcon,
             },
         ].map((item) => (<div key={item.title} className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/10">
-                <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-cnf-accent text-cnf-accent-ink">
-                  <item.icon className="h-5 w-5"/>
-                </div>
-                <p className="mt-4 text-xs font-semibold uppercase tracking-[0.28em] text-cnf-cream/75">{item.title}</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-cnf-cream/75">{item.title}</p>
                 <h3 className="mt-4 text-2xl font-semibold text-white">{item.headline}</h3>
                 <p className="mt-4 text-base leading-8 text-cnf-cream/80">{item.text}</p>
               </div>))}
@@ -218,12 +208,8 @@ export default function AboutPage() {
 
           <div className="mt-10 grid gap-6 lg:grid-cols-3 xl:grid-cols-5">
             {values.map((value) => {
-            const Icon = value.icon;
             return (<div key={value.title} className="rounded-[2rem] border border-cnf-border bg-white p-7 text-center shadow-sm">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-3xl bg-cnf-accent/15 text-cnf-accent">
-                    <Icon className="h-6 w-6"/>
-                  </div>
-                  <h3 className="mt-6 text-xl font-semibold text-cnf-ink">{value.title}</h3>
+                  <h3 className="text-xl font-semibold text-cnf-ink">{value.title}</h3>
                   <p className="mt-3 text-sm leading-7 text-cnf-muted">{value.description}</p>
                 </div>);
         })}
@@ -263,11 +249,8 @@ export default function AboutPage() {
           <div className="space-y-6">
             <div className="relative overflow-hidden rounded-[2rem] border border-cnf-border bg-cnf-primary p-8 text-white shadow-2xl shadow-black/10">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.12),transparent_20%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.06),transparent_20%)]"/>
-              <div className="relative flex min-h-[420px] flex-col items-center justify-center rounded-[1.75rem] border border-white/10 bg-cnf-primary/70">
-                <div className="flex h-24 w-24 items-center justify-center rounded-full bg-white/10 text-3xl text-cnf-cream">
-                  <ImageOffIcon className="h-10 w-10"/>
-                </div>
-                <p className="mt-5 text-center text-sm uppercase tracking-[0.28em] text-cnf-cream/75">Place Chiggy’s professional photo here</p>
+              <div className="relative flex min-h-[420px] flex-col items-center justify-center rounded-[1.75rem] border border-white/10 bg-cnf-primary/70 px-4">
+                <ImagePlaceholder label="Place Chiggy's professional photo here" tone="dark-on-primary" className="max-w-sm"/>
               </div>
             </div>
             <div className="rounded-3xl border border-cnf-primary/15 bg-white p-6 text-cnf-ink shadow-sm">
@@ -290,10 +273,9 @@ export default function AboutPage() {
           <div className="mt-10 grid gap-6 xl:grid-cols-2">
             {teamMembers.map((member) => (<div key={member.name} className="overflow-hidden rounded-[2rem] border border-cnf-border bg-white shadow-sm">
                 <div className="rounded-t-[1.75rem] bg-cnf-surface/80 p-6 text-center">
-                  <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-cnf-cream text-cnf-primary">
-                    <ImageOffIcon className="h-10 w-10"/>
+                  <div className="mx-auto max-w-[200px]">
+                    <ImagePlaceholder label="Photo coming soon" tone="light" className="py-4"/>
                   </div>
-                  <p className="mt-4 text-sm uppercase tracking-[0.25em] text-cnf-muted">Photo coming soon</p>
                 </div>
                 <div className="p-7">
                   <h3 className="text-xl font-semibold text-cnf-ink">{member.name}</h3>

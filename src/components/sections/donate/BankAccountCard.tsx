@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { CheckIcon, CopyIcon } from "@/components/ui/icons";
 import { cn } from "@/lib/cn";
 type Row = {
     label: string;
@@ -39,8 +38,7 @@ export function BankAccountCard({ rows }: Props) {
                 <span className={cn("font-semibold", isPlaceholder ? "text-cnf-accent" : "text-white")}>
                   {row.value}
                 </span>
-                {row.copyable && !isPlaceholder ? (<button type="button" onClick={() => handleCopy(row.label, row.value)} className="inline-flex items-center gap-1 rounded-md bg-white/10 px-2 py-1 text-xs font-medium text-white transition-colors hover:bg-white/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-accent" aria-label={`Copy ${row.label}`}>
-                    {isCopied ? (<CheckIcon className="h-3.5 w-3.5"/>) : (<CopyIcon className="h-3.5 w-3.5"/>)}
+                {row.copyable && !isPlaceholder ? (<button type="button" onClick={() => handleCopy(row.label, row.value)} className="inline-flex items-center rounded-md bg-white/10 px-2 py-1 text-xs font-medium text-white transition-colors hover:bg-white/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-accent" aria-label={`Copy ${row.label}`}>
                     <span>{isCopied ? "Copied" : "Copy"}</span>
                   </button>) : null}
               </dd>

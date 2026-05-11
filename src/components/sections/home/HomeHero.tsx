@@ -2,7 +2,6 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { ButtonLink } from "@/components/ui/ButtonLink";
-import { ArrowRightIcon, PinIcon } from "@/components/ui/icons";
 import { cn } from "@/lib/cn";
 import { fontDisplay } from "@/lib/fonts";
 import { HOME_HERO_CAROUSEL_SLIDES } from "@/data/home/carousel-images";
@@ -42,17 +41,16 @@ export function HomeHero({ eyebrow = "Est. 2024 · Abuja, Nigeria", title, title
             </div>);
         })}
         
-        <div className="absolute inset-0 z-[2] bg-gradient-to-br from-cnf-primary/44 via-cnf-primary/26 to-black/18" aria-hidden/>
-        <div className="absolute inset-0 z-[2] bg-[radial-gradient(ellipse_at_top_right,rgba(244,146,33,0.04),transparent_60%)]" aria-hidden/>
+        <div className="absolute inset-0 z-[2] bg-gradient-to-br from-cnf-primary/52 via-cnf-primary/34 to-black/26" aria-hidden/>
+        <div className="absolute inset-0 z-[2] bg-[radial-gradient(ellipse_at_top_right,rgba(244,146,33,0.07),transparent_60%)]" aria-hidden/>
       </div>
 
       
       <div className={cn("relative z-[3] px-6 py-16 sm:px-10 md:px-14 md:py-24 lg:px-16 lg:py-28", slides.length > 1 && "pb-24 sm:pb-28")}>
         
         <div className="max-w-2xl cnf-hero-page-enter-once">
-          <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-cnf-accent">
-            <PinIcon className="h-3.5 w-3.5"/>
-            <span>{eyebrow}</span>
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cnf-accent">
+            {eyebrow}
           </p>
           <h1 id="home-hero-title" className={`${fontDisplay.className} mt-8 text-5xl font-semibold leading-[1.04] text-white md:text-6xl lg:text-7xl`}>
             {title}
@@ -73,7 +71,7 @@ export function HomeHero({ eyebrow = "Est. 2024 · Abuja, Nigeria", title, title
             <ButtonLink href="/get-involved" variant="dark-outline" size="lg" className="cnf-hero-btn-breathe-outline inline-flex will-change-transform">
               <span className="inline-flex items-center gap-2">
                 Get involved
-                <ArrowRightIcon className="h-4 w-4"/>
+                <span aria-hidden className="text-base leading-none">&rarr;</span>
               </span>
             </ButtonLink>
           </div>

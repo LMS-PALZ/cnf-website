@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
-import { ImageOffIcon } from "@/components/ui/icons";
+import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { cn } from "@/lib/cn";
 import { fontDisplay } from "@/lib/fonts";
 import type { VideoItem } from "@/data/projects/videos";
@@ -17,7 +17,7 @@ const themeBadge = {
 export function VideoCard({ video }: Props) {
     const inner: ReactNode = (<>
       <div className={cn("relative flex flex-1 items-center justify-center overflow-hidden bg-cnf-border/70", video.featured ? "min-h-[280px]" : "min-h-[160px]")}>
-        <ImageOffIcon className="h-10 w-10 text-cnf-muted/70"/>
+        <ImagePlaceholder label="Video thumbnail" tone="muted" className="min-h-[120px] py-6"/>
       </div>
 
       <div className="flex flex-col gap-2 p-5">

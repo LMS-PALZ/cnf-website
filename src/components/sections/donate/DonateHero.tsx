@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { ButtonLink } from "@/components/ui/ButtonLink";
-import { HeartIcon } from "@/components/ui/icons";
 import { donateHeroStats } from "@/data/donate/hero-stats";
 import { fontDisplay } from "@/lib/fonts";
 import { donateConfig } from "@/lib/site";
@@ -35,8 +34,7 @@ export function DonateHero() {
 
             <div className="mt-10">
               <ButtonLink href={donateConfig.korapayUrl} variant="accent" size="lg">
-                <HeartIcon className="h-4 w-4" aria-hidden/>
-                <span>Donate Now via Korapay</span>
+                Donate Now via Korapay
               </ButtonLink>
             </div>
           </div>

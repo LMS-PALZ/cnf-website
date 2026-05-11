@@ -1,9 +1,7 @@
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
 import { ButtonLink } from "@/components/ui/ButtonLink";
-import { IconTile } from "@/components/ui/IconTile";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { ArrowRightIcon } from "@/components/ui/icons";
 import { giveOptions } from "@/data/donate/give-options";
 import { donateConfig, site } from "@/lib/site";
 import { fontDisplay } from "@/lib/fonts";
@@ -31,8 +29,7 @@ export function HowToGiveSection() {
           {giveOptions.map((opt) => (<li key={opt.id} className="flex">
               <Card tone="elevated" padding="lg" className="flex w-full flex-col text-center">
                 <div className="flex flex-col items-center">
-                  <IconTile iconKey={opt.iconKey} tone={opt.iconTone} size="lg"/>
-                  <h3 className={cn(fontDisplay.className, "mt-4 text-2xl font-semibold text-cnf-ink")}>
+                  <h3 className={cn(fontDisplay.className, "text-2xl font-semibold text-cnf-ink")}>
                     {opt.title}
                   </h3>
                   <p className="mt-3 text-sm leading-relaxed text-cnf-muted">
@@ -44,14 +41,14 @@ export function HowToGiveSection() {
                   {opt.action === "primary" ? (<ButtonLink href={hrefForOption[opt.id]} variant="primary" size="md" className="w-full">
                       <span className="inline-flex items-center gap-2">
                         {opt.ctaLabel}
-                        <ArrowRightIcon className="h-4 w-4"/>
+                        <span aria-hidden className="text-base leading-none">&rarr;</span>
                       </span>
                     </ButtonLink>) : null}
 
                   {opt.action === "outline" ? (<ButtonLink href={hrefForOption[opt.id]} variant="secondary" size="md" className="w-full">
                       <span className="inline-flex items-center gap-2">
                         {opt.ctaLabel}
-                        <ArrowRightIcon className="h-4 w-4"/>
+                        <span aria-hidden className="text-base leading-none">&rarr;</span>
                       </span>
                     </ButtonLink>) : null}
 
