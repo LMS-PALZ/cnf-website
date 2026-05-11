@@ -27,7 +27,7 @@ export function SiteHeader() {
       <Container className="flex items-center justify-between gap-4 py-3">
         <Link href="/" className="flex shrink-0 items-center gap-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-primary">
           <span className="sr-only">{site.name}, home</span>
-          <Image src="/CNFLogo.png" alt={site.name} width={96} height={48} className="h-12 w-24"/>
+          <Image src="/CNFLogo.png" alt={site.name} width={240} height={120} priority className="h-14 w-auto max-h-16 sm:h-16"/>
         </Link>
 
         <nav aria-label="Primary" className="hidden flex-1 flex-wrap items-center justify-center gap-6 lg:flex">

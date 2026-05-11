@@ -115,28 +115,12 @@ export default function AboutPage() {
         <Container className="grid gap-16 lg:grid-cols-[0.95fr_1.05fr] items-start">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cnf-primary">Our Story</p>
-            <h2 className={`${fontDisplay.className} mt-6 text-4xl font-semibold text-cnf-ink`}>From a Calling to a Foundation</h2>
+            <h2 className={`${fontDisplay.className} mt-6 text-balance text-5xl font-semibold leading-[1.08] text-cnf-ink`}>From a Calling to a Foundation</h2>
             <div className="mt-12 space-y-8">
               {[
             {
-                date: "January 2024",
-                title: "CNF is founded by Chiggy Nsofor in Abuja, Nigeria",
-            },
-            {
-                date: "May 2024",
-                title: "Formally registered with the Corporate Affairs Commission (CAC No. 7511818)",
-            },
-            {
-                date: "June 2024",
-                title: "Skill Scale-Up (SSU) Programme launches, Cohort 1 begins training",
-            },
-            {
-                date: "2024-2025",
-                title: "Humanitarian, education, and healthcare outreaches expand across FCT, Nasarawa, Kaduna, and Plateau",
-            },
-            {
-                date: "March 2026",
-                title: "Cohort 3 active, 74+ graduates across three cohorts, LMS platform in development for Q3 2026 launch",
+                date: "April 2025",
+                title: "CNF was founded in Abuja, Nigeria",
             },
         ].map((item) => (<div key={item.date} className="flex gap-4">
                   <div className="mt-1 h-2.5 w-2.5 rounded-full bg-cnf-primary"/>
@@ -274,7 +258,7 @@ export default function AboutPage() {
             {teamMembers.map((member) => (<div key={member.name} className="overflow-hidden rounded-[2rem] border border-cnf-border bg-white shadow-sm">
                 <div className="rounded-t-[1.75rem] bg-cnf-surface/80 p-6 text-center">
                   <div className="mx-auto max-w-[200px]">
-                    <ImagePlaceholder label="Photo coming soon" tone="light" className="py-4"/>
+                    <ImagePlaceholder label={member.name} tone="light" className="py-4"/>
                   </div>
                 </div>
                 <div className="p-7">
