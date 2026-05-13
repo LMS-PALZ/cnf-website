@@ -21,6 +21,8 @@ export type PillarBlockData = {
         href: string;
     };
     mediaLabel: string;
+    /** Hero photo for the media card (Our Work pillars only). */
+    heroImageSrc?: string;
     reachStat: {
         eyebrow: string;
         value: string;
@@ -57,7 +59,8 @@ export const ourWorkPillars: PillarBlockData[] = [
             },
         ],
         cta: { label: "Learn more about SSU", href: "/programmes/skill-scale-up" },
-        mediaLabel: "Place an SSU training session photo here",
+        mediaLabel: "SSU training and skills development",
+        heroImageSrc: "/assets/ourWorkImgs/skillaqc.jpeg",
         reachStat: {
             eyebrow: "SSU programme results",
             value: "86%",
@@ -97,7 +100,8 @@ export const ourWorkPillars: PillarBlockData[] = [
             },
         ],
         cta: { label: "Learn more about Education", href: "/projects#education" },
-        mediaLabel: "Place a school outreach or classroom photo here",
+        mediaLabel: "Education outreach in partner schools",
+        heroImageSrc: "/assets/ourWorkImgs/education%20outreach.jpg",
         reachStat: {
             eyebrow: "Education reach",
             value: "1,000+",
@@ -141,7 +145,8 @@ export const ourWorkPillars: PillarBlockData[] = [
             label: "Learn more about Humanitarian work",
             href: "/projects#humanitarian",
         },
-        mediaLabel: "Place a humanitarian outreach or medical mission photo here",
+        mediaLabel: "Community aid and humanitarian outreach",
+        heroImageSrc: "/assets/ourWorkImgs/community%20aid.jpg",
         reachStat: {
             eyebrow: "Humanitarian reach",
             value: "4,000+",

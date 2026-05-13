@@ -1,14 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { IconType } from "react-icons";
+import { FaInstagram, FaLinkedin, FaTiktok, FaYoutube } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { Container } from "@/components/ui/Container";
 import { site } from "@/lib/site";
-import { fontDisplay } from "@/lib/fonts";
-const social = [
-    { label: "Instagram", href: "#" },
-    { label: "X (Twitter)", href: "#" },
-    { label: "LinkedIn", href: "#" },
-    { label: "YouTube", href: "#" },
-] as const;
+
+const social: readonly { label: string; href: string; Icon: IconType }[] = [
+    { label: "TikTok", href: "https://www.tiktok.com/@chiggy_nsofor_foundation", Icon: FaTiktok },
+    { label: "Instagram", href: "https://www.instagram.com/chiggynsoforfoundation/", Icon: FaInstagram },
+    { label: "X", href: "https://x.com/ChiggyNsoforFdn", Icon: FaXTwitter },
+    { label: "YouTube", href: "https://www.youtube.com/@chiggynsoforfoundation", Icon: FaYoutube },
+    { label: "LinkedIn", href: "https://www.linkedin.com/company/chiggynsoforfoundation/", Icon: FaLinkedin },
+];
 const workLinks = [
     { href: "/projects#skills", label: "Skill Development" },
     { href: "/projects#education", label: "Education" },
@@ -29,13 +33,16 @@ export function SiteFooter() {
             <div className="flex h-28 w-28 shrink-0 items-center justify-center overflow-hidden rounded-full border border-cnf-border/80 bg-cnf-primary-soft p-2 shadow-sm sm:h-32 sm:w-32 sm:p-2.5">
               <Image src="/CNFLogo.png" alt={site.name} width={240} height={120} className="h-auto max-h-[3.75rem] w-auto max-w-[92%] object-contain object-center sm:max-h-[4.5rem]"/>
             </div>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed">{site.footerTagline}</p>
+            <p className="mt-4 max-w-xs whitespace-pre-line text-sm leading-relaxed">{site.footerTagline}</p>
             <ul className="mt-6 flex flex-wrap gap-2">
-              {social.map((s) => (<li key={s.label}>
-                  <a className="inline-flex rounded-full bg-white/5 px-4 py-2 text-xs font-medium text-cnf-footer-muted transition-colors hover:bg-white/10 hover:text-cnf-footer-heading focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-accent" href={s.href}>
-                    {s.label}
-                  </a>
-                </li>))}
+              {social.map((s) => {
+                  const Icon = s.Icon;
+                  return (<li key={s.label}>
+                      <a aria-label={s.label} className="inline-flex size-11 items-center justify-center rounded-full bg-white/5 text-cnf-footer-muted transition-colors hover:bg-white/10 hover:text-cnf-footer-heading focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-accent" href={s.href} rel="noopener noreferrer" target="_blank">
+                        <Icon aria-hidden className="size-5"/>
+                      </a>
+                    </li>);
+                })}
             </ul>
           </div>
 
@@ -62,9 +69,6 @@ export function SiteFooter() {
                     {l.label}
                   </Link>
                 </li>))}
-              <li>
-                <span className="text-cnf-footer-muted/80">Annual report, coming soon</span>
-              </li>
             </ul>
           </nav>
 

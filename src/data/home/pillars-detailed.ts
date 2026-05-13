@@ -7,6 +7,8 @@ export type HomePillar = {
     title: string;
     description: string;
     href: string;
+    /** Photo for the card header (optional; falls back to solid pillar colour). */
+    heroImageSrc?: string;
 };
 
 export const homePillars: HomePillar[] = [
@@ -17,6 +19,7 @@ export const homePillars: HomePillar[] = [
         title: "Skill Scale-Up & Mentorship",
         description: "Free, cohort-based training for Nigerian youth, paired with mentorship, internship placement, and alumni support to bridge training and real-world opportunity.",
         href: "/projects#skills",
+        heroImageSrc: "/assets/ourWorkImgs/skillaqc.jpeg",
     },
     {
         id: "education",
@@ -25,6 +28,7 @@ export const homePillars: HomePillar[] = [
         title: "Access, Equity & Civic Learning",
         description: "We re-enrol out-of-school children, cover exam fees, and build civic awareness, laying the groundwork for educated, engaged citizens.",
         href: "/projects#education",
+        heroImageSrc: "/assets/ourWorkImgs/education%20outreach.jpg",
     },
     {
         id: "humanitarian",
@@ -33,5 +37,6 @@ export const homePillars: HomePillar[] = [
         title: "Relief, Health & Community Care",
         description: "Food, medical care, and emergency support, delivered directly to underserved families and communities when they need it most.",
         href: "/projects#humanitarian",
+        heroImageSrc: "/assets/ourWorkImgs/community%20aid.jpg",
     },
 ];

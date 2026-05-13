@@ -6,10 +6,12 @@ import { cn } from "@/lib/cn";
 import { fontDisplay } from "@/lib/fonts";
 import { pillarTheme } from "@/lib/pillar-theme";
 import type { PillarBlockData } from "@/data/our-work/pillars";
+
 type Props = {
     pillar: PillarBlockData;
     surface?: "cream" | "light";
 };
+
 export function PillarBlock({ pillar, surface = "cream" }: Props) {
     const t = pillarTheme[pillar.theme];
     return (<Section tone={surface} padding="lg" ariaLabelledBy={`${pillar.id}-heading`} id={pillar.id}>
@@ -45,7 +47,7 @@ export function PillarBlock({ pillar, surface = "cream" }: Props) {
           </div>
         </div>
 
-        <PillarMediaCard theme={pillar.theme} mediaLabel={pillar.mediaLabel} reachStat={pillar.reachStat} smallStats={pillar.smallStats}/>
+        <PillarMediaCard theme={pillar.theme} mediaLabel={pillar.mediaLabel} reachStat={pillar.reachStat} smallStats={pillar.smallStats} heroImageSrc={pillar.heroImageSrc}/>
       </div>
     </Section>);
 }
