@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Container } from "@/components/ui/Container";
@@ -115,33 +116,21 @@ export default function AboutPage() {
         <Container className="grid gap-16 lg:grid-cols-[0.95fr_1.05fr] items-start">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cnf-primary">Our Story</p>
-            <h2 className={`${fontDisplay.className} mt-6 text-balance text-5xl font-semibold leading-[1.08] text-cnf-ink`}>From a Calling to a Foundation</h2>
+            <h2 className={`${fontDisplay.className} mt-6 text-balance text-5xl font-semibold leading-[1.08] text-cnf-ink`}>How we started</h2>
             <div className="mt-12 space-y-8">
-              {[
-            {
-                date: "April 2025",
-                title: "CNF was founded in Abuja, Nigeria",
-            },
-        ].map((item) => (<div key={item.date} className="flex gap-4">
-                  <div className="mt-1 h-2.5 w-2.5 rounded-full bg-cnf-primary"/>
-                  <div>
-                    <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cnf-primary">{item.date}</p>
-                    <p className="mt-2 text-base leading-7 text-cnf-muted">{item.title}</p>
-                  </div>
-                </div>))}
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore deserunt eligendi cumque et saepe totam accusamus fugiat odio, architecto molestiae itaque ipsam id ratione corporis, voluptas obcaecati, quis atque! Praesentium?
+                Doloremque ipsum quidem quam nisi totam in culpa nesciunt iusto quasi autem tenetur ex voluptate maxime et aspernatur maiores quibusdam non illum, aut minima nemo, quod amet perspiciatis. Sint, nihil!
+                Repudiandae porro repellat corrupti, atque ad blanditiis perspiciatis delectus quasi quibusdam minus? Odit error voluptatibus doloribus quidem ab in animi, eum tempore minus, perspiciatis explicabo sequi maxime vero iste iusto.
+                Similique aspernatur, numquam delectus, quam ducimus dignissimos, officiis cum aliquid dolores mollitia atque ipsa nesciunt blanditiis? Ipsum delectus hic similique est maiores unde necessitatibus voluptatibus explicabo dolor. Illum, velit doloremque?
+                Assumenda cumque sed mollitia necessitatibus, commodi, dolor similique placeat qui impedit porro eos quae doloremque repellat, quos vel aliquam fuga amet molestiae rerum ea consequuntur praesentium. Veniam recusandae sint ullam?
+              </p>
             </div>
           </div>
 
           <div className="space-y-8">
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cnf-primary">The story so far</p>
-            <h3 className="text-3xl font-semibold text-cnf-ink">Building a movement from conviction, not from a boardroom.</h3>
-            <div className="space-y-5 text-base leading-8 text-cnf-muted">
-              <p>
-                The Chiggy Nsofor Foundation did not begin in a boardroom. It began with a decision to leave behind a successful international fintech career in Toronto and return home to Nigeria to answer a more pressing question: <strong>what happens to the millions of young Nigerians who never get a fair shot?</strong>
-              </p>
-              <p>
-                Nigeria has one of the highest youth unemployment rates in the world. According to the National Bureau of Statistics, over 53% of young Nigerians are unemployed or underemployed. Over 80% of graduates enter the workforce without the practical digital skills that today&apos;s economy demands. For communities in the FCT, Nasarawa, Kaduna, and Plateau, these are not statistics. They are neighbours&apos; children.
-              </p>
+            <div className="bg-slate-100/30">
+              <Image alt="How it started" className="w-full h-auto object-cover" width={1200} height={800} priority={false} sizes="(max-width: 1024px) 100vw, 50vw" src="/assets/howItStarted/howitstarted.jpg"/>
             </div>
             <div className="rounded-3xl border border-cnf-primary/10 bg-cnf-cream p-7">
               <p className="text-lg italic leading-8 text-cnf-ink">
