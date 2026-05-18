@@ -43,22 +43,22 @@ export const ourWorkPillars: PillarBlockData[] = [
         features: [
             {
                 title: "Digital & Tech Track",
-                description: "AI-assisted coding, prompt engineering, data analysis, web development, digital marketing, graphic design, photography.",
+                description: "AI-assisted coding, prompt engineering, data analysis, web development, digital marketing, graphic design, content creation.",
             },
-            {
-                title: "Vocational Skills Track",
-                description: "Catering, hair styling, makeup artistry, videography, and more.",
-            },
+            // {
+            //     title: "Vocational Skills Track",
+            //     description: "Catering, hair styling, makeup artistry, videography, and more.",
+            // },
             {
                 title: "Total Man Module (Core, Weekly)",
-                description: "Character development, financial literacy, leadership, and entrepreneurship.",
+                description: "Character development, financial literacy, leadership, mentorship, and entrepreneurship.",
             },
             {
                 title: "Post-Training Support",
-                description: "Guaranteed internship placement, alumni peer mentorship, and startup capital support.",
+                description: "Internship placement, alumni peer mentorship, and startup capital support.",
             },
         ],
-        cta: { label: "Learn more about SSU", href: "/programmes/skill-scale-up" },
+        cta: { label: "See more about SSU", href: "/programmes/skill-scale-up" },
         mediaLabel: "SSU training and skills development",
         heroImageSrc: "/assets/ourWorkImgs/skillaqc.jpeg",
         reachStat: {
@@ -80,7 +80,7 @@ export const ourWorkPillars: PillarBlockData[] = [
         heading: "Education",
         subheading: "Access, Equity & Civic Learning",
         lead: "Education is the foundation of everything else. For children in underserved communities, financial barriers too often make it an impossible dream, CNF works to change that.",
-        body: "Across Nigeria, thousands of children are out of school, not because they lack ability or ambition, but because their families cannot afford fees, uniforms, or exam costs. CNF's Education pillar removes these barriers directly: enrolling out-of-school children in secondary schools, covering school fees and examination costs, distributing academic resources, and delivering civic education workshops that build engaged, aware citizens. We believe that every child who gets back into a classroom is one less child left behind, and one more future leader the country can count on.",
+        body: "Across Nigeria, thousands of children are out of school, not because they lack ability or ambition, but because their families cannot afford fees, uniforms, or exam costs. CNF's Education pillar removes these barriers directly: enrolling out-of-school children in secondary schools, tertiary institutions, covering school fees and examination costs, distributing academic resources, and delivering civic education workshops that build engaged, aware citizens. We believe that every child who gets back into a classroom is one less child left behind, and one more future leader the country can count on.",
         features: [
             {
                 title: "Out-of-School Re-enrolment",
@@ -99,7 +99,7 @@ export const ourWorkPillars: PillarBlockData[] = [
                 description: "Building civic awareness, legal literacy, and community engagement among students.",
             },
         ],
-        cta: { label: "Learn more about Education", href: "/projects#education" },
+        cta: { label: "See more about Education", href: "/projects#education" },
         mediaLabel: "Education outreach in partner schools",
         heroImageSrc: "/assets/ourWorkImgs/education%20outreach.jpg",
         reachStat: {
@@ -110,7 +110,7 @@ export const ourWorkPillars: PillarBlockData[] = [
         smallStats: [
             { value: "69+", label: "Scholarship beneficiaries funded" },
             { value: "4", label: "States with active education outreach" },
-            { value: "3yr", label: "Secondary school enrolment support" },
+            { value: "12 Months", label: "School enrolment support" },
             { value: "100%", label: "Free in-person programme" },
         ],
         reversed: true,
@@ -122,14 +122,14 @@ export const ourWorkPillars: PillarBlockData[] = [
         heading: "Humanitarian Aid",
         subheading: "Relief, Health & Community Care",
         lead: "When people are in crisis, they cannot think about skills or education. CNF shows up first with food, medicine, and care, because meeting people where they are is where everything else begins.",
-        body: "No circumstance should determine whether a person eats today, receives medical attention, or has their child's hospital bill settled. CNF's Humanitarian Aid and Healthcare pillar delivers direct, tangible support to underserved individuals and families, from food relief and festive outreaches to full medical missions and hospital bill offset programmes. Our healthcare focus is particularly centred on those most at risk: pregnant women, young children, and communities with limited access to basic medical services. Through Project HEEM, CNF brings healthcare directly into these communities, because access should never be a privilege.",
+        body: "No circumstance should determine whether a person eats today, receives medical attention, or has their child's hospital bill settled. CNF's Humanitarian Aid and Healthcare pillar delivers direct, tangible support to underserved individuals and families, from food relief and festive outreaches to full medical missions and hospital bill offset programmes. Our healthcare focus is particularly centred on those most at risk: pregnant women, young children, and communities with limited access to basic medical services. CNF brings healthcare directly into these communities, because access should never be a privilege.",
         features: [
             {
                 title: "Food Relief & Festive Outreaches",
                 description: "Prepared food items and relief packages distributed to underserved families and communities.",
             },
             {
-                title: "Project HEEM, Medical Missions",
+                title: "Medical Missions",
                 description: "Free general health check-ups, maternal care, nutritional support for children, and disease prevention in underserved communities.",
             },
             {
@@ -142,7 +142,7 @@ export const ourWorkPillars: PillarBlockData[] = [
             },
         ],
         cta: {
-            label: "Learn more about Humanitarian work",
+            label: "See more about Humanitarian work",
             href: "/projects#humanitarian",
         },
         mediaLabel: "Community aid and humanitarian outreach",
@@ -155,7 +155,7 @@ export const ourWorkPillars: PillarBlockData[] = [
         smallStats: [
             { value: "9", label: "Communities served" },
             { value: "4", label: "States reached" },
-            { value: "FCT", label: "Nasarawa · Katsina · Plateau" },
+            { value: "FCT", label: "Nasarawa · Kaduna · Plateau" },
             { value: "100%", label: "Free to all beneficiaries" },
         ],
     },

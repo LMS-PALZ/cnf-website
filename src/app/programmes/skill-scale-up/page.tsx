@@ -1,4 +1,4 @@
-import { PageHero } from "@/components/sections/PageHero";
+import { SkillScaleUpHero } from "@/components/sections/programmes/SkillScaleUpHero";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Container } from "@/components/ui/Container";
 import { fontDisplay } from "@/lib/fonts";
@@ -6,12 +6,7 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata = pageMetadata("Skill Scale-Up, free youth training", "Free youth training in Nigeria from the Chiggy Nsofor Foundation: digital skills, employability, and entrepreneurship foundations.");
 export default function SkillScaleUpPage() {
     return (<>
-      <PageHero eyebrow="Skill Scale-Up programme" title="Free youth training in Nigeria." description="Skill Scale-Up opens structured, mentor-supported learning for young people who want to grow their digital confidence, workplace readiness, and entrepreneurial thinking.">
-        <ButtonLink href="/get-involved#volunteer">Apply or volunteer</ButtonLink>
-        <ButtonLink href="/projects#skills" variant="secondary">
-          Back to skills pillar
-        </ButtonLink>
-      </PageHero>
+      <SkillScaleUpHero />
 
       <section className="py-16 md:py-24">
         <Container className="max-w-3xl space-y-4 text-base leading-relaxed text-cnf-muted">

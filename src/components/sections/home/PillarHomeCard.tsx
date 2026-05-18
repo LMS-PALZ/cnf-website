@@ -47,7 +47,7 @@ export function PillarHomeCard({ pillar }: Props) {
         </p>
         <div className="mt-auto pt-2">
           <Link href={pillar.href} className={cn("inline-flex items-center gap-1.5 text-sm font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-primary", linkTone[pillar.badgeTone])}>
-            Learn more
+            See more
             <span aria-hidden className="text-sm leading-none">&rarr;</span>
           </Link>
         </div>

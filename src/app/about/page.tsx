@@ -1,46 +1,100 @@
 import Image from "next/image";
+import type { ReactNode } from "react";
+import { AboutAnnualReportSection } from "@/components/sections/about/AboutAnnualReportSection";
+import { AboutCoreValuesSection } from "@/components/sections/about/AboutCoreValuesSection";
+import { AboutFoundationSection } from "@/components/sections/about/AboutFoundationSection";
+import { PageBanner } from "@/components/sections/PageBanner";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Container } from "@/components/ui/Container";
+import { pageBannerImages } from "@/data/page-banners";
 import { fontDisplay } from "@/lib/fonts";
 import { pageMetadata } from "@/lib/metadata";
 import { sdgCards } from "@/data/our-work/sdgs";
 export const metadata = pageMetadata("About: mission and impact", "Mission, vision, and values of the Chiggy Nsofor Foundation, a Nigerian nonprofit advancing skills, education, and humanitarian aid.");
-const teamMembers = [
+
+type TeamMember = {
+    name: string;
+    role: string;
+    description: string;
+    image?: string;
+    imageAlt?: string;
+    linkedin?: string;
+};
+
+const founderLinkedIn = "https://www.linkedin.com/in/chigoziensofor";
+
+function PortraitLinkedInLink({
+    href,
+    label,
+    children,
+}: {
+    href?: string;
+    label: string;
+    children: ReactNode;
+}) {
+    if (!href) {
+        return <>{children}</>;
+    }
+
+    return (
+        <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${label} on LinkedIn`}
+            className="block transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-primary"
+        >
+            {children}
+        </a>
+    );
+}
+
+/** Team portrait frame. */
+const portraitFrameClass =
+    "relative aspect-[4/5] w-full max-h-[28rem] overflow-hidden bg-cnf-surface";
+/** Founder portrait — slightly taller than team. */
+const founderPortraitFrameClass =
+    "relative aspect-[4/5] w-full max-h-[32rem] overflow-hidden bg-cnf-surface";
+const portraitImageClass = "object-cover object-[50%_18%]";
+
+const teamMembers: TeamMember[] = [
     {
         name: "Pamela Ibemesi",
         role: "Partnerships & Programs Officer",
         description: "Pamela drives CNF's partnership development and programme coordination, building the relationships and operational structures that keep every pillar running effectively. She also serves as Board Secretary.",
-        initials: "PI",
-        bg: "from-cnf-primary to-cnf-primary/90 text-white",
+        image: "/assets/team/IMG_8009.jpg",
+        imageAlt: "Pamela Ibemesi, Partnerships & Programs Officer at the Chiggy Nsofor Foundation",
+        linkedin: "https://www.linkedin.com/in/pamela-ibemesi-9a7778373",
     },
     {
         name: "Victor A.",
         role: "Operations & Finance Lead",
         description: "Oversees CNF's day-to-day operations and financial management, ensuring every naira is tracked, every process is sound, and every programme is delivered on time and on budget.",
-        initials: "VA",
-        bg: "from-cnf-primary/90 via-cnf-night to-cnf-primary/80 text-white",
+        image: "/assets/team/victor.jpg",
+        imageAlt: "Victor A., Operations & Finance Lead at the Chiggy Nsofor Foundation",
+        linkedin: "https://www.linkedin.com/in/victor-anyirigwo-b64788229",
     },
     {
         name: "Hajimrea K.",
         role: "Communications",
         description: "Tells CNF's story across platforms, from impact reports and social media to partner communications, making sure the world knows what is being built in Abuja's communities.",
-        initials: "HK",
-        bg: "from-cnf-pillar-humanitarian via-cnf-primary to-cnf-primary/80 text-white",
+        image: "/assets/team/hajim.jpg",
+        imageAlt: "Hajimrea K., Communications at the Chiggy Nsofor Foundation",
+        linkedin: "https://www.linkedin.com/in/hajimrea-kawuwa-aa7392185",
     },
     {
         name: "Dorothy Uji",
         role: "Programme Delivery",
-        description: "On the ground, every session, every cohort. Dorothy ensures the SSU Programme and community outreaches are delivered with consistency, care, and quality for every beneficiary.",
-        initials: "DU",
-        bg: "from-cnf-pillar-skills/80 via-cnf-primary/80 to-cnf-primary/90 text-white",
+        description: "On the ground, every session, every cohort. Dorothy ensures the Programme and community outreaches are delivered with consistency, care, and quality for every beneficiary.",
+        image: "/assets/team/dorothy.jpeg",
+        imageAlt: "Dorothy Uji, Programme Delivery at the Chiggy Nsofor Foundation",
+        linkedin: "https://www.linkedin.com/in/dorothy-uji-b9b188220",
     },
     {
         name: "Marho Imodje",
         role: "Teaching Assistant & LMS Developer",
-        description: "An SSU Cohort graduate who returned to the classroom, this time as a teacher. Marho now leads development of CNF's Moodle-based LMS platform, launching Q3 2026.",
-        initials: "MI",
-        bg: "from-cnf-pillar-education via-cnf-primary/70 to-cnf-primary/90 text-white",
+        description: "An SSU Cohort graduate who returned to the classroom, this time as a teacher. Marho now leads development of CNF's module-based LMS platform.",
     },
 ];
 const boardMembers = [
@@ -55,7 +109,7 @@ const boardMembers = [
     {
         name: "Dickson Nsofor",
         title: "Trustee, Technology & Innovation",
-        description: "Founder of Kora Technologies. Provides strategic oversight on CNF's digital infrastructure and technology programmes. Relationship disclosed; recusal policy in place.",
+        description: "Founder of Kora Technologies. Provides strategic oversight on CNF's digital infrastructure and technology programmes.",
         role: "Technology",
         initials: "DN",
         tone: "bg-cnf-pillar-skills text-white",
@@ -69,48 +123,21 @@ const boardMembers = [
         tone: "bg-cnf-accent text-cnf-accent-ink",
     },
 ];
-const values = [
-    {
-        title: "Integrity",
-        description: "We do the right thing, always. With our resources, our people, and our beneficiaries.",
-    },
-    {
-        title: "Excellence",
-        description: "We hold ourselves to the highest standard in everything we deliver, because the people we serve deserve nothing less.",
-    },
-    {
-        title: "Possibility",
-        description: "We believe no circumstance is permanent. We bring creative, forward-thinking solutions to challenges others have accepted as fixed.",
-    },
-    {
-        title: "People First",
-        description: "We are stronger together, our team, our communities, our beneficiaries. No one is left behind, no one works alone.",
-    },
-    {
-        title: "Growth",
-        description: "We don’t just serve, we build. Every programme is designed to leave people more capable, more confident, and more independent than we found them.",
-    },
-];
 export default function AboutPage() {
     return (<>
-      <section className="relative overflow-hidden bg-cnf-primary text-white">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.12),transparent_24%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.06),transparent_24%)]"/>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(244,146,33,0.08),transparent_32%)]"/>
-        <Container className="relative py-20 md:py-28">
-          <div className="max-w-2xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cnf-cream/70">
-              HOME <span className="text-cnf-accent">/ ABOUT US</span>
-            </p>
-            <h1 className={`${fontDisplay.className} mt-6 text-5xl font-semibold leading-tight tracking-tight text-white md:text-6xl`}>
-              Who We Are &
-              <span className="block text-white">Why We <span className="text-cnf-accent">Exist</span></span>
-            </h1>
-            <p className="mt-8 max-w-2xl text-base leading-8 text-cnf-cream/90 md:text-lg">
-              The Chiggy Nsofor Foundation was born from one simple belief: that where you start in life should never determine where you end up. We exist to close that gap, one skill, one community, one opportunity at a time.
-            </p>
-          </div>
-        </Container>
-      </section>
+      <PageBanner
+        id="about-hero-title"
+        breadcrumbLabel="About Us"
+        image={pageBannerImages.about}
+        title={
+          <>
+            Who We Are &amp;
+            <br />
+            Why We <span className="text-cnf-accent">Exist</span>
+          </>
+        }
+        description="The Chiggy Nsofor Foundation was born from one simple belief: that where you start in life should never determine where you end up. We exist to close that gap, one skill, one community, one opportunity at a time."
+      />
 
       <section className="py-20 md:py-28">
         <Container className="grid gap-16 lg:grid-cols-[0.95fr_1.05fr] items-start">
@@ -142,120 +169,52 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="bg-cnf-night py-20 md:py-28 text-white">
-        <Container>
-          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cnf-accent">Our Foundation</p>
-          <h2 className={`${fontDisplay.className} mt-6 text-4xl font-semibold text-white`}>Mission & Vision</h2>
-          <p className="mt-4 max-w-3xl text-base leading-8 text-cnf-cream/80">
-            Every decision we make, every programme we run, every partner we choose, flows from these core commitments.
-          </p>
+      <AboutFoundationSection />
 
-          <div className="mt-12 grid gap-6 xl:grid-cols-2">
-            {[
-            {
-                title: "Our Mission",
-                headline: "To Provide & To Build",
-                text: "To provide essential support and build lasting capacity in individuals and communities across Nigeria, creating pathways into opportunity for underserved people and communities.",
-            },
-            {
-                title: "Our Vision",
-                headline: "A Nigeria Where No One Is Left Behind",
-                text: "We envision a Nigeria where every underserved person, regardless of background, location, or circumstance, is given a genuine opportunity to live a better quality of life.",
-            },
-        ].map((item) => (<div key={item.title} className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/10">
-                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-cnf-cream/75">{item.title}</p>
-                <h3 className="mt-4 text-2xl font-semibold text-white">{item.headline}</h3>
-                <p className="mt-4 text-base leading-8 text-cnf-cream/80">{item.text}</p>
-              </div>))}
-          </div>
-        </Container>
-      </section>
+      <AboutCoreValuesSection />
 
-      <section className="py-20 md:py-28">
-        <Container>
-          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cnf-primary">What We Stand For</p>
-          <h2 className={`${fontDisplay.className} mt-6 text-4xl font-semibold text-cnf-ink`}>Our Core Values</h2>
-          <p className="mt-4 max-w-3xl text-base leading-8 text-cnf-muted">
-            Five values that define how we work, who we are, and what every beneficiary, partner, and team member can always expect from CNF.
-          </p>
-
-          <div className="mt-10 grid gap-6 lg:grid-cols-3 xl:grid-cols-5">
-            {values.map((value) => {
-            return (<div key={value.title} className="rounded-[2rem] border border-cnf-border bg-white p-7 text-center shadow-sm">
-                  <h3 className="text-xl font-semibold text-cnf-ink">{value.title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-cnf-muted">{value.description}</p>
-                </div>);
-        })}
-          </div>
-        </Container>
-      </section>
 
       <section className="bg-cnf-cream py-20 md:py-28">
-        <Container className="grid gap-16 xl:grid-cols-[0.95fr_1.05fr] items-start">
+        <Container>
+          <div className="mx-auto grid w-full max-w-[80%] grid-cols-1 items-start gap-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-16">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cnf-primary">Meet the Founder</p>
             <h2 className={`${fontDisplay.className} mt-6 text-4xl font-semibold text-cnf-ink`}>Chiggy Nsofor, The Person Behind the Purpose</h2>
             <p className="mt-6 text-base leading-8 text-cnf-muted">
-              Chiggy Nsofor is the Founder and CEO of the Chiggy Nsofor Foundation. Before founding CNF, she served as Lead Financial Trader at both Kora and Fincra in Toronto, bringing sharp financial acumen and operational discipline back to the work she cares about most.
+              Chiggy Nsofor is the Founder and CEO of the Chiggy Nsofor Foundation.
             </p>
             <p className="mt-5 text-base leading-8 text-cnf-muted">
-              Her path to CNF was not conventional. Prior to fintech, she founded Farmstripe, an agri-tech platform operating across five Nigerian states. She holds degrees from the University of Sunderland and Covenant University Nigeria, and completed a leadership programme at Harvard University (2025).
+              She holds degrees from the University of Sunderland and Covenant University Nigeria, and completed a leadership programme at Harvard University (2025).
             </p>
             <p className="mt-5 text-base leading-8 text-cnf-muted">
-              What Chiggy brings to CNF is not just her academic credentials or professional track record, it is an unwillingness to accept that youth unemployment, educational exclusion, and poverty are simply facts of Nigerian life. Under her leadership, CNF has grown from a personal conviction into a structured, data-driven organisation that has touched over 5,000 lives in under two years.
+              What Chiggy brings to CNF is not just her academic credentials, it is an unwillingness to accept that youth unemployment, educational exclusion, and poverty are simply facts of Nigerian life. Under her leadership, CNF has grown from a personal conviction into a structured, data-driven organisation that has touched over 5,000 lives.
             </p>
-
-            <ul className="mt-10 space-y-3 text-sm text-cnf-muted">
-              {[
-            "Harvard University, 2025",
-            "University of Sunderland",
-            "Covenant University Nigeria",
-            "Former Lead Financial Trader, Kora & Fincra, Toronto",
-            "Founder, Farmstripe (Agri-tech, 5 Nigerian States)",
-        ].map((item) => (<li key={item} className="flex items-start gap-3">
-                  <span className="mt-1 h-2 w-2 rounded-full bg-cnf-primary"/>
-                  <span>{item}</span>
-                </li>))}
-            </ul>
           </div>
 
-          <div className="space-y-6">
-            <div className="relative overflow-hidden rounded-[2rem] border border-cnf-border bg-cnf-primary p-8 text-white shadow-2xl shadow-black/10">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.12),transparent_20%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.06),transparent_20%)]"/>
-              <div className="relative flex min-h-[420px] flex-col items-center justify-center rounded-[1.75rem] border border-white/10 bg-cnf-primary/70 px-4">
-                <ImagePlaceholder label="Place Chiggy's professional photo here" tone="dark-on-primary" className="max-w-sm"/>
-              </div>
+          <div className="flex w-full max-w-lg flex-col gap-6 justify-self-center lg:justify-self-start">
+            <div className="w-full overflow-hidden border border-cnf-border bg-white shadow-sm">
+              <PortraitLinkedInLink href={founderLinkedIn} label="Chiggy Nsofor">
+                <div className={founderPortraitFrameClass}>
+                  <Image
+                    src="/assets/team/chiggy.jpg"
+                    alt="Chiggy Nsofor, Founder and CEO of the Chiggy Nsofor Foundation"
+                    fill
+                    className={portraitImageClass}
+                    sizes="(max-width: 640px) 100vw, 512px"
+                    priority
+                  />
+                </div>
+              </PortraitLinkedInLink>
             </div>
-            <div className="rounded-3xl border border-cnf-primary/15 bg-white p-6 text-cnf-ink shadow-sm">
-              <p className="text-base leading-7 text-cnf-ink">
+            <blockquote className="rounded-3xl border border-cnf-primary/10 bg-white p-6 shadow-sm md:p-7">
+              <p className="text-base italic leading-7 text-cnf-ink">
                 “I kept asking myself: what if these young people simply had the tools? What if someone just showed up, consistently, with real skills, real support, and real belief in them? That question became CNF.”
               </p>
-            </div>
+              <footer className="mt-4 text-sm font-semibold uppercase tracking-[0.25em] text-cnf-primary">
+                — Chiggy Nsofor, Founder &amp; CEO
+              </footer>
+            </blockquote>
           </div>
-        </Container>
-      </section>
-
-      <section id="team" className="scroll-mt-28 py-20 md:py-28">
-        <Container>
-          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cnf-primary">Our People</p>
-          <h2 className={`${fontDisplay.className} mt-6 text-4xl font-semibold text-cnf-ink`}>The Team Making It Happen</h2>
-          <p className="mt-4 max-w-3xl text-base leading-8 text-cnf-muted">
-            CNF is powered by a small, dedicated team of professionals committed to delivering high-quality programmes at the community level every single day.
-          </p>
-
-          <div className="mt-10 grid gap-6 xl:grid-cols-2">
-            {teamMembers.map((member) => (<div key={member.name} className="overflow-hidden rounded-[2rem] border border-cnf-border bg-white shadow-sm">
-                <div className="rounded-t-[1.75rem] bg-cnf-surface/80 p-6 text-center">
-                  <div className="mx-auto max-w-[200px]">
-                    <ImagePlaceholder label={member.name} tone="light" className="py-4"/>
-                  </div>
-                </div>
-                <div className="p-7">
-                  <h3 className="text-xl font-semibold text-cnf-ink">{member.name}</h3>
-                  <p className="mt-2 text-sm uppercase tracking-[0.25em] text-cnf-primary">{member.role}</p>
-                  <p className="mt-4 text-sm leading-7 text-cnf-muted">{member.description}</p>
-                </div>
-              </div>))}
           </div>
         </Container>
       </section>
@@ -280,24 +239,52 @@ export default function AboutPage() {
               </div>))}
           </div>
 
-          <div className="mt-12 overflow-hidden rounded-[2rem] bg-cnf-night px-8 py-10 text-white shadow-2xl shadow-black/10">
-            <div className="grid gap-8 lg:grid-cols-[1.4fr_0.9fr] lg:items-center">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-cnf-accent/80">Accountability & Transparency</p>
-                <h3 className="mt-4 text-3xl font-semibold">CNF 2025 Annual Report</h3>
-                <p className="mt-4 text-base leading-8 text-cnf-cream/80">
-                  Full programme results, financials, and impact data, published openly for every partner, funder, and community we serve.
-                </p>
+        </Container>
+      </section>
+
+      <section id="team" className="scroll-mt-28 py-20 md:py-28">
+        <Container>
+          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cnf-primary">Our People</p>
+          <h2 className={`${fontDisplay.className} mt-6 text-4xl font-semibold text-cnf-ink`}>The Team Making It Happen</h2>
+          <p className="mt-4 max-w-3xl text-base leading-8 text-cnf-muted">
+            CNF is powered by a small, dedicated team of professionals committed to delivering high-quality programmes at the community level every single day.
+          </p>
+
+          <div className="mt-10 grid justify-items-center gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {teamMembers.map((member) => (
+              <div
+                key={member.name}
+                className="w-full max-w-sm overflow-hidden rounded-[2rem] border border-cnf-border bg-white shadow-sm"
+              >
+                <PortraitLinkedInLink href={member.linkedin} label={member.name}>
+                  <div className={portraitFrameClass}>
+                    {member.image ? (
+                      <Image
+                        src={member.image}
+                        alt={member.imageAlt ?? member.name}
+                        fill
+                        className={portraitImageClass}
+                        sizes="(max-width: 640px) 100vw, 384px"
+                      />
+                    ) : (
+                      <div className="flex h-full min-h-[16rem] items-center justify-center">
+                        <ImagePlaceholder label={member.name} tone="light" className="py-4"/>
+                      </div>
+                    )}
+                  </div>
+                </PortraitLinkedInLink>
+                <div className="p-7">
+                  <h3 className="text-xl font-semibold text-cnf-ink">{member.name}</h3>
+                  <p className="mt-2 text-sm uppercase tracking-[0.25em] text-cnf-primary">{member.role}</p>
+                  <p className="mt-4 text-sm leading-7 text-cnf-muted">{member.description}</p>
+                </div>
               </div>
-              <div className="flex items-center justify-start lg:justify-end">
-                <ButtonLink href="/news" className="bg-cnf-accent text-cnf-accent-ink hover:bg-cnf-accent-hover">
-                  Download Report
-                </ButtonLink>
-              </div>
-            </div>
+            ))}
           </div>
         </Container>
       </section>
+
+      <AboutAnnualReportSection />
 
       <section className="py-20 md:py-28">
         <Container>

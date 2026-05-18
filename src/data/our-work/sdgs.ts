@@ -10,7 +10,7 @@ export const sdgCards: SdgCard[] = [
         number: 3,
         theme: "humanitarian",
         title: "Good Health & Well-Being",
-        description: "Project HEEM medical missions, hospital bill support, and maternal and child health outreaches ensure underserved communities can access basic healthcare.",
+        description: "Project medical missions, hospital bill support, and maternal and child health outreaches ensure underserved communities can access basic healthcare.",
     },
     {
         number: 4,
