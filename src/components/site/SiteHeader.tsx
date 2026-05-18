@@ -38,15 +38,16 @@ export function SiteHeader() {
       <Container className="flex items-center justify-between gap-4 py-3">
         <Link
           href="/"
-          className="flex shrink-0 items-center gap-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-primary"
+          className="flex min-w-0 items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-primary"
         >
           <span className="sr-only">{site.name}, home</span>
           <Image
             src="/CNFLogo.png"
             alt={site.name}
-            width={96}
-            height={48}
-            className="h-12 w-24"
+            width={220}
+            height={72}
+            className="h-11 w-auto min-w-[10.5rem] max-w-[13.5rem] object-contain object-left sm:h-12 sm:min-w-[11.5rem] sm:max-w-[15rem]"
+            priority
           />
         </Link>
 

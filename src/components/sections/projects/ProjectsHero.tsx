@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { fontDisplay } from "@/lib/fonts";
 export function ProjectsHero() {
-    return (<section aria-labelledby="projects-hero-title" className="relative overflow-hidden bg-cnf-night">
+    return (<section aria-labelledby="projects-hero-title" data-cnf-skip-enter="true" className="relative overflow-hidden bg-cnf-night">
       <div aria-hidden className="cnf-dot-pattern absolute inset-0 opacity-20"/>
-      <div className="relative px-6 py-16 sm:px-10 md:px-14 md:py-20 lg:px-16 lg:py-24">
+      <div className="cnf-hero-page-enter-once relative px-6 py-16 sm:px-10 md:px-14 md:py-20 lg:px-16 lg:py-24">
         <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em]">
           <Link href="/" className="text-white/55 transition-colors hover:text-white">
             Home

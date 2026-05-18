@@ -25,7 +25,7 @@ export function HomeHero({ eyebrow = "Est. 2024 · Abuja, Nigeria", title, title
         }, AUTOPLAY_INTERVAL_MS);
         return () => window.clearInterval(id);
     }, [slides.length]);
-    return (<section aria-labelledby="home-hero-title" aria-roledescription="carousel" className="relative isolate flex min-h-[min(100svh,56rem)] flex-col justify-center overflow-hidden">
+    return (<section aria-labelledby="home-hero-title" aria-roledescription="carousel" data-cnf-skip-enter="true" className="relative isolate flex min-h-[min(100svh,56rem)] flex-col justify-center overflow-hidden">
       
       <div className="absolute inset-0 bg-cnf-primary" aria-hidden>
         {slides.map((slide, i) => {

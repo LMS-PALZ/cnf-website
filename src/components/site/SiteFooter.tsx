@@ -14,9 +14,9 @@ const social: readonly { label: string; href: string; Icon: IconType }[] = [
     { label: "LinkedIn", href: "https://www.linkedin.com/company/chiggynsoforfoundation/", Icon: FaLinkedin },
 ];
 const workLinks = [
-    { href: "/projects#skills", label: "Skill Development" },
-    { href: "/projects#education", label: "Education" },
-    { href: "/projects#humanitarian", label: "Humanitarian Aid & Healthcare" },
+    { href: "/our-work#skills", label: "Skill Development" },
+    { href: "/our-work#education", label: "Education" },
+    { href: "/our-work#humanitarian", label: "Humanitarian Aid & Healthcare" },
     { href: "/programmes/skill-scale-up", label: "SSU Programme" },
 ] as const;
 const orgLinks = [
@@ -92,14 +92,11 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-8 text-xs text-cnf-footer-muted md:flex-row md:flex-wrap md:items-center md:justify-between md:gap-x-6 md:gap-y-2">
+        <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-8 text-xs text-cnf-footer-muted sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-x-6">
           <p>
             © {new Date().getFullYear()} {site.name}. All rights reserved. {site.registrationLine}
           </p>
-          <p>Registered NGO · Abuja, Nigeria</p>
-          <Link className="underline-offset-4 hover:text-cnf-footer-heading hover:underline" href="/privacy">
-            Privacy policy
-          </Link>
+          <p className="text-cnf-footer-heading/90">Registered NGO · Abuja, Nigeria</p>
         </div>
       </Container>
     </footer>);

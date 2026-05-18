@@ -18,7 +18,7 @@ export const homePillars: HomePillar[] = [
         badgeTone: "skills",
         title: "Skill Scale-Up & Mentorship",
         description: "Free, cohort-based training for Nigerian youth, paired with mentorship, internship placement, and alumni support to bridge training and real-world opportunity.",
-        href: "/projects#skills",
+        href: "/our-work#skills",
         heroImageSrc: "/assets/ourWorkImgs/skillaqc.jpeg",
     },
     {
@@ -27,7 +27,7 @@ export const homePillars: HomePillar[] = [
         badgeTone: "education",
         title: "Access, Equity & Civic Learning",
         description: "We re-enrol out-of-school children, cover exam fees, and build civic awareness, laying the groundwork for educated, engaged citizens.",
-        href: "/projects#education",
+        href: "/our-work#education",
         heroImageSrc: "/assets/ourWorkImgs/education%20outreach.jpg",
     },
     {
@@ -36,7 +36,7 @@ export const homePillars: HomePillar[] = [
         badgeTone: "humanitarian",
         title: "Relief, Health & Community Care",
         description: "Food, medical care, and emergency support, delivered directly to underserved families and communities when they need it most.",
-        href: "/projects#humanitarian",
+        href: "/our-work#humanitarian",
         heroImageSrc: "/assets/ourWorkImgs/community%20aid.jpg",
     },
 ];

@@ -1,4 +1,5 @@
 import { Card } from "@/components/ui/Card";
+import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { cn } from "@/lib/cn";
@@ -18,13 +19,16 @@ const eyebrowTone: Record<SdgCard["theme"], string> = {
 };
 export function SdgSection() {
     return (<Section tone="surface" padding="lg" ariaLabelledBy="sdg-title">
+      <Reveal>
       <SectionHeader id="sdg-title" eyebrow="Global alignment" title={<>
             Aligned With the{" "}
             <span className="text-cnf-primary">UN Sustainable Development Goals</span>
           </>}/>
+      </Reveal>
 
       <div className="mt-10 grid gap-4 md:grid-cols-3 md:gap-6">
-        {sdgCards.map((sdg) => (<Card key={sdg.number} tone="elevated" padding="md" className="flex items-start gap-5 bg-white" as="article">
+        {sdgCards.map((sdg, i) => (<Reveal key={sdg.number} delay={Math.min(i + 1, 5) as 0 | 1 | 2 | 3 | 4 | 5}>
+          <Card tone="elevated" padding="md" className="flex items-start gap-5 bg-white transition-transform duration-300 hover:-translate-y-0.5" as="article">
             <div className="flex flex-col">
               <span className={cn("text-[11px] font-semibold uppercase tracking-[0.2em]", eyebrowTone[sdg.theme])}>
                 SDG {sdg.number}
@@ -41,7 +45,8 @@ export function SdgSection() {
                 {sdg.description}
               </p>
             </div>
-          </Card>))}
+          </Card>
+        </Reveal>))}
       </div>
     </Section>);
 }

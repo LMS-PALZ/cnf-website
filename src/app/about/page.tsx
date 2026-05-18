@@ -235,7 +235,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="py-20 md:py-28">
+      <section id="team" className="scroll-mt-28 py-20 md:py-28">
         <Container>
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cnf-primary">Our People</p>
           <h2 className={`${fontDisplay.className} mt-6 text-4xl font-semibold text-cnf-ink`}>The Team Making It Happen</h2>

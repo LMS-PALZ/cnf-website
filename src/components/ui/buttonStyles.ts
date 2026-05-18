@@ -1,9 +1,9 @@
 export type ButtonVariant = "primary" | "secondary" | "ghost" | "accent" | "dark-outline" | "dark-solid";
 export type ButtonSize = "sm" | "md" | "lg";
-export const buttonBase = "inline-flex items-center justify-center gap-2 rounded-md font-semibold transition-colors cursor-pointer disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2";
+export const buttonBase = "inline-flex items-center justify-center gap-2 rounded-md font-semibold transition-[color,background-color,border-color,transform] duration-200 cursor-pointer active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2";
 export const buttonVariants: Record<ButtonVariant, string> = {
-    primary: "bg-cnf-primary-light text-white hover:bg-cnf-primary focus-visible:outline-cnf-accent",
-    accent: "bg-cnf-accent text-cnf-accent-ink hover:bg-cnf-accent-hover focus-visible:outline-white",
+    primary: "cnf-btn-breathe-primary bg-cnf-primary-light text-white hover:bg-cnf-primary focus-visible:outline-cnf-accent",
+    accent: "cnf-btn-breathe-accent bg-cnf-accent text-cnf-accent-ink hover:bg-cnf-accent-hover focus-visible:outline-white",
     secondary: "border border-cnf-primary/25 bg-white text-cnf-primary hover:border-cnf-primary/50 focus-visible:outline-cnf-primary",
     ghost: "text-cnf-primary hover:bg-cnf-primary/5 focus-visible:outline-cnf-primary",
     "dark-outline": "border border-white/25 bg-transparent text-white hover:bg-white/10 focus-visible:outline-cnf-accent",

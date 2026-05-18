@@ -4,9 +4,9 @@ import { donateHeroStats } from "@/data/donate/hero-stats";
 import { fontDisplay } from "@/lib/fonts";
 import { donateConfig } from "@/lib/site";
 export function DonateHero() {
-    return (<section aria-labelledby="donate-hero-title" className="relative overflow-hidden bg-cnf-night">
+    return (<section aria-labelledby="donate-hero-title" data-cnf-skip-enter="true" className="relative overflow-hidden bg-cnf-night">
       <div aria-hidden className="cnf-dot-pattern absolute inset-0 opacity-20"/>
-      <div className="relative px-6 py-16 sm:px-10 md:px-14 md:py-20 lg:px-16 lg:py-24">
+      <div className="cnf-hero-page-enter-once relative px-6 py-16 sm:px-10 md:px-14 md:py-20 lg:px-16 lg:py-24">
         <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em]">
           <Link href="/" className="text-white/55 transition-colors hover:text-white">
             Home

@@ -12,7 +12,8 @@ export const metadata: Metadata = {
     },
     description: site.description,
     icons: {
-        icon: "/CNFLogo.png",
+        icon: "/Dark%20green%20Stamp.png",
+        apple: "/Dark%20green%20Stamp.png",
     },
     openGraph: {
         type: "website",

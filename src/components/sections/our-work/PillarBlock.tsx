@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
 import { PillarFeatureRow } from "./PillarFeatureRow";
 import { PillarMediaCard } from "./PillarMediaCard";
@@ -14,7 +15,8 @@ type Props = {
 
 export function PillarBlock({ pillar, surface = "cream" }: Props) {
     const t = pillarTheme[pillar.theme];
-    return (<Section tone={surface} padding="lg" ariaLabelledBy={`${pillar.id}-heading`} id={pillar.id}>
+    return (<Section tone={surface} padding="lg" ariaLabelledBy={`${pillar.id}-heading`} id={pillar.id} className="scroll-mt-28">
+      <Reveal>
       <div className={cn("grid gap-10 lg:grid-cols-2 lg:gap-14", pillar.reversed && "lg:[&>:first-child]:order-2")}>
         <div className="flex flex-col">
           <span className={cn("inline-flex w-fit items-center gap-2 rounded-full bg-white px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] shadow-sm", t.text)}>
@@ -49,5 +51,6 @@ export function PillarBlock({ pillar, surface = "cream" }: Props) {
 
         <PillarMediaCard theme={pillar.theme} mediaLabel={pillar.mediaLabel} reachStat={pillar.reachStat} smallStats={pillar.smallStats} heroImageSrc={pillar.heroImageSrc}/>
       </div>
+      </Reveal>
     </Section>);
 }

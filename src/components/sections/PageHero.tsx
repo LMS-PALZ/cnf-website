@@ -8,7 +8,7 @@ type Props = {
 };
 export function PageHero({ eyebrow, title, description, children }: Props) {
     return (<section className="border-b border-cnf-primary/10 bg-gradient-to-b from-cnf-surface to-white">
-      <div className="px-6 py-16 sm:px-10 md:px-14 md:py-20 lg:px-16 lg:py-24">
+      <div className="cnf-hero-page-enter-once px-6 py-16 sm:px-10 md:px-14 md:py-20 lg:px-16 lg:py-24">
         {eyebrow ? (<p className="mb-3 text-sm font-semibold uppercase tracking-wide text-cnf-primary">
             {eyebrow}
           </p>) : null}
