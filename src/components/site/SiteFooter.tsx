@@ -4,15 +4,16 @@ import type { IconType } from "react-icons";
 import { FaInstagram, FaLinkedin, FaTiktok, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { Container } from "@/components/ui/Container";
+import { siteSocialLinks, type SocialLinkId } from "@/data/social-links";
 import { site } from "@/lib/site";
 
-const social: readonly { label: string; href: string; Icon: IconType }[] = [
-    { label: "TikTok", href: "https://www.tiktok.com/@chiggy_nsofor_foundation", Icon: FaTiktok },
-    { label: "Instagram", href: "https://www.instagram.com/chiggynsoforfoundation/", Icon: FaInstagram },
-    { label: "X", href: "https://x.com/ChiggyNsoforFdn", Icon: FaXTwitter },
-    { label: "YouTube", href: "https://www.youtube.com/@chiggynsoforfoundation", Icon: FaYoutube },
-    { label: "LinkedIn", href: "https://www.linkedin.com/company/chiggynsoforfoundation/", Icon: FaLinkedin },
-];
+const socialIcons: Record<SocialLinkId, IconType> = {
+    tiktok: FaTiktok,
+    instagram: FaInstagram,
+    x: FaXTwitter,
+    youtube: FaYoutube,
+    linkedin: FaLinkedin,
+};
 const workLinks = [
     { href: "/our-work#skills", label: "Skill Development" },
     { href: "/our-work#education", label: "Education" },
@@ -35,9 +36,9 @@ export function SiteFooter() {
             </div>
             <p className="mt-4 max-w-xs whitespace-pre-line text-sm leading-relaxed">{site.footerTagline}</p>
             <ul className="mt-6 flex flex-wrap gap-2">
-              {social.map((s) => {
-                  const Icon = s.Icon;
-                  return (<li key={s.label}>
+              {siteSocialLinks.map((s) => {
+                  const Icon = socialIcons[s.id];
+                  return (<li key={s.id}>
                       <a aria-label={s.label} className="inline-flex size-11 items-center justify-center rounded-full bg-white/5 text-cnf-footer-muted transition-colors hover:bg-white/10 hover:text-cnf-footer-heading focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-accent" href={s.href} rel="noopener noreferrer" target="_blank">
                         <Icon aria-hidden className="size-5"/>
                       </a>

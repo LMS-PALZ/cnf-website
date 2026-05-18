@@ -20,6 +20,10 @@ export type PillarBlockData = {
         label: string;
         href: string;
     };
+    secondaryCta?: {
+        label: string;
+        href: string;
+    };
     mediaLabel: string;
     /** Hero photo for the media card (Our Work pillars only). */
     heroImageSrc?: string;
@@ -42,15 +46,15 @@ export const ourWorkPillars: PillarBlockData[] = [
         body: "Over 80% of Nigerian graduates enter the workforce without the digital skills today's economy demands. CNF's SSU Programme directly addresses this gap. The in-person programme is fully free; an online SSU tier with a ₦20,000 application fee is also available. Both are built around technical and character development, training participants across three tracks, Digital & Tech, Vocational Skills, and the Total Man Module, preparing them not just for jobs, but for sustainable livelihoods. What makes SSU different is what happens after training. Every graduate receives guaranteed post-training internship placement, startup support, and access to an alumni mentorship network. Our graduates don't just learn, they earn. The in-person SSU Programme is fully free to all participants. An online SSU tier is also available with a ₦20,000 application fee, making skills training accessible to Nigerians across the country, not just in Abuja.",
         features: [
             {
-                title: "Digital & Tech Track",
+                title: "Digital & Tech Track (Remote & On-site)",
                 description: "AI-assisted coding, prompt engineering, data analysis, web development, digital marketing, graphic design, content creation.",
             },
-            // {
-            //     title: "Vocational Skills Track",
-            //     description: "Catering, hair styling, makeup artistry, videography, and more.",
-            // },
             {
-                title: "Total Man Module (Core, Weekly)",
+                title: "Vocational Skills Track (Fully on-site)",
+                description: "Catering, hair styling, makeup artistry, videography, and more.",
+            },
+            {
+                title: "Total Man Module (Core, Weekly, On-site)",
                 description: "Character development, financial literacy, leadership, mentorship, and entrepreneurship.",
             },
             {
@@ -59,6 +63,7 @@ export const ourWorkPillars: PillarBlockData[] = [
             },
         ],
         cta: { label: "See more about SSU", href: "/programmes/skill-scale-up" },
+        secondaryCta: { label: "See our projects", href: "/projects" },
         mediaLabel: "SSU training and skills development",
         heroImageSrc: "/assets/ourWorkImgs/skillaqc.jpeg",
         reachStat: {

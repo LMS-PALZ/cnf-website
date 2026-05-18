@@ -113,12 +113,12 @@ Outcomes will be summarised at the close of the batch and published on this page
     },
     {
         slug: "project-heem-kuchingoro-idp",
-        title: "New Kuchingoro IDP Camp Receives Free Medical Services, Scholarships, and Food Relief via Project HEEM",
+        title: "New Kuchingoro IDP Camp Receives Free Medical Services, Scholarships, and Food Relief",
         date: "2024-09-10",
         tag: "Impact",
         category: "humanitarian-aid",
         ribbon: "HUMANITARIAN AID",
-        excerpt: "CNF brings Project HEEM to displaced families at New Kuchingoro IDP Camp, delivering healthcare, scholarships, and food in one of Abuja's most underserved communities.",
+        excerpt: "CNF reaches displaced families at New Kuchingoro IDP Camp, delivering healthcare, scholarships, and food in one of Abuja's most underserved communities.",
         body: `Medical desks, learning packs, and hot meals were organised in sequence to reduce waiting times for families with children.`,
     },
     {

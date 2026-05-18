@@ -26,6 +26,6 @@ export const programmeFunds: ProgrammeFundCard[] = [
         pillarLabel: "Pillar three",
         theme: "humanitarian",
         title: "Humanitarian Aid & Healthcare",
-        description: "Funds food relief packages, Project HEEM medical missions, hospital bill offsets, and maternal and child health support across nine communities.",
+        description: "Funds food relief packages, community medical missions, hospital bill offsets, and maternal and child health support across nine communities.",
     },
 ];

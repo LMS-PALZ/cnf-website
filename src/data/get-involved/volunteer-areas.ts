@@ -22,7 +22,7 @@ export const volunteerAreas: VolunteerAreaCard[] = [
     {
         id: "medical-outreach",
         title: "Medical / Health Outreach",
-        description: "For licensed medical professionals, join Project HEEM missions and free health-camp days.",
+        description: "For licensed medical professionals, join community medical missions and free health-camp days.",
     },
     {
         id: "fieldwork-ssu",

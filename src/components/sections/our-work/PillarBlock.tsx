@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
 import { PillarFeatureRow } from "./PillarFeatureRow";
@@ -41,11 +42,24 @@ export function PillarBlock({ pillar, surface = "cream" }: Props) {
             {pillar.features.map((f) => (<PillarFeatureRow key={f.title} title={f.title} description={f.description}/>))}
           </div>
 
-          <div className="mt-8">
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-8">
             <Link href={pillar.cta.href} className={cn("inline-flex min-h-11 items-center justify-center gap-2 rounded-md px-5 py-2.5 text-base font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-accent", t.button)}>
               {pillar.cta.label}
               <span aria-hidden className="text-sm leading-none">&rarr;</span>
             </Link>
+            {pillar.secondaryCta ? (
+              <ButtonLink
+                href={pillar.secondaryCta.href}
+                variant="ghost"
+                size="md"
+                className={cn(t.text, "px-0 hover:bg-transparent hover:opacity-80")}
+              >
+                <span className="inline-flex items-center gap-2">
+                  {pillar.secondaryCta.label}
+                  <span aria-hidden className="text-sm leading-none">&rarr;</span>
+                </span>
+              </ButtonLink>
+            ) : null}
           </div>
         </div>
 
