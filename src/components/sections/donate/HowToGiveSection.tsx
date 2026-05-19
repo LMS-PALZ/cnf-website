@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
+import { DonatePayButton } from "@/components/payments/DonatePayButton";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { giveOptions } from "@/data/donate/give-options";
@@ -8,7 +9,6 @@ import { fontDisplay } from "@/lib/fonts";
 import { cn } from "@/lib/cn";
 import { BankAccountCard } from "./BankAccountCard";
 const hrefForOption: Record<string, string> = {
-    online: donateConfig.korapayUrl,
     abroad: `mailto:${site.contactEmail}?subject=International donation enquiry`,
 };
 export function HowToGiveSection() {
@@ -38,12 +38,23 @@ export function HowToGiveSection() {
                 </div>
 
                 <div className="mt-6 flex flex-1 flex-col justify-end">
-                  {opt.action === "primary" ? (<ButtonLink href={hrefForOption[opt.id]} variant="primary" size="md" className="w-full">
-                      <span className="inline-flex items-center gap-2">
-                        {opt.ctaLabel}
-                        <span aria-hidden className="text-base leading-none">&rarr;</span>
-                      </span>
-                    </ButtonLink>) : null}
+                  {opt.action === "primary" ? (
+                    opt.id === "online" ? (
+                      <DonatePayButton variant="primary" size="md" fullWidth purpose="Give online">
+                        <span className="inline-flex items-center gap-2">
+                          {opt.ctaLabel}
+                          <span aria-hidden className="text-base leading-none">&rarr;</span>
+                        </span>
+                      </DonatePayButton>
+                    ) : (
+                      <ButtonLink href={hrefForOption[opt.id]} variant="primary" size="md" className="w-full">
+                        <span className="inline-flex items-center gap-2">
+                          {opt.ctaLabel}
+                          <span aria-hidden className="text-base leading-none">&rarr;</span>
+                        </span>
+                      </ButtonLink>
+                    )
+                  ) : null}
 
                   {opt.action === "outline" ? (<ButtonLink href={hrefForOption[opt.id]} variant="secondary" size="md" className="w-full">
                       <span className="inline-flex items-center gap-2">

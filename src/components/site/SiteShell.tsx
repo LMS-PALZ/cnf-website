@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react";
 import { Suspense } from "react";
+import { KoraPaymentShell } from "@/components/payments/KoraPaymentShell";
 import { NavigationLoadingProvider } from "@/components/providers/NavigationLoadingProvider";
 import { PageMotion } from "@/components/providers/PageMotion";
 import { SiteFooter } from "@/components/site/SiteFooter";
@@ -25,7 +26,9 @@ function SiteShellInner({ children }: { children: ReactNode }) {
 export function SiteShell({ children }: { children: ReactNode }) {
     return (
         <Suspense fallback={null}>
-            <SiteShellInner>{children}</SiteShellInner>
+            <KoraPaymentShell>
+                <SiteShellInner>{children}</SiteShellInner>
+            </KoraPaymentShell>
         </Suspense>
     );
 }

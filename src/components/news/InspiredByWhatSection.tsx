@@ -1,4 +1,5 @@
 import { CtaBand } from "@/components/sections/shared/CtaBand";
+import { DonatePayButton } from "@/components/payments/DonatePayButton";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 export function InspiredByWhatSection() {
     return (<CtaBand tone="dark" id="inspired-by-what-title" title={<>
@@ -9,9 +10,9 @@ export function InspiredByWhatSection() {
           Every story on this page was made possible by people who believed in
           CNF&rsquo;s mission. You can be part of the next chapter.
         </>} actions={<>
-          <ButtonLink href="/donate" variant="accent" size="lg">
+          <DonatePayButton variant="accent" size="lg" purpose="News CTA">
             Donate Today
-          </ButtonLink>
+          </DonatePayButton>
           <ButtonLink href="/get-involved" variant="dark-outline" size="lg">
             Get Involved
           </ButtonLink>

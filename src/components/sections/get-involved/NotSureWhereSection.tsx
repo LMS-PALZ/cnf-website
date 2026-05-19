@@ -1,4 +1,5 @@
 import { CtaBand } from "@/components/sections/shared/CtaBand";
+import { DonatePayLinkButton } from "@/components/payments/DonatePayButton";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { site } from "@/lib/site";
 export function NotSureWhereSection() {
@@ -14,8 +15,8 @@ export function NotSureWhereSection() {
           <ButtonLink href={`mailto:${site.contactEmail}`} variant="accent" size="lg">
             Contact Us Directly
           </ButtonLink>
-          <ButtonLink href="/donate" variant="dark-outline" size="lg">
+          <DonatePayLinkButton size="lg" purpose="Get involved — donate instead">
             Donate Instead
-          </ButtonLink>
+          </DonatePayLinkButton>
         </>}/>);
 }

@@ -1,8 +1,7 @@
-import { ButtonLink } from "@/components/ui/ButtonLink";
+import { DonatePayButton } from "@/components/payments/DonatePayButton";
 import { type DonationTier, type DonationTierVariant, } from "@/data/donate/donation-tiers";
 import { cn } from "@/lib/cn";
 import { fontDisplay } from "@/lib/fonts";
-import { donateConfig } from "@/lib/site";
 type Variants = Record<DonationTierVariant, {
     headerBg: string;
     headerAmount: string;
@@ -45,7 +44,6 @@ type Props = {
 };
 export function DonationTierCard({ tier }: Props) {
     const v = variants[tier.variant];
-    const href = donateConfig.korapayUrl;
     return (<article className={cn("relative flex h-full flex-col overflow-hidden rounded-2xl border bg-white", v.cardBorder)}>
       {tier.badge ? (<span className="absolute right-4 top-4 z-10 inline-flex items-center rounded-full bg-cnf-accent px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-cnf-accent-ink">
           {tier.badge}
@@ -78,9 +76,16 @@ export function DonationTierCard({ tier }: Props) {
         </ul>
 
         <div className="mt-6 flex flex-1 flex-col justify-end">
-          <ButtonLink href={href} variant="primary" size="md" className={cn("w-full", v.buttonClassName)}>
+          <DonatePayButton
+            amountNaira={tier.amountNaira}
+            lockAmount={tier.amountNaira != null}
+            purpose={tier.title}
+            size="md"
+            fullWidth
+            className={v.buttonClassName}
+          >
             {tier.ctaLabel}
-          </ButtonLink>
+          </DonatePayButton>
         </div>
       </div>
     </article>);

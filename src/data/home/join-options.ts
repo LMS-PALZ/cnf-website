@@ -4,6 +4,7 @@ export type JoinOption = {
     description: string;
     ctaLabel: string;
     href: string;
+    opensPayment?: boolean;
 };
 export const joinOptions: JoinOption[] = [
     {
@@ -12,6 +13,7 @@ export const joinOptions: JoinOption[] = [
         description: "Your financial contribution directly funds our programmes, from SSU training kits to food relief packages and medical outreaches.",
         ctaLabel: "Give now",
         href: "/donate",
+        opensPayment: true,
     },
     {
         id: "partner",

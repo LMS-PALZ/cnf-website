@@ -3,6 +3,8 @@ export type DonationTier = {
     id: string;
     variant: DonationTierVariant;
     amount: string;
+    /** Whole naira for Korapay; omit for custom amount tiers */
+    amountNaira?: number;
     amountSubtitle: string;
     title: string;
     description: string;
@@ -15,6 +17,7 @@ export const donationTiers: DonationTier[] = [
         id: "starter",
         variant: "soft-green",
         amount: "\u20A610,000",
+        amountNaira: 10_000,
         amountSubtitle: "One-time gift",
         title: "The Starter",
         description: "A meaningful contribution that directly reaches a family or student in need.",
@@ -29,6 +32,7 @@ export const donationTiers: DonationTier[] = [
         id: "builder",
         variant: "soft-gold",
         amount: "\u20A650,000",
+        amountNaira: 50_000,
         amountSubtitle: "One-time gift",
         title: "The Builder",
         description: "A significant contribution that funds training materials and programme delivery.",
@@ -44,6 +48,7 @@ export const donationTiers: DonationTier[] = [
         id: "champion",
         variant: "solid-green",
         amount: "\u20A6150,000",
+        amountNaira: 150_000,
         amountSubtitle: "One-time gift",
         title: "The Champion",
         description: "A transformative gift that helps scale our programmes to reach more communities.",

@@ -5,6 +5,7 @@ import { AboutCoreValuesSection } from "@/components/sections/about/AboutCoreVal
 import { AboutFoundationSection } from "@/components/sections/about/AboutFoundationSection";
 import { PageBanner } from "@/components/sections/PageBanner";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
+import { DonatePayButton } from "@/components/payments/DonatePayButton";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Container } from "@/components/ui/Container";
 import { pageBannerImages } from "@/data/page-banners";
@@ -329,7 +330,7 @@ export default function AboutPage() {
                 </p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row">
-                <ButtonLink href="/donate">Donate Today</ButtonLink>
+                <DonatePayButton purpose="About page CTA">Donate Today</DonatePayButton>
                 <ButtonLink href="/get-involved" variant="secondary">
                   Partner With Us
                 </ButtonLink>

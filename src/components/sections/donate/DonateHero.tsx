@@ -1,11 +1,9 @@
 import { PageBanner } from "@/components/sections/PageBanner";
-import { ButtonLink } from "@/components/ui/ButtonLink";
+import { DonatePayButton } from "@/components/payments/DonatePayButton";
 import { Container } from "@/components/ui/Container";
 import { fontDisplay } from "@/lib/fonts";
 import { pageBannerImages } from "@/data/page-banners";
 import { donateHeroStats } from "@/data/donate/hero-stats";
-import { donateConfig } from "@/lib/site";
-
 export function DonateHero() {
     return (
         <>
@@ -22,9 +20,9 @@ export function DonateHero() {
                 }
                 description="Every naira given to CNF goes directly into programmes that train young people, keep children in school, feed underserved families, and bring healthcare to those who cannot afford it. No overhead fluff. Real impact, documented and reported."
             >
-                <ButtonLink href={donateConfig.korapayUrl} variant="accent" size="lg">
+                <DonatePayButton variant="accent" size="lg" purpose="Donate page">
                     Donate Now via Korapay
-                </ButtonLink>
+                </DonatePayButton>
             </PageBanner>
 
             <section

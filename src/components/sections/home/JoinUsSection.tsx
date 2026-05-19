@@ -1,3 +1,4 @@
+import { DonatePayButton } from "@/components/payments/DonatePayButton";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Card } from "@/components/ui/Card";
 import { Reveal } from "@/components/ui/Reveal";
@@ -21,9 +22,15 @@ function JoinCard({ option }: { option: JoinOption }) {
                 {option.description}
             </p>
             <div className="mt-6">
-                <ButtonLink href={option.href} variant="primary" size="md">
-                    {option.ctaLabel}
-                </ButtonLink>
+                {option.opensPayment ? (
+                    <DonatePayButton variant="primary" size="md" purpose={option.title}>
+                        {option.ctaLabel}
+                    </DonatePayButton>
+                ) : (
+                    <ButtonLink href={option.href} variant="primary" size="md">
+                        {option.ctaLabel}
+                    </ButtonLink>
+                )}
             </div>
         </Card>
     );

@@ -1,3 +1,4 @@
+import { DonatePayButton } from "@/components/payments/DonatePayButton";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { CtaBand } from "@/components/sections/shared/CtaBand";
 export function ReadyToSupportSection() {
@@ -6,9 +7,9 @@ export function ReadyToSupportSection() {
           <br />
           <span className="text-cnf-accent">This Work?</span>
         </>} description="Whether through a donation, a partnership, or your time, every contribution directly funds one of these three pillars and the lives they change." actions={<>
-          <ButtonLink href="/donate" variant="accent" size="md">
+          <DonatePayButton variant="accent" size="md" purpose="Support our work">
             Donate today
-          </ButtonLink>
+          </DonatePayButton>
           <ButtonLink href="/get-involved#partner" variant="dark-outline" size="md">
             Become a partner
           </ButtonLink>

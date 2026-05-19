@@ -5,6 +5,8 @@ export type ProgrammeFundCard = {
     theme: PillarTheme;
     title: string;
     description: string;
+    imageSrc: string;
+    imageAlt: string;
 };
 export const programmeFunds: ProgrammeFundCard[] = [
     {
@@ -13,6 +15,8 @@ export const programmeFunds: ProgrammeFundCard[] = [
         theme: "skills",
         title: "Skill Development",
         description: "Funds training materials, facilitator fees, internship placement support, and the Total Man Module for cohorts of young Nigerians aged 15 to 30.",
+        imageSrc: "/assets/ourWorkImgs/skillaqc.jpeg",
+        imageAlt: "Young people in a Skill Scale-Up training session",
     },
     {
         id: "education",
@@ -20,6 +24,8 @@ export const programmeFunds: ProgrammeFundCard[] = [
         theme: "education",
         title: "Education",
         description: "Covers school re-enrolment fees, WAEC and NECO exam costs, textbooks and learning materials, and civic education workshops in partner schools.",
+        imageSrc: "/assets/ourWorkImgs/education%20outreach.jpg",
+        imageAlt: "Education outreach with students in partner schools",
     },
     {
         id: "humanitarian",
@@ -27,5 +33,7 @@ export const programmeFunds: ProgrammeFundCard[] = [
         theme: "humanitarian",
         title: "Humanitarian Aid & Healthcare",
         description: "Funds food relief packages, community medical missions, hospital bill offsets, and maternal and child health support across nine communities.",
+        imageSrc: "/assets/ourWorkImgs/community%20aid.jpg",
+        imageAlt: "Community aid and humanitarian outreach",
     },
 ];
