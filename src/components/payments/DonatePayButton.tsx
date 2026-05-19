@@ -58,7 +58,7 @@ export function DonatePayButton({
             size={size}
             disabled={disabled}
             className={cn(fullWidth && "w-full", className)}
-            onClick={() => openPayment(intent)}
+            onClick={() => openPayment(intent ?? {})}
         >
             {children}
         </Button>
@@ -85,7 +85,7 @@ export function DonatePayLinkButton({
                 buttonSizes[size],
                 className,
             )}
-            onClick={() => openPayment(buildPaymentIntent(amountNaira, lockAmount, purpose))}
+            onClick={() => openPayment(buildPaymentIntent(amountNaira, lockAmount, purpose) ?? {})}
         >
             {children}
         </button>

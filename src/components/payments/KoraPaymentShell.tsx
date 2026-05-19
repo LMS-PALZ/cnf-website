@@ -11,7 +11,7 @@ export function KoraPaymentShell({ children }: { children: ReactNode }) {
         <KoraPaymentProvider>
             {children}
             <KoraPaymentModal />
-            <Script src={KORAPAY_COLLECTIONS_SCRIPT_URL} strategy="lazyOnload" />
+            <Script src={KORAPAY_COLLECTIONS_SCRIPT_URL} strategy="afterInteractive" />
         </KoraPaymentProvider>
     );
 }

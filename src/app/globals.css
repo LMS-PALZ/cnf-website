@@ -201,11 +201,13 @@
 .cnf-section-enter {
   opacity: 0;
   transform: translateY(1.75rem);
+  pointer-events: none;
 }
 
 .cnf-section-enter-active {
   animation: cnf-section-slide-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
   animation-delay: var(--cnf-enter-delay, 0s);
+  pointer-events: auto;
 }
 
 /* Scroll-reveal (sections) */

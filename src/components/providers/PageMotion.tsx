@@ -16,7 +16,10 @@ export function PageMotion() {
         sections.forEach((section, i) => {
             if (section.dataset.cnfSkipEnter === "true") return;
 
+            const delayMs = Math.min(i * 70, 420) + 900;
+
             section.classList.remove("cnf-section-enter", "cnf-section-enter-active");
+            section.style.removeProperty("pointer-events");
             section.style.setProperty("--cnf-enter-delay", `${Math.min(i * 0.07, 0.42)}s`);
 
             requestAnimationFrame(() => {
@@ -25,6 +28,12 @@ export function PageMotion() {
                     section.classList.add("cnf-section-enter-active");
                 });
             });
+
+            // Ensure sections stay clickable if animation does not run (e.g. reduced motion edge cases).
+            window.setTimeout(() => {
+                section.classList.add("cnf-section-enter-active");
+                section.style.pointerEvents = "auto";
+            }, delayMs);
         });
     }, [pathname]);
 
