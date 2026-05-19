@@ -1,13 +1,11 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { Suspense } from "react";
 import { NavigationLoadingProvider } from "@/components/providers/NavigationLoadingProvider";
-import { PageMotion } from "@/components/providers/PageMotion";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteHeader } from "@/components/site/SiteHeader";
 
-function SiteShellInner({ children }: { children: ReactNode }) {
+export function SiteShell({ children }: { children: ReactNode }) {
     return (
         <NavigationLoadingProvider>
             <div className="flex min-h-screen flex-col">
@@ -16,16 +14,7 @@ function SiteShellInner({ children }: { children: ReactNode }) {
                     {children}
                 </main>
                 <SiteFooter />
-                <PageMotion />
             </div>
         </NavigationLoadingProvider>
-    );
-}
-
-export function SiteShell({ children }: { children: ReactNode }) {
-    return (
-        <Suspense fallback={null}>
-            <SiteShellInner>{children}</SiteShellInner>
-        </Suspense>
     );
 }

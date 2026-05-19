@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { PaymentProvider } from "@/components/payments/PaymentProvider";
+import { PaymentScripts } from "@/components/payments/PaymentScripts";
 import { ToasterProvider } from "@/components/providers/ToasterProvider";
 import { SiteShell } from "@/components/site/SiteShell";
 import { fontSans } from "@/lib/fonts";
@@ -35,12 +35,16 @@ export const metadata: Metadata = {
 export default function RootLayout({ children, }: Readonly<{
     children: React.ReactNode;
 }>) {
-    return (<html lang="en">
-      <body className={`${fontSans.className} min-h-screen bg-white text-cnf-ink antialiased`}>
-        <PaymentProvider>
-          <SiteShell>{children}</SiteShell>
-          <ToasterProvider />
-        </PaymentProvider>
-      </body>
-    </html>);
+    return (
+      <html lang="en" suppressHydrationWarning>
+        <body
+          className={`${fontSans.className} min-h-screen bg-white text-cnf-ink antialiased`}
+          suppressHydrationWarning
+        >
+        <PaymentScripts />
+        <SiteShell>{children}</SiteShell>
+        <ToasterProvider />
+        </body>
+      </html>
+    );
 }

@@ -5,7 +5,7 @@ import { useState } from "react";
 import { cn } from "@/lib/cn";
 import { Skeleton } from "./Skeleton";
 
-type Props = ImageProps & {
+type Props = Omit<ImageProps, "onLoadingComplete"> & {
     containerClassName?: string;
     showSkeleton?: boolean;
 };
@@ -15,7 +15,6 @@ export function CnfImage({
     containerClassName,
     showSkeleton = true,
     onLoad,
-    onLoadingComplete,
     alt,
     ...props
 }: Props) {
@@ -24,11 +23,6 @@ export function CnfImage({
     function handleLoad(event: React.SyntheticEvent<HTMLImageElement>) {
         setLoaded(true);
         onLoad?.(event);
-    }
-
-    function handleLoadingComplete(img: HTMLImageElement) {
-        setLoaded(true);
-        onLoadingComplete?.(img);
     }
 
     const fill = props.fill;
@@ -58,7 +52,6 @@ export function CnfImage({
                     className,
                 )}
                 onLoad={handleLoad}
-                onLoadingComplete={handleLoadingComplete}
             />
         </div>
     );

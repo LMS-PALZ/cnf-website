@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import {
     createContext,
     useCallback,
@@ -20,12 +20,11 @@ const NavigationLoadingContext =
 
 export function NavigationLoadingProvider({ children }: { children: ReactNode }) {
     const pathname = usePathname();
-    const searchParams = useSearchParams();
     const [isNavigating, setIsNavigating] = useState(false);
 
     useEffect(() => {
         setIsNavigating(false);
-    }, [pathname, searchParams]);
+    }, [pathname]);
 
     const startNavigation = useCallback(() => {
         setIsNavigating(true);
