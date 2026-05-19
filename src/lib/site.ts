@@ -10,6 +10,8 @@ export const site = {
     phone: "+234 903 459 9227",
     address: "16b Vaal Street, Maitama, Abuja",
     registrationLine: "CAC No. 7511818",
+    annualReportUrl:
+        "https://drive.google.com/file/d/1WCsx8huUwBrw4uAo1hr29DP9QlJCjqIw/view?usp=drive_link",
 } as const;
 export const donateConfig = {
     korapayUrl: process.env.NEXT_PUBLIC_KORAPAY_URL ?? "#",

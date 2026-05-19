@@ -1,5 +1,6 @@
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Container } from "@/components/ui/Container";
+import { site } from "@/lib/site";
 
 export function AboutAnnualReportSection() {
     return (
@@ -19,8 +20,11 @@ export function AboutAnnualReportSection() {
                         </div>
                         <div className="flex items-center justify-start lg:justify-end">
                             <ButtonLink
-                                href="/news"
-                                className="bg-cnf-accent text-cnf-accent-ink hover:bg-cnf-accent-hover"
+                                href={site.annualReportUrl}
+                                external
+                                variant="ghost"
+                                ariaLabel="Download CNF 2025 Annual Report (opens in a new tab)"
+                                className="!animate-none border-2 border-cnf-accent bg-cnf-accent text-white shadow-none transition-all duration-200 hover:!scale-[0.98] hover:!border-white/80 hover:!bg-transparent hover:!text-white"
                             >
                                 Download Report
                             </ButtonLink>
