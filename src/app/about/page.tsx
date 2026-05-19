@@ -9,6 +9,7 @@ import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Container } from "@/components/ui/Container";
 import { pageBannerImages } from "@/data/page-banners";
 import { fontDisplay } from "@/lib/fonts";
+import { pageContentWidthClass } from "@/lib/layout";
 import { pageMetadata } from "@/lib/metadata";
 import { sdgCards } from "@/data/our-work/sdgs";
 export const metadata = pageMetadata("About: mission and impact", "Mission, vision, and values of the Chiggy Nsofor Foundation, a Nigerian nonprofit advancing skills, education, and humanitarian aid.");
@@ -174,12 +175,45 @@ export default function AboutPage() {
       <AboutCoreValuesSection />
 
 
-      <section className="bg-cnf-cream py-20 md:py-28">
+      <section className="bg-cnf-surface py-20 md:py-28">
         <Container>
-          <div className="mx-auto grid w-full max-w-[80%] grid-cols-1 items-start gap-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-16">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cnf-primary">Meet the Founder</p>
-            <h2 className={`${fontDisplay.className} mt-6 text-4xl font-semibold text-cnf-ink`}>Chiggy Nsofor, The Person Behind the Purpose</h2>
+          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cnf-primary">Governance</p>
+          <h2 className={`${fontDisplay.className} mt-6 text-4xl font-semibold text-cnf-ink`}>Our Board of Trustees</h2>
+          <p className="mt-4 max-w-3xl text-base leading-8 text-cnf-muted">
+            CNF is governed by a dedicated board that brings together expertise in technology, finance, and organisational development to ensure accountability and strategic oversight.
+          </p>
+
+          <div className="mt-10 grid gap-6 lg:grid-cols-3">
+            {boardMembers.map((member) => (
+              <div
+                key={member.name}
+                className="rounded-[2rem] border border-cnf-border bg-white p-7 shadow-sm"
+              >
+                <div
+                  className={`inline-flex h-12 w-12 items-center justify-center rounded-3xl ${member.tone} text-sm font-semibold`}
+                >
+                  {member.initials}
+                </div>
+                <h3 className="mt-5 text-xl font-semibold text-cnf-ink">{member.name}</h3>
+                <p className="mt-2 text-sm uppercase tracking-[0.22em] text-cnf-primary">{member.title}</p>
+                <p className="mt-4 text-sm leading-7 text-cnf-muted">{member.description}</p>
+                <span className="mt-4 inline-flex rounded-full bg-cnf-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-cnf-primary">
+                  {member.role}
+                </span>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-cnf-cream py-20 md:py-28">
+        <Container width="full">
+          <div
+            className={`${pageContentWidthClass} grid grid-cols-1 items-start gap-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-16`}
+          >
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cnf-primary">Meet the Founder</p>
+              <h2 className={`${fontDisplay.className} mt-6 text-4xl font-semibold text-cnf-ink`}>Chiggy Nsofor, The Person Behind the Purpose</h2>
             <p className="mt-6 text-base leading-8 text-cnf-muted">
               Chiggy Nsofor is the Founder and CEO of the Chiggy Nsofor Foundation.
             </p>
@@ -216,29 +250,6 @@ export default function AboutPage() {
             </blockquote>
           </div>
           </div>
-        </Container>
-      </section>
-
-      <section className="bg-cnf-surface py-20 md:py-28">
-        <Container>
-          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cnf-primary">Governance</p>
-          <h2 className={`${fontDisplay.className} mt-6 text-4xl font-semibold text-cnf-ink`}>Our Board of Trustees</h2>
-          <p className="mt-4 max-w-3xl text-base leading-8 text-cnf-muted">
-            CNF is governed by a dedicated board that brings together expertise in technology, finance, and organisational development to ensure accountability and strategic oversight.
-          </p>
-
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
-            {boardMembers.map((member) => (<div key={member.name} className="rounded-[2rem] border border-cnf-border bg-white p-7 shadow-sm">
-                <div className={`inline-flex h-12 w-12 items-center justify-center rounded-3xl ${member.tone} text-sm font-semibold`}>{member.initials}</div>
-                <h3 className="mt-5 text-xl font-semibold text-cnf-ink">{member.name}</h3>
-                <p className="mt-2 text-sm uppercase tracking-[0.22em] text-cnf-primary">{member.title}</p>
-                <p className="mt-4 text-sm leading-7 text-cnf-muted">{member.description}</p>
-                <span className="mt-4 inline-flex rounded-full bg-cnf-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-cnf-primary">
-                  {member.role}
-                </span>
-              </div>))}
-          </div>
-
         </Container>
       </section>
 
