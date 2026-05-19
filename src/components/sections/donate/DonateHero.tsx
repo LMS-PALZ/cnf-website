@@ -1,5 +1,3 @@
-"use client";
-
 import { PageBanner } from "@/components/sections/PageBanner";
 import { DonatePayButton } from "@/components/payments/DonatePayButton";
 import { Container } from "@/components/ui/Container";

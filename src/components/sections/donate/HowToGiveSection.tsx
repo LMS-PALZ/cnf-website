@@ -1,5 +1,3 @@
-"use client";
-
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
 import { DonatePayButton } from "@/components/payments/DonatePayButton";
