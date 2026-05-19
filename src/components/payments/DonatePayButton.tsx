@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type ReactNode } from "react";
+import { useDonatePaymentOpener } from "@/components/payments/DonatePaymentContext";
 import { KoraPaymentModal } from "@/components/payments/KoraPaymentModal";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
@@ -41,6 +42,32 @@ function buildIntent(
     return Object.keys(intent).length > 0 ? intent : undefined;
 }
 
+function usePayHandler(
+    amountNaira: number | undefined,
+    lockAmount: boolean | undefined,
+    purpose: string | undefined,
+) {
+    const openFromDonatePage = useDonatePaymentOpener();
+    const [open, setOpen] = useState(false);
+    const intent = buildIntent(amountNaira, lockAmount, purpose);
+
+    const handlePay = () => {
+        if (openFromDonatePage) {
+            openFromDonatePage(intent);
+        } else {
+            setOpen(true);
+        }
+    };
+
+    return {
+        handlePay,
+        showOwnModal: openFromDonatePage == null,
+        open,
+        close: () => setOpen(false),
+        intent,
+    };
+}
+
 export function DonatePayButton({
     children,
     amountNaira,
@@ -52,8 +79,11 @@ export function DonatePayButton({
     disabled,
     fullWidth,
 }: Props) {
-    const [open, setOpen] = useState(false);
-    const intent = buildIntent(amountNaira, lockAmount, purpose);
+    const { handlePay, showOwnModal, open, close, intent } = usePayHandler(
+        amountNaira,
+        lockAmount,
+        purpose,
+    );
 
     return (
         <>
@@ -63,11 +93,13 @@ export function DonatePayButton({
                 size={size}
                 disabled={disabled}
                 className={cn(fullWidth && "w-full", className)}
-                onClick={() => setOpen(true)}
+                onClick={handlePay}
             >
                 {children}
             </Button>
-            <KoraPaymentModal open={open} onClose={() => setOpen(false)} intent={intent} />
+            {showOwnModal ? (
+                <KoraPaymentModal open={open} onClose={close} intent={intent} />
+            ) : null}
         </>
     );
 }
@@ -80,8 +112,11 @@ export function DonatePayLinkButton({
     className,
     size = "md",
 }: Pick<Props, "children" | "amountNaira" | "lockAmount" | "purpose" | "className" | "size">) {
-    const [open, setOpen] = useState(false);
-    const intent = buildIntent(amountNaira, lockAmount, purpose);
+    const { handlePay, showOwnModal, open, close, intent } = usePayHandler(
+        amountNaira,
+        lockAmount,
+        purpose,
+    );
 
     return (
         <>
@@ -93,11 +128,13 @@ export function DonatePayLinkButton({
                     buttonSizes[size],
                     className,
                 )}
-                onClick={() => setOpen(true)}
+                onClick={handlePay}
             >
                 {children}
             </button>
-            <KoraPaymentModal open={open} onClose={() => setOpen(false)} intent={intent} />
+            {showOwnModal ? (
+                <KoraPaymentModal open={open} onClose={close} intent={intent} />
+            ) : null}
         </>
     );
 }

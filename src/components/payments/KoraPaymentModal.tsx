@@ -2,8 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import Script from "next/script";
-import { useEffect, useId, useState } from "react";
-import { createPortal } from "react-dom";
+import { useEffect, useId, useRef, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { FormField } from "@/components/forms/FormField";
@@ -36,12 +35,9 @@ export function KoraPaymentScript() {
 
 export function KoraPaymentModal({ open, onClose, intent }: Props) {
     const titleId = useId();
-    const [mounted, setMounted] = useState(false);
+    const dialogRef = useRef<HTMLDialogElement>(null);
     const [isPaying, setIsPaying] = useState(false);
 
-    useEffect(() => {
-        setMounted(true);
-    }, []);
     const lockedAmount =
         intent?.lockAmount === true && intent.amountNaira != null ? intent.amountNaira : undefined;
 
@@ -71,32 +67,18 @@ export function KoraPaymentModal({ open, onClose, intent }: Props) {
     }, [open, lockedAmount, reset]);
 
     useEffect(() => {
-        if (!open) {
+        const dialog = dialogRef.current;
+        if (!dialog) {
             return;
         }
-        const prev = document.body.style.overflow;
-        document.body.style.overflow = "hidden";
-        return () => {
-            document.body.style.overflow = prev;
-        };
-    }, [open]);
-
-    useEffect(() => {
-        if (!open) {
-            return;
-        }
-        const onKeyDown = (e: KeyboardEvent) => {
-            if (e.key === "Escape") {
-                onClose();
+        if (open) {
+            if (!dialog.open) {
+                dialog.showModal();
             }
-        };
-        window.addEventListener("keydown", onKeyDown);
-        return () => window.removeEventListener("keydown", onKeyDown);
-    }, [onClose, open]);
-
-    if (!open || !mounted) {
-        return null;
-    }
+        } else if (dialog.open) {
+            dialog.close();
+        }
+    }, [open]);
 
     const onSubmit = handleSubmit((data) => {
         if (!korapayConfig.publicKey) {
@@ -122,129 +104,131 @@ export function KoraPaymentModal({ open, onClose, intent }: Props) {
         }
     });
 
-    return createPortal(
-        <div
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6"
-            role="presentation"
+    return (
+        <dialog
+            ref={dialogRef}
+            aria-labelledby={titleId}
+            className="cnf-payment-dialog fixed inset-0 z-[200] m-0 h-full max-h-none w-full max-w-none border-0 bg-transparent p-4 sm:p-6"
+            onCancel={(event) => {
+                event.preventDefault();
+                onClose();
+            }}
+            onClose={onClose}
         >
-            <button
-                type="button"
-                className="absolute inset-0 bg-cnf-ink/70 backdrop-blur-[2px]"
-                aria-label="Close payment form"
-                onClick={onClose}
-            />
+            <div className="flex min-h-full items-center justify-center">
+                <button
+                    type="button"
+                    className="absolute inset-0 bg-cnf-ink/70 backdrop-blur-[2px]"
+                    aria-label="Close payment form"
+                    onClick={onClose}
+                />
 
-            <div
-                role="dialog"
-                aria-modal="true"
-                aria-labelledby={titleId}
-                className="relative z-10 w-full max-w-lg rounded-2xl border border-cnf-border bg-white p-6 shadow-2xl sm:p-8"
-            >
-                <div className="relative px-10 text-center sm:px-12">
-                    <button
-                        type="button"
-                        onClick={onClose}
-                        className="absolute right-0 top-0 inline-flex h-10 w-10 items-center justify-center rounded-full border border-cnf-border text-cnf-muted transition-colors hover:bg-cnf-surface hover:text-cnf-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-primary"
-                        aria-label="Close"
-                    >
-                        <span aria-hidden>✕</span>
-                    </button>
-                    <h2
-                        id={titleId}
-                        className="text-xs font-semibold uppercase tracking-[0.28em] text-cnf-primary"
-                    >
-                        Secure payment
-                    </h2>
-                </div>
-
-                <form
-                    key={lockedAmount != null ? `locked-${lockedAmount}` : "custom-amount"}
-                    className="mt-8 space-y-5"
-                    noValidate
-                    onSubmit={onSubmit}
-                >
-                    <FormField id="kora-pay-name" label="Full name" required error={errors.name?.message}>
-                        <input
-                            id="kora-pay-name"
-                            className={inputClass}
-                            autoComplete="name"
-                            {...register("name")}
-                        />
-                    </FormField>
-
-                    <FormField id="kora-pay-email" label="Email" required error={errors.email?.message}>
-                        <input
-                            id="kora-pay-email"
-                            type="email"
-                            className={inputClass}
-                            autoComplete="email"
-                            {...register("email")}
-                        />
-                    </FormField>
-
-                    {lockedAmount != null ? (
-                        <FormField id="kora-pay-amount-display" label="Amount (NGN)" required>
-                            <input
-                                id="kora-pay-amount-display"
-                                className={`${inputClass} bg-cnf-surface text-cnf-ink`}
-                                readOnly
-                                disabled
-                                value={formatNairaAmount(lockedAmount)}
-                            />
-                            <input type="hidden" {...register("amountNaira", { value: lockedAmount })} />
-                        </FormField>
-                    ) : (
-                        <FormField
-                            id="kora-pay-amount"
-                            label="Amount (NGN)"
-                            required
-                            error={errors.amountNaira?.message}
+                <div className="relative z-10 w-full max-w-lg rounded-2xl border border-cnf-border bg-white p-6 shadow-2xl sm:p-8">
+                    <div className="relative px-10 text-center sm:px-12">
+                        <button
+                            type="button"
+                            onClick={onClose}
+                            className="absolute right-0 top-0 inline-flex h-10 w-10 items-center justify-center rounded-full border border-cnf-border text-cnf-muted transition-colors hover:bg-cnf-surface hover:text-cnf-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-primary"
+                            aria-label="Close"
                         >
-                            <Controller
-                                name="amountNaira"
-                                control={control}
-                                render={({ field }) => (
-                                    <input
-                                        id="kora-pay-amount"
-                                        type="text"
-                                        className={inputClass}
-                                        inputMode="numeric"
-                                        autoComplete="off"
-                                        placeholder="e.g. 10,000"
-                                        value={
-                                            field.value != null &&
-                                            !Number.isNaN(field.value) &&
-                                            field.value > 0
-                                                ? formatAmountWithSeparators(field.value)
-                                                : ""
-                                        }
-                                        onChange={(e) => {
-                                            const parsed = parseNairaDisplayAmount(e.target.value);
-                                            field.onChange(parsed);
-                                        }}
-                                        onBlur={field.onBlur}
-                                        ref={field.ref}
-                                    />
-                                )}
+                            <span aria-hidden>✕</span>
+                        </button>
+                        <h2
+                            id={titleId}
+                            className="text-xs font-semibold uppercase tracking-[0.28em] text-cnf-primary"
+                        >
+                            Secure payment
+                        </h2>
+                    </div>
+
+                    <form
+                        key={lockedAmount != null ? `locked-${lockedAmount}` : "custom-amount"}
+                        className="mt-8 space-y-5"
+                        noValidate
+                        onSubmit={onSubmit}
+                    >
+                        <FormField id="kora-pay-name" label="Full name" required error={errors.name?.message}>
+                            <input
+                                id="kora-pay-name"
+                                className={inputClass}
+                                autoComplete="name"
+                                {...register("name")}
                             />
                         </FormField>
-                    )}
 
-                    <p className="text-xs leading-relaxed text-cnf-muted">
-                        You will complete payment securely via Korapay (card, bank transfer, or USSD).
-                    </p>
+                        <FormField id="kora-pay-email" label="Email" required error={errors.email?.message}>
+                            <input
+                                id="kora-pay-email"
+                                type="email"
+                                className={inputClass}
+                                autoComplete="email"
+                                {...register("email")}
+                            />
+                        </FormField>
 
-                    <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:justify-end">
-                        <Button type="button" variant="secondary" onClick={onClose} disabled={isPaying}>
-                            Cancel
-                        </Button>
-                        <Button type="submit" variant="accent" disabled={isPaying}>
-                            {isPaying ? "Opening Korapay…" : "Pay with Korapay"}
-                        </Button>
-                    </div>
-                </form>
+                        {lockedAmount != null ? (
+                            <FormField id="kora-pay-amount-display" label="Amount (NGN)" required>
+                                <input
+                                    id="kora-pay-amount-display"
+                                    className={`${inputClass} bg-cnf-surface text-cnf-ink`}
+                                    readOnly
+                                    disabled
+                                    value={formatNairaAmount(lockedAmount)}
+                                />
+                                <input type="hidden" {...register("amountNaira", { value: lockedAmount })} />
+                            </FormField>
+                        ) : (
+                            <FormField
+                                id="kora-pay-amount"
+                                label="Amount (NGN)"
+                                required
+                                error={errors.amountNaira?.message}
+                            >
+                                <Controller
+                                    name="amountNaira"
+                                    control={control}
+                                    render={({ field }) => (
+                                        <input
+                                            id="kora-pay-amount"
+                                            type="text"
+                                            className={inputClass}
+                                            inputMode="numeric"
+                                            autoComplete="off"
+                                            placeholder="e.g. 10,000"
+                                            value={
+                                                field.value != null &&
+                                                !Number.isNaN(field.value) &&
+                                                field.value > 0
+                                                    ? formatAmountWithSeparators(field.value)
+                                                    : ""
+                                            }
+                                            onChange={(e) => {
+                                                const parsed = parseNairaDisplayAmount(e.target.value);
+                                                field.onChange(parsed);
+                                            }}
+                                            onBlur={field.onBlur}
+                                            ref={field.ref}
+                                        />
+                                    )}
+                                />
+                            </FormField>
+                        )}
+
+                        <p className="text-xs leading-relaxed text-cnf-muted">
+                            You will complete payment securely via Korapay (card, bank transfer, or USSD).
+                        </p>
+
+                        <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:justify-end">
+                            <Button type="button" variant="secondary" onClick={onClose} disabled={isPaying}>
+                                Cancel
+                            </Button>
+                            <Button type="submit" variant="accent" disabled={isPaying}>
+                                {isPaying ? "Opening Korapay…" : "Pay with Korapay"}
+                            </Button>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </div>,
-        document.body,
+        </dialog>
     );
 }
