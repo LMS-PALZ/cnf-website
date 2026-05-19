@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/Card";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { homeEyebrowClassName } from "@/components/sections/home/homeEyebrow";
 import { joinOptions, type JoinOption } from "@/data/home/join-options";
 import { fontDisplay } from "@/lib/fonts";
 
@@ -43,6 +44,7 @@ export function JoinUsSection() {
                 <SectionHeader
                     id="join-us-title"
                     eyebrow="Join us"
+                    eyebrowClassName={homeEyebrowClassName}
                     title={
                         <>
                             Ready to Be <span className="text-cnf-accent">Part of the Change?</span>

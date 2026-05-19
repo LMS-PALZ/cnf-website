@@ -15,7 +15,7 @@ export function SkillScaleUpHero() {
                     <span className="text-cnf-accent">Programme.</span>
                 </>
             }
-            description="Free, cohort-based training for Nigerian youth aged 15 to 30 — digital skills, vocational trades, and the support to turn learning into real income."
+            description="Cohort-based training for Nigerian youth aged 15 to 30 — digital skills, vocational trades, and the support to turn learning into real income."
         >
             <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <ButtonLink href="/get-involved#volunteer" variant="accent" size="lg">

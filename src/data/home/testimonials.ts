@@ -4,16 +4,14 @@ export type Testimonial = {
     name: string;
     role: string;
     pillar: "skills" | "education" | "humanitarian";
-    rating?: number;
 };
 export const testimonials: Testimonial[] = [
     {
         id: "toru-dada",
-        quote: "I am highly impressed. You looked to the indigent area and paid their outstanding school fees and examination fees. When I look at you, I say you are as a vacuum.",
-        name: "Rev. Toru-Dada Adoramone",
-        role: "Founder, St. Mary's Academy",
+        quote: "Your visit moved us deeply. You spoke powerfully to our young female students, then sought out those who couldn't afford their WAEC and NECO fees and paid them. You are truly uncommon. May God bless you.",
+        name: "Rev. Tony-Dada Aderomose",
+        role: "Founder, St. Phillip's Academy",
         pillar: "education",
-        rating: 5,
     },
     {
         id: "kuje-matron",
@@ -21,14 +19,26 @@ export const testimonials: Testimonial[] = [
         name: "Kuje Matron",
         role: "Kuje General Hospital",
         pillar: "humanitarian",
-        rating: 5,
     },
     {
         id: "hafsatu-usman",
         quote: "We got free medication, food items, start-up capital for business and scholarship for our child. We are so grateful for remembering us. God bless you.",
         name: "Hafsatu Usman",
-        role: "Programme beneficiary",
+        role: "Humanitarian Aid Beneficiary",
         pillar: "skills",
-        rating: 5,
+    },
+    {
+        id: "nana-firdausi",
+        quote: "Thank you so much CNF Captain and Army for impacting our lives, we really appreciate. If something comes up even if it’s not skill scale up and you need our assistance just call and we will turn up by God’s grace. We love you.",
+        name: "Nana Firdausi",
+        role: "Skill Scale-Up Beneficiary",
+        pillar: "education",
+    },
+    {
+        id: "winner-emmanuel ",
+        quote: "Chiggy Nsofor Foundation, thank you for changing my life. Your support made my digital marketing education possible, and I'm forever grateful. Because of you, I’ve learned valuable skills and gained confidence to build a better future. I promise to work hard and help others too. God bless you for all the good you do.",        
+        name: "Winner Emmanuel",
+        role: "Skill Scale-Up Beneficiary",
+        pillar: "education",
     },
 ];

@@ -13,8 +13,8 @@ export const metadata: Metadata = {
     },
     description: site.description,
     icons: {
-        icon: "/Dark%20green%20Stamp.png",
-        apple: "/Dark%20green%20Stamp.png",
+        icon: "/logotab.png",
+        apple: "/logotab.png",
     },
     openGraph: {
         type: "website",

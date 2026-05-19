@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { cn } from "@/lib/cn";
 import { fontDisplay } from "@/lib/fonts";
+import { homeEyebrowClassName } from "@/components/sections/home/homeEyebrow";
 import { HOME_HERO_CAROUSEL_SLIDES } from "@/data/home/carousel-images";
 const AUTOPLAY_INTERVAL_MS = 3600;
 const SLIDE_CROSSFADE_MS = 550;
@@ -49,7 +50,12 @@ export function HomeHero({ eyebrow = "Est. 2024 · Abuja, Nigeria", title, title
       <div className={cn("relative z-[3] px-6 py-16 sm:px-10 md:px-14 md:py-24 lg:px-16 lg:py-28", slides.length > 1 && "pb-24 sm:pb-28")}>
         
         <div className="max-w-2xl cnf-hero-page-enter-once">
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cnf-accent">
+          <p
+            className={cn(
+              "font-semibold uppercase text-cnf-accent",
+              homeEyebrowClassName,
+            )}
+          >
             {eyebrow}
           </p>
           <h1 id="home-hero-title" className={`${fontDisplay.className} mt-8 text-5xl font-semibold leading-[1.04] text-white md:text-6xl lg:text-7xl`}>

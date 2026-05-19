@@ -17,7 +17,7 @@ export const homePillars: HomePillar[] = [
         badge: "Skills development",
         badgeTone: "skills",
         title: "Skill Scale-Up & Mentorship",
-        description: "Free, cohort-based training for Nigerian youth, paired with mentorship, internship placement, and alumni support to bridge training and real-world opportunity.",
+        description: "Cohort-based training for Nigerian youth, paired with mentorship, internship placement, and alumni support to bridge training and real-world opportunity.",
         href: "/our-work#skills",
         heroImageSrc: "/assets/ourWorkImgs/skillaqc.jpeg",
     },
@@ -32,7 +32,7 @@ export const homePillars: HomePillar[] = [
     },
     {
         id: "humanitarian",
-        badge: "Humanitarian aid & healthcare",
+        badge: "Humanitarian aid",
         badgeTone: "humanitarian",
         title: "Relief, Health & Community Care",
         description: "Food, medical care, and emergency support, delivered directly to underserved families and communities when they need it most.",

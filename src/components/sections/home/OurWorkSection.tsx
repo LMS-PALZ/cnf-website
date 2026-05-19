@@ -1,16 +1,24 @@
 import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { homeEyebrowClassName } from "@/components/sections/home/homeEyebrow";
 import { homePillars } from "@/data/home/pillars-detailed";
 import { PillarHomeCard } from "./PillarHomeCard";
 
 export function OurWorkSection() {
     return (
-        <Section tone="light" padding="lg" ariaLabelledBy="our-work-title" id="our-work">
+        <Section
+            tone="light"
+            padding="lg"
+            ariaLabelledBy="our-work-title"
+            id="our-work"
+            className="pt-10 md:pt-12"
+        >
             <Reveal>
                 <SectionHeader
                     id="our-work-title"
                     eyebrow="Our work"
+                    eyebrowClassName={homeEyebrowClassName}
                     title="Three Pillars."
                     titleAccent="One Mission."
                     description="Every programme we run sits under one of three interconnected pillars, a holistic response to the challenges facing underserved Nigerians."

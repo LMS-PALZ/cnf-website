@@ -1,17 +1,26 @@
-import { Card } from "@/components/ui/Card";
+import { cn } from "@/lib/cn";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { fontDisplay } from "@/lib/fonts";
+import {
+    homeEyebrowClassName,
+    homeSoftSectionClassName,
+} from "@/components/sections/home/homeEyebrow";
 
 export function WhoWeAreSection() {
     return (
-        <Section tone="cream" padding="lg" ariaLabelledBy="who-we-are-title">
+        <Section
+            tone="surface"
+            padding="lg"
+            ariaLabelledBy="who-we-are-title"
+            className={cn(homeSoftSectionClassName, "pb-4 md:pb-6")}
+        >
             <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
                 <Reveal direction="left" className="lg:col-span-5">
                     <SectionHeader
                         id="who-we-are-title"
                         eyebrow="Who we are"
+                        eyebrowClassName={homeEyebrowClassName}
                         title="Built on Purpose."
                         titleAccent="Driven by People."
                         accent="primary"
@@ -27,30 +36,9 @@ export function WhoWeAreSection() {
                         </p>
                         <p>
                             We work across three pillars, Skills Development, Education, and Humanitarian
-                            Aid &amp; Healthcare, delivering programmes that build lasting capacity in
+                            Aid, delivering programmes that build lasting capacity in
                             individuals and communities across Nigeria.
                         </p>
-                    </div>
-
-                    <div className="mt-8 grid gap-5 sm:grid-cols-2">
-                        <Card tone="primary" padding="md" className="flex flex-col gap-3 transition-transform duration-300 hover:-translate-y-0.5">
-                            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-cnf-accent">
-                                Our mission
-                            </p>
-                            <p className={`${fontDisplay.className} text-lg font-medium leading-snug text-white`}>
-                                To provide essential support and build capacity in individuals and
-                                communities.
-                            </p>
-                        </Card>
-                        <Card tone="outlined" padding="md" className="flex flex-col gap-3 bg-white transition-transform duration-300 hover:-translate-y-0.5">
-                            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-cnf-primary">
-                                Our vision
-                            </p>
-                            <p className={`${fontDisplay.className} text-lg font-medium leading-snug text-cnf-ink`}>
-                                To see underserved Nigerians given opportunities to have a better quality of
-                                life.
-                            </p>
-                        </Card>
                     </div>
                 </Reveal>
             </div>

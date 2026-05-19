@@ -16,6 +16,7 @@ type Props = {
     className?: string;
     id?: string;
     descriptionClassName?: string;
+    eyebrowClassName?: string;
 };
 const eyebrowToneByAccent: Record<Tone, Record<AccentColor, string>> = {
     light: {
@@ -39,11 +40,19 @@ const accentColor: Record<AccentColor, string> = {
     primary: "text-cnf-primary",
     accent: "text-cnf-accent",
 };
-export function SectionHeader({ eyebrow, title, titleAccent, description, as: Tag = "h2", tone = "light", align = "left", accent = "primary", className, id, descriptionClassName, }: Props) {
+export function SectionHeader({ eyebrow, title, titleAccent, description, as: Tag = "h2", tone = "light", align = "left", accent = "primary", className, id, descriptionClassName, eyebrowClassName, }: Props) {
     return (<header className={cn(align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-3xl", className)}>
-      {eyebrow ? (<p className={cn("text-xs font-semibold uppercase tracking-[0.2em]", eyebrowToneByAccent[tone][accent])}>
+      {eyebrow ? (
+        <p
+          className={cn(
+            "text-xs font-semibold uppercase tracking-[0.2em]",
+            eyebrowToneByAccent[tone][accent],
+            eyebrowClassName,
+          )}
+        >
           {eyebrow}
-        </p>) : null}
+        </p>
+      ) : null}
       <Tag id={id} className={cn(fontDisplay.className, "mt-3 text-3xl font-semibold leading-[1.1] md:text-5xl", titleToneStyles[tone])}>
         {title}
         {titleAccent ? (<>

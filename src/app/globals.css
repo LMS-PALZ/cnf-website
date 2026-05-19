@@ -286,6 +286,26 @@
   animation: cnf-lightbox-scale 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
+@keyframes cnf-voices-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.cnf-voices-marquee-track {
+  --cnf-voices-marquee-duration: 38s;
+  animation: cnf-voices-marquee var(--cnf-voices-marquee-duration) linear infinite;
+  will-change: transform;
+}
+
+.cnf-voices-marquee-track:hover,
+.cnf-voices-marquee-track:focus-within {
+  animation-play-state: paused;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -329,6 +349,12 @@
   .cnf-lightbox-backdrop,
   .cnf-lightbox-image {
     animation: none !important;
+  }
+
+  .cnf-voices-marquee-track {
+    animation: none !important;
+    transform: none !important;
+    will-change: auto;
   }
 }
 

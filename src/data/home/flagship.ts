@@ -6,8 +6,7 @@ export const flagshipStats: HeroStat[] = [
     { value: "62%", label: "Earning within 6 months" },
 ];
 export const impactStats: HeroStat[] = [
-    { value: "4+", label: "States reached" },
-    { value: "6,000+", label: "Individuals reached" },
+    { value: "4", label: "States reached" },
     { value: "9", label: "Communities" },
-    { value: "4,000+", label: "Suppported Medically" },
+    { value: "7,000+", label: "Individuals reached" },
 ];
