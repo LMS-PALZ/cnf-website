@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { CnfImage } from "@/components/ui/CnfImage";
 import type { ReactNode } from "react";
 import { AboutAnnualReportSection } from "@/components/sections/about/AboutAnnualReportSection";
 import { AboutCoreValuesSection } from "@/components/sections/about/AboutCoreValuesSection";
@@ -156,8 +156,8 @@ export default function AboutPage() {
           </div>
 
           <div className="space-y-8">
-            <div className="bg-slate-100/30">
-              <Image alt="How it started" className="w-full h-auto object-cover" width={1200} height={800} priority={false} sizes="(max-width: 1024px) 100vw, 50vw" src="/assets/howItStarted/howitstarted.jpg"/>
+            <div className="relative bg-cnf-surface">
+              <CnfImage alt="How it started" className="h-auto w-full object-cover" width={1200} height={800} priority={false} sizes="(max-width: 1024px) 100vw, 50vw" src="/assets/howItStarted/howitstarted.jpg"/>
             </div>
             <div className="rounded-3xl border border-cnf-primary/10 bg-cnf-cream p-7">
               <p className="text-lg italic leading-8 text-cnf-ink">
@@ -195,7 +195,7 @@ export default function AboutPage() {
             <div className="w-full overflow-hidden border border-cnf-border bg-white shadow-sm">
               <PortraitLinkedInLink href={founderLinkedIn} label="Chiggy Nsofor">
                 <div className={founderPortraitFrameClass}>
-                  <Image
+                  <CnfImage
                     src="/assets/team/chiggy.jpg"
                     alt="Chiggy Nsofor, Founder and CEO of the Chiggy Nsofor Foundation"
                     fill
@@ -259,7 +259,7 @@ export default function AboutPage() {
                 <PortraitLinkedInLink href={member.linkedin} label={member.name}>
                   <div className={portraitFrameClass}>
                     {member.image ? (
-                      <Image
+                      <CnfImage
                         src={member.image}
                         alt={member.imageAlt ?? member.name}
                         fill

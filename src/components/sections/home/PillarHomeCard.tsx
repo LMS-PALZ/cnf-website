@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { CnfImage } from "@/components/ui/CnfImage";
 import Link from "next/link";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
@@ -27,7 +27,7 @@ export function PillarHomeCard({ pillar }: Props) {
     return (<Card tone="elevated" padding="none" className="flex h-full flex-col transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg" as="article">
       <div className={cn("relative flex min-h-[13rem] flex-col justify-end gap-4 overflow-hidden px-6 pb-8 pt-6 sm:min-h-[15rem] md:min-h-[17rem]", !hero && headerTone[pillar.badgeTone], hero && "shadow-inner ring-1 ring-black/10")}>
         {hero && pillar.heroImageSrc && (<>
-            <Image alt={heroAlt} className="z-0 object-cover" fill priority={false} sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" src={pillar.heroImageSrc}/>
+            <CnfImage alt={heroAlt} className="z-0 object-cover" fill priority={false} sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" src={pillar.heroImageSrc}/>
             <div aria-hidden className="absolute inset-0 z-[1] bg-gradient-to-t from-black/80 via-black/50 to-black/40"/>
           </>)}
 

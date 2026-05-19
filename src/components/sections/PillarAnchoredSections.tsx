@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { CnfImage } from "@/components/ui/CnfImage";
 import Link from "next/link";
 import { pillars } from "@/constants/pillars";
 import { Container } from "@/components/ui/Container";
@@ -8,8 +8,8 @@ export function PillarAnchoredSections() {
       <Container className="space-y-20 md:space-y-28">
         {pillars.map((pillar, index) => (<div key={pillar.id} id={pillar.id} className="grid scroll-mt-28 gap-10 md:grid-cols-2 md:items-center">
             <div className={index % 2 === 1 ? "md:order-2" : ""}>
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-cnf-primary/10 shadow-sm">
-                <Image src={pillar.imageSrc} alt={pillar.imageAlt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw"/>
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-cnf-primary/10 bg-cnf-surface shadow-sm">
+                <CnfImage src={pillar.imageSrc} alt={pillar.imageAlt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw"/>
               </div>
             </div>
             <div className={index % 2 === 1 ? "md:order-1" : ""}>

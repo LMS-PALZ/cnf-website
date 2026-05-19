@@ -27,8 +27,8 @@ const orgLinks = [
     { href: "/get-involved#careers", label: "Careers" },
 ] as const;
 export function SiteFooter() {
-    return (<footer className="bg-cnf-primary text-cnf-footer-muted">
-      <Container className="py-14 md:py-16">
+    return (<footer className="w-full bg-cnf-primary text-cnf-footer-muted">
+      <Container width="full" className="py-14 md:py-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <div className="flex h-28 w-28 shrink-0 items-center justify-center overflow-hidden rounded-full border border-cnf-border/80 bg-cnf-primary-soft p-2 shadow-sm sm:h-32 sm:w-32 sm:p-2.5">

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { CnfImage } from "@/components/ui/CnfImage";
 import { Card } from "@/components/ui/Card";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { Stat } from "@/components/ui/Stat";
@@ -22,7 +22,7 @@ export function PillarMediaCard({ theme, mediaLabel, reachStat, smallStats, medi
       <div className={cn("relative overflow-hidden rounded-2xl", hero ? "min-h-[22rem] shadow-sm ring-1 ring-black/10 sm:min-h-[28rem] md:min-h-[34rem]" : t.surface)}>
         {!hero && (<div aria-hidden className="cnf-dot-pattern absolute inset-0 opacity-25"/>)}
         {hero && heroImageSrc && (<>
-            <Image alt={mediaLabel} className="z-0 object-cover" fill priority={false} sizes="(max-width: 1024px) 100vw, 50vw" src={heroImageSrc}/>
+            <CnfImage alt={mediaLabel} className="z-0 object-cover" fill priority={false} sizes="(max-width: 1024px) 100vw, 50vw" src={heroImageSrc}/>
             <div aria-hidden className="absolute inset-0 z-[1] bg-gradient-to-t from-black/85 via-black/45 to-black/35"/>
           </>)}
 

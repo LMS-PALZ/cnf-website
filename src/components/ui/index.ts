@@ -11,6 +11,8 @@ export { Reveal } from "./Reveal";
 export { Section } from "./Section";
 export { SectionHeader } from "./SectionHeader";
 export { Skeleton } from "./Skeleton";
+export type { SkeletonVariant } from "./Skeleton";
+export { CnfImage } from "./CnfImage";
 export { StarRating } from "./StarRating";
 export { Stat } from "./Stat";
 export type { ButtonSize, ButtonVariant } from "./buttonStyles";

@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import { CnfImage } from "@/components/ui/CnfImage";
 import { useEffect, useState } from "react";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { cn } from "@/lib/cn";
@@ -35,8 +35,8 @@ export function HomeHero({ eyebrow = "Est. 2024 · Abuja, Nigeria", title, title
                     transitionProperty: "opacity",
                 }}>
               
-              <div className="relative h-full w-full overflow-hidden bg-cnf-primary">
-                <Image src={slide.src} alt={active ? slide.alt : ""} fill sizes="100vw" priority={i === 0} className="object-cover object-center" style={{ objectPosition: "center center" }} aria-hidden={!active}/>
+              <div className="relative h-full w-full overflow-hidden bg-cnf-surface">
+                <CnfImage src={slide.src} alt={active ? slide.alt : ""} fill sizes="100vw" priority={i === 0} className="object-cover object-center" style={{ objectPosition: "center center" }} aria-hidden={!active}/>
               </div>
             </div>);
         })}

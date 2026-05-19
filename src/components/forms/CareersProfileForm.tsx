@@ -48,7 +48,7 @@ export function CareersProfileForm() {
         toast.success("Thanks, we'll keep your profile on file for the right role.");
         reset();
     });
-    return (<form className="space-y-5" noValidate onSubmit={onSubmit}>
+    return (<form className="space-y-5" noValidate onSubmit={onSubmit} aria-busy={isSubmitting}>
       <div className="grid gap-5 sm:grid-cols-2">
         <FormInput id={`${idPrefix}-firstName`} label="First Name" required placeholder="First name" autoComplete="given-name" error={errors.firstName?.message} {...register("firstName")}/>
         <FormInput id={`${idPrefix}-lastName`} label="Last Name" required placeholder="Last name" autoComplete="family-name" error={errors.lastName?.message} {...register("lastName")}/>

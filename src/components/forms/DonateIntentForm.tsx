@@ -35,7 +35,7 @@ export function DonateIntentForm() {
         toast.success("Thank you. Our team will follow up shortly.");
         reset({ consent: false });
     });
-    return (<form className="space-y-6" noValidate onSubmit={onSubmit}>
+    return (<form className="space-y-6" noValidate onSubmit={onSubmit} aria-busy={isSubmitting}>
       <FormField id="donate-name" label="Full name" error={errors.name?.message}>
         <input id="donate-name" className={inputClass} autoComplete="name" {...register("name")}/>
       </FormField>

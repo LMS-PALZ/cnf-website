@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { Card } from "@/components/ui/Card";
+import { CnfImage } from "@/components/ui/CnfImage";
 import { cn } from "@/lib/cn";
 import { fontDisplay } from "@/lib/fonts";
 import type { ProjectItem } from "@/data/projects/projects";
@@ -18,18 +18,13 @@ const photoStripeTone: Record<ProjectItem["theme"], string> = {
     education: "bg-cnf-pillar-education/40",
     humanitarian: "bg-cnf-pillar-humanitarian/40",
 };
-const mediaSurface: Record<ProjectItem["theme"], string> = {
-    skills: "bg-cnf-accent",
-    education: "bg-cnf-pillar-education",
-    humanitarian: "bg-cnf-pillar-humanitarian",
-};
 
 export function ProjectCard({ project }: Props) {
     return (
         <Card tone="elevated" padding="none" className="flex h-full flex-col" as="article">
-            <div className={cn("relative aspect-[16/10] overflow-hidden", mediaSurface[project.theme])}>
+            <div className="relative aspect-[16/10] overflow-hidden bg-cnf-surface">
                 {project.imageSrc ? (
-                    <Image
+                    <CnfImage
                         src={project.imageSrc}
                         alt={project.imageAlt ?? project.title}
                         fill

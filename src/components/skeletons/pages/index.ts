@@ -1,0 +1,10 @@
+export { HomePageSkeleton } from "./HomePageSkeleton";
+export { AboutPageSkeleton } from "./AboutPageSkeleton";
+export { OurWorkPageSkeleton } from "./OurWorkPageSkeleton";
+export { ProjectsPageSkeleton } from "./ProjectsPageSkeleton";
+export { GetInvolvedPageSkeleton } from "./GetInvolvedPageSkeleton";
+export { DonatePageSkeleton } from "./DonatePageSkeleton";
+export { NewsPageSkeleton } from "./NewsPageSkeleton";
+export { NewsArticlePageSkeleton } from "./NewsArticlePageSkeleton";
+export { SkillScaleUpPageSkeleton } from "./SkillScaleUpPageSkeleton";
+export { PrivacyPageSkeleton } from "./PrivacyPageSkeleton";

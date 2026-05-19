@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { CnfImage } from "@/components/ui/CnfImage";
 import Link from "next/link";
 import type { Pillar } from "@/constants/pillars";
 import { fontDisplay } from "@/lib/fonts";
@@ -9,7 +9,7 @@ type Props = {
 export function PillarCard({ pillar, imagePriority }: Props) {
     return (<article className="flex flex-col overflow-hidden rounded-xl border border-cnf-primary/10 bg-white shadow-sm">
       <div className="relative aspect-[16/10] w-full">
-        <Image src={pillar.imageSrc} alt={pillar.imageAlt} fill priority={imagePriority} className="object-cover" sizes="(max-width: 768px) 100vw, 33vw"/>
+        <CnfImage src={pillar.imageSrc} alt={pillar.imageAlt} fill priority={imagePriority} className="object-cover" sizes="(max-width: 768px) 100vw, 33vw"/>
       </div>
       <div className="flex flex-1 flex-col p-6">
         <h2 className={`${fontDisplay.className} text-2xl font-semibold text-cnf-ink`}>

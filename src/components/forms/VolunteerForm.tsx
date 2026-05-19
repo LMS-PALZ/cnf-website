@@ -65,7 +65,7 @@ export function VolunteerForm() {
         toast.success("Thank you, we'll review your application and get back to you.");
         reset();
     });
-    return (<form className="space-y-5" noValidate onSubmit={onSubmit}>
+    return (<form className="space-y-5" noValidate onSubmit={onSubmit} aria-busy={isSubmitting}>
       <div className="grid gap-5 sm:grid-cols-2">
         <FormInput id={`${idPrefix}-firstName`} label="First Name" required placeholder="Your first name" autoComplete="given-name" error={errors.firstName?.message} {...register("firstName")}/>
         <FormInput id={`${idPrefix}-lastName`} label="Last Name" required placeholder="Your last name" autoComplete="family-name" error={errors.lastName?.message} {...register("lastName")}/>

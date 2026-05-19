@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { CnfImage } from "@/components/ui/CnfImage";
 import { useCallback, useRef, useState } from "react";
 import { cn } from "@/lib/cn";
 
@@ -74,7 +74,7 @@ export function ImageMagnifier({
             onTouchEnd={() => setExploringState(false)}
             onTouchMove={onTouchMove}
         >
-            <Image
+            <CnfImage
                 src={src}
                 alt={alt}
                 fill
