@@ -20,7 +20,11 @@ export function PageBannerBackground({ src, alt }: Props) {
             />
 
             <div
-                className="absolute inset-0 z-[2] bg-gradient-to-br from-cnf-primary/80 via-cnf-primary/65 to-cnf-ink/50"
+                className="absolute inset-0 z-[2] bg-gradient-to-br from-cnf-primary/52 via-cnf-primary/34 to-black/26"
+                aria-hidden
+            />
+            <div
+                className="absolute inset-0 z-[2] bg-[radial-gradient(ellipse_at_top_right,rgba(244,146,33,0.07),transparent_60%)]"
                 aria-hidden
             />
             <div
