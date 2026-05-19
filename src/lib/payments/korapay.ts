@@ -65,8 +65,15 @@ export function startKorapayPayment(input: StartKorapayPaymentInput): void {
         metadata: input.metadata,
     };
 
-    if (korapayConfig.notificationUrl) {
-        options.notification_url = korapayConfig.notificationUrl;
+    const notificationOverride = process.env.NEXT_PUBLIC_KORAPAY_NOTIFICATION_URL?.trim();
+    const notificationUrl =
+        notificationOverride ||
+        (typeof window !== "undefined"
+            ? `${window.location.origin}/api/payments/korapay-webhook`
+            : undefined);
+
+    if (notificationUrl) {
+        options.notification_url = notificationUrl;
     }
 
     window.Korapay.initialize(options);

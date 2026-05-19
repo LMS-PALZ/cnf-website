@@ -16,7 +16,6 @@ export const site = {
 export const donateConfig = {
     /** @deprecated Use in-app Korapay modal via DonatePayButton */
     korapayUrl: process.env.NEXT_PUBLIC_KORAPAY_URL ?? "#",
-    korapayPublicKey: process.env.NEXT_PUBLIC_KORAPAY_KEY ?? "",
     bank: {
         accountName: process.env.NEXT_PUBLIC_DONATE_ACCOUNT_NAME ?? "Chiggy Nsofor Foundation",
         accountNumber: process.env.NEXT_PUBLIC_DONATE_ACCOUNT_NUMBER ?? "Add Account No.",

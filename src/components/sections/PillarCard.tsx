@@ -2,7 +2,7 @@
 
 import { CnfImage } from "@/components/ui/CnfImage";
 import Link from "next/link";
-import { useKoraPayment } from "@/components/payments/KoraPaymentContext";
+import { openPaymentModal } from "@/lib/payments/payment-opener";
 import type { Pillar } from "@/constants/pillars";
 import { fontDisplay } from "@/lib/fonts";
 
@@ -19,8 +19,6 @@ function isPaymentLink(href: string, label: string): boolean {
 }
 
 export function PillarCard({ pillar, imagePriority }: Props) {
-    const { openPayment } = useKoraPayment();
-
     return (
         <article className="flex flex-col overflow-hidden rounded-xl border border-cnf-primary/10 bg-white shadow-sm">
             <div className="relative aspect-[16/10] w-full">
@@ -46,7 +44,7 @@ export function PillarCard({ pillar, imagePriority }: Props) {
                                 key={l.href + l.label}
                                 type="button"
                                 className={linkClass}
-                                onClick={() => openPayment({ label: l.label })}
+                                onClick={() => openPaymentModal({ label: l.label })}
                             >
                                 {l.label}
                             </button>

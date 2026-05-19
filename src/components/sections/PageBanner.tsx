@@ -72,7 +72,7 @@ export function PageBanner({
                     </p>
                 ) : null}
 
-                {children ? <div className="mt-8 w-full">{children}</div> : null}
+                {children ? <div className="relative z-10 mt-8 w-full">{children}</div> : null}
             </div>
         </section>
     );

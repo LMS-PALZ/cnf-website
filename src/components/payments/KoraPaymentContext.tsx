@@ -1,14 +1,21 @@
 "use client";
 
-import { createContext, useCallback, useContext, useMemo, useState, type ReactNode } from "react";
+import {
+    createContext,
+    useCallback,
+    useContext,
+    useEffect,
+    useMemo,
+    useState,
+    type ReactNode,
+} from "react";
+import {
+    CNF_OPEN_PAYMENT_EVENT,
+    registerPaymentOpener,
+} from "@/lib/payments/payment-opener";
+import type { PaymentIntent } from "@/lib/payments/payment-types";
 
-export type PaymentIntent = {
-    amountNaira?: number;
-    /** When true, amount is prefilled and cannot be changed (tier card CTAs only) */
-    lockAmount?: boolean;
-    /** Shown in the modal subtitle, e.g. tier or campaign name */
-    label?: string;
-};
+export type { PaymentIntent } from "@/lib/payments/payment-types";
 
 type KoraPaymentContextValue = {
     isOpen: boolean;
@@ -31,6 +38,27 @@ export function KoraPaymentProvider({ children }: { children: ReactNode }) {
     const closePayment = useCallback(() => {
         setIsOpen(false);
         setIntent(null);
+    }, []);
+
+    useEffect(() => {
+        const handleOpen = (nextIntent: PaymentIntent | null) => {
+            setIntent(nextIntent);
+            setIsOpen(true);
+        };
+
+        registerPaymentOpener(handleOpen);
+
+        const onWindowEvent = (event: Event) => {
+            const detail = (event as CustomEvent<PaymentIntent | null>).detail ?? null;
+            handleOpen(detail);
+        };
+
+        window.addEventListener(CNF_OPEN_PAYMENT_EVENT, onWindowEvent);
+
+        return () => {
+            registerPaymentOpener(null);
+            window.removeEventListener(CNF_OPEN_PAYMENT_EVENT, onWindowEvent);
+        };
     }, []);
 
     const value = useMemo(

@@ -4,20 +4,19 @@ import type { ReactNode } from "react";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
 import { buttonBase, buttonSizes, buttonVariants, type ButtonSize, type ButtonVariant } from "@/components/ui/buttonStyles";
-import { useKoraPayment, type PaymentIntent } from "./KoraPaymentContext";
+import { openPaymentModal } from "@/lib/payments/payment-opener";
+import type { PaymentIntent } from "@/lib/payments/payment-types";
 
 type Props = {
     children: ReactNode;
     amountNaira?: number;
     /** Prefill and lock amount — only for fixed-tier buttons (e.g. Give ₦150,000) */
     lockAmount?: boolean;
-    /** Context label passed to Korapay metadata and modal subtitle */
     purpose?: string;
     variant?: ButtonVariant;
     size?: ButtonSize;
     className?: string;
     disabled?: boolean;
-    /** Use full width like tier card CTAs */
     fullWidth?: boolean;
 };
 
@@ -48,9 +47,6 @@ export function DonatePayButton({
     disabled,
     fullWidth,
 }: Props) {
-    const { openPayment } = useKoraPayment();
-    const intent = buildPaymentIntent(amountNaira, lockAmount, purpose);
-
     return (
         <Button
             type="button"
@@ -58,14 +54,13 @@ export function DonatePayButton({
             size={size}
             disabled={disabled}
             className={cn(fullWidth && "w-full", className)}
-            onClick={() => openPayment(intent ?? {})}
+            onClick={() => openPaymentModal(buildPaymentIntent(amountNaira, lockAmount, purpose))}
         >
             {children}
         </Button>
     );
 }
 
-/** Outline-style pay trigger for dark CTA bands (matches ButtonLink dark-outline). */
 export function DonatePayLinkButton({
     children,
     amountNaira,
@@ -74,8 +69,6 @@ export function DonatePayLinkButton({
     className,
     size = "md",
 }: Pick<Props, "children" | "amountNaira" | "lockAmount" | "purpose" | "className" | "size">) {
-    const { openPayment } = useKoraPayment();
-
     return (
         <button
             type="button"
@@ -85,7 +78,7 @@ export function DonatePayLinkButton({
                 buttonSizes[size],
                 className,
             )}
-            onClick={() => openPayment(buildPaymentIntent(amountNaira, lockAmount, purpose) ?? {})}
+            onClick={() => openPaymentModal(buildPaymentIntent(amountNaira, lockAmount, purpose))}
         >
             {children}
         </button>
