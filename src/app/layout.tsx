@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { PaymentUIProvider } from "@/components/payments/PaymentUIProvider";
 import { ToasterProvider } from "@/components/providers/ToasterProvider";
 import { SiteShell } from "@/components/site/SiteShell";
 import { fontSans } from "@/lib/fonts";
@@ -36,8 +37,10 @@ export default function RootLayout({ children, }: Readonly<{
 }>) {
     return (<html lang="en">
       <body className={`${fontSans.className} min-h-screen bg-white text-cnf-ink antialiased`}>
-        <SiteShell>{children}</SiteShell>
-        <ToasterProvider />
+        <PaymentUIProvider>
+          <SiteShell>{children}</SiteShell>
+          <ToasterProvider />
+        </PaymentUIProvider>
       </body>
     </html>);
 }

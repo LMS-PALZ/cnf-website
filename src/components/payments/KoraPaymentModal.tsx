@@ -3,6 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import Script from "next/script";
 import { useEffect, useId, useState } from "react";
+import { createPortal } from "react-dom";
 import { Controller, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { FormField } from "@/components/forms/FormField";
@@ -35,7 +36,12 @@ export function KoraPaymentScript() {
 
 export function KoraPaymentModal({ open, onClose, intent }: Props) {
     const titleId = useId();
+    const [mounted, setMounted] = useState(false);
     const [isPaying, setIsPaying] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
     const lockedAmount =
         intent?.lockAmount === true && intent.amountNaira != null ? intent.amountNaira : undefined;
 
@@ -88,7 +94,7 @@ export function KoraPaymentModal({ open, onClose, intent }: Props) {
         return () => window.removeEventListener("keydown", onKeyDown);
     }, [onClose, open]);
 
-    if (!open) {
+    if (!open || !mounted) {
         return null;
     }
 
@@ -116,7 +122,7 @@ export function KoraPaymentModal({ open, onClose, intent }: Props) {
         }
     });
 
-    return (
+    return createPortal(
         <div
             className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6"
             role="presentation"
@@ -238,6 +244,7 @@ export function KoraPaymentModal({ open, onClose, intent }: Props) {
                     </div>
                 </form>
             </div>
-        </div>
+        </div>,
+        document.body,
     );
 }

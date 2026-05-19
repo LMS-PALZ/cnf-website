@@ -1,10 +1,10 @@
 "use client";
 
-import { useMemo, useState, type ReactNode } from "react";
+import type { ReactNode } from "react";
 import { Button } from "@/components/ui/Button";
+import { useOpenPayment } from "@/components/payments/PaymentUIProvider";
 import { cn } from "@/lib/cn";
 import { buttonBase, buttonSizes, buttonVariants, type ButtonSize, type ButtonVariant } from "@/components/ui/buttonStyles";
-import { KoraPaymentModal } from "@/components/payments/KoraPaymentModal";
 import type { PaymentIntent } from "@/lib/payments/payment-types";
 
 type Props = {
@@ -46,26 +46,23 @@ export function DonatePayButton({
     disabled,
     fullWidth,
 }: Props) {
-    const [open, setOpen] = useState(false);
-    const intent = useMemo(
-        () => buildIntent(amountNaira, lockAmount, purpose),
-        [amountNaira, lockAmount, purpose],
-    );
+    const { openPayment } = useOpenPayment();
 
     return (
-        <>
-            <Button
-                type="button"
-                variant={variant}
-                size={size}
-                disabled={disabled}
-                className={cn(fullWidth && "w-full", className)}
-                onClick={() => setOpen(true)}
-            >
-                {children}
-            </Button>
-            <KoraPaymentModal open={open} onClose={() => setOpen(false)} intent={intent} />
-        </>
+        <Button
+            type="button"
+            variant={variant}
+            size={size}
+            disabled={disabled}
+            className={cn(fullWidth && "w-full", className)}
+            onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                openPayment(buildIntent(amountNaira, lockAmount, purpose));
+            }}
+        >
+            {children}
+        </Button>
     );
 }
 
@@ -77,27 +74,24 @@ export function DonatePayLinkButton({
     className,
     size = "md",
 }: Pick<Props, "children" | "amountNaira" | "lockAmount" | "purpose" | "className" | "size">) {
-    const [open, setOpen] = useState(false);
-    const intent = useMemo(
-        () => buildIntent(amountNaira, lockAmount, purpose),
-        [amountNaira, lockAmount, purpose],
-    );
+    const { openPayment } = useOpenPayment();
 
     return (
-        <>
-            <button
-                type="button"
-                className={cn(
-                    buttonBase,
-                    buttonVariants["dark-outline"],
-                    buttonSizes[size],
-                    className,
-                )}
-                onClick={() => setOpen(true)}
-            >
-                {children}
-            </button>
-            <KoraPaymentModal open={open} onClose={() => setOpen(false)} intent={intent} />
-        </>
+        <button
+            type="button"
+            className={cn(
+                buttonBase,
+                buttonVariants["dark-outline"],
+                buttonSizes[size],
+                className,
+            )}
+            onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                openPayment(buildIntent(amountNaira, lockAmount, purpose));
+            }}
+        >
+            {children}
+        </button>
     );
 }
