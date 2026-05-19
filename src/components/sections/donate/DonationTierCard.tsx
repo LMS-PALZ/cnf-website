@@ -1,3 +1,5 @@
+"use client";
+
 import { DonatePayButton } from "@/components/payments/DonatePayButton";
 import { type DonationTier, type DonationTierVariant, } from "@/data/donate/donation-tiers";
 import { cn } from "@/lib/cn";

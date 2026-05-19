@@ -1,3 +1,5 @@
+"use client";
+
 import { CtaBand } from "@/components/sections/shared/CtaBand";
 import { DonatePayButton } from "@/components/payments/DonatePayButton";
 export function EveryGiftCtaSection() {
