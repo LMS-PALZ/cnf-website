@@ -11,6 +11,7 @@ import { Container } from "@/components/ui/Container";
 import { pageBannerImages } from "@/data/page-banners";
 import { fontDisplay } from "@/lib/fonts";
 import { pageContentWidthClass } from "@/lib/layout";
+import { primaryEyebrowClassName } from "@/components/sections/home/homeEyebrow";
 import { pageMetadata } from "@/lib/metadata";
 import { sdgCards } from "@/data/our-work/sdgs";
 export const metadata = pageMetadata("About: mission and impact", "Mission, vision, and values of the Chiggy Nsofor Foundation, a Nigerian nonprofit advancing skills, education, and humanitarian aid.");
@@ -62,8 +63,8 @@ const portraitImageClass = "object-cover object-[50%_18%]";
 
 const teamMembers: TeamMember[] = [
     {
-        name: "Pamela Ibemesi",
-        role: "Partnerships & Programs Officer",
+        name: "Pamela I",
+        role: "Partnerships & Programs",
         description: "Pamela drives CNF's partnership development and programme coordination, building the relationships and operational structures that keep every pillar running effectively. She also serves as Board Secretary.",
         image: "/assets/team/IMG_8009.jpg",
         imageAlt: "Pamela Ibemesi, Partnerships & Programs Officer at the Chiggy Nsofor Foundation",
@@ -71,7 +72,7 @@ const teamMembers: TeamMember[] = [
     },
     {
         name: "Victor A.",
-        role: "Operations & Finance Lead",
+        role: "Operations & Finance",
         description: "Oversees CNF's day-to-day operations and financial management, ensuring every naira is tracked, every process is sound, and every programme is delivered on time and on budget.",
         image: "/assets/team/victor.jpg",
         imageAlt: "Victor A., Operations & Finance Lead at the Chiggy Nsofor Foundation",
@@ -80,23 +81,23 @@ const teamMembers: TeamMember[] = [
     {
         name: "Hajimrea K.",
         role: "Communications",
-        description: "Tells CNF's story across platforms, from impact reports and social media to partner communications, making sure the world knows what is being built in Abuja's communities.",
+        description: "Tells CNF's story across platforms, from impact reports and social media to partner communications, making sure the world knows what is being built in Nigeria.",
         image: "/assets/team/hajim.jpg",
         imageAlt: "Hajimrea K., Communications at the Chiggy Nsofor Foundation",
         linkedin: "https://www.linkedin.com/in/hajimrea-kawuwa-aa7392185",
     },
     {
-        name: "Dorothy Uji",
-        role: "Programme Delivery",
-        description: "On the ground, every session, every cohort. Dorothy ensures the Programme and community outreaches are delivered with consistency, care, and quality for every beneficiary.",
+        name: "Dorothy U",
+        role: "Programmes",
+        description: "Dorothy ensures the Programme and community outreaches are delivered with consistency, care, and quality for every beneficiary.",
         image: "/assets/team/dorothy.jpeg",
         imageAlt: "Dorothy Uji, Programme Delivery at the Chiggy Nsofor Foundation",
         linkedin: "https://www.linkedin.com/in/dorothy-uji-b9b188220",
     },
     {
-        name: "Marho Imodje",
-        role: "Teaching Assistant & LMS Developer",
-        description: "An SSU Cohort graduate who returned to the classroom, this time as a teacher. Marho now leads development of CNF's module-based LMS platform.",
+        name: "Marho I",
+        role: "Teaching Assistant",
+        description: "An SSU Cohort graduate who returned to the classroom, this time as a teacher.",
     },
 ];
 const boardMembers = [
@@ -144,15 +145,11 @@ export default function AboutPage() {
       <section className="py-20 md:py-28">
         <Container className="grid gap-16 lg:grid-cols-[0.95fr_1.05fr] items-start">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cnf-primary">Our Story</p>
-            <h2 className={`${fontDisplay.className} mt-6 text-balance text-5xl font-semibold leading-[1.08] text-cnf-ink`}>How we started</h2>
+            <p className={primaryEyebrowClassName}>Our Story</p>
+            <h2 className={`${fontDisplay.className} mt-6 text-balance text-5xl font-semibold leading-[1.08] text-cnf-accent`}>How we started</h2>
             <div className="mt-12 space-y-8">
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore deserunt eligendi cumque et saepe totam accusamus fugiat odio, architecto molestiae itaque ipsam id ratione corporis, voluptas obcaecati, quis atque! Praesentium?
-                Doloremque ipsum quidem quam nisi totam in culpa nesciunt iusto quasi autem tenetur ex voluptate maxime et aspernatur maiores quibusdam non illum, aut minima nemo, quod amet perspiciatis. Sint, nihil!
-                Repudiandae porro repellat corrupti, atque ad blanditiis perspiciatis delectus quasi quibusdam minus? Odit error voluptatibus doloribus quidem ab in animi, eum tempore minus, perspiciatis explicabo sequi maxime vero iste iusto.
-                Similique aspernatur, numquam delectus, quam ducimus dignissimos, officiis cum aliquid dolores mollitia atque ipsa nesciunt blanditiis? Ipsum delectus hic similique est maiores unde necessitatibus voluptatibus explicabo dolor. Illum, velit doloremque?
-                Assumenda cumque sed mollitia necessitatibus, commodi, dolor similique placeat qui impedit porro eos quae doloremque repellat, quos vel aliquam fuga amet molestiae rerum ea consequuntur praesentium. Veniam recusandae sint ullam?
+              <p className="text-justify">
+              The Chiggy Nsofor Foundation (CNF) was born out of a deep conviction that every underserved Nigerian deserves action. Founded in 2024 by Chiggy Nsofor, it began as a heartfelt response to the growing needs of individuals and  communities across Nigeria. What started as a personal passion to provide essential relief to families in need quickly grew into a passionate foundation, built on the belief that lasting change is possible when driven by purpose, integrity, and selfless service. From our very first outreach, we set out to do more than provide temporary assistance; we set out to transform lives.
               </p>
             </div>
           </div>
@@ -161,12 +158,12 @@ export default function AboutPage() {
             <div className="relative bg-cnf-surface">
               <CnfImage alt="How it started" className="h-auto w-full object-cover" width={1200} height={800} priority={false} sizes="(max-width: 1024px) 100vw, 50vw" src="/assets/howItStarted/howitstarted.jpg"/>
             </div>
-            <div className="rounded-3xl border border-cnf-primary/10 bg-cnf-cream p-7">
-              <p className="text-lg italic leading-8 text-cnf-ink">
-                “I kept asking myself: what if these young people simply had the tools? What if someone just showed up, consistently, with real skills, real support, and real belief in them? That question became CNF.”
-              </p>
-              <p className="mt-4 text-sm font-semibold uppercase tracking-[0.25em] text-cnf-primary">- Chiggy Nsofor, Founder & CEO</p>
+            <div>
+            <h2 className={`${fontDisplay.className} mt-16 text-balance text-5xl font-semibold leading-[1.08] text-cnf-accent`}>Where We Are Now</h2>
             </div>
+            <p className="justify-self-center text-justify">
+            Today, CNF is a growing force for good, actively reaching communities across Nigeria through our  three key programmes: Humanitarian Aid, Education, and Skill Acquisition. We have provided food relief to families in crisis, offset medical bills for patients in hospitals, enrolled out-of-school children back into education, empowered young people with skills for financial independence and promoted civic engagement. Our team of dedicated staff and volunteers continues to expand, and with our headquarters in Abuja, and an ever-growing network of partners and supporters,across the country, CNF remains firmly committed to its mission: providing opportunities and impacting lives.
+            </p>
           </div>
         </Container>
       </section>
@@ -176,9 +173,9 @@ export default function AboutPage() {
       <AboutCoreValuesSection />
 
 
-      <section className="bg-cnf-surface py-20 md:py-28">
+      <section className="bg-white py-20 md:py-28">
         <Container>
-          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cnf-primary">Governance</p>
+          <p className={primaryEyebrowClassName}>Governance</p>
           <h2 className={`${fontDisplay.className} mt-6 text-4xl font-semibold text-cnf-ink`}>Our Board of Trustees</h2>
           <p className="mt-4 max-w-3xl text-base leading-8 text-cnf-muted">
             CNF is governed by a dedicated board that brings together expertise in technology, finance, and organisational development to ensure accountability and strategic oversight.
@@ -207,13 +204,13 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="bg-cnf-cream py-20 md:py-28">
+      <section className="bg-cnf-primary-soft py-20 md:py-28">
         <Container width="full">
           <div
             className={`${pageContentWidthClass} grid grid-cols-1 items-start gap-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-16`}
           >
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cnf-primary">Meet the Founder</p>
+              <p className={primaryEyebrowClassName}>Meet the Founder</p>
               <h2 className={`${fontDisplay.className} mt-6 text-4xl font-semibold text-cnf-ink`}>Chiggy Nsofor, The Person Behind the Purpose</h2>
             <p className="mt-6 text-base leading-8 text-cnf-muted">
               Chiggy Nsofor is the Founder and CEO of the Chiggy Nsofor Foundation.
@@ -241,10 +238,11 @@ export default function AboutPage() {
                 </div>
               </PortraitLinkedInLink>
             </div>
-            <blockquote className="rounded-3xl border border-cnf-primary/10 bg-white p-6 shadow-sm md:p-7">
+            <blockquote className="rounded-3xl border border-cnf-primary/10 bg-white p-6 text-center shadow-sm md:p-7">
               <p className="text-base italic leading-7 text-cnf-ink">
-                “I kept asking myself: what if these young people simply had the tools? What if someone just showed up, consistently, with real skills, real support, and real belief in them? That question became CNF.”
+                “I believe something can be given by everyone to make other people’s lives better.
               </p>
+              <p className="text-base italic leading-7 text-cnf-ink">That&apos;s Impact!”</p>
               <footer className="mt-4 text-sm font-semibold uppercase tracking-[0.25em] text-cnf-primary">
                 — Chiggy Nsofor, Founder &amp; CEO
               </footer>
@@ -256,7 +254,7 @@ export default function AboutPage() {
 
       <section id="team" className="scroll-mt-28 py-20 md:py-28">
         <Container>
-          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cnf-primary">Our People</p>
+          <p className={primaryEyebrowClassName}>Our People</p>
           <h2 className={`${fontDisplay.className} mt-6 text-4xl font-semibold text-cnf-ink`}>The Team Making It Happen</h2>
           <p className="mt-4 max-w-3xl text-base leading-8 text-cnf-muted">
             CNF is powered by a small, dedicated team of professionals committed to delivering high-quality programmes at the community level every single day.
@@ -297,48 +295,6 @@ export default function AboutPage() {
       </section>
 
       <AboutAnnualReportSection />
-
-      <section className="py-20 md:py-28">
-        <Container>
-          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cnf-primary">Global Alignment</p>
-          <h2 className={`${fontDisplay.className} mt-6 text-4xl font-semibold text-cnf-ink`}>Our Work & the Sustainable Development Goals</h2>
-          <p className="mt-4 max-w-3xl text-base leading-8 text-cnf-muted">
-            CNF&apos;s four programme pillars are directly aligned with three United Nations Sustainable Development Goals.
-          </p>
-
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {sdgCards.map((card) => (<div key={card.number} className="rounded-[2rem] border border-cnf-border bg-white p-7 shadow-sm">
-                <div className="flex items-center gap-4">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-3xl bg-cnf-surface text-3xl font-semibold text-cnf-primary">
-                    {card.number}
-                  </div>
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.28em] text-cnf-primary">SDG {card.number}</p>
-                    <h3 className="mt-2 text-xl font-semibold text-cnf-ink">{card.title}</h3>
-                  </div>
-                </div>
-                <p className="mt-5 text-sm leading-7 text-cnf-muted">{card.description}</p>
-              </div>))}
-          </div>
-
-          <div className="mt-14 overflow-hidden rounded-[2rem] bg-cnf-primary px-8 py-12 text-white shadow-2xl shadow-black/10">
-            <div className="grid gap-8 lg:grid-cols-[1.6fr_0.8fr] lg:items-center">
-              <div>
-                <h3 className="text-3xl font-semibold">Believe in What We’re Building?</h3>
-                <p className="mt-4 max-w-2xl text-base leading-8 text-cnf-cream/80">
-                  Support CNF&apos;s work, through donations, partnerships, or volunteering, and help us reach 30,000 young Nigerians by 2030.
-                </p>
-              </div>
-              <div className="flex flex-col gap-3 sm:flex-row">
-                <DonatePayButton purpose="About page CTA">Donate Today</DonatePayButton>
-                <ButtonLink href="/get-involved" variant="secondary">
-                  Partner With Us
-                </ButtonLink>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
     </>);
 }
 
