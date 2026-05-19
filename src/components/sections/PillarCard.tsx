@@ -2,7 +2,7 @@
 
 import { CnfImage } from "@/components/ui/CnfImage";
 import Link from "next/link";
-import { openPaymentModal } from "@/lib/payments/payment-opener";
+import { DonatePayLinkButton } from "@/components/payments/DonatePayButton";
 import type { Pillar } from "@/constants/pillars";
 import { fontDisplay } from "@/lib/fonts";
 
@@ -40,14 +40,13 @@ export function PillarCard({ pillar, imagePriority }: Props) {
                 <div className="mt-6 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
                     {pillar.links.map((l) =>
                         isPaymentLink(l.href, l.label) ? (
-                            <button
+                            <DonatePayLinkButton
                                 key={l.href + l.label}
-                                type="button"
+                                purpose={l.label}
                                 className={linkClass}
-                                onClick={() => openPaymentModal({ label: l.label })}
                             >
                                 {l.label}
-                            </button>
+                            </DonatePayLinkButton>
                         ) : (
                             <Link key={l.href + l.label} className={linkClass} href={l.href}>
                                 {l.label}

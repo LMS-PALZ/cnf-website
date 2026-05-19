@@ -1,12 +1,13 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import Script from "next/script";
 import { useEffect, useId, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { FormField } from "@/components/forms/FormField";
 import { Button } from "@/components/ui/Button";
-import { korapayConfig } from "@/lib/payments/korapay-config";
+import { KORAPAY_COLLECTIONS_SCRIPT_URL, korapayConfig } from "@/lib/payments/korapay-config";
 import {
     formatAmountWithSeparators,
     formatNairaAmount,
@@ -17,13 +18,22 @@ import {
     koraPaymentFormSchema,
     type KoraPaymentFormValues,
 } from "@/lib/payments/payment-form-schema";
-import { useKoraPayment } from "./KoraPaymentContext";
+import type { PaymentIntent } from "@/lib/payments/payment-types";
 
 const inputClass =
     "w-full rounded-md border border-cnf-primary/20 bg-white px-3 py-2.5 text-base text-cnf-ink shadow-sm focus:border-cnf-primary focus:outline-none focus:ring-2 focus:ring-cnf-primary/20";
 
-export function KoraPaymentModal() {
-    const { isOpen, intent, closePayment } = useKoraPayment();
+type Props = {
+    open: boolean;
+    onClose: () => void;
+    intent?: PaymentIntent;
+};
+
+export function KoraPaymentScript() {
+    return <Script src={KORAPAY_COLLECTIONS_SCRIPT_URL} strategy="afterInteractive" />;
+}
+
+export function KoraPaymentModal({ open, onClose, intent }: Props) {
     const titleId = useId();
     const [isPaying, setIsPaying] = useState(false);
     const lockedAmount =
@@ -44,7 +54,7 @@ export function KoraPaymentModal() {
     });
 
     useEffect(() => {
-        if (!isOpen) {
+        if (!open) {
             return;
         }
         reset({
@@ -52,10 +62,10 @@ export function KoraPaymentModal() {
             email: "",
             ...(lockedAmount != null ? { amountNaira: lockedAmount } : {}),
         });
-    }, [isOpen, lockedAmount, reset]);
+    }, [open, lockedAmount, reset]);
 
     useEffect(() => {
-        if (!isOpen) {
+        if (!open) {
             return;
         }
         const prev = document.body.style.overflow;
@@ -63,22 +73,22 @@ export function KoraPaymentModal() {
         return () => {
             document.body.style.overflow = prev;
         };
-    }, [isOpen]);
+    }, [open]);
 
     useEffect(() => {
-        if (!isOpen) {
+        if (!open) {
             return;
         }
         const onKeyDown = (e: KeyboardEvent) => {
             if (e.key === "Escape") {
-                closePayment();
+                onClose();
             }
         };
         window.addEventListener("keydown", onKeyDown);
         return () => window.removeEventListener("keydown", onKeyDown);
-    }, [closePayment, isOpen]);
+    }, [onClose, open]);
 
-    if (!isOpen) {
+    if (!open) {
         return null;
     }
 
@@ -96,7 +106,7 @@ export function KoraPaymentModal() {
                 email: data.email,
                 metadata: intent?.label ? { purpose: intent.label } : undefined,
             });
-            closePayment();
+            onClose();
         } catch (error) {
             const message =
                 error instanceof Error ? error.message : "Could not start payment. Please try again.";
@@ -115,7 +125,7 @@ export function KoraPaymentModal() {
                 type="button"
                 className="absolute inset-0 bg-cnf-ink/70 backdrop-blur-[2px]"
                 aria-label="Close payment form"
-                onClick={closePayment}
+                onClick={onClose}
             />
 
             <div
@@ -127,7 +137,7 @@ export function KoraPaymentModal() {
                 <div className="relative px-10 text-center sm:px-12">
                     <button
                         type="button"
-                        onClick={closePayment}
+                        onClick={onClose}
                         className="absolute right-0 top-0 inline-flex h-10 w-10 items-center justify-center rounded-full border border-cnf-border text-cnf-muted transition-colors hover:bg-cnf-surface hover:text-cnf-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-primary"
                         aria-label="Close"
                     >
@@ -219,7 +229,7 @@ export function KoraPaymentModal() {
                     </p>
 
                     <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:justify-end">
-                        <Button type="button" variant="secondary" onClick={closePayment} disabled={isPaying}>
+                        <Button type="button" variant="secondary" onClick={onClose} disabled={isPaying}>
                             Cancel
                         </Button>
                         <Button type="submit" variant="accent" disabled={isPaying}>
