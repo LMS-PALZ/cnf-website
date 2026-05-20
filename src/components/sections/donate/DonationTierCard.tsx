@@ -54,9 +54,11 @@ export function DonationTierCard({ tier }: Props) {
         <p className={cn(fontDisplay.className, "text-3xl font-semibold leading-none md:text-4xl", v.headerAmount)}>
           {tier.amount}
         </p>
-        <p className={cn("mt-2 text-[11px] font-semibold uppercase tracking-[0.22em]", v.headerSubtitle)}>
-          {tier.amountSubtitle}
-        </p>
+        {tier.amountSubtitle ? (
+          <p className={cn("mt-2 text-[11px] font-semibold uppercase tracking-[0.22em]", v.headerSubtitle)}>
+            {tier.amountSubtitle}
+          </p>
+        ) : null}
       </div>
 
       

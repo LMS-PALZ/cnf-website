@@ -6,7 +6,7 @@ export function InspiredCtaSection() {
           <DonatePayButton variant="accent" size="md" purpose="Projects CTA">
             Donate today
           </DonatePayButton>
-          <ButtonLink href="/get-involved" variant="dark-outline" size="md">
+          <ButtonLink href="/get-involved" variant="primary" size="md">
             Get involved
           </ButtonLink>
         </>}/>);

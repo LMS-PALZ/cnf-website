@@ -17,8 +17,8 @@ export default function DonatePage() {
     return (
         <DonatePageClient>
             <DonateHero />
-            <HowToGiveSection />
             <YourImpactSection />
+            <HowToGiveSection />
             <WhereItGoesSection />
             <TrustStripSection />
             <TestimonialSection />

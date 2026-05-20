@@ -52,6 +52,7 @@ export function KoraPaymentModal({ open, onClose, intent }: Props) {
         defaultValues: {
             name: "",
             email: "",
+            amountNaira: undefined,
         },
     });
 
@@ -62,7 +63,7 @@ export function KoraPaymentModal({ open, onClose, intent }: Props) {
         reset({
             name: "",
             email: "",
-            ...(lockedAmount != null ? { amountNaira: lockedAmount } : {}),
+            amountNaira: lockedAmount,
         });
     }, [open, lockedAmount, reset]);
 
@@ -194,7 +195,7 @@ export function KoraPaymentModal({ open, onClose, intent }: Props) {
                                             className={inputClass}
                                             inputMode="numeric"
                                             autoComplete="off"
-                                            placeholder="e.g. 10,000"
+                                            placeholder="e.g. 150,000"
                                             value={
                                                 field.value != null &&
                                                 !Number.isNaN(field.value) &&

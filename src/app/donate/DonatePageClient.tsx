@@ -21,7 +21,16 @@ export function DonatePageClient({ children }: { children: ReactNode }) {
     return (
         <DonatePaymentProvider openPayment={openPayment}>
             {children}
-            <KoraPaymentModal open={open} onClose={() => setOpen(false)} intent={intent} />
+            <KoraPaymentModal
+                key={
+                    intent?.lockAmount && intent.amountNaira != null
+                        ? `locked-${intent.amountNaira}`
+                        : "custom-amount"
+                }
+                open={open}
+                onClose={() => setOpen(false)}
+                intent={intent}
+            />
         </DonatePaymentProvider>
     );
 }

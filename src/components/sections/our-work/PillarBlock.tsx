@@ -34,9 +34,13 @@ export function PillarBlock({ pillar, surface = "cream" }: Props) {
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-cnf-ink md:text-lg">
             {pillar.lead}
           </p>
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-cnf-muted md:text-base">
-            {pillar.body}
-          </p>
+          <div className="mt-4 max-w-2xl space-y-4 text-sm leading-relaxed text-cnf-muted md:text-base">
+            {(Array.isArray(pillar.body) ? pillar.body : [pillar.body]).map(
+              (paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ),
+            )}
+          </div>
 
           <div className="mt-8 grid gap-3">
             {pillar.features.map((f) => (<PillarFeatureRow key={f.title} title={f.title} description={f.description}/>))}

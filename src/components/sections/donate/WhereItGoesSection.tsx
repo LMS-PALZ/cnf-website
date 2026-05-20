@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { primaryEyebrowClassName } from "@/components/sections/home/homeEyebrow";
 import { CnfImage } from "@/components/ui/CnfImage";
 import { Container } from "@/components/ui/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
@@ -17,6 +18,7 @@ export function WhereItGoesSection() {
             <Container>
                 <SectionHeader
                     eyebrow="Where it goes"
+                    eyebrowClassName={primaryEyebrowClassName}
                     title="Your Donation Funds"
                     titleAccent="These Programmes"
                     accent="primary"

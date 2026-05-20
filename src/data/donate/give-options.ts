@@ -1,30 +1,51 @@
-export type GiveActionKind = "primary" | "outline" | "bank-card";
+export type BankDetailRow = {
+    label: string;
+    value: string;
+    copyable?: boolean;
+};
+
+export type GiveActionKind = "outline" | "bank-card";
+
 export type GiveOption = {
     id: string;
     title: string;
     description: string;
     action: GiveActionKind;
     ctaLabel?: string;
-    ctaHref?: string;
+    bankRows?: BankDetailRow[];
 };
+
 export const giveOptions: GiveOption[] = [
     {
-        id: "online",
-        title: "Give Online",
-        description: "The fastest and easiest way. Click below to donate securely via Korapay, card, bank transfer, or USSD all accepted.",
-        action: "primary",
-        ctaLabel: "Donate via Korapay",
+        id: "bank-ngn",
+        title: "Naira Bank Transfer",
+        description:
+            "Transfer in Nigerian naira using the details below. Thank you",
+        action: "bank-card",
+        bankRows: [
+            { label: "Bank", value: "Zenith Bank" },
+            { label: "Account Number", value: "1310103551", copyable: true },
+            { label: "Account Name", value: "Chiggy Nsofor Foundation" },
+        ],
     },
     {
-        id: "bank",
-        title: "Bank Transfer",
-        description: "Prefer to give directly? Use the account details below. Please send your name and \u201CDonation\u201D as the reference so we can acknowledge your gift.",
+        id: "bank-usd",
+        title: "USD Bank Transfer",
+        description:
+            "Transfer in US dollars using the details below. Thank you",
         action: "bank-card",
+        bankRows: [
+            { label: "Bank", value: "Providus Bank USD" },
+            { label: "Account Number", value: "1305291764", copyable: true },
+            { label: "Swift Code", value: "UMPLNGLA", copyable: true },
+            { label: "Account Name", value: "Chiggy Nsofor Foundation" },
+        ],
     },
     {
         id: "abroad",
         title: "Giving From Abroad",
-        description: "Based outside Nigeria? You can still give directly to CNF. Reach out to us and we will provide the most convenient payment option for your location.",
+        description:
+            "Based outside Nigeria? You can still give directly to CNF. Reach out to us and we will provide the most convenient payment option for your location.",
         action: "outline",
         ctaLabel: "Contact Us to Give",
     },

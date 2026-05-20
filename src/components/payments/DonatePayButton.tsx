@@ -35,9 +35,11 @@ function buildIntent(
     if (purpose) {
         intent.label = purpose;
     }
-    if (lockAmount && amountNaira != null) {
+    if (lockAmount === true && amountNaira != null) {
         intent.amountNaira = amountNaira;
         intent.lockAmount = true;
+    } else {
+        intent.lockAmount = false;
     }
     return Object.keys(intent).length > 0 ? intent : undefined;
 }

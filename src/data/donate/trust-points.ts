@@ -7,7 +7,7 @@ export const trustPoints: TrustPoint[] = [
     {
         id: "secure",
         title: "Secure Payments",
-        description: "All online donations processed securely via Korapay \u2014 a trusted Nigerian payment platform.",
+        description: "All online donations processed securely via Korapay, a trusted Nigerian payment platform.",
     },
     {
         id: "transparent",

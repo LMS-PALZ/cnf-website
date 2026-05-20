@@ -14,7 +14,7 @@ export type PillarBlockData = {
     heading: string;
     subheading: string;
     lead: string;
-    body: string;
+    body: string | readonly string[];
     features: PillarFeature[];
     cta: {
         label: string;
@@ -43,19 +43,25 @@ export const ourWorkPillars: PillarBlockData[] = [
         heading: "Skill Development",
         subheading: "Mentorship & Skill Scale-Up",
         lead: "Our flagship Skill Scale-Up (SSU) Programme equips underserved Nigerian youth aged 15 to 30 with practical, future-ready skills, and the support to turn those skills into real income.",
-        body: "Over 80% of Nigerian graduates enter the workforce without the digital skills today's economy demands. CNF's SSU Programme directly addresses this gap. The in-person programme is fully free; an online SSU tier with a ₦20,000 application fee is also available. Both are built around technical and character development, training participants across three tracks, Digital & Tech, Vocational Skills, and the Total Man Module, preparing them not just for jobs, but for sustainable livelihoods. What makes SSU different is what happens after training. Every graduate receives guaranteed post-training internship placement, startup support, and access to an alumni mentorship network. Our graduates don't just learn, they earn. The in-person SSU Programme is fully free to all participants. An online SSU tier is also available with a ₦20,000 application fee, making skills training accessible to Nigerians across the country, not just in Abuja.",
+        body: [
+            "Over 80% of Nigerian graduates enter the workforce without the digital skills today's economy demands. CNF's SSU Programme directly addresses this gap.",
+            "The programme is delivered through a highly subsidised in-person model, alongside an online SSU tier with an application fee ranging from ₦10,000 to ₦20,000, making quality skills training accessible to young Nigerians across the country.",
+            "Built around both technical and character development, SSU equips participants through three core tracks: Digital & Tech, Vocational Skills, and the Total Man Mentorship Programme. The goal is not only to prepare young people for employment, but to position them for sustainable livelihoods and long-term financial independence.",
+            "What sets SSU apart is its commitment beyond the classroom. Graduates gain access to post-training internship placements, startup support, and an alumni mentorship network designed to foster continuous growth and opportunity.",
+            "At SSU, our graduates do not just learn, they earn.",
+        ],
         features: [
             {
                 title: "Digital & Tech Track (Remote & On-site)",
-                description: "AI-assisted coding, prompt engineering, data analysis, web development, digital marketing, graphic design, content creation.",
+                description: "AI-assisted coding, virtual assistant, prompt engineering, data analysis, web development, digital marketing, graphic design, content creation.",
             },
             {
                 title: "Vocational Skills Track (Fully on-site)",
                 description: "Catering, hair styling, makeup artistry, videography, and more.",
             },
             {
-                title: "Total Man Module (Core, Weekly, On-site)",
-                description: "Character development, financial literacy, leadership, mentorship, and entrepreneurship.",
+                title: "Total Man Mentorship (Core, Remote, On-site)",
+                description: "Civic learning, financial literacy, leadership, mentorship, and entrepreneurship.",
             },
             {
                 title: "Post-Training Support",
@@ -63,7 +69,7 @@ export const ourWorkPillars: PillarBlockData[] = [
             },
         ],
         cta: { label: "See more about SSU", href: "/programmes/skill-scale-up" },
-        secondaryCta: { label: "See our projects", href: "/projects" },
+        secondaryCta: { label: "See us in action", href: "/projects" },
         mediaLabel: "SSU training and skills development",
         heroImageSrc: "/assets/ourWorkImgs/skillaqc.jpeg",
         reachStat: {
@@ -101,10 +107,10 @@ export const ourWorkPillars: PillarBlockData[] = [
             },
             {
                 title: "Civic Education Workshops",
-                description: "Building civic awareness, legal literacy, and community engagement among students.",
+                description: "Building civic awareness, legal literacy, and community engagement.",
             },
         ],
-        cta: { label: "See more about Education", href: "/projects#education" },
+        cta: { label: "See us in action", href: "/projects#education" },
         mediaLabel: "Education outreach in partner schools",
         heroImageSrc: "/assets/ourWorkImgs/education%20outreach.jpg",
         reachStat: {
@@ -114,9 +120,7 @@ export const ourWorkPillars: PillarBlockData[] = [
         },
         smallStats: [
             { value: "69+", label: "Scholarship beneficiaries funded" },
-            { value: "4", label: "States with active education outreach" },
-            { value: "12 Months", label: "School enrolment support" },
-            { value: "100%", label: "Free in-person programme" },
+            { value: "12 Months", label: "Renewable School enrolment support" },
         ],
         reversed: true,
     },
@@ -147,14 +151,14 @@ export const ourWorkPillars: PillarBlockData[] = [
             },
         ],
         cta: {
-            label: "See more about Humanitarian work",
+            label: "See us in action",
             href: "/projects#humanitarian",
         },
         mediaLabel: "Community aid and humanitarian outreach",
         heroImageSrc: "/assets/ourWorkImgs/community%20aid.jpg",
         reachStat: {
             eyebrow: "Humanitarian reach",
-            value: "4,000+",
+            value: "6,000+",
             description: "Beneficiaries across food relief, medical care, and emergency support",
         },
         smallStats: [

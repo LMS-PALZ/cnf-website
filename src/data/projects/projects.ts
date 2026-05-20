@@ -35,7 +35,7 @@ export const filterTabs: {
     { id: "all", label: "All projects" },
     { id: "skills", label: "Skill Development" },
     { id: "education", label: "Education" },
-    { id: "humanitarian", label: "Humanitarian Aid & Healthcare" },
+    { id: "humanitarian", label: "Humanitarian Aid" },
 ];
 
 export const projects: ProjectItem[] = [
@@ -105,7 +105,7 @@ export const projects: ProjectItem[] = [
         id: "heem-medical-mission",
         pillar: "humanitarian",
         theme: "humanitarian",
-        badge: "Humanitarian Aid & Healthcare",
+        badge: "Humanitarian Aid",
         title: "Community Medical Mission",
         description:
             "Free medical services, financial empowerment, scholarships, and food relief delivered to some of Abuja's most underserved communities.",
@@ -165,7 +165,7 @@ export const projects: ProjectItem[] = [
         id: "heem-kuchingoro",
         pillar: "humanitarian",
         theme: "humanitarian",
-        badge: "Humanitarian Aid & Healthcare",
+        badge: "Humanitarian Aid",
         title: "Medical Outreach at New Kuchingoro IDP Camp",
         description:
             "Free medical services, scholarships, and food relief delivered to displaced families at New Kuchingoro IDP Camp, meeting people in one of their most difficult moments.",
