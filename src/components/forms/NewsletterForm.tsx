@@ -2,9 +2,8 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useId } from "react";
 import { useForm } from "react-hook-form";
-import toast from "react-hot-toast";
 import { Button } from "@/components/ui/Button";
-import { postJson } from "@/lib/api/post-json";
+import { submitFormWithToast } from "@/lib/forms/submit-with-toast";
 import { type NewsletterInput, newsletterSchema } from "@/lib/forms/schemas";
 const inputClass = "w-full rounded-md border border-white/15 bg-white/5 px-4 py-3 text-base text-white placeholder:text-white/55 focus:border-cnf-accent focus:outline-none focus:ring-2 focus:ring-cnf-accent/30";
 export function NewsletterForm() {
@@ -14,20 +13,13 @@ export function NewsletterForm() {
         defaultValues: { name: "", email: "" },
     });
     const onSubmit = handleSubmit(async (data) => {
-        const res = await postJson("/api/forms/newsletter", data);
-        if (!res.ok) {
-            if (res.fieldErrors) {
-                for (const [key, messages] of Object.entries(res.fieldErrors)) {
-                    const msg = messages?.[0];
-                    if (msg)
-                        setError(key as keyof NewsletterInput, { message: msg });
-                }
-            }
-            toast.error(res.error);
-            return;
-        }
-        toast.success("Subscribed \u2014 thanks for joining the list.");
-        reset();
+        const ok = await submitFormWithToast({
+            url: "/api/forms/newsletter",
+            data,
+            setError,
+            successMessage: "Subscribed \u2014 thanks for joining the list.",
+        });
+        if (ok) reset();
     });
     return (<form noValidate onSubmit={onSubmit} className="space-y-3">
       

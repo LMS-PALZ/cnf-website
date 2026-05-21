@@ -202,7 +202,7 @@ Since full artifact CSS was not extracted:
 
 ```env
 NEXT_PUBLIC_SITE_NAME=Chiggy Nsofor Foundation
-NEXT_PUBLIC_SITE_URL=https://www.example.org
+NEXT_PUBLIC_SITE_URL=https://chiggynsoforfoundation.org
 
 # Form notifications (optional)
 # RESEND_API_KEY=

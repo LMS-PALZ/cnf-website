@@ -3,9 +3,8 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useId } from "react";
 import { useForm } from "react-hook-form";
-import toast from "react-hot-toast";
 import { Button } from "@/components/ui/Button";
-import { postJson } from "@/lib/api/post-json";
+import { submitFormWithToast } from "@/lib/forms/submit-with-toast";
 import { type ContactInput, contactSchema } from "@/lib/forms/schemas";
 import { FormInput } from "./FormInput";
 import { FormTextarea } from "./FormTextarea";
@@ -30,19 +29,13 @@ export function ContactForm() {
     });
 
     const onSubmit = handleSubmit(async (data) => {
-        const res = await postJson("/api/forms/contact", data);
-        if (!res.ok) {
-            if (res.fieldErrors) {
-                for (const [key, messages] of Object.entries(res.fieldErrors)) {
-                    const msg = messages?.[0];
-                    if (msg) setError(key as keyof ContactInput, { message: msg });
-                }
-            }
-            toast.error(res.error);
-            return;
-        }
-        toast.success("Thank you. Your message has been sent.");
-        reset();
+        const ok = await submitFormWithToast({
+            url: "/api/forms/contact",
+            data,
+            setError,
+            successMessage: "Thank you. Your message has been sent.",
+        });
+        if (ok) reset();
     });
 
     return (

@@ -1,6 +1,6 @@
 import { NextRequest } from "next/server";
-import { notifyInbox } from "@/lib/email";
 import { jsonError, jsonFieldErrors, jsonOk } from "@/lib/forms/api-response";
+import { deliverInboxNotification } from "@/lib/forms/deliver-inbox-notification";
 import { appendSubmission } from "@/lib/forms/persist";
 import { partnershipSchema } from "@/lib/forms/schemas";
 export async function POST(req: NextRequest) {
@@ -36,6 +36,12 @@ export async function POST(req: NextRequest) {
     ]
         .filter(Boolean)
         .join("\n");
-    await notifyInbox("New partnership enquiry (CNF website)", summary).catch(() => { });
+    const emailError = await deliverInboxNotification(
+        "partnership",
+        "New partnership enquiry (CNF website)",
+        summary,
+    );
+    if (emailError) return emailError;
+
     return jsonOk();
 }

@@ -2,29 +2,28 @@ export type CarouselSlide = {
     src: string;
     alt: string;
 };
+
+const LANDING_SLIDE_BASE = "/assets/Landing%20Page%20Slide%20Picture";
+
 export const HOME_HERO_CAROUSEL_SLIDES: CarouselSlide[] = [
     {
-        src: "/assets/carouselImgs/_Y4B0704.JPG",
-        alt: "Chiggy Nsofor Foundation programme participants and facilitators",
+        src: `${LANDING_SLIDE_BASE}/4A90624A-7C71-4242-B861-AA130B1E65E5_1_105_c.jpeg`,
+        alt: "CNF instructor teaching web development to students in a classroom",
     },
     {
-        src: "/assets/carouselImgs/IMG_4340%203.JPG",
-        alt: "Community skills training and engagement",
+        src: `${LANDING_SLIDE_BASE}/9C13BAEC-3A79-41D7-8359-F4A20D9637A9_1_105_c.jpeg`,
+        alt: "Participants learning cake decorating during a CNF skills workshop",
     },
     {
-        src: "/assets/carouselImgs/3M8A8624.JPEG",
-        alt: "CNF outreach and learning session",
+        src: `${LANDING_SLIDE_BASE}/IMG_2586%203.JPEG`,
+        alt: "CNF volunteer leading a makeup and beauty skills training session",
     },
     {
-        src: "/assets/carouselImgs/_Y4B0504.JPG",
-        alt: "Foundation activities with youth and community members",
+        src: `${LANDING_SLIDE_BASE}/Copy%20of%203M8A9074%202.JPG`,
+        alt: "CNF team sorting medical supplies for community health outreach",
     },
     {
-        src: "/assets/carouselImgs/DE8E3217-50A3-4574-BAA5-66B7E9974018_1_201_a.jpeg",
-        alt: "Hands-on skills development workshop",
-    },
-    {
-        src: "/assets/carouselImgs/3M8A8846.JPG",
-        alt: "CNF team and beneficiaries during a programme day",
+        src: `${LANDING_SLIDE_BASE}/IMG_2580%203.JPEG`,
+        alt: "Young woman in a CNF media skills studio photoshoot session",
     },
 ];

@@ -1,6 +1,6 @@
 import { NextRequest } from "next/server";
-import { notifyInbox } from "@/lib/email";
 import { jsonError, jsonFieldErrors, jsonOk } from "@/lib/forms/api-response";
+import { deliverInboxNotification } from "@/lib/forms/deliver-inbox-notification";
 import { appendSubmission } from "@/lib/forms/persist";
 import { newsletterSchema } from "@/lib/forms/schemas";
 export async function POST(req: NextRequest) {
@@ -22,6 +22,12 @@ export async function POST(req: NextRequest) {
         console.error("[forms/newsletter] persist", e);
         return jsonError("Could not save your subscription. Please try again.", 500);
     }
-    await notifyInbox("Newsletter signup (CNF website)", `Name: ${parsed.data.name}\nEmail: ${parsed.data.email}`).catch(() => { });
+    const emailError = await deliverInboxNotification(
+        "programmes",
+        "Newsletter signup (CNF website)",
+        `Name: ${parsed.data.name}\nEmail: ${parsed.data.email}`,
+    );
+    if (emailError) return emailError;
+
     return jsonOk();
 }

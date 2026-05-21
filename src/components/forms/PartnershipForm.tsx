@@ -2,9 +2,8 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useId } from "react";
 import { useForm } from "react-hook-form";
-import toast from "react-hot-toast";
 import { Button } from "@/components/ui/Button";
-import { postJson } from "@/lib/api/post-json";
+import { submitFormWithToast } from "@/lib/forms/submit-with-toast";
 import { type PartnershipInput, partnershipSchema, } from "@/lib/forms/schemas";
 import { FormCheckboxGroup } from "./FormCheckboxGroup";
 import { FormInput } from "./FormInput";
@@ -31,20 +30,14 @@ export function PartnershipForm() {
         },
     });
     const onSubmit = handleSubmit(async (data) => {
-        const res = await postJson("/api/forms/partnership", data);
-        if (!res.ok) {
-            if (res.fieldErrors) {
-                for (const [key, messages] of Object.entries(res.fieldErrors)) {
-                    const msg = messages?.[0];
-                    if (msg)
-                        setError(key as keyof PartnershipInput, { message: msg });
-                }
-            }
-            toast.error(res.error);
-            return;
-        }
-        toast.success("Thank you, our partnerships team will be in touch within 3 working days.");
-        reset();
+        const ok = await submitFormWithToast({
+            url: "/api/forms/partnership",
+            data,
+            setError,
+            successMessage:
+                "Thank you, our partnerships team will be in touch within 3 working days.",
+        });
+        if (ok) reset();
     });
     return (<form className="space-y-5" noValidate onSubmit={onSubmit} aria-busy={isSubmitting}>
       <div className="grid gap-5 sm:grid-cols-2">

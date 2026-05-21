@@ -2,9 +2,8 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useId } from "react";
 import { useForm } from "react-hook-form";
-import toast from "react-hot-toast";
 import { Button } from "@/components/ui/Button";
-import { postJson } from "@/lib/api/post-json";
+import { submitFormWithToast } from "@/lib/forms/submit-with-toast";
 import { type CareersProfileInput, careersProfileSchema, } from "@/lib/forms/schemas";
 import { FormInput } from "./FormInput";
 import { FormSelect } from "./FormSelect";
@@ -33,20 +32,13 @@ export function CareersProfileForm() {
         },
     });
     const onSubmit = handleSubmit(async (data) => {
-        const res = await postJson("/api/forms/careers-profile", data);
-        if (!res.ok) {
-            if (res.fieldErrors) {
-                for (const [key, messages] of Object.entries(res.fieldErrors)) {
-                    const msg = messages?.[0];
-                    if (msg)
-                        setError(key as keyof CareersProfileInput, { message: msg });
-                }
-            }
-            toast.error(res.error);
-            return;
-        }
-        toast.success("Thanks, we'll keep your profile on file for the right role.");
-        reset();
+        const ok = await submitFormWithToast({
+            url: "/api/forms/careers-profile",
+            data,
+            setError,
+            successMessage: "Thanks, we'll keep your profile on file for the right role.",
+        });
+        if (ok) reset();
     });
     return (<form className="space-y-5" noValidate onSubmit={onSubmit} aria-busy={isSubmitting}>
       <div className="grid gap-5 sm:grid-cols-2">

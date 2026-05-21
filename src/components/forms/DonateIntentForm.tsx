@@ -1,9 +1,8 @@
 "use client";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Controller, useForm } from "react-hook-form";
-import toast from "react-hot-toast";
 import { FormField } from "@/components/forms/FormField";
-import { postJson } from "@/lib/api/post-json";
+import { submitFormWithToast } from "@/lib/forms/submit-with-toast";
 import { type DonateIntentInput, donateIntentSchema } from "@/lib/forms/schemas";
 const inputClass = "w-full rounded-md border border-cnf-primary/20 bg-white px-3 py-2.5 text-base text-cnf-ink shadow-sm focus:border-cnf-primary focus:outline-none focus:ring-2 focus:ring-cnf-primary/20";
 export function DonateIntentForm() {
@@ -19,21 +18,13 @@ export function DonateIntentForm() {
         },
     });
     const onSubmit = handleSubmit(async (data) => {
-        const res = await postJson("/api/forms/donate-intent", data);
-        if (!res.ok) {
-            if (res.fieldErrors) {
-                for (const [key, messages] of Object.entries(res.fieldErrors)) {
-                    const msg = messages?.[0];
-                    if (msg) {
-                        setError(key as keyof DonateIntentInput, { message: msg });
-                    }
-                }
-            }
-            toast.error(res.error);
-            return;
-        }
-        toast.success("Thank you. Our team will follow up shortly.");
-        reset({ consent: false });
+        const ok = await submitFormWithToast({
+            url: "/api/forms/donate-intent",
+            data,
+            setError,
+            successMessage: "Thank you. Our team will follow up shortly.",
+        });
+        if (ok) reset({ consent: false });
     });
     return (<form className="space-y-6" noValidate onSubmit={onSubmit} aria-busy={isSubmitting}>
       <FormField id="donate-name" label="Full name" error={errors.name?.message}>

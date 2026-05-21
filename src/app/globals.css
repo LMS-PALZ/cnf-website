@@ -5,6 +5,12 @@
   --foreground: #0c0f0d;
   --toast-bg: #ffffff;
   --toast-fg: #0c0f0d;
+  --toast-success-bg: #ecf8ee;
+  --toast-success-fg: #0c0f0d;
+  --toast-success-border: #0b693a;
+  --toast-error-bg: #fef2f2;
+  --toast-error-fg: #0c0f0d;
+  --toast-error-border: #b91c1c;
 }
 
 @theme inline {

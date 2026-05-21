@@ -8,7 +8,7 @@ import {
     homeSoftSectionClassName,
 } from "@/components/sections/home/homeEyebrow";
 import { Stat } from "@/components/ui/Stat";
-import { HOME_HERO_CAROUSEL_SLIDES } from "@/data/home/carousel-images";
+import { IMPACT_GALLERY_SLIDES } from "@/data/home/impact-gallery";
 import { impactStats } from "@/data/home/flagship";
 import { ImpactGallery } from "./ImpactGallery";
 
@@ -62,7 +62,7 @@ export function ImpactSection() {
                 </Reveal>
 
                 <Reveal direction="right" delay={1}>
-                    <ImpactGallery slides={HOME_HERO_CAROUSEL_SLIDES} />
+                    <ImpactGallery slides={IMPACT_GALLERY_SLIDES} />
                 </Reveal>
             </div>
         </Section>

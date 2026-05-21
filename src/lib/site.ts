@@ -1,12 +1,22 @@
+/** Canonical live site (matches https://chiggynsoforfoundation.org/). */
+export const SITE_PRODUCTION_URL = "https://chiggynsoforfoundation.org";
+
 export const site = {
     name: process.env.NEXT_PUBLIC_SITE_NAME ?? "Chiggy Nsofor Foundation",
     shortName: "CNF",
     tagline: "Skills, Education & Humanitarian Aid",
     description: "A Nigerian nonprofit advancing skills, education, and humanitarian aid in communities across Nigeria.",
     footerTagline: "Providing Opportunities, Impacting Lives.\nA Nigerian NGO building a future where no underserved person is left behind.",
-    url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+    url:
+        process.env.NEXT_PUBLIC_SITE_URL ??
+        (process.env.NODE_ENV === "production"
+            ? SITE_PRODUCTION_URL
+            : "http://localhost:3000"),
     contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "info@chiggynsoforfoundation.org",
     partnershipsEmail: "partnerships@chiggynsoforfoundation.org",
+    programmesEmail: "programmes@chiggynsoforfoundation.org",
+    /** Domain verified in Resend for outbound form notification emails. */
+    emailSendingDomain: "chiggynsoforfoundation.org",
     phone: "+234 903 459 9227",
     address: "16b Vaal Street, Maitama, Abuja",
     registrationLine: "CAC No. 7511818",
