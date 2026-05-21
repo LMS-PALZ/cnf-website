@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { parseNewsBody } from "@/data/news";
 
-const PREVIEW_PARAGRAPH_COUNT = 3;
+const PREVIEW_PARAGRAPH_COUNT = 5;
 
 type Props = {
     body: string;
