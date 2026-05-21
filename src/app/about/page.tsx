@@ -156,7 +156,15 @@ export default function AboutPage() {
 
           <div className="space-y-8">
             <div className="relative bg-cnf-surface">
-              <CnfImage alt="How it started" className="h-auto w-full object-cover" width={1200} height={800} priority={false} sizes="(max-width: 1024px) 100vw, 50vw" src="/assets/howItStarted/howitstarted.jpg"/>
+              <CnfImage
+                alt="Chiggy Nsofor Foundation team gathered at the training hub for a group photo"
+                className="h-auto w-full object-cover"
+                width={1200}
+                height={800}
+                priority={false}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                src="/assets/whoweare/whoweare1.jpg"
+              />
             </div>
             <div>
             <h2 className={`${fontDisplay.className} mt-16 text-balance text-5xl font-semibold leading-[1.08] text-cnf-accent`}>Where We Are Now</h2>

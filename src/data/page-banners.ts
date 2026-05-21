@@ -8,8 +8,9 @@ export type PageBannerImage = {
 /** Background photos for inner-page banners (not home hero). */
 export const pageBannerImages = {
     about: {
-        src: "/assets/howItStarted/howitstarted.jpg",
-        alt: "Chiggy Nsofor Foundation founder and community outreach",
+        src: "/assets/whoweare/whoweare2.jpg",
+        alt: "Chiggy Nsofor Foundation team members in branded shirts at the training hub",
+        objectPosition: "50% 35%",
     },
     ourWork: {
         src: "/assets/ourWorkImgs/skillaqc.jpeg",
