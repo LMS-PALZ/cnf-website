@@ -10,7 +10,12 @@ export function TestimonialCard({ testimonial }: Props) {
         “{testimonial.quote}”
       </blockquote>
       <figcaption className="flex items-center gap-3">
-        <Avatar name={testimonial.name} tone={testimonial.pillar} size="md"/>
+        <Avatar
+          name={testimonial.name}
+          src={testimonial.imageSrc}
+          tone={testimonial.pillar}
+          size="md"
+        />
         <div className="flex flex-col">
           <span className="text-sm font-semibold text-cnf-ink">{testimonial.name}</span>
           <span className="text-xs text-cnf-muted">{testimonial.role}</span>

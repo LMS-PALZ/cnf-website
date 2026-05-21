@@ -4,7 +4,12 @@ export type Testimonial = {
     name: string;
     role: string;
     pillar: "skills" | "education" | "humanitarian";
+    /** Round portrait for the testimonial card. */
+    imageSrc?: string;
 };
+
+const TESTIMONIAL_BASE = "/assets/TESTIMONIAL";
+
 export const testimonials: Testimonial[] = [
     {
         id: "toru-dada",
@@ -12,6 +17,7 @@ export const testimonials: Testimonial[] = [
         name: "Rev. Tony-Dada Aderomose",
         role: "Founder, St. Phillip's Academy",
         pillar: "education",
+        imageSrc: `${TESTIMONIAL_BASE}/Rev%20Tony-Dada%20Aderomose-%20Founder%20of%20St%20Philips%20Academy.jpg`,
     },
     {
         id: "kuje-matron",
@@ -26,6 +32,7 @@ export const testimonials: Testimonial[] = [
         name: "Hafsatu Usman",
         role: "Humanitarian Aid Beneficiary",
         pillar: "skills",
+        imageSrc: `${TESTIMONIAL_BASE}/Hafsatu%20Usman.jpg`,
     },
     {
         id: "nana-firdausi",
@@ -33,12 +40,14 @@ export const testimonials: Testimonial[] = [
         name: "Nana Firdausi",
         role: "Skill Scale-Up Beneficiary",
         pillar: "education",
+        imageSrc: `${TESTIMONIAL_BASE}/Nana%20Firdausi.jpg`,
     },
     {
-        id: "winner-emmanuel ",
-        quote: "Chiggy Nsofor Foundation, thank you for changing my life. Your support made my digital marketing education possible, and I'm forever grateful. Because of you, I’ve learned valuable skills and gained confidence to build a better future. I promise to work hard and help others too. God bless you for all the good you do.",        
+        id: "winner-emmanuel",
+        quote: "Chiggy Nsofor Foundation, thank you for changing my life. Your support made my digital marketing education possible, and I'm forever grateful. Because of you, I’ve learned valuable skills and gained confidence to build a better future. I promise to work hard and help others too. God bless you for all the good you do.",
         name: "Winner Emmanuel",
         role: "Skill Scale-Up Beneficiary",
         pillar: "education",
+        imageSrc: `${TESTIMONIAL_BASE}/Winner%20Emmanuel.jpg`,
     },
 ];
