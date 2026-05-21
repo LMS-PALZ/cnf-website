@@ -9,6 +9,7 @@ const staticRoutes = [
     "/programmes/skill-scale-up",
     "/news",
     "/donate",
+    "/contact",
     "/get-involved/partnership",
     "/get-involved/volunteer",
     "/get-involved/careers",

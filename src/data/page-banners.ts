@@ -36,4 +36,9 @@ export const pageBannerImages = {
         alt: "CNF Skill Scale-Up classroom training with instructor and students coding on laptops",
         objectPosition: "50% 22%",
     },
+    contact: {
+        src: "/assets/contact/contacthand.jpg",
+        alt: "Person holding a phone, representing ways to reach the Chiggy Nsofor Foundation",
+        objectPosition: "50% 40%",
+    },
 } as const satisfies Record<string, PageBannerImage>;

@@ -2,6 +2,7 @@ export { HomePageSkeleton } from "./HomePageSkeleton";
 export { AboutPageSkeleton } from "./AboutPageSkeleton";
 export { OurWorkPageSkeleton } from "./OurWorkPageSkeleton";
 export { ProjectsPageSkeleton } from "./ProjectsPageSkeleton";
+export { ContactPageSkeleton } from "./ContactPageSkeleton";
 export { GetInvolvedPageSkeleton } from "./GetInvolvedPageSkeleton";
 export { GetInvolvedSubPageSkeleton } from "./GetInvolvedSubPageSkeleton";
 export { DonatePageSkeleton } from "./DonatePageSkeleton";

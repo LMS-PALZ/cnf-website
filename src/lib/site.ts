@@ -45,5 +45,6 @@ export const mainNav: NavItem[] = [
             { href: "/get-involved/careers", label: "Careers" },
         ],
     },
+    { href: "/contact", label: "Contact" },
     { href: "/news", label: "News" },
 ];

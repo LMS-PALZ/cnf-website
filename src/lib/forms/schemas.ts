@@ -92,6 +92,17 @@ export const newsletterSchema = z.object({
     name: nonEmpty("Name"),
     email: z.string().trim().email("Enter a valid email"),
 });
+export const contactSchema = z.object({
+    name: nonEmpty("Name"),
+    email: z.string().trim().email("Enter a valid email"),
+    phone: nonEmpty("Phone", 40),
+    subject: nonEmpty("Subject", 200),
+    message: z
+        .string()
+        .trim()
+        .min(10, "Please enter your message (10+ characters)")
+        .max(5000),
+});
 export const careersExpertiseValues = [
     "programme-management",
     "operations",
@@ -122,6 +133,7 @@ export type VolunteerInput = z.infer<typeof volunteerSchema>;
 export type CareersNewsletterInput = z.infer<typeof careersNewsletterSchema>;
 export type CareersProfileInput = z.infer<typeof careersProfileSchema>;
 export type NewsletterInput = z.infer<typeof newsletterSchema>;
+export type ContactInput = z.infer<typeof contactSchema>;
 export function emptyToUndefined(body: Record<string, unknown>, keys: string[]): Record<string, unknown> {
     const out = { ...body };
     for (const key of keys) {

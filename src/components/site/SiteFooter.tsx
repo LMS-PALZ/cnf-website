@@ -29,6 +29,7 @@ const orgLinks = [
     { href: "/get-involved/partnership", label: "Partnership" },
     { href: "/get-involved/volunteer", label: "Volunteer" },
     { href: "/get-involved/careers", label: "Careers" },
+    { href: "/contact", label: "Contact" },
     { href: "/news", label: "News" },
 ];
 

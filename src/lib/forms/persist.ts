@@ -1,6 +1,13 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-export type SubmissionKind = "donate-intent" | "partnership" | "volunteer" | "careers-newsletter" | "careers-profile" | "newsletter";
+export type SubmissionKind =
+    | "donate-intent"
+    | "partnership"
+    | "volunteer"
+    | "careers-newsletter"
+    | "careers-profile"
+    | "newsletter"
+    | "contact";
 export async function appendSubmission(kind: SubmissionKind, payload: Record<string, unknown>): Promise<void> {
     const dir = path.join(process.cwd(), "data");
     await fs.mkdir(dir, { recursive: true });
