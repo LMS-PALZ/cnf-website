@@ -20,15 +20,30 @@ export const donateConfig = {
         bankName: process.env.NEXT_PUBLIC_DONATE_BANK_NAME ?? "Add Bank Name",
     },
 } as const;
-export type NavItem = {
+export type NavChildItem = {
     href: string;
     label: string;
 };
+
+export type NavItem = {
+    href: string;
+    label: string;
+    children?: NavChildItem[];
+};
+
 export const mainNav: NavItem[] = [
     { href: "/about", label: "About Us" },
     { href: "/our-work", label: "Our Work" },
     { href: "/programmes/skill-scale-up", label: "SSU Programme" },
     { href: "/projects", label: "Projects" },
-    { href: "/get-involved", label: "Get Involved" },
+    {
+        href: "/get-involved",
+        label: "Get Involved",
+        children: [
+            { href: "/get-involved/partnership", label: "Partnership" },
+            { href: "/get-involved/volunteer", label: "Volunteer" },
+            { href: "/get-involved/careers", label: "Careers" },
+        ],
+    },
     { href: "/news", label: "News" },
 ];

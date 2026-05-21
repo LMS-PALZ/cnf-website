@@ -20,13 +20,13 @@ export const joinOptions: JoinOption[] = [
         title: "Partner with us",
         description: "Whether you're a business, institution, or community leader, strategic partnerships help us scale our impact further and faster.",
         ctaLabel: "Become a partner",
-        href: "/get-involved#partner",
+        href: "/get-involved/partnership",
     },
     {
         id: "volunteer",
         title: "Volunteer",
         description: "Give your time and skills. From programme delivery to event support to communications, there's a role for every willing hand.",
         ctaLabel: "Volunteer",
-        href: "/get-involved#volunteer",
+        href: "/get-involved/volunteer",
     },
 ];

@@ -36,7 +36,8 @@ export const pillars: Pillar[] = [
         imageAlt: "Children studying together at desks in a classroom",
         links: [
             { href: "/projects#education", label: "Education pillar details" },
-            { href: "/get-involved", label: "Volunteer or partner" },
+            { href: "/get-involved/volunteer", label: "Volunteer" },
+            { href: "/get-involved/partnership", label: "Partner with CNF" },
         ],
     },
     {

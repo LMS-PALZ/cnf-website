@@ -6,39 +6,10 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useNavigationLoading } from "@/components/providers/NavigationLoadingProvider";
 import { NavSkeleton } from "@/components/skeletons/NavSkeleton";
+import { NavMenuItem } from "@/components/site/NavMenuItem";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Container } from "@/components/ui/Container";
 import { mainNav, site } from "@/lib/site";
-
-function NavLink({
-    href,
-    label,
-    onNavigate,
-}: {
-    href: string;
-    label: string;
-    onNavigate: () => void;
-}) {
-    const pathname = usePathname();
-    const active =
-        pathname === href || (href !== "/" && pathname.startsWith(href));
-
-    return (
-        <Link
-            className={`rounded-md px-2.5 py-2 text-base font-medium tracking-tight transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-primary lg:text-lg ${
-                active ? "text-cnf-primary" : "text-cnf-muted hover:text-cnf-primary"
-            }`}
-            href={href}
-            onClick={() => {
-                if (href !== pathname) {
-                    onNavigate();
-                }
-            }}
-        >
-            {label}
-        </Link>
-    );
-}
 
 export function SiteHeader() {
     const [open, setOpen] = useState(false);
@@ -81,10 +52,9 @@ export function SiteHeader() {
                         <NavSkeleton count={mainNav.length} />
                     ) : (
                         mainNav.map((item) => (
-                            <NavLink
+                            <NavMenuItem
                                 key={item.href}
-                                href={item.href}
-                                label={item.label}
+                                item={item}
                                 onNavigate={startNavigation}
                             />
                         ))
@@ -141,11 +111,11 @@ export function SiteHeader() {
                                 <NavSkeleton count={mainNav.length} stacked />
                             ) : (
                                 mainNav.map((item) => (
-                                    <NavLink
+                                    <NavMenuItem
                                         key={item.href}
-                                        href={item.href}
-                                        label={item.label}
+                                        item={item}
                                         onNavigate={startNavigation}
+                                        stacked
                                     />
                                 ))
                             )}

@@ -10,7 +10,7 @@ export function ReadyToSupportSection() {
           <DonatePayButton variant="accent" size="md" purpose="Support our work">
             Donate today
           </DonatePayButton>
-          <ButtonLink href="/get-involved#partner" variant="dark-outline" size="md">
+          <ButtonLink href="/get-involved/partnership" variant="dark-outline" size="md">
             Become a partner
           </ButtonLink>
         </>}/>);

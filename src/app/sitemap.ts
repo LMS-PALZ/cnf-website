@@ -9,7 +9,9 @@ const staticRoutes = [
     "/programmes/skill-scale-up",
     "/news",
     "/donate",
-    "/get-involved",
+    "/get-involved/partnership",
+    "/get-involved/volunteer",
+    "/get-involved/careers",
     "/privacy",
 ];
 export default function sitemap(): MetadataRoute.Sitemap {

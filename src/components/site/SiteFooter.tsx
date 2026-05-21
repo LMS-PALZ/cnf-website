@@ -26,7 +26,9 @@ const orgLinks = [
     { href: "/about", label: "About Us" },
     { href: "/programmes/skill-scale-up", label: "SSU Programme" },
     { href: "/projects", label: "Projects" },
-    { href: "/get-involved", label: "Get Involved" },
+    { href: "/get-involved/partnership", label: "Partnership" },
+    { href: "/get-involved/volunteer", label: "Volunteer" },
+    { href: "/get-involved/careers", label: "Careers" },
     { href: "/news", label: "News" },
 ];
 
