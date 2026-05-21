@@ -5,9 +5,14 @@ import { CnfImage } from "@/components/ui/CnfImage";
 type Props = {
     src: string;
     alt: string;
+    objectPosition?: string;
 };
 
-export function PageBannerBackground({ src, alt }: Props) {
+export function PageBannerBackground({
+    src,
+    alt,
+    objectPosition = "center",
+}: Props) {
     return (
         <div className="absolute inset-0 bg-cnf-surface" aria-hidden>
             <CnfImage
@@ -16,7 +21,8 @@ export function PageBannerBackground({ src, alt }: Props) {
                 fill
                 priority
                 sizes="100vw"
-                className="object-cover object-center"
+                className="object-cover"
+                style={{ objectPosition }}
             />
 
             <div

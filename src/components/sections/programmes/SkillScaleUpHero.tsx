@@ -1,6 +1,6 @@
 import { PageBanner } from "@/components/sections/PageBanner";
-import { ButtonLink } from "@/components/ui/ButtonLink";
 import { pageBannerImages } from "@/data/page-banners";
+import { ssuHero } from "@/data/programmes/skill-scale-up";
 
 export function SkillScaleUpHero() {
     return (
@@ -10,21 +10,13 @@ export function SkillScaleUpHero() {
             image={pageBannerImages.skillScaleUp}
             title={
                 <>
-                    Skill Scale-Up
+                    {ssuHero.title.line1}
                     <br />
-                    <span className="text-cnf-accent">Programme.</span>
+                    {ssuHero.title.line2}{" "}
+                    <span className="text-cnf-accent">{ssuHero.title.accent}</span>
                 </>
             }
-            description="Cohort-based training for Nigerian youth aged 15 to 30 — digital skills, vocational trades, and the support to turn learning into real income."
-        >
-            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                <ButtonLink href="/get-involved#volunteer" variant="accent" size="lg">
-                    Apply or volunteer
-                </ButtonLink>
-                <ButtonLink href="/our-work#skills" variant="dark-outline" size="lg">
-                    View skills pillar
-                </ButtonLink>
-            </div>
-        </PageBanner>
+            description={ssuHero.description}
+        />
     );
 }

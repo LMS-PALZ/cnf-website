@@ -1,6 +1,8 @@
 export type PageBannerImage = {
     src: string;
     alt: string;
+    /** CSS object-position for banner crop focal point (default: center) */
+    objectPosition?: string;
 };
 
 /** Background photos for inner-page banners (not home hero). */
@@ -30,7 +32,8 @@ export const pageBannerImages = {
         alt: "CNF education outreach in partner schools",
     },
     skillScaleUp: {
-        src: "/assets/carouselImgs/3M8A8624.JPEG",
-        alt: "Skill Scale-Up training session with youth participants",
+        src: "/assets/ssu/ssuclass.jpeg",
+        alt: "CNF Skill Scale-Up classroom training with instructor and students coding on laptops",
+        objectPosition: "50% 22%",
     },
 } as const satisfies Record<string, PageBannerImage>;

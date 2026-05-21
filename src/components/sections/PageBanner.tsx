@@ -37,7 +37,11 @@ export function PageBanner({
             data-cnf-skip-enter="true"
             className={cn(PAGE_BANNER_SHELL, className)}
         >
-            <PageBannerBackground src={image.src} alt={image.alt} />
+            <PageBannerBackground
+                src={image.src}
+                alt={image.alt}
+                objectPosition={image.objectPosition}
+            />
 
             <div className={PAGE_BANNER_INNER}>
                 <nav
