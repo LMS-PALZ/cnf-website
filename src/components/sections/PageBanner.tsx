@@ -40,6 +40,7 @@ export function PageBanner({
             <PageBannerBackground
                 src={image.src}
                 alt={image.alt}
+                objectFit={image.objectFit}
                 objectPosition={image.objectPosition}
             />
 

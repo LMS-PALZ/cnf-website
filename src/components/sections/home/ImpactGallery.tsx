@@ -2,9 +2,10 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi2";
-import { ImageMagnifier } from "@/components/ui/ImageMagnifier";
+import { CnfImage } from "@/components/ui/CnfImage";
 import { cn } from "@/lib/cn";
 import type { CarouselSlide } from "@/data/home/carousel-images";
+import { coverImageTopClass, coverImageTopPosition } from "@/lib/image-fit";
 
 const AUTOPLAY_MS = 4500;
 const SWIPE_THRESHOLD_PX = 48;
@@ -17,7 +18,6 @@ type Props = {
 
 export function ImpactGallery({ slides }: Props) {
     const [index, setIndex] = useState(0);
-    const [exploring, setExploring] = useState(false);
     const touchStartX = useRef<number | null>(null);
     const count = slides.length;
 
@@ -33,12 +33,12 @@ export function ImpactGallery({ slides }: Props) {
     const goPrev = useCallback(() => goTo(index - 1), [goTo, index]);
 
     useEffect(() => {
-        if (count <= 1 || exploring) return;
+        if (count <= 1) return;
         const id = window.setInterval(() => {
             setIndex((i) => (i + 1) % count);
         }, AUTOPLAY_MS);
         return () => window.clearInterval(id);
-    }, [count, exploring]);
+    }, [count]);
 
     const onTouchStart = (event: React.TouchEvent) => {
         touchStartX.current = event.touches[0]?.clientX ?? null;
@@ -47,7 +47,7 @@ export function ImpactGallery({ slides }: Props) {
     const onTouchEnd = (event: React.TouchEvent) => {
         const start = touchStartX.current;
         touchStartX.current = null;
-        if (start == null || exploring) return;
+        if (start == null) return;
         const end = event.changedTouches[0]?.clientX;
         if (end == null) return;
         const delta = end - start;
@@ -67,7 +67,7 @@ export function ImpactGallery({ slides }: Props) {
             aria-label="Impact gallery"
         >
             <div
-                className={cn("relative overflow-visible", CAROUSEL_HEIGHT)}
+                className={cn("relative overflow-hidden", CAROUSEL_HEIGHT)}
                 onTouchStart={onTouchStart}
                 onTouchEnd={onTouchEnd}
             >
@@ -83,13 +83,16 @@ export function ImpactGallery({ slides }: Props) {
                         aria-hidden={i !== index}
                     >
                         {i === index ? (
-                            <ImageMagnifier
-                                src={slide.src}
-                                alt={slide.alt}
-                                className={CAROUSEL_HEIGHT}
-                                zoom={2.75}
-                                onExploreChange={setExploring}
-                            />
+                            <div className="relative h-full w-full overflow-hidden bg-cnf-surface">
+                                <CnfImage
+                                    src={slide.src}
+                                    alt={slide.alt}
+                                    fill
+                                    sizes="(max-width: 1024px) 100vw, 50vw"
+                                    className={coverImageTopClass}
+                                    style={{ objectPosition: coverImageTopPosition }}
+                                />
+                            </div>
                         ) : null}
                     </div>
                 ))}
@@ -136,7 +139,7 @@ export function ImpactGallery({ slides }: Props) {
             ) : null}
 
             <p className="sr-only" aria-live="polite">
-                {active.alt}. Image {index + 1} of {count}. Hover or drag to magnify.
+                {active.alt}. Image {index + 1} of {count}.
             </p>
         </div>
     );

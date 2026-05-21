@@ -71,7 +71,7 @@ export const ourWorkPillars: PillarBlockData[] = [
         cta: { label: "See more about SSU", href: "/programmes/skill-scale-up" },
         secondaryCta: { label: "See us in action", href: "/projects" },
         mediaLabel: "SSU training and skills development",
-        heroImageSrc: "/assets/ourWorkImgs/skillaqc.jpeg",
+        heroImageSrc: "/assets/ourWorkImgs/skill1.JPEG",
         reachStat: {
             eyebrow: "SSU programme results",
             value: "86%",
@@ -112,7 +112,7 @@ export const ourWorkPillars: PillarBlockData[] = [
         ],
         cta: { label: "See us in action", href: "/projects#education" },
         mediaLabel: "Education outreach in partner schools",
-        heroImageSrc: "/assets/ourWorkImgs/education%20outreach.jpg",
+        heroImageSrc: "/assets/ourWorkImgs/ourworkeducation.jpeg",
         reachStat: {
             eyebrow: "Education reach",
             value: "1,000+",
@@ -155,7 +155,7 @@ export const ourWorkPillars: PillarBlockData[] = [
             href: "/projects#humanitarian",
         },
         mediaLabel: "Community aid and humanitarian outreach",
-        heroImageSrc: "/assets/ourWorkImgs/community%20aid.jpg",
+        heroImageSrc: "/assets/ourWorkImgs/ourworkhumanitarian.jpeg",
         reachStat: {
             eyebrow: "Humanitarian reach",
             value: "6,000+",

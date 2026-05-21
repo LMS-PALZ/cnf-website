@@ -16,7 +16,7 @@ const values = [
     {
         title: "People First",
         description:
-            "We are stronger together — our team, our communities, our beneficiaries. No one is left behind; no one works alone.",
+            "We are stronger together, our team, our communities, our beneficiaries. No one is left behind; no one works alone.",
     },
     {
         title: "Growth",
@@ -31,7 +31,7 @@ const values = [
     {
         title: "Integrity",
         description:
-            "We do the right thing, always — with our resources, our people, and our beneficiaries.",
+            "We do the right thing, always, with our resources, our people, and our beneficiaries.",
     },
 ] as const;
 

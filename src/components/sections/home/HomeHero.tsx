@@ -6,6 +6,7 @@ import { cn } from "@/lib/cn";
 import { fontDisplay } from "@/lib/fonts";
 import { homeEyebrowClassName } from "@/components/sections/home/homeEyebrow";
 import { HOME_HERO_CAROUSEL_SLIDES } from "@/data/home/carousel-images";
+import { coverImageTopClass, coverImageTopPosition } from "@/lib/image-fit";
 const AUTOPLAY_INTERVAL_MS = 3600;
 const SLIDE_CROSSFADE_MS = 550;
 type Props = {
@@ -37,7 +38,16 @@ export function HomeHero({ eyebrow = "Est. 2024 · Abuja, Nigeria", title, title
                 }}>
               
               <div className="relative h-full w-full overflow-hidden bg-cnf-surface">
-                <CnfImage src={slide.src} alt={active ? slide.alt : ""} fill sizes="100vw" priority={i === 0} className="object-cover object-center" style={{ objectPosition: "center center" }} aria-hidden={!active}/>
+                <CnfImage
+                  src={slide.src}
+                  alt={active ? slide.alt : ""}
+                  fill
+                  sizes="100vw"
+                  priority={i === 0}
+                  className={coverImageTopClass}
+                  style={{ objectPosition: coverImageTopPosition }}
+                  aria-hidden={!active}
+                />
               </div>
             </div>);
         })}

@@ -1,6 +1,14 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/cn";
-type Tone = "neutral" | "primary" | "skills" | "education" | "humanitarian" | "accent-on-dark";
+export type BadgeTone =
+    | "neutral"
+    | "primary"
+    | "skills"
+    | "education"
+    | "humanitarian"
+    | "accent-on-dark";
+
+type Tone = BadgeTone;
 type Props = {
     children: ReactNode;
     tone?: Tone;

@@ -1,52 +1,55 @@
 import type { ProjectTheme } from "./projects";
 
-/** Placeholder share link until final video URLs are set. */
-export const CNF_PLACEHOLDER_VIDEO_LINK =
-    "https://drive.google.com/file/d/1PoAA_3ZFAIQzxn15sDzQKiUyloF4gFdF/view?usp=sharing";
+import type { BadgeTone } from "@/components/ui/Badge";
 
 export type VideoItem = {
     id: string;
     badge: string;
+    /** Badge background style (defaults to neutral). */
+    badgeTone?: BadgeTone;
     theme?: ProjectTheme;
     title: string;
-    featured?: boolean;
-    /** Google Drive share/view link, or a direct path/URL to an MP4 for `<video>`. */
-    videoUrl?: string;
-    /** Frame to show in the preview strip (seconds into the video). */
+    /** Google Drive share link, YouTube URL, or direct MP4 path. */
+    videoUrl: string;
+    /** Start time in seconds when the embed loads (e.g. 240 = 4:00). */
     previewOffsetSeconds?: number;
+    /** Static image shown until the user presses play. */
+    previewImageSrc?: string;
 };
 
 export const videos: VideoItem[] = [
     {
         id: "cnf-impact-story",
-        badge: "Featured · Impact story",
-        title: "CNF Impact Story, What We've Built and Where We're Going",
-        featured: true,
-        videoUrl: CNF_PLACEHOLDER_VIDEO_LINK,
-        previewOffsetSeconds: 0,
+        badge: "Impact story",
+        badgeTone: "primary",
+        title: "Skill Scale-Up Impact Story",
+        videoUrl:
+            "https://drive.google.com/file/d/1PoAA_3ZFAIQzxn15sDzQKiUyloF4gFdF/view?usp=sharing",
+        previewOffsetSeconds: 240,
+        previewImageSrc: "/assets/projects/impactstory.jpeg",
     },
     {
-        id: "ssu-inside-training",
-        badge: "Skill Development",
-        theme: "skills",
-        title: "The Skill Scale-Up (SSU) Programme, Inside the Training",
-        videoUrl: CNF_PLACEHOLDER_VIDEO_LINK,
-        previewOffsetSeconds: 45,
-    },
-    {
-        id: "cohort-1-graduation",
-        badge: "Milestone · Graduation",
-        theme: "skills",
-        title: "Cohort 1 Graduation, Celebrating Our First Set of SSU Graduates",
-        videoUrl: CNF_PLACEHOLDER_VIDEO_LINK,
-        previewOffsetSeconds: 90,
-    },
-    {
-        id: "heem-humanitarian-segment",
+        id: "humanitarian-outreach",
         badge: "Humanitarian Aid",
         theme: "humanitarian",
-        title: "Humanitarian Aid Segment",
-        videoUrl: CNF_PLACEHOLDER_VIDEO_LINK,
-        previewOffsetSeconds: 135,
+        title: "Humanitarian Aid Outreach",
+        videoUrl: "https://www.youtube.com/watch?v=cPBdrw2tm1U",
+        previewOffsetSeconds: 120,
+    },
+    {
+        id: "education-outreach",
+        badge: "Education",
+        theme: "education",
+        title: "Educational Outreach",
+        videoUrl: "https://www.youtube.com/watch?v=GmcZqncsa08",
+        previewOffsetSeconds: 180,
+    },
+    {
+        id: "ssu-graduation",
+        badge: "Skill Development",
+        theme: "skills",
+        title: "Skill Scale-Up Graduation",
+        videoUrl: "https://www.youtube.com/shorts/sXdL2XxHt6w",
+        previewOffsetSeconds: 45,
     },
 ];

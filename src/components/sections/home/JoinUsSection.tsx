@@ -4,7 +4,10 @@ import { Card } from "@/components/ui/Card";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { homeEyebrowClassName } from "@/components/sections/home/homeEyebrow";
+import {
+    homeEyebrowClassName,
+    homeSoftSectionClassName,
+} from "@/components/sections/home/homeEyebrow";
 import { joinOptions, type JoinOption } from "@/data/home/join-options";
 import { fontDisplay } from "@/lib/fonts";
 
@@ -39,7 +42,12 @@ function JoinCard({ option }: { option: JoinOption }) {
 
 export function JoinUsSection() {
     return (
-        <Section tone="light" padding="lg" ariaLabelledBy="join-us-title">
+        <Section
+            tone="light"
+            padding="lg"
+            ariaLabelledBy="join-us-title"
+            className={homeSoftSectionClassName}
+        >
             <Reveal>
                 <SectionHeader
                     id="join-us-title"

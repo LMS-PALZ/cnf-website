@@ -18,7 +18,7 @@ export const ssuHero = {
         accent: "future?",
     },
     description:
-        "Join our Skill Scale-Up Program. A FREE digital, vocational and core life skills training that enables individuals build sustainable livelihoods, and create opportunity.",
+        "Join our Skill Scale-Up Program. A tech, digital, vocational and core life skills training that enables individuals build sustainable livelihoods, and create opportunity.",
 } as const;
 
 export const ssuIntro = {
@@ -90,7 +90,7 @@ export type SsuProgramItem = {
 
 export const ssuProgramsSection = {
     title: "Programs Offered",
-    subtitle: "Participants will be able to learn high-demand skill at zero cost",
+    subtitle: "Participants will be able to learn high-demand skills, such as;",
     items: [
         {
             title: "Product Design",
@@ -128,7 +128,7 @@ export const ssuProgramsSection = {
 };
 
 export const ssuCta = {
-    title: "We are here to empower you build a sustainable livelihood.",
+    title: "We are here to empower you to build a sustainable livelihood.",
 } as const;
 
 export type SsuFaqItem = {
@@ -156,11 +156,6 @@ export const ssuFaqs: SsuFaqItem[] = [
         question: "How much time do I need to commit weekly?",
         answer:
             "At least 10 hours per week for live classes, assignments, and projects.",
-    },
-    {
-        question: "Is the program really free?",
-        answer:
-            "Yes. SSU is completely free, but it is not casual and requires full commitment.",
     },
     {
         question: "What happens if I miss classes or fail to submit assignments?",

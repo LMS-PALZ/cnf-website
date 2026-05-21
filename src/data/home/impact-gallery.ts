@@ -1,5 +1,6 @@
 import type { CarouselSlide } from "@/data/home/carousel-images";
 
+/** Slides must match files in `public/assets/Impact So far/` (web formats only). */
 const IMPACT_SO_FAR_BASE = "/assets/Impact%20So%20far";
 
 export const IMPACT_GALLERY_SLIDES: CarouselSlide[] = [
@@ -22,9 +23,5 @@ export const IMPACT_GALLERY_SLIDES: CarouselSlide[] = [
     {
         src: `${IMPACT_SO_FAR_BASE}/a22629a9-047e-4033-99f7-1b20c3f3eb12%204.JPEG`,
         alt: "CNF programme participants preparing a meal together in a training kitchen",
-    },
-    {
-        src: `${IMPACT_SO_FAR_BASE}/IMG_2579.JPG`,
-        alt: "Young woman smiling during a CNF media skills studio photoshoot",
     },
 ];

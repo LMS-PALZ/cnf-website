@@ -1,8 +1,14 @@
 import Link from "next/link";
 import { PageBanner } from "@/components/sections/PageBanner";
-import { pageBannerImages } from "@/data/page-banners";
-import { getInvolvedNavChildren } from "@/data/get-involved/nav";
+import { pageBannerImages, type PageBannerImage } from "@/data/page-banners";
+import { getInvolvedNavChildren, getInvolvedRoutes } from "@/data/get-involved/nav";
 import type { GetInvolvedPageHero } from "@/data/get-involved/page-heroes";
+
+const getInvolvedBannerByHref: Record<string, PageBannerImage> = {
+    [getInvolvedRoutes.partnership.href]: pageBannerImages.getInvolvedPartnership,
+    [getInvolvedRoutes.volunteer.href]: pageBannerImages.getInvolvedVolunteer,
+    [getInvolvedRoutes.careers.href]: pageBannerImages.getInvolvedCareers,
+};
 
 const pillDots = [
     "bg-cnf-accent",
@@ -16,11 +22,14 @@ type Props = {
 };
 
 export function GetInvolvedSubHero({ hero, currentHref }: Props) {
+    const image =
+        getInvolvedBannerByHref[currentHref] ?? pageBannerImages.getInvolvedPartnership;
+
     return (
         <PageBanner
             id={hero.id}
             breadcrumbLabel={hero.breadcrumbLabel}
-            image={pageBannerImages.getInvolved}
+            image={image}
             title={hero.title}
             description={hero.description}
         >

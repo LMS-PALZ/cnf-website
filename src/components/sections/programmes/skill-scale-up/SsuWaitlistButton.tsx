@@ -18,7 +18,7 @@ export function SsuWaitlistButton({ className, size = "lg" }: Props) {
             className={cn("rounded-full px-8", className)}
             ariaLabel="Join the Skill Scale-Up Digital Cohort waitlist (opens Google Form in a new tab)"
         >
-            Join Waitlist
+            Apply
             <HiChevronRight className="h-4 w-4" aria-hidden />
         </ButtonLink>
     );

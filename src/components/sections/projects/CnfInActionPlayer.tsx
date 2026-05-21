@@ -1,11 +1,14 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { HiPlay } from "react-icons/hi2";
 import { Badge } from "@/components/ui/Badge";
+import { CnfImage } from "@/components/ui/CnfImage";
 import { cn } from "@/lib/cn";
 import { fontDisplay } from "@/lib/fonts";
+import { coverImageTopClass } from "@/lib/image-fit";
 import { googleDriveEmbedUrl, isGoogleDriveUrl } from "@/lib/google-drive";
+import { isYouTubeUrl, youtubeEmbedUrl } from "@/lib/youtube";
 import type { VideoItem } from "@/data/projects/videos";
 import { videos } from "@/data/projects/videos";
 
@@ -15,178 +18,127 @@ const themeBadge = {
     humanitarian: "humanitarian" as const,
 };
 
-type EmbedOptions = {
-    autoplay?: boolean;
-    startSeconds?: number;
-};
-
-function resolveEmbedSrc(video: VideoItem, options: EmbedOptions = {}): string | null {
-    if (!video.videoUrl) {
-        return null;
-    }
+function resolveEmbedSrc(video: VideoItem): string | null {
+    const startSeconds = video.previewOffsetSeconds ?? 0;
+    const start = startSeconds > 0 ? startSeconds : undefined;
 
     if (isGoogleDriveUrl(video.videoUrl)) {
-        const startSeconds = options.startSeconds ?? video.previewOffsetSeconds ?? 0;
-        return googleDriveEmbedUrl(video.videoUrl, {
-            autoplay: options.autoplay,
-            startSeconds: startSeconds > 0 ? startSeconds : undefined,
-        });
+        return googleDriveEmbedUrl(video.videoUrl, { startSeconds: start });
+    }
+
+    if (isYouTubeUrl(video.videoUrl)) {
+        return youtubeEmbedUrl(video.videoUrl, { startSeconds: start });
     }
 
     return video.videoUrl;
 }
 
-function VideoEmbed({
-    video,
-    autoplay,
-    startSeconds,
-}: {
-    video: VideoItem;
-    autoplay: boolean;
-    startSeconds?: number;
-}) {
-    const driveEmbed =
-        video.videoUrl && isGoogleDriveUrl(video.videoUrl)
-            ? resolveEmbedSrc(video, { autoplay, startSeconds })
-            : null;
-    const directSrc = video.videoUrl && !isGoogleDriveUrl(video.videoUrl) ? video.videoUrl : null;
+function VideoEmbed({ video }: { video: VideoItem }) {
+    const [playing, setPlaying] = useState(!video.previewImageSrc);
+    const embedSrc = resolveEmbedSrc(video);
 
-    if (driveEmbed) {
+    if (video.previewImageSrc && !playing) {
+        return (
+            <button
+                type="button"
+                onClick={() => setPlaying(true)}
+                className="group absolute inset-0 flex h-full w-full items-center justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-accent"
+                aria-label={`Play ${video.title}`}
+            >
+                <CnfImage
+                    src={video.previewImageSrc}
+                    alt=""
+                    fill
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                    className={cn(coverImageTopClass, "transition duration-300 group-hover:scale-[1.02]")}
+                    aria-hidden
+                />
+                <span className="absolute inset-0 bg-black/25 transition group-hover:bg-black/35" aria-hidden />
+                <span
+                    className="relative z-[1] flex h-14 w-14 items-center justify-center rounded-full bg-white/95 text-cnf-primary shadow-lg transition group-hover:scale-105"
+                    aria-hidden
+                >
+                    <HiPlay className="ml-0.5 h-7 w-7" />
+                </span>
+            </button>
+        );
+    }
+
+    if (embedSrc && (isGoogleDriveUrl(video.videoUrl) || isYouTubeUrl(video.videoUrl))) {
         return (
             <iframe
-                key={`${video.id}-${autoplay ? "play" : "idle"}-${startSeconds ?? 0}`}
-                src={driveEmbed}
+                src={embedSrc}
                 title={video.title}
                 className="absolute inset-0 h-full w-full border-0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
+                referrerPolicy="strict-origin-when-cross-origin"
             />
         );
     }
 
-    if (directSrc) {
+    if (embedSrc) {
         return (
             <video
-                key={video.id}
                 controls
-                autoPlay={autoplay}
                 playsInline
                 preload="metadata"
                 className="h-full w-full object-cover"
                 aria-label={video.title}
             >
-                <source src={directSrc} type="video/mp4" />
+                <source src={embedSrc} type="video/mp4" />
             </video>
         );
     }
 
-    return null;
-}
-
-function VideoPreviewThumb({ video, onSelect }: { video: VideoItem; onSelect: () => void }) {
-    const previewSrc = resolveEmbedSrc(video, {
-        startSeconds: video.previewOffsetSeconds,
-    });
-
     return (
-        <button
-            type="button"
-            onClick={onSelect}
-            className="group flex w-full flex-col overflow-hidden rounded-lg border border-cnf-border/80 bg-white text-left shadow-sm transition-colors hover:border-cnf-accent/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-primary"
-        >
-            <div className="relative aspect-video min-h-[10.5rem] w-full overflow-hidden bg-black sm:min-h-[12rem] md:min-h-[13.5rem]">
-                {previewSrc ? (
-                    <iframe
-                        src={previewSrc}
-                        title={`Preview: ${video.title}`}
-                        className="pointer-events-none absolute inset-0 h-full w-full scale-[1.02] border-0"
-                        loading="lazy"
-                        tabIndex={-1}
-                        aria-hidden
-                    />
-                ) : null}
-                <span className="absolute inset-0 flex items-center justify-center bg-black/25 transition-colors group-hover:bg-black/40">
-                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-cnf-accent text-cnf-accent-ink shadow-lg">
-                        <HiPlay className="h-5 w-5 translate-x-0.5" aria-hidden />
-                    </span>
-                </span>
-            </div>
-            <div className="flex flex-col gap-2 p-4">
-                <Badge tone={video.theme ? themeBadge[video.theme] : "neutral"} className="w-fit">
-                    {video.badge}
-                </Badge>
-                <p
-                    className={cn(
-                        fontDisplay.className,
-                        "line-clamp-2 text-sm font-semibold leading-snug text-cnf-ink",
-                    )}
-                >
-                    {video.title}
-                </p>
-            </div>
-        </button>
+        <div className="flex h-full min-h-[10rem] items-center justify-center bg-cnf-surface px-4 text-center text-sm text-cnf-muted">
+            Video unavailable
+        </div>
     );
 }
 
-const initialActiveId = videos.find((v) => v.featured)?.id ?? videos[0]?.id ?? "";
+function VideoActionBox({ video }: { video: VideoItem }) {
+    const badgeTone = video.badgeTone ?? (video.theme ? themeBadge[video.theme] : "neutral");
+
+    return (
+        <article className="flex h-full flex-col overflow-hidden rounded-lg border border-cnf-border/80 bg-white shadow-sm">
+            <div className="relative aspect-video w-full overflow-hidden bg-black">
+                <VideoEmbed video={video} />
+            </div>
+            <div className="flex flex-col gap-2 p-4">
+                <Badge tone={badgeTone} className="w-fit">
+                    {video.badge}
+                </Badge>
+                <h3
+                    className={cn(
+                        fontDisplay.className,
+                        "text-sm font-semibold leading-snug text-cnf-ink md:text-base",
+                    )}
+                >
+                    {video.title}
+                </h3>
+            </div>
+        </article>
+    );
+}
 
 export function CnfInActionPlayer() {
-    const [activeId, setActiveId] = useState(initialActiveId);
-    const [playOnLoad, setPlayOnLoad] = useState(false);
-
-    const activeVideo = useMemo(() => videos.find((v) => v.id === activeId) ?? videos[0], [activeId]);
-    const previews = useMemo(() => videos.filter((v) => v.id !== activeVideo?.id), [activeVideo?.id]);
-
-    if (!activeVideo) {
+    if (videos.length === 0) {
         return null;
     }
 
-    function handleSelect(id: string) {
-        setPlayOnLoad(true);
-        setActiveId(id);
-    }
-
-    const mainStartSeconds = playOnLoad ? activeVideo.previewOffsetSeconds : undefined;
-
     return (
-        <div className="mt-10 flex flex-col gap-5 md:gap-6">
-            <article className="mx-auto w-full max-w-4xl overflow-hidden rounded-lg border border-cnf-border/80 bg-white shadow-sm lg:max-w-5xl">
-                <div className="relative aspect-video min-h-[16rem] w-full overflow-hidden bg-black sm:min-h-[18rem] md:min-h-[20rem] lg:min-h-[22rem]">
-                    <VideoEmbed
-                        key={activeVideo.id}
-                        video={activeVideo}
-                        autoplay={playOnLoad}
-                        startSeconds={mainStartSeconds}
-                    />
+        <div
+            className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:gap-6"
+            role="list"
+            aria-label="CNF videos"
+        >
+            {videos.map((video) => (
+                <div key={video.id} role="listitem" className="min-w-0">
+                    <VideoActionBox video={video} />
                 </div>
-                <div className="flex flex-col gap-2 p-4 md:p-5">
-                    <Badge tone={activeVideo.theme ? themeBadge[activeVideo.theme] : "neutral"} className="w-fit">
-                        {activeVideo.badge}
-                    </Badge>
-                    <h3
-                        className={cn(
-                            fontDisplay.className,
-                            "text-base font-semibold leading-snug text-cnf-ink md:text-lg",
-                        )}
-                    >
-                        {activeVideo.title}
-                    </h3>
-                </div>
-            </article>
-
-            {previews.length > 0 ? (
-                <div
-                    className="mx-auto grid w-full max-w-4xl grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-5 lg:max-w-5xl lg:gap-6"
-                    role="list"
-                    aria-label="More videos"
-                >
-                    {previews.map((video) => (
-                        <div key={video.id} role="listitem">
-                            <VideoPreviewThumb video={video} onSelect={() => handleSelect(video.id)} />
-                        </div>
-                    ))}
-                </div>
-            ) : null}
+            ))}
         </div>
     );
 }

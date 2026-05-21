@@ -12,8 +12,15 @@ import { pageBannerImages } from "@/data/page-banners";
 import { fontDisplay } from "@/lib/fonts";
 import { pageContentWidthClass } from "@/lib/layout";
 import { primaryEyebrowClassName } from "@/components/sections/home/homeEyebrow";
+import { coverImageTopPosition } from "@/lib/image-fit";
 import { pageMetadata } from "@/lib/metadata";
 import { sdgCards } from "@/data/our-work/sdgs";
+
+const WHOWEARE = {
+    storyStart: "/assets/whoweare/whoweare2.jpg",
+    storyNow: "/assets/whoweare/whoweare1.jpg",
+} as const;
+
 export const metadata = pageMetadata("About: mission and impact", "Mission, vision, and values of the Chiggy Nsofor Foundation, a Nigerian nonprofit advancing skills, education, and humanitarian aid.");
 
 type TeamMember = {
@@ -56,7 +63,7 @@ function PortraitLinkedInLink({
 /** Team portrait frame. */
 const portraitFrameClass =
     "relative aspect-[4/5] w-full max-h-[28rem] overflow-hidden bg-cnf-surface";
-/** Founder portrait — slightly taller than team. */
+/** Founder portrait: slightly taller than team. */
 const founderPortraitFrameClass =
     "relative aspect-[4/5] w-full max-h-[32rem] overflow-hidden bg-cnf-surface";
 const portraitImageClass = "object-cover object-[50%_18%]";
@@ -66,7 +73,7 @@ const teamMembers: TeamMember[] = [
         name: "Pamela I",
         role: "Partnerships & Programs",
         description: "Pamela drives CNF's partnership development and programme coordination, building the relationships and operational structures that keep every pillar running effectively. She also serves as Board Secretary.",
-        image: "/assets/team/IMG_8009.jpg",
+        image: "/assets/team/PAMELA%20Inew..png",
         imageAlt: "Pamela Ibemesi, Partnerships & Programs Officer at the Chiggy Nsofor Foundation",
         linkedin: "https://www.linkedin.com/in/pamela-ibemesi-9a7778373",
     },
@@ -90,7 +97,7 @@ const teamMembers: TeamMember[] = [
         name: "Dorothy U",
         role: "Programmes",
         description: "Dorothy ensures the Programme and community outreaches are delivered with consistency, care, and quality for every beneficiary.",
-        image: "/assets/team/dorothy.jpeg",
+        image: "/assets/team/Dorothynew.jpg",
         imageAlt: "Dorothy Uji, Programme Delivery at the Chiggy Nsofor Foundation",
         linkedin: "https://www.linkedin.com/in/dorothy-uji-b9b188220",
     },
@@ -143,34 +150,66 @@ export default function AboutPage() {
       />
 
       <section className="py-20 md:py-28">
-        <Container className="grid gap-16 lg:grid-cols-[0.95fr_1.05fr] items-start">
-          <div>
+        <Container className="grid items-start gap-12 lg:grid-cols-2 lg:gap-x-16 lg:gap-y-14">
+          <div className="lg:col-start-1 lg:row-start-1">
             <p className={primaryEyebrowClassName}>Our Story</p>
-            <h2 className={`${fontDisplay.className} mt-6 text-balance text-5xl font-semibold leading-[1.08] text-cnf-accent`}>How we started</h2>
-            <div className="mt-12 space-y-8">
-              <p className="text-justify">
-              The Chiggy Nsofor Foundation (CNF) was born out of a deep conviction that every underserved Nigerian deserves action. Founded in 2024 by Chiggy Nsofor, it began as a heartfelt response to the growing needs of individuals and  communities across Nigeria. What started as a personal passion to provide essential relief to families in need quickly grew into a passionate foundation, built on the belief that lasting change is possible when driven by purpose, integrity, and selfless service. From our very first outreach, we set out to do more than provide temporary assistance; we set out to transform lives.
-              </p>
-            </div>
+            <h2
+              className={`${fontDisplay.className} mt-6 text-balance text-5xl font-semibold leading-[1.08] text-cnf-accent`}
+            >
+              How we started
+            </h2>
+            <p className="mt-12 text-justify">
+              The Chiggy Nsofor Foundation (CNF) was born out of a deep conviction that every
+              underserved Nigerian deserves action. Founded in 2024 by Chiggy Nsofor, it began as a
+              heartfelt response to the growing needs of individuals and communities across Nigeria.
+              What started as a personal passion to provide essential relief to families in need
+              quickly grew into a passionate foundation, built on the belief that lasting change is
+              possible when driven by purpose, integrity, and selfless service. From our very first
+              outreach, we set out to do more than provide temporary assistance; we set out to
+              transform lives.
+            </p>
           </div>
 
-          <div className="space-y-8">
-            <div className="relative bg-cnf-surface">
-              <CnfImage
-                alt="Chiggy Nsofor Foundation team gathered at the training hub for a group photo"
-                className="h-auto w-full object-cover"
-                width={1200}
-                height={800}
-                priority={false}
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                src="/assets/whoweare/whoweare1.jpg"
-              />
-            </div>
-            <div>
-            <h2 className={`${fontDisplay.className} mt-16 text-balance text-5xl font-semibold leading-[1.08] text-cnf-accent`}>Where We Are Now</h2>
-            </div>
-            <p className="justify-self-center text-justify">
-            Today, CNF is a growing force for good, actively reaching communities across Nigeria through our  three key programmes: Humanitarian Aid, Education, and Skill Acquisition. We have provided food relief to families in crisis, offset medical bills for patients in hospitals, enrolled out-of-school children back into education, empowered young people with skills for financial independence and promoted civic engagement. Our team of dedicated staff and volunteers continues to expand, and with our headquarters in Abuja, and an ever-growing network of partners and supporters,across the country, CNF remains firmly committed to its mission: providing opportunities and impacting lives.
+          <div className="overflow-hidden bg-cnf-surface lg:col-start-2 lg:row-start-1">
+            <CnfImage
+              src={WHOWEARE.storyNow}
+              alt="Chiggy Nsofor Foundation team and volunteers gathered for a group photo"
+              className="h-auto w-full object-cover"
+              width={1200}
+              height={800}
+              priority
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              style={{ objectPosition: coverImageTopPosition }}
+            />
+          </div>
+
+          <div className="overflow-hidden bg-cnf-surface lg:col-start-1 lg:row-start-2">
+            <CnfImage
+              src={WHOWEARE.storyStart}
+              alt="Chiggy Nsofor Foundation volunteers in branded shirts at the training hub"
+              className="h-auto w-full object-cover"
+              width={1200}
+              height={800}
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              style={{ objectPosition: coverImageTopPosition }}
+            />
+          </div>
+
+          <div className="lg:col-start-2 lg:row-start-2">
+            <h2
+              className={`${fontDisplay.className} text-balance text-5xl font-semibold leading-[1.08] text-cnf-accent`}
+            >
+              Where We Are Now
+            </h2>
+            <p className="mt-12 text-justify">
+              Today, CNF is a growing force for good, actively reaching communities across Nigeria
+              through our three key programmes: Humanitarian Aid, Education, and Skill Acquisition. We
+              have provided food relief to families in crisis, offset medical bills for patients in
+              hospitals, enrolled out-of-school children back into education, empowered young people
+              with skills for financial independence and promoted civic engagement. Our team of
+              dedicated staff and volunteers continues to expand, and with our headquarters in Abuja,
+              and an ever-growing network of partners and supporters across the country, CNF remains
+              firmly committed to its mission: providing opportunities and impacting lives.
             </p>
           </div>
         </Container>
@@ -224,7 +263,7 @@ export default function AboutPage() {
               Chiggy Nsofor is the Founder and CEO of the Chiggy Nsofor Foundation.
             </p>
             <p className="mt-5 text-base leading-8 text-cnf-muted">
-              She holds degrees from the University of Sunderland and Covenant University Nigeria, and completed a leadership programme at Harvard University (2025).
+              She holds degrees from Covenant University, Nigeria, University of Sunderland England, completed a leadership programme at Harvard University, United States, and completed an executive program for non-profit at Stanford University, United States.
             </p>
             <p className="mt-5 text-base leading-8 text-cnf-muted">
               What Chiggy brings to CNF is not just her academic credentials, it is an unwillingness to accept that youth unemployment, educational exclusion, and poverty are simply facts of Nigerian life. Under her leadership, CNF has grown from a personal conviction into a structured, data-driven organisation that has touched over 5,000 lives.
@@ -252,7 +291,7 @@ export default function AboutPage() {
               </p>
               <p className="text-base italic leading-7 text-cnf-ink">That&apos;s Impact!”</p>
               <footer className="mt-4 text-sm font-semibold uppercase tracking-[0.25em] text-cnf-primary">
-                — Chiggy Nsofor, Founder &amp; CEO
+                Chiggy Nsofor, Founder &amp; CEO
               </footer>
             </blockquote>
           </div>

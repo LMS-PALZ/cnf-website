@@ -1,4 +1,27 @@
 import { z } from "zod";
+import { countries } from "@/data/countries";
+
+const countryNames = new Set(countries.map((c) => c.name));
+
+const optionalPhone = z
+    .string()
+    .trim()
+    .max(40)
+    .refine((val) => {
+        if (!val) {
+            return true;
+        }
+
+        return /^\+[1-9]\d{6,14}$/.test(val.replace(/\s/g, ""));
+    }, { message: "Enter a valid phone number" })
+    .transform((val) => val.replace(/\s/g, ""));
+
+const partnershipCountry = z
+    .string()
+    .trim()
+    .min(1, "Select a country")
+    .max(80)
+    .refine((name) => countryNames.has(name), { message: "Select a country" });
 const nonEmpty = (label: string, max = 120) => z.string().trim().min(2, `${label} is required`).max(max);
 const optionalText = (max = 200) => z
     .string()
@@ -31,9 +54,9 @@ export const partnershipSchema = z.object({
     firstName: nonEmpty("First name"),
     lastName: nonEmpty("Last name"),
     email: z.string().trim().email("Enter a valid email"),
-    phone: optionalText(40),
+    phone: optionalPhone,
     organisation: nonEmpty("Organisation", 200),
-    country: nonEmpty("Country", 80),
+    country: partnershipCountry,
     pillars: z
         .array(z.enum(partnershipPillarValues))
         .min(1, "Select at least one pillar"),

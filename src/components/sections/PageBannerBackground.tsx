@@ -1,28 +1,36 @@
 "use client";
 
 import { CnfImage } from "@/components/ui/CnfImage";
+import {
+    containImageClass,
+    containImagePosition,
+    coverImageTopClass,
+    coverImageTopPosition,
+} from "@/lib/image-fit";
+import type { PageBannerImage } from "@/data/page-banners";
 
-type Props = {
-    src: string;
-    alt: string;
-    objectPosition?: string;
-};
+type Props = Pick<PageBannerImage, "src" | "alt" | "objectFit" | "objectPosition">;
 
 export function PageBannerBackground({
     src,
     alt,
-    objectPosition = "center",
+    objectFit = "cover",
+    objectPosition,
 }: Props) {
+    const contain = objectFit === "contain";
+    const imageClass = contain ? containImageClass : coverImageTopClass;
+    const position = objectPosition ?? (contain ? containImagePosition : coverImageTopPosition);
+
     return (
-        <div className="absolute inset-0 bg-cnf-surface" aria-hidden>
+        <div className="absolute inset-0 bg-cnf-primary" aria-hidden>
             <CnfImage
                 src={src}
                 alt={alt}
                 fill
                 priority
                 sizes="100vw"
-                className="object-cover"
-                style={{ objectPosition }}
+                className={imageClass}
+                style={{ objectPosition: position }}
             />
 
             <div
