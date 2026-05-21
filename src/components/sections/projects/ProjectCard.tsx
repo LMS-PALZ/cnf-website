@@ -1,8 +1,8 @@
 import { Card } from "@/components/ui/Card";
-import { CnfImage } from "@/components/ui/CnfImage";
 import { cn } from "@/lib/cn";
 import { fontDisplay } from "@/lib/fonts";
 import type { ProjectItem } from "@/data/projects/projects";
+import { ProjectCardCarousel } from "./ProjectCardCarousel";
 
 type Props = {
     project: ProjectItem;
@@ -22,30 +22,13 @@ const photoStripeTone: Record<ProjectItem["theme"], string> = {
 export function ProjectCard({ project }: Props) {
     return (
         <Card tone="elevated" padding="none" className="flex h-full flex-col" as="article">
-            <div className="relative aspect-[16/10] overflow-hidden bg-cnf-surface">
-                {project.imageSrc ? (
-                    <CnfImage
-                        src={project.imageSrc}
-                        alt={project.imageAlt ?? project.title}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                ) : (
-                    <div className="flex h-full flex-col justify-end">
-                        <div
-                            className={cn(
-                                "flex items-center gap-2 px-4 py-2.5 text-[11px] font-medium text-white/85",
-                                photoStripeTone[project.theme],
-                            )}
-                        >
-                            <span aria-hidden className="text-base leading-none">
-                                +
-                            </span>
-                            <span>{project.mediaLabel}</span>
-                        </div>
-                    </div>
-                )}
+            <div className="relative aspect-[4/3] overflow-hidden bg-cnf-surface">
+                <ProjectCardCarousel
+                    images={project.images}
+                    title={project.title}
+                    mediaLabel={project.mediaLabel}
+                    photoStripeClassName={photoStripeTone[project.theme]}
+                />
             </div>
 
             <div className="flex flex-1 flex-col gap-3 p-5">

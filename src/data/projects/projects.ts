@@ -1,5 +1,10 @@
+import type { ProjectImage } from "./project-image-catalog";
+import { projectImageCatalog as img } from "./project-image-catalog";
+
 export type ProjectFilter = "all" | "skills" | "education" | "humanitarian";
 export type ProjectTheme = "skills" | "education" | "humanitarian";
+export type { ProjectImage } from "./project-image-catalog";
+
 export type ProjectItem = {
     id: string;
     pillar: Exclude<ProjectFilter, "all">;
@@ -8,25 +13,10 @@ export type ProjectItem = {
     title: string;
     description: string;
     mediaLabel: string;
-    imageSrc?: string;
-    imageAlt?: string;
+    /** Up to 8 photos per project — edit this array when final event images are ready */
+    images: ProjectImage[];
     href?: string;
 };
-
-/** Named pillar photos in public/assets/ourWorkImgs */
-const pillarImages = {
-    skills: "/assets/ourWorkImgs/skillaqc.jpeg",
-    education: "/assets/ourWorkImgs/education%20outreach.jpg",
-    humanitarian: "/assets/ourWorkImgs/community%20aid.jpg",
-} as const;
-
-/** Event photos from carousel (used when a named pillar image would repeat too often). */
-const eventImages = {
-    graduation: "/assets/carouselImgs/3M8A8846.JPG",
-    foodRelief: "/assets/carouselImgs/_Y4B0704.JPG",
-    festiveOutreach: "/assets/carouselImgs/3M8A8624.JPEG",
-    clinic: "/assets/carouselImgs/IMG_4340%203.JPG",
-} as const;
 
 export const filterTabs: {
     id: ProjectFilter;
@@ -47,9 +37,17 @@ export const projects: ProjectItem[] = [
         title: "Skill Scale-Up Cohort 3 Tech Batch Begins",
         description:
             "A new chapter of impact, CNF opens its third cohort of the SSU Programme, welcoming the next generation of digital and vocational trainees.",
-        mediaLabel: "Add SSU Cohort 3 photo here",
-        imageSrc: pillarImages.skills,
-        imageAlt: "Skill Scale-Up training at AQC",
+        mediaLabel: "Add SSU Cohort 3 photos here",
+        images: [
+            img.skillsTraining,
+            img.programmeLaunch,
+            img.handsOnWorkshop,
+            img.graduationCeremony,
+            img.cohortCelebration,
+            img.communityGathering,
+            img.clinicOutreach,
+            img.educationOutreach,
+        ],
         href: "/programmes/skill-scale-up",
     },
     {
@@ -60,9 +58,17 @@ export const projects: ProjectItem[] = [
         title: "Graduation of CNF's Second Skill Scale-Up Cohort",
         description:
             "Celebrating another set of young Nigerians who completed training and are now equipped to earn, lead, and give back.",
-        mediaLabel: "Add Cohort 2 graduation photo here",
-        imageSrc: eventImages.graduation,
-        imageAlt: "Skill Scale-Up Cohort 2 graduation",
+        mediaLabel: "Add Cohort 2 graduation photos here",
+        images: [
+            img.graduationCeremony,
+            img.cohortCelebration,
+            img.skillsTraining,
+            img.handsOnWorkshop,
+            img.programmeLaunch,
+            img.communityGathering,
+            img.educationOutreach,
+            img.howItStarted,
+        ],
     },
     {
         id: "ssu-launch",
@@ -72,9 +78,17 @@ export const projects: ProjectItem[] = [
         title: "CNF Launches the Skill Scale-Up Programme",
         description:
             "The flagship SSU Programme launches in Abuja, CNF's boldest commitment to equipping underserved youth with skills for the modern economy.",
-        mediaLabel: "Add SSU launch photo here",
-        imageSrc: pillarImages.skills,
-        imageAlt: "CNF Skill Scale-Up Programme launch",
+        mediaLabel: "Add SSU launch photos here",
+        images: [
+            img.programmeLaunch,
+            img.skillsTraining,
+            img.handsOnWorkshop,
+            img.graduationCeremony,
+            img.cohortCelebration,
+            img.communityGathering,
+            img.educationOutreach,
+            img.howItStarted,
+        ],
         href: "/programmes/skill-scale-up",
     },
     {
@@ -85,9 +99,17 @@ export const projects: ProjectItem[] = [
         title: "International Women's Day at AGGS Gudu, Abuja",
         description:
             "CNF marks International Women's Day by engaging female students at AGGS Gudu with sessions on leadership, confidence, and civic awareness.",
-        mediaLabel: "Add IWD outreach photo here",
-        imageSrc: pillarImages.education,
-        imageAlt: "Education outreach at AGGS Gudu",
+        mediaLabel: "Add IWD outreach photos here",
+        images: [
+            img.educationOutreach,
+            img.handsOnWorkshop,
+            img.communityGathering,
+            img.howItStarted,
+            img.skillsTraining,
+            img.graduationCeremony,
+            img.cohortCelebration,
+            img.programmeLaunch,
+        ],
     },
     {
         id: "st-phillips-academy",
@@ -97,9 +119,17 @@ export const projects: ProjectItem[] = [
         title: "Educational Outreach at St. Phillips Academy",
         description:
             "CNF covers outstanding school fees and exam costs for deserving students at St. Phillips Academy, removing financial barriers to education.",
-        mediaLabel: "Add St. Phillips outreach photo here",
-        imageSrc: pillarImages.education,
-        imageAlt: "Educational outreach at St. Phillips Academy",
+        mediaLabel: "Add St. Phillips outreach photos here",
+        images: [
+            img.educationOutreach,
+            img.howItStarted,
+            img.handsOnWorkshop,
+            img.skillsTraining,
+            img.communityGathering,
+            img.graduationCeremony,
+            img.cohortCelebration,
+            img.programmeLaunch,
+        ],
     },
     {
         id: "heem-medical-mission",
@@ -109,9 +139,17 @@ export const projects: ProjectItem[] = [
         title: "Community Medical Mission",
         description:
             "Free medical services, financial empowerment, scholarships, and food relief delivered to some of Abuja's most underserved communities.",
-        mediaLabel: "Add community medical mission photo here",
-        imageSrc: pillarImages.humanitarian,
-        imageAlt: "Community medical mission outreach",
+        mediaLabel: "Add community medical mission photos here",
+        images: [
+            img.communityAid,
+            img.clinicOutreach,
+            img.communityGathering,
+            img.educationOutreach,
+            img.skillsTraining,
+            img.graduationCeremony,
+            img.howItStarted,
+            img.handsOnWorkshop,
+        ],
     },
     {
         id: "mangu-food-relief",
@@ -121,9 +159,17 @@ export const projects: ProjectItem[] = [
         title: "Food Relief Outreach in Mangu, Plateau State",
         description:
             "Essential food items distributed to underserved families in Mangu, Plateau State, part of CNF's ongoing commitment to communities across Nigeria.",
-        mediaLabel: "Add Mangu outreach photo here",
-        imageSrc: eventImages.foodRelief,
-        imageAlt: "Food relief outreach in Mangu, Plateau State",
+        mediaLabel: "Add Mangu outreach photos here",
+        images: [
+            img.communityGathering,
+            img.communityAid,
+            img.cohortCelebration,
+            img.howItStarted,
+            img.educationOutreach,
+            img.clinicOutreach,
+            img.graduationCeremony,
+            img.skillsTraining,
+        ],
     },
     {
         id: "gonin-gora-festive",
@@ -133,9 +179,17 @@ export const projects: ProjectItem[] = [
         title: "Festive Food Relief Outreach, Gonin Gora, Kaduna",
         description:
             "CNF brightens the festive season for families in Gonin Gora, Kaduna State, ensuring no one goes hungry during the holidays.",
-        mediaLabel: "Add Gonin Gora outreach photo here",
-        imageSrc: eventImages.festiveOutreach,
-        imageAlt: "Festive food relief outreach in Gonin Gora, Kaduna",
+        mediaLabel: "Add Gonin Gora outreach photos here",
+        images: [
+            img.cohortCelebration,
+            img.communityGathering,
+            img.communityAid,
+            img.howItStarted,
+            img.educationOutreach,
+            img.clinicOutreach,
+            img.graduationCeremony,
+            img.skillsTraining,
+        ],
     },
     {
         id: "jikwoyi-drug-donation",
@@ -145,9 +199,17 @@ export const projects: ProjectItem[] = [
         title: "Drug Donations & Healthcare Access in Jikwoyi, Abuja",
         description:
             "CNF donates essential medications to a community clinic in Jikwoyi, Abuja, improving access to basic healthcare for hundreds of residents.",
-        mediaLabel: "Add Jikwoyi outreach photo here",
-        imageSrc: eventImages.clinic,
-        imageAlt: "Drug donations in Jikwoyi, Abuja",
+        mediaLabel: "Add Jikwoyi outreach photos here",
+        images: [
+            img.clinicOutreach,
+            img.communityAid,
+            img.communityGathering,
+            img.educationOutreach,
+            img.skillsTraining,
+            img.handsOnWorkshop,
+            img.graduationCeremony,
+            img.howItStarted,
+        ],
     },
     {
         id: "kuje-health-outreach",
@@ -157,9 +219,17 @@ export const projects: ProjectItem[] = [
         title: "Health Outreach, Whitedove & Kuje General Hospital",
         description:
             "CNF visits patients at Kuje General Hospital, offsetting outstanding bills and bringing dignity to those who could not afford care.",
-        mediaLabel: "Add Kuje outreach photo here",
-        imageSrc: pillarImages.humanitarian,
-        imageAlt: "Health outreach at Kuje General Hospital",
+        mediaLabel: "Add Kuje outreach photos here",
+        images: [
+            img.clinicOutreach,
+            img.communityAid,
+            img.communityGathering,
+            img.educationOutreach,
+            img.handsOnWorkshop,
+            img.skillsTraining,
+            img.graduationCeremony,
+            img.howItStarted,
+        ],
     },
     {
         id: "heem-kuchingoro",
@@ -169,9 +239,17 @@ export const projects: ProjectItem[] = [
         title: "Medical Outreach at New Kuchingoro IDP Camp",
         description:
             "Free medical services, scholarships, and food relief delivered to displaced families at New Kuchingoro IDP Camp, meeting people in one of their most difficult moments.",
-        mediaLabel: "Add Kuchingoro outreach photo here",
-        imageSrc: pillarImages.humanitarian,
-        imageAlt: "Medical outreach at New Kuchingoro IDP Camp",
+        mediaLabel: "Add Kuchingoro outreach photos here",
+        images: [
+            img.communityAid,
+            img.clinicOutreach,
+            img.communityGathering,
+            img.educationOutreach,
+            img.cohortCelebration,
+            img.handsOnWorkshop,
+            img.graduationCeremony,
+            img.howItStarted,
+        ],
     },
     {
         id: "wash-secondary-schools",
@@ -181,8 +259,16 @@ export const projects: ProjectItem[] = [
         title: "Project WASH, Hygiene Education in Secondary Schools",
         description:
             "CNF promotes hygiene and sanitation awareness among secondary school students, because health education is preventive healthcare.",
-        mediaLabel: "Add Project WASH photo here",
-        imageSrc: pillarImages.education,
-        imageAlt: "Hygiene education outreach in secondary schools",
+        mediaLabel: "Add Project WASH photos here",
+        images: [
+            img.educationOutreach,
+            img.handsOnWorkshop,
+            img.communityGathering,
+            img.skillsTraining,
+            img.clinicOutreach,
+            img.communityAid,
+            img.howItStarted,
+            img.programmeLaunch,
+        ],
     },
 ];

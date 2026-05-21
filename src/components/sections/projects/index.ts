@@ -2,6 +2,7 @@ export { CnfInActionSection } from "./CnfInActionSection";
 export { FollowOurJourneySection } from "./FollowOurJourneySection";
 export { InspiredCtaSection } from "./InspiredCtaSection";
 export { ProjectCard } from "./ProjectCard";
+export { ProjectCardCarousel } from "./ProjectCardCarousel";
 export { ProjectsFilterTabs } from "./ProjectsFilterTabs";
 export { ProjectsHero } from "./ProjectsHero";
 export { ProjectsStatsBand } from "./ProjectsStatsBand";

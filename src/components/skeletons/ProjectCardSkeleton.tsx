@@ -8,7 +8,7 @@ export function ProjectCardSkeleton() {
                 variant="image"
                 announce={false}
                 className="gap-0"
-                itemClassName="aspect-[16/10] rounded-none rounded-t-xl"
+                itemClassName="aspect-[4/3] rounded-none rounded-t-xl"
             />
             <div className="flex flex-col gap-3 p-5">
                 <Skeleton variant="badge" announce={false} />
