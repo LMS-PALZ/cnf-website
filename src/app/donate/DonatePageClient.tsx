@@ -6,7 +6,7 @@ import { KoraPaymentModal } from "@/components/payments/KoraPaymentModal";
 import type { PaymentIntent } from "@/lib/payments/payment-types";
 
 /**
- * Single client boundary for /donate — one modal instance, all pay buttons
+ * Single client boundary for /donate - one modal instance, all pay buttons
  * call openPayment via context (reliable on Vercel static deploy).
  */
 export function DonatePageClient({ children }: { children: ReactNode }) {

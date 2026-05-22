@@ -26,7 +26,7 @@ export type ProjectItem = {
     title: string;
     description: string;
     mediaLabel: string;
-    /** Up to 8 photos per project — edit this array when final event images are ready */
+    /** Up to 8 photos per project - edit this array when final event images are ready */
     images: ProjectImage[];
     href?: string;
 };

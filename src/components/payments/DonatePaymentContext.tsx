@@ -19,7 +19,7 @@ export function DonatePaymentProvider({
     );
 }
 
-/** Set on /donate only — one shared modal for all pay buttons on that page. */
+/** Set on /donate only - one shared modal for all pay buttons on that page. */
 export function useDonatePaymentOpener(): OpenDonatePayment | null {
     return useContext(DonatePaymentContext);
 }

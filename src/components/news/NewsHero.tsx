@@ -14,7 +14,7 @@ export function NewsHero() {
                     &amp; <span className="text-cnf-accent">Impact.</span>
                 </>
             }
-            description="Stay up to date with everything happening at CNF — from programme milestones and community outreaches to new partnerships and announcements."
+            description="Stay up to date with everything happening at CNF, from programme milestones and community outreaches to new partnerships and announcements."
         />
     );
 }

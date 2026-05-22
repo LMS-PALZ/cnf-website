@@ -266,7 +266,7 @@ export default function AboutPage() {
               She holds degrees from Covenant University, Nigeria, University of Sunderland England, completed a leadership programme at Harvard University, United States, and completed an executive program for non-profit at Stanford University, United States.
             </p>
             <p className="mt-5 text-base leading-8 text-cnf-muted">
-              What Chiggy brings to CNF is not just her academic credentials, it is an unwillingness to accept that youth unemployment, educational exclusion, and poverty are simply facts of Nigerian life. Under her leadership, CNF has grown from a personal conviction into a structured, data-driven organisation that has touched over 5,000 lives.
+              What Chiggy brings to CNF is not just her academic credentials, but an unwillingness to accept that youth unemployment, educational exclusion, and poverty are simply facts of Nigerian life. Under her leadership, CNF has grown from a personal conviction into a structured, data-driven organisation that has touched over 5,000 lives.
             </p>
           </div>
 

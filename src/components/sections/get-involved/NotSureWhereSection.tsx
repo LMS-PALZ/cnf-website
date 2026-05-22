@@ -15,7 +15,7 @@ export function NotSureWhereSection() {
           <ButtonLink href={`mailto:${site.contactEmail}`} variant="accent" size="lg">
             Contact Us Directly
           </ButtonLink>
-          <DonatePayLinkButton size="lg" purpose="Get involved — donate instead">
+          <DonatePayLinkButton size="lg" purpose="Get involved, donate instead">
             Donate Instead
           </DonatePayLinkButton>
         </>}/>);

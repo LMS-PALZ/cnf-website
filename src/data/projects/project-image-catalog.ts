@@ -1,4 +1,4 @@
-/** Stock photos for project cards — swap paths here when final event photos are ready. */
+/** Stock photos for project cards - swap paths here when final event photos are ready. */
 export type ProjectImage = {
     src: string;
     alt: string;
@@ -8,7 +8,7 @@ export const MAX_PROJECT_CARD_IMAGES = 8;
 
 const COHORT_1_BASE = "/assets/projects/COHORT%201";
 
-/** CNF Launches the Skill Scale-Up Programme — `public/assets/projects/COHORT 1/` */
+/** CNF Launches the Skill Scale-Up Programme - `public/assets/projects/COHORT 1/` */
 export const cohort1ProjectImages: ProjectImage[] = [
     {
         src: `${COHORT_1_BASE}/Screenshot%20From%202026-05-21%2022-04-36.png`,
@@ -46,7 +46,7 @@ export const cohort1ProjectImages: ProjectImage[] = [
 
 const COHORT_3_BASE = "/assets/projects/Cohort%203";
 
-/** Skill Scale-Up Cohort 3 Tech Batch — `public/assets/projects/Cohort 3/` */
+/** Skill Scale-Up Cohort 3 Tech Batch - `public/assets/projects/Cohort 3/` */
 export const cohort3ProjectImages: ProjectImage[] = [
     {
         src: `${COHORT_3_BASE}/IMG_0049.jpg`,
@@ -76,7 +76,7 @@ export const cohort3ProjectImages: ProjectImage[] = [
 
 const COHORT_2_GRAD_BASE = "/assets/projects/Cohort%202%20graduation";
 
-/** Skill Scale-Up Cohort 2 graduation — `public/assets/projects/Cohort 2 graduation/` */
+/** Skill Scale-Up Cohort 2 graduation - `public/assets/projects/Cohort 2 graduation/` */
 export const cohort2GraduationProjectImages: ProjectImage[] = [
     {
         src: `${COHORT_2_GRAD_BASE}/IMG_8257.JPG`,
@@ -110,7 +110,7 @@ export const cohort2GraduationProjectImages: ProjectImage[] = [
 
 const ST_PHILLIPS_BASE = "/assets/projects/ST%20philip%20academy";
 
-/** Educational Outreach at St. Phillips Academy — `public/assets/projects/ST philip academy/` */
+/** Educational Outreach at St. Phillips Academy - `public/assets/projects/ST philip academy/` */
 export const stPhillipsAcademyProjectImages: ProjectImage[] = [
     {
         src: `${ST_PHILLIPS_BASE}/IMG_4107.JPG`,
@@ -144,7 +144,7 @@ export const stPhillipsAcademyProjectImages: ProjectImage[] = [
 
 const AGGS_IWD_BASE = "/assets/projects/AGGS%20IWD%20OUTREACH";
 
-/** International Women's Day at AGGS Gudu — `public/assets/projects/AGGS IWD OUTREACH/` */
+/** International Women's Day at AGGS Gudu - `public/assets/projects/AGGS IWD OUTREACH/` */
 export const aggsIwdOutreachProjectImages: ProjectImage[] = [
     {
         src: `${AGGS_IWD_BASE}/ATT07852.jpg`,
@@ -170,7 +170,7 @@ export const aggsIwdOutreachProjectImages: ProjectImage[] = [
 
 const MANGU_OUTREACH_BASE = "/assets/projects/MANGU%20OUTREACH";
 
-/** Food Relief Outreach in Mangu — `public/assets/projects/MANGU OUTREACH/` */
+/** Food Relief Outreach in Mangu - `public/assets/projects/MANGU OUTREACH/` */
 export const manguOutreachProjectImages: ProjectImage[] = [
     {
         src: `${MANGU_OUTREACH_BASE}/IMG_3264.JPG`,
@@ -208,7 +208,7 @@ export const manguOutreachProjectImages: ProjectImage[] = [
 
 const FESTIVE_FOOD_RELIEF_BASE = "/assets/projects/FESTIVE%20FOOD%20RELIEF";
 
-/** Festive Food Relief Outreach, Gonin Gora — `public/assets/projects/FESTIVE FOOD RELIEF/` */
+/** Festive Food Relief Outreach, Gonin Gora - `public/assets/projects/FESTIVE FOOD RELIEF/` */
 export const festiveFoodReliefProjectImages: ProjectImage[] = [
     {
         src: `${FESTIVE_FOOD_RELIEF_BASE}/1.jpg`,
@@ -246,7 +246,7 @@ export const festiveFoodReliefProjectImages: ProjectImage[] = [
 
 const JIKWOYI_DRUG_BASE = "/assets/projects/DRUG%20DONATION%20OUTREACH%20JIKWOYI";
 
-/** Drug Donations & Healthcare Access in Jikwoyi — `public/assets/projects/DRUG DONATION OUTREACH JIKWOYI/` */
+/** Drug Donations & Healthcare Access in Jikwoyi - `public/assets/projects/DRUG DONATION OUTREACH JIKWOYI/` */
 export const jikwoyiDrugDonationProjectImages: ProjectImage[] = [
     {
         src: `${JIKWOYI_DRUG_BASE}/3M8A9074%202.JPG`,
@@ -285,7 +285,7 @@ export const jikwoyiDrugDonationProjectImages: ProjectImage[] = [
 const KUJE_HEALTH_BASE =
     "/assets/projects/WHITE%20DOVE%20AND%20KUJE%20GENERAL%20HEALTH%20OUTREACH";
 
-/** Health Outreach, Whitedove & Kuje General Hospital — web formats only (HEIC excluded). */
+/** Health Outreach, Whitedove & Kuje General Hospital - web formats only (HEIC excluded). */
 export const kujeHealthOutreachProjectImages: ProjectImage[] = [
     {
         src: `${KUJE_HEALTH_BASE}/IMG_4850.JPG`,
@@ -311,7 +311,7 @@ export const kujeHealthOutreachProjectImages: ProjectImage[] = [
 
 const KUCHINGORO_BASE = "/assets/projects/Outreach%20at%20New%20Kuchingoro";
 
-/** Outreach at New Kuchingoro IDP Camp — `public/assets/projects/Outreach at New Kuchingoro/` */
+/** Outreach at New Kuchingoro IDP Camp - `public/assets/projects/Outreach at New Kuchingoro/` */
 export const kuchingoroOutreachProjectImages: ProjectImage[] = [
     {
         src: `${KUCHINGORO_BASE}/_Y4B0747.JPG`,
@@ -349,7 +349,7 @@ export const kuchingoroOutreachProjectImages: ProjectImage[] = [
 
 const PROJECT_WASH_KEFFI_BASE = "/assets/projects/Project%20WASH-Keffi";
 
-/** Project WASH, Keffi — `public/assets/projects/Project WASH-Keffi/` */
+/** Project WASH, Keffi - `public/assets/projects/Project WASH-Keffi/` */
 export const projectWashKeffiProjectImages: ProjectImage[] = [
     {
         src: `${PROJECT_WASH_KEFFI_BASE}/Screenshot%20From%202026-05-21%2021-55-06.png`,

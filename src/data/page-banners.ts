@@ -51,8 +51,10 @@ export const pageBannerImages = {
         objectPosition: "50% 42%",
     },
     news: {
-        src: "/assets/ourWorkImgs/education%20outreach.jpg",
-        alt: "CNF education outreach in partner schools",
+        src: "/assets/newsImages/newsbannerimage.jpeg",
+        alt: "CNF team member supporting a patient during a community healthcare outreach",
+        /** Keep faces and interaction in frame on wide banners. */
+        objectPosition: "50% 28%",
     },
     skillScaleUp: {
         src: "/assets/ssu/ssuclass.jpeg",

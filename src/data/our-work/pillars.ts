@@ -48,7 +48,7 @@ export const ourWorkPillars: PillarBlockData[] = [
             "The programme is delivered through a highly subsidised in-person model, alongside an online SSU tier with an application fee ranging from ₦10,000 to ₦20,000, making quality skills training accessible to young Nigerians across the country.",
             "Built around both technical and character development, SSU equips participants through three core tracks: Digital & Tech, Vocational Skills, and the Total Man Mentorship Programme. The goal is not only to prepare young people for employment, but to position them for sustainable livelihoods and long-term financial independence.",
             "What sets SSU apart is its commitment beyond the classroom. Graduates gain access to post-training internship placements, startup support, and an alumni mentorship network designed to foster continuous growth and opportunity.",
-            "At SSU, our graduates do not just learn, they earn.",
+            "At SSU, our graduates do not just learn; they earn.",
         ],
         features: [
             {

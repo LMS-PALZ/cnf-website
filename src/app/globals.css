@@ -204,7 +204,7 @@
   }
 }
 
-/* Korapay payment modal — native <dialog> */
+/* Korapay payment modal - native <dialog> */
 .cnf-payment-dialog::backdrop {
   background: rgb(12 15 13 / 0.7);
   backdrop-filter: blur(2px);

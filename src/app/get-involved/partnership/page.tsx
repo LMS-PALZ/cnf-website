@@ -6,7 +6,7 @@ import { partnershipPageHero } from "@/data/get-involved/page-heroes";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata(
-    "Partnership — Get Involved",
+    "Partnership - Get Involved",
     "Partner with the Chiggy Nsofor Foundation to support evidence-based, community-centred impact across Nigeria.",
 );
 
