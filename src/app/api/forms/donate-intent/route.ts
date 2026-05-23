@@ -1,5 +1,6 @@
 import { NextRequest } from "next/server";
 import { buildFormNotificationEmail } from "@/lib/email/form-notification-template";
+import { donateIntentTemplateVariables } from "@/lib/email/resend-template-variables";
 import { jsonFieldErrors, jsonError, jsonOk } from "@/lib/forms/api-response";
 import { deliverInboxNotification } from "@/lib/forms/deliver-inbox-notification";
 import { appendSubmission } from "@/lib/forms/persist";
@@ -26,7 +27,7 @@ export async function POST(req: NextRequest) {
         console.error("[forms/donate-intent] persist", e);
         return jsonError("Could not save submission. Please try again later.", 500);
     }
-    const payload = buildFormNotificationEmail({
+    const notificationContent = {
         title: "New donor interest",
         intro: "A visitor expressed interest in giving via the Donate page.",
         fields: [
@@ -36,12 +37,18 @@ export async function POST(req: NextRequest) {
             { label: "Pledge amount", value: parsed.data.pledgeAmount ?? "" },
         ],
         messageBody: parsed.data.message,
-    });
+    };
+    const payload = buildFormNotificationEmail(notificationContent);
     const emailError = await deliverInboxNotification(
         "programmes",
         "New donor interest (CNF website)",
         payload,
-        { replyTo: parsed.data.email },
+        {
+            replyTo: parsed.data.email,
+            templateKey: "donate-intent",
+            templateVariables: donateIntentTemplateVariables(parsed.data),
+            notificationContent,
+        },
     );
     if (emailError) return emailError;
 

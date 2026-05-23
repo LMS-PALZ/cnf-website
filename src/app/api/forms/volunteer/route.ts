@@ -1,5 +1,6 @@
 import { NextRequest } from "next/server";
 import { buildFormNotificationEmail } from "@/lib/email/form-notification-template";
+import { volunteerTemplateVariables } from "@/lib/email/resend-template-variables";
 import { jsonError, jsonFieldErrors, jsonOk } from "@/lib/forms/api-response";
 import { deliverInboxNotification } from "@/lib/forms/deliver-inbox-notification";
 import { appendSubmission } from "@/lib/forms/persist";
@@ -35,7 +36,7 @@ export async function POST(req: NextRequest) {
         leadershipOpenness,
         idType,
     } = parsed.data;
-    const payload = buildFormNotificationEmail({
+    const notificationContent = {
         title: "New volunteer application",
         intro: "A visitor submitted the Volunteer form on the website.",
         fields: [
@@ -49,12 +50,18 @@ export async function POST(req: NextRequest) {
             { label: "Open to leadership", value: leadershipOpenness },
             { label: "ID type", value: idType },
         ],
-    });
+    };
+    const payload = buildFormNotificationEmail(notificationContent);
     const emailError = await deliverInboxNotification(
         "programmes",
         "New volunteer application (CNF website)",
         payload,
-        { replyTo: email },
+        {
+            replyTo: email,
+            templateKey: "volunteer",
+            templateVariables: volunteerTemplateVariables(parsed.data),
+            notificationContent,
+        },
     );
     if (emailError) return emailError;
 

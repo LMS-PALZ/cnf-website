@@ -9,8 +9,14 @@ export type EmailPayload = {
     html: string;
 };
 
+export type ResendTemplateSend = {
+    id: string;
+    variables: Record<string, string | number>;
+};
+
 export type NotifyInboxOptions = {
     replyTo?: string;
+    template?: ResendTemplateSend;
 };
 
 export class EmailDeliveryError extends Error {
@@ -62,9 +68,17 @@ export async function notifyInbox(
         from,
         to: [to],
         subject,
-        text: payload.text,
-        html: payload.html,
     };
+
+    if (options.template) {
+        body.template = {
+            id: options.template.id,
+            variables: options.template.variables,
+        };
+    } else {
+        body.text = payload.text;
+        body.html = payload.html;
+    }
 
     const replyTo = options.replyTo?.trim();
     if (replyTo) {
@@ -88,6 +102,7 @@ export async function notifyInbox(
             inbox,
             to,
             from,
+            templateId: options.template?.id,
             detail,
         });
         throw new EmailDeliveryError("Failed to send notification email", res.status, detail);

@@ -1,5 +1,6 @@
 import { NextRequest } from "next/server";
 import { buildFormNotificationEmail } from "@/lib/email/form-notification-template";
+import { partnershipTemplateVariables } from "@/lib/email/resend-template-variables";
 import { jsonError, jsonFieldErrors, jsonOk } from "@/lib/forms/api-response";
 import { deliverInboxNotification } from "@/lib/forms/deliver-inbox-notification";
 import { appendSubmission } from "@/lib/forms/persist";
@@ -23,7 +24,7 @@ export async function POST(req: NextRequest) {
         return jsonError("Could not save submission. Please try again later.", 500);
     }
     const { firstName, lastName, email, organisation, country, pillars, message, phone } = parsed.data;
-    const payload = buildFormNotificationEmail({
+    const notificationContent = {
         title: "New partnership enquiry",
         intro: "A visitor submitted the Partner With CNF form on the website.",
         fields: [
@@ -35,12 +36,18 @@ export async function POST(req: NextRequest) {
             { label: "Pillars", value: pillars.join(", ") },
         ],
         messageBody: message,
-    });
+    };
+    const payload = buildFormNotificationEmail(notificationContent);
     const emailError = await deliverInboxNotification(
         "partnership",
         "New partnership enquiry (CNF website)",
         payload,
-        { replyTo: email },
+        {
+            replyTo: email,
+            templateKey: "partnership",
+            templateVariables: partnershipTemplateVariables(parsed.data),
+            notificationContent,
+        },
     );
     if (emailError) return emailError;
 

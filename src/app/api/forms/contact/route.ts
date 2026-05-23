@@ -1,5 +1,6 @@
 import { NextRequest } from "next/server";
 import { buildFormNotificationEmail } from "@/lib/email/form-notification-template";
+import { contactTemplateVariables } from "@/lib/email/resend-template-variables";
 import { jsonError, jsonFieldErrors, jsonOk } from "@/lib/forms/api-response";
 import { deliverInboxNotification } from "@/lib/forms/deliver-inbox-notification";
 import { appendSubmission } from "@/lib/forms/persist";
@@ -26,7 +27,7 @@ export async function POST(req: NextRequest) {
     }
 
     const { name, email, phone, subject, message } = parsed.data;
-    const payload = buildFormNotificationEmail({
+    const notificationContent = {
         title: "New contact form message",
         intro: "A visitor sent a message from the Contact page.",
         fields: [
@@ -36,13 +37,19 @@ export async function POST(req: NextRequest) {
             { label: "Subject", value: subject },
         ],
         messageBody: message,
-    });
+    };
+    const payload = buildFormNotificationEmail(notificationContent);
 
     const emailError = await deliverInboxNotification(
         "programmes",
         `Contact: ${subject}`,
         payload,
-        { replyTo: email },
+        {
+            replyTo: email,
+            templateKey: "contact",
+            templateVariables: contactTemplateVariables(parsed.data),
+            notificationContent,
+        },
     );
     if (emailError) return emailError;
 
