@@ -7,10 +7,6 @@ const LANDING_SLIDE_BASE = "/assets/Landing%20Page%20Slide%20Picture";
 
 export const HOME_HERO_CAROUSEL_SLIDES: CarouselSlide[] = [
     {
-        src: `${LANDING_SLIDE_BASE}/4A90624A-7C71-4242-B861-AA130B1E65E5_1_105_c.jpeg`,
-        alt: "CNF instructor teaching web development to students in a classroom",
-    },
-    {
         src: `${LANDING_SLIDE_BASE}/9C13BAEC-3A79-41D7-8359-F4A20D9637A9_1_105_c.jpeg`,
         alt: "Participants learning cake decorating during a CNF skills workshop",
     },
@@ -25,5 +21,9 @@ export const HOME_HERO_CAROUSEL_SLIDES: CarouselSlide[] = [
     {
         src: `${LANDING_SLIDE_BASE}/IMG_2580%203.JPEG`,
         alt: "Young woman in a CNF media skills studio photoshoot session",
+    },
+    {
+        src: `${LANDING_SLIDE_BASE}/IMG_devlecture.jpeg`,
+        alt: "CNF instructor teaching web development to students in a classroom",
     },
 ];
