@@ -203,11 +203,21 @@ Since full artifact CSS was not extracted:
 ```env
 NEXT_PUBLIC_SITE_NAME=Chiggy Nsofor Foundation
 NEXT_PUBLIC_SITE_URL=https://chiggynsoforfoundation.org
+NEXT_PUBLIC_CONTACT_EMAIL=programmes@cnfhq.org
 
-# Form notifications (optional)
-# RESEND_API_KEY=
-# NOTIFICATIONS_EMAIL=hello@chiggynsoforfoundation.org
+# Resend (required for form email delivery)
+# Send from the domain verified in Resend; deliver to @cnfhq.org team inboxes.
+RESEND_API_KEY=
+RESEND_FROM=CNF Website <noreply@chiggynsoforfoundation.org>
+RESEND_SENDING_DOMAIN=chiggynsoforfoundation.org
+
+# Optional inbox overrides
+# PARTNERSHIPS_EMAIL=partnerships@cnfhq.org
+# PROGRAMMES_EMAIL=programmes@cnfhq.org
+# MEDIA_EMAIL=media@cnfhq.org
 ```
+
+**Form routing:** partnership → `partnerships@cnfhq.org`; contact, volunteer, careers, donate → `programmes@cnfhq.org`; newsletter → `media@cnfhq.org`. **Sending domain** (`from`) is `chiggynsoforfoundation.org`; **receiving inboxes** are on `cnfhq.org`. Notification HTML is built in `src/lib/email/form-notification-template.ts`.
 
 ---
 

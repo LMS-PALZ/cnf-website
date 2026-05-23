@@ -1,40 +1,95 @@
 import { FORM_INBOX_ADDRESSES, type FormInbox } from "@/lib/email-inboxes";
 import { site } from "@/lib/site";
 
-const defaultFrom = `CNF Website <noreply@${site.emailSendingDomain}>`;
+const defaultFromAddress = `noreply@${site.emailSendingDomain}`;
+const defaultFrom = `CNF Website <${defaultFromAddress}>`;
+
+export type EmailPayload = {
+    text: string;
+    html: string;
+};
+
+export type NotifyInboxOptions = {
+    replyTo?: string;
+};
 
 export class EmailDeliveryError extends Error {
-    constructor(message = "Failed to send notification email") {
+    readonly statusCode?: number;
+    readonly detail?: string;
+
+    constructor(message = "Failed to send notification email", statusCode?: number, detail?: string) {
         super(message);
         this.name = "EmailDeliveryError";
+        this.statusCode = statusCode;
+        this.detail = detail;
+    }
+}
+
+function resolveFromAddress(): string {
+    const configured = process.env.RESEND_FROM?.trim();
+    if (configured) {
+        return configured;
+    }
+    return defaultFrom;
+}
+
+function parseResendError(body: string): string {
+    try {
+        const parsed = JSON.parse(body) as { message?: string };
+        return parsed.message ?? body;
+    } catch {
+        return body;
     }
 }
 
 export async function notifyInbox(
     inbox: FormInbox,
     subject: string,
-    text: string,
+    payload: EmailPayload,
+    options: NotifyInboxOptions = {},
 ): Promise<void> {
-    const key = process.env.RESEND_API_KEY;
+    const key = process.env.RESEND_API_KEY?.trim();
     if (!key) {
-        console.info("[email] RESEND_API_KEY missing; skip send");
-        return;
+        const message = "RESEND_API_KEY is not configured";
+        console.error(`[email] ${message}`);
+        throw new EmailDeliveryError(message);
     }
 
     const to = FORM_INBOX_ADDRESSES[inbox];
-    const from = process.env.RESEND_FROM ?? defaultFrom;
+    const from = resolveFromAddress();
+
+    const body: Record<string, unknown> = {
+        from,
+        to: [to],
+        subject,
+        text: payload.text,
+        html: payload.html,
+    };
+
+    const replyTo = options.replyTo?.trim();
+    if (replyTo) {
+        body.reply_to = replyTo;
+    }
+
     const res = await fetch("https://api.resend.com/emails", {
         method: "POST",
         headers: {
             Authorization: `Bearer ${key}`,
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({ from, to, subject, text }),
+        body: JSON.stringify(body),
     });
 
     if (!res.ok) {
         const errText = await res.text().catch(() => "");
-        console.error("[email] Resend error", res.status, errText);
-        throw new EmailDeliveryError();
+        const detail = parseResendError(errText);
+        console.error("[email] Resend error", {
+            status: res.status,
+            inbox,
+            to,
+            from,
+            detail,
+        });
+        throw new EmailDeliveryError("Failed to send notification email", res.status, detail);
     }
 }

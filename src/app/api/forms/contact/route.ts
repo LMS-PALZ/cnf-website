@@ -1,4 +1,5 @@
 import { NextRequest } from "next/server";
+import { buildFormNotificationEmail } from "@/lib/email/form-notification-template";
 import { jsonError, jsonFieldErrors, jsonOk } from "@/lib/forms/api-response";
 import { deliverInboxNotification } from "@/lib/forms/deliver-inbox-notification";
 import { appendSubmission } from "@/lib/forms/persist";
@@ -25,20 +26,23 @@ export async function POST(req: NextRequest) {
     }
 
     const { name, email, phone, subject, message } = parsed.data;
-    const summary = [
-        "Contact form message",
-        `Name: ${name}`,
-        `Email: ${email}`,
-        `Phone: ${phone}`,
-        `Subject: ${subject}`,
-        "",
-        message,
-    ].join("\n");
+    const payload = buildFormNotificationEmail({
+        title: "New contact form message",
+        intro: "A visitor sent a message from the Contact page.",
+        fields: [
+            { label: "Name", value: name },
+            { label: "Email", value: email },
+            { label: "Phone", value: phone },
+            { label: "Subject", value: subject },
+        ],
+        messageBody: message,
+    });
 
     const emailError = await deliverInboxNotification(
         "programmes",
-        "New contact form message (CNF website)",
-        summary,
+        `Contact: ${subject}`,
+        payload,
+        { replyTo: email },
     );
     if (emailError) return emailError;
 
