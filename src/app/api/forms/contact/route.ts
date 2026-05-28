@@ -41,7 +41,7 @@ export async function POST(req: NextRequest) {
     const payload = buildFormNotificationEmail(notificationContent);
 
     const emailError = await deliverInboxNotification(
-        "programmes",
+        "info",
         `Contact: ${subject}`,
         payload,
         {

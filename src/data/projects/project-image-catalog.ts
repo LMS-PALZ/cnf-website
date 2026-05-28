@@ -113,10 +113,6 @@ const ST_PHILLIPS_BASE = "/assets/projects/ST%20philip%20academy";
 /** Educational Outreach at St. Phillips Academy - `public/assets/projects/ST philip academy/` */
 export const stPhillipsAcademyProjectImages: ProjectImage[] = [
     {
-        src: `${ST_PHILLIPS_BASE}/IMG_4107.JPG`,
-        alt: "CNF educational outreach with students at St. Phillips Academy",
-    },
-    {
         src: `${ST_PHILLIPS_BASE}/IMG_4327%203.JPG`,
         alt: "St. Phillips Academy students during CNF outreach",
     },

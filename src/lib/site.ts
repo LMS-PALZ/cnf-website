@@ -16,7 +16,9 @@ export const site = {
         (process.env.NODE_ENV === "production"
             ? SITE_PRODUCTION_URL
             : "http://localhost:3000"),
-    contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "programmes@cnfhq.org",
+    contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "Info@chiggynsoforfoundation.org",
+    /** Internal destination for contact form submissions (defaults to public contact email). */
+    infoEmail: process.env.INFO_EMAIL ?? (process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "Info@chiggynsoforfoundation.org"),
     partnershipsEmail: process.env.PARTNERSHIPS_EMAIL ?? "partnerships@cnfhq.org",
     programmesEmail: process.env.PROGRAMMES_EMAIL ?? "programmes@cnfhq.org",
     mediaEmail: process.env.MEDIA_EMAIL ?? "media@cnfhq.org",
