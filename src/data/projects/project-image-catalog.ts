@@ -381,6 +381,32 @@ export const projectWashKeffiProjectImages: ProjectImage[] = [
     },
 ];
 
+const CIVIC_AWARENESS_BASE = "/assets/projects/Civic%20Awareness";
+
+/** Civic Awareness Programme - `public/assets/projects/Civic Awareness/` */
+export const civicAwarenessProjectImages: ProjectImage[] = [
+    {
+        src: `${CIVIC_AWARENESS_BASE}/1.JPEG`,
+        alt: "CNF civic awareness session with Skill Scale-Up cohort participants",
+    },
+    {
+        src: `${CIVIC_AWARENESS_BASE}/2.JPEG`,
+        alt: "Young cohort members learning about civic literacy at CNF",
+    },
+    {
+        src: `${CIVIC_AWARENESS_BASE}/3.JPEG`,
+        alt: "SSU civic awareness workshop with trainees",
+    },
+    {
+        src: `${CIVIC_AWARENESS_BASE}/4.JPEG`,
+        alt: "CNF founder addressing cohort on civic awareness and engagement",
+    },
+    {
+        src: `${CIVIC_AWARENESS_BASE}/5.JPEG`,
+        alt: "Skill Scale-Up participants at a civic awareness programme session",
+    },
+];
+
 /** Reusable catalog entries; compose per-project `images` arrays in projects.ts */
 export const projectImageCatalog = {
     skillsTraining: {

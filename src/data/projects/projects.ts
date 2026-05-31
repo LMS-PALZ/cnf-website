@@ -1,6 +1,7 @@
 import type { ProjectImage } from "./project-image-catalog";
 import {
     aggsIwdOutreachProjectImages,
+    civicAwarenessProjectImages,
     cohort1ProjectImages,
     cohort2GraduationProjectImages,
     cohort3ProjectImages,
@@ -14,8 +15,8 @@ import {
     stPhillipsAcademyProjectImages,
 } from "./project-image-catalog";
 
-export type ProjectFilter = "all" | "skills" | "education" | "humanitarian";
-export type ProjectTheme = "skills" | "education" | "humanitarian";
+export type ProjectFilter = "all" | "skills" | "education" | "humanitarian" | "civic";
+export type ProjectTheme = "skills" | "education" | "humanitarian" | "civic";
 export type { ProjectImage } from "./project-image-catalog";
 
 export type ProjectItem = {
@@ -39,6 +40,7 @@ export const filterTabs: {
     { id: "skills", label: "Skill Development" },
     { id: "education", label: "Education" },
     { id: "humanitarian", label: "Humanitarian Aid" },
+    { id: "civic", label: "Civic Awareness" },
 ];
 
 export const projects: ProjectItem[] = [
@@ -164,5 +166,17 @@ export const projects: ProjectItem[] = [
             "CNF promotes hygiene and sanitation awareness among secondary school students, because health education is preventive healthcare.",
         mediaLabel: "Project WASH, Keffi",
         images: projectWashKeffiProjectImages,
+    },
+    {
+        id: "civic-awareness",
+        pillar: "civic",
+        theme: "civic",
+        badge: "Civic Awareness",
+        title: "Civic Awareness",
+        description:
+            "The flagship SSU program educates young cohorts on the importance of civic awareness and civic literacy.",
+        mediaLabel: "Civic Awareness programme",
+        images: civicAwarenessProjectImages,
+        href: "/programmes/skill-scale-up",
     },
 ];

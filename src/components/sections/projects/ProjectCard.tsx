@@ -12,11 +12,13 @@ const badgeTone: Record<ProjectItem["theme"], string> = {
     skills: "bg-cnf-pillar-skills-soft text-cnf-pillar-skills",
     education: "bg-cnf-pillar-education-soft text-cnf-pillar-education",
     humanitarian: "bg-cnf-pillar-humanitarian-soft text-cnf-pillar-humanitarian",
+    civic: "bg-cnf-pillar-education-soft text-cnf-pillar-education",
 };
 const photoStripeTone: Record<ProjectItem["theme"], string> = {
     skills: "bg-cnf-pillar-skills/40",
     education: "bg-cnf-pillar-education/40",
     humanitarian: "bg-cnf-pillar-humanitarian/40",
+    civic: "bg-cnf-pillar-education/40",
 };
 
 export function ProjectCard({ project }: Props) {

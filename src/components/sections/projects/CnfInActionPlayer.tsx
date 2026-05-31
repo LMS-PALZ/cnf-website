@@ -16,6 +16,7 @@ const themeBadge = {
     skills: "skills" as const,
     education: "education" as const,
     humanitarian: "humanitarian" as const,
+    civic: "education" as const,
 };
 
 function resolveEmbedSrc(video: VideoItem): string | null {
