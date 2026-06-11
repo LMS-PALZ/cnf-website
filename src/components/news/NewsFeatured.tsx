@@ -22,6 +22,7 @@ export function NewsFeatured({ item }: Props) {
                         className="md:absolute md:inset-0"
                         imageClassName="md:rounded-none"
                         priority
+                        showRibbon={false}
                     />
                 </div>
 

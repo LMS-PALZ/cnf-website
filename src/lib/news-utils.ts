@@ -21,7 +21,8 @@ export function parseNewsParagraphSegments(text: string): NewsParagraphSegment[]
         if (match.index > lastIndex) {
             segments.push({ type: "text", content: text.slice(lastIndex, match.index) });
         }
-        segments.push({ type: "link", label: match[0], href: match[0] });
+        const href = match[0].replace(/[.,;:!?)]+$/, "");
+        segments.push({ type: "link", label: href, href });
         lastIndex = match.index + match[0].length;
     }
 
