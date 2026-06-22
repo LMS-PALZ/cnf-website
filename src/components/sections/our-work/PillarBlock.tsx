@@ -67,7 +67,7 @@ export function PillarBlock({ pillar, surface = "cream" }: Props) {
           </div>
         </div>
 
-        <PillarMediaCard theme={pillar.theme} mediaLabel={pillar.mediaLabel} reachStat={pillar.reachStat} smallStats={pillar.smallStats} heroImageSrc={pillar.heroImageSrc}/>
+        <PillarMediaCard theme={pillar.theme} mediaLabel={pillar.mediaLabel} smallStats={pillar.smallStats} heroImageSrc={pillar.heroImageSrc}/>
       </div>
       </Reveal>
     </Section>);

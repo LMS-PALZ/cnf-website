@@ -31,7 +31,7 @@ export function SdgSection() {
           <Card tone="elevated" padding="md" className="flex items-start gap-5 bg-white transition-transform duration-300 hover:-translate-y-0.5" as="article">
             <div className="flex flex-col">
               <span className={cn("text-[11px] font-semibold uppercase tracking-[0.2em]", eyebrowTone[sdg.theme])}>
-                SDG {sdg.number}
+                SDG 
               </span>
               <span aria-hidden className={cn(fontDisplay.className, "mt-1 text-5xl font-semibold leading-none md:text-6xl", numberTone[sdg.theme])}>
                 {sdg.number}

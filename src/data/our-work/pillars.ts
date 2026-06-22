@@ -27,11 +27,6 @@ export type PillarBlockData = {
     mediaLabel: string;
     /** Hero photo for the media card (Our Work pillars only). */
     heroImageSrc?: string;
-    reachStat: {
-        eyebrow: string;
-        value: string;
-        description: string;
-    };
     smallStats: PillarSmallStat[];
     reversed?: boolean;
 };
@@ -40,7 +35,7 @@ export const ourWorkPillars: PillarBlockData[] = [
         id: "skills",
         pillarLabel: "Pillar one",
         theme: "skills",
-        heading: "Skill Development",
+        heading: "Economic Empowerment",
         subheading: "Mentorship & Skill Scale-Up",
         lead: "Our flagship Skill Scale-Up (SSU) Programme equips underserved Nigerian youth aged 15 to 30 with practical, future-ready skills, and the support to turn those skills into real income.",
         body: [
@@ -72,16 +67,9 @@ export const ourWorkPillars: PillarBlockData[] = [
         secondaryCta: { label: "See us in action", href: "/projects" },
         mediaLabel: "SSU training and skills development",
         heroImageSrc: "/assets/ourWorkImgs/skill1.JPEG",
-        reachStat: {
-            eyebrow: "SSU programme results",
-            value: "86%",
-            description: "Economic activation rate, graduates employed, interning, or running businesses",
-        },
         smallStats: [
             { value: "74+", label: "Youth trained across 3 cohorts" },
             { value: "60%", label: "Women among SSU graduates" },
-            { value: "62%", label: "Earning income within 6 months" },
-            { value: "14%", label: "Now serving as peer mentors" },
         ],
     },
     {
@@ -113,11 +101,6 @@ export const ourWorkPillars: PillarBlockData[] = [
         cta: { label: "See us in action", href: "/projects#education" },
         mediaLabel: "Education outreach in partner schools",
         heroImageSrc: "/assets/ourWorkImgs/ourworkeducation.jpeg",
-        reachStat: {
-            eyebrow: "Education reach",
-            value: "1,000+",
-            description: "Students reached through education outreach across partner schools",
-        },
         smallStats: [
             { value: "69+", label: "Scholarship beneficiaries funded" },
             { value: "12 Months", label: "Renewable School enrolment support" },
@@ -156,11 +139,6 @@ export const ourWorkPillars: PillarBlockData[] = [
         },
         mediaLabel: "Community aid and humanitarian outreach",
         heroImageSrc: "/assets/ourWorkImgs/ourworkhumanitarian.jpeg",
-        reachStat: {
-            eyebrow: "Humanitarian reach",
-            value: "6,000+",
-            description: "Beneficiaries across food relief, medical care, and emergency support",
-        },
         smallStats: [
             { value: "9", label: "Communities served" },
             { value: "4", label: "States reached" },
