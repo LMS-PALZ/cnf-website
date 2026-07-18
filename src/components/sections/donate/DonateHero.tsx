@@ -14,7 +14,7 @@ export function DonateHero() {
                     Changes a <span className="text-cnf-accent">Life.</span>
                 </>
             }
-            description="Every naira given to CNF goes directly into programmes that train young people, keep children in school, feed underserved families, and bring healthcare to those who cannot afford it. No overhead fluff. Real impact, documented and reported."
+            description="Every naira given to CFO goes directly into programmes that train young people, keep children in school, feed underserved families, and bring healthcare to those who cannot afford it. No overhead fluff. Real impact, documented and reported."
         />
     );
 }

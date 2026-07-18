@@ -7,7 +7,7 @@ import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata(
     "Careers - Get Involved",
-    "Explore careers at the Chiggy Nsofor Foundation and join a team committed to purpose-driven work in Nigeria.",
+    "Explore careers at the Chiggy Foundation for Opportunity and join a team committed to purpose-driven work in Nigeria.",
 );
 
 export default function CareersPage() {

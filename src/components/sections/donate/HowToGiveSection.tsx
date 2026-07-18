@@ -27,7 +27,7 @@ export function HowToGiveSection() {
                     title="Three Ways to"
                     titleAccent="Donate"
                     accent="primary"
-                    description="Choose the option that works best for you. Bank transfers go directly to CNF programmes."
+                    description="Choose the option that works best for you. Bank transfers go directly to CFO programmes."
                     id="how-to-give-title"
                 />
 

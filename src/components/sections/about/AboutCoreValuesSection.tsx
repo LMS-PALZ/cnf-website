@@ -68,7 +68,7 @@ export function AboutCoreValuesSection() {
                     </h2>
                     <p className="mt-4 text-base leading-8 text-cnf-muted md:text-lg">
                         Six values that define how we work, who we are, and what every
-                        beneficiary, partner, and team member can always expect from CNF.
+                        beneficiary, partner, and team member can always expect from CFO.
                     </p>
                 </div>
 

@@ -22,7 +22,7 @@ export function WhereItGoesSection() {
                     title="Your Donation Funds"
                     titleAccent="These Programmes"
                     accent="primary"
-                    description="Every gift supports one or more of CNF’s three active programme pillars. All in-person programmes are fully free to beneficiaries. An online SSU tier with a ₦20,000 application fee is also available."
+                    description="Every gift supports one or more of CFO’s three active programme pillars. All in-person programmes are fully free to beneficiaries. An online SSU tier with a ₦20,000 application fee is also available."
                     id="where-it-goes-title"
                 />
 

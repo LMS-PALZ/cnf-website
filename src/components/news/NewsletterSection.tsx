@@ -10,7 +10,7 @@ export function NewsletterSection() {
               Stay connected
             </p>
             <h2 id="stay-connected-title" className={`${fontDisplay.className} mt-3 text-3xl font-semibold leading-tight text-white md:text-4xl`}>
-              Get CNF Updates
+              Get CFO Updates
               <br />
               <span className="text-cnf-accent">Delivered to You</span>
             </h2>

@@ -48,7 +48,7 @@ export function ContactReachSection() {
                                             href={link.href}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            aria-label={`CNF on ${link.label}`}
+                                            aria-label={`CFO on ${link.label}`}
                                             className="inline-flex size-12 items-center justify-center rounded-full bg-cnf-ink text-white transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-primary"
                                         >
                                             <Icon className="size-5" aria-hidden />

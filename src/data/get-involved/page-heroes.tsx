@@ -46,5 +46,5 @@ export const careersPageHero: GetInvolvedPageHero = {
         </>
     ),
     description:
-        "Working at CNF means your skills do something that matters. If that resonates with you, we want to hear from you.",
+        "Working at CFO means your skills do something that matters. If that resonates with you, we want to hear from you.",
 };

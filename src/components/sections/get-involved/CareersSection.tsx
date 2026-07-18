@@ -13,10 +13,10 @@ export function CareersSection() {
       <Container>
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
           <div>
-            <SectionHeader eyebrow="Careers" title="Build Your Career" titleAccent="With Purpose" accent="primary" description="Working at CNF means your skills do something that matters. We are a small, dedicated team committed to doing excellent work for communities that deserve nothing less. If that resonates with you, we want to hear from you." id="careers-title"/>
+            <SectionHeader eyebrow="Careers" title="Build Your Career" titleAccent="With Purpose" accent="primary" description="Working at CFO means your skills do something that matters. We are a small, dedicated team committed to doing excellent work for communities that deserve nothing less. If that resonates with you, we want to hear from you." id="careers-title"/>
 
             <h3 className="mt-10 text-xs font-semibold uppercase tracking-[0.2em] text-cnf-muted">
-              Life at CNF
+              Life at CFO
             </h3>
             <ul className="mt-4 grid gap-4 sm:grid-cols-2">
               {lifeAtCnfCards.map((card) => {
@@ -41,7 +41,7 @@ export function CareersSection() {
                 No Open Vacancies Right Now
               </h3>
               <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-cnf-muted">
-                We do not have active job openings at this time, but CNF is
+                We do not have active job openings at this time, but CFO is
                 growing. Register your interest below and we will reach out as
                 soon as a role that suits your profile becomes available.
               </p>

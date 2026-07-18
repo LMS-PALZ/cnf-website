@@ -36,7 +36,7 @@ export const testimonials: Testimonial[] = [
     },
     {
         id: "nana-firdausi",
-        quote: "Thank you so much CNF Captain and Army for impacting our lives, we really appreciate. If something comes up even if it’s not skill scale up and you need our assistance just call and we will turn up by God’s grace. We love you.",
+        quote: "Thank you so much CFO Captain and Army for impacting our lives, we really appreciate. If something comes up even if it’s not skill scale up and you need our assistance just call and we will turn up by God’s grace. We love you.",
         name: "Nana Firdausi",
         role: "Skill Scale-Up Beneficiary",
         pillar: "education",
@@ -44,7 +44,7 @@ export const testimonials: Testimonial[] = [
     },
     {
         id: "winner-emmanuel",
-        quote: "Chiggy Nsofor Foundation, thank you for changing my life. Your support made my digital marketing education possible, and I'm forever grateful. Because of you, I’ve learned valuable skills and gained confidence to build a better future. I promise to work hard and help others too. God bless you for all the good you do.",
+        quote: "Chiggy Foundation for Opportunity, thank you for changing my life. Your support made my digital marketing education possible, and I'm forever grateful. Because of you, I’ve learned valuable skills and gained confidence to build a better future. I promise to work hard and help others too. God bless you for all the good you do.",
         name: "Winner Emmanuel",
         role: "Skill Scale-Up Beneficiary",
         pillar: "education",

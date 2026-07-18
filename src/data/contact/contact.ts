@@ -19,6 +19,6 @@ export const contactInfo = {
     ],
 } as const;
 
-/** Google Maps embed for CNF office (16B Vaal St, Maitama, Abuja). */
+/** Google Maps embed for CFO office (16B Vaal St, Maitama, Abuja). */
 export const contactMapEmbedUrl =
     "https://maps.google.com/maps?q=16B+Vaal+St,+Maitama,+Abuja,+904101,+Nigeria&hl=en&z=16&output=embed";

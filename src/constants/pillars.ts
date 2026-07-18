@@ -37,7 +37,7 @@ export const pillars: Pillar[] = [
         links: [
             { href: "/projects#education", label: "Education pillar details" },
             { href: "/get-involved/volunteer", label: "Volunteer" },
-            { href: "/get-involved/partnership", label: "Partner with CNF" },
+            { href: "/get-involved/partnership", label: "Partner with CFO" },
         ],
     },
     {

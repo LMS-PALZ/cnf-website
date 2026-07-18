@@ -4,7 +4,7 @@ import { NewsListing } from "@/components/news/NewsListing";
 import { NewsletterSection } from "@/components/news/NewsletterSection";
 import { newsItems } from "@/data/news";
 import { pageMetadata } from "@/lib/metadata";
-export const metadata = pageMetadata("News \u2014 Stories, Updates & Impact", "Updates from the Chiggy Nsofor Foundation on programmes, partnerships, and humanitarian response in Nigeria.");
+export const metadata = pageMetadata("News \u2014 Stories, Updates & Impact", "Updates from the Chiggy Foundation for Opportunity on programmes, partnerships, and humanitarian response in Nigeria.");
 export default function NewsPage() {
     return (<>
       <NewsHero />

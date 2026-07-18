@@ -19,7 +19,7 @@ const WHOWEARE = {
     storyNow: "/assets/whoweare/whoweare1.jpg",
 } as const;
 
-export const metadata = pageMetadata("About: mission and impact", "Mission, vision, and values of the Chiggy Nsofor Foundation, a Nigerian nonprofit advancing skills, education, and humanitarian aid.");
+export const metadata = pageMetadata("About: mission and impact", "Mission, vision, and values of the Chiggy Foundation for Opportunity, a Nigerian nonprofit advancing skills, education, and humanitarian aid.");
 
 type TeamMember = {
     name: string;
@@ -72,7 +72,7 @@ const teamMembers: TeamMember[] = [
         role: "Partnerships & Programs",
         description: "Pamela drives CFO's partnership development and programme coordination, building the relationships and operational structures that keep every pillar running effectively. She also serves as Board Secretary.",
         image: "/assets/team/PAMELA%20Inew..png",
-        imageAlt: "Pamela Ibemesi, Partnerships & Programs Officer at the Chiggy Nsofor Foundation",
+        imageAlt: "Pamela Ibemesi, Partnerships & Programs Officer at the Chiggy Foundation for Opportunity",
         linkedin: "https://www.linkedin.com/in/pamela-ibemesi-9a7778373",
     },
     {
@@ -80,7 +80,7 @@ const teamMembers: TeamMember[] = [
         role: "Operations & Finance",
         description: "Oversees CFO's day-to-day operations and financial management, ensuring every naira is tracked, every process is sound, and every programme is delivered on time and on budget.",
         image: "/assets/team/victor.jpg",
-        imageAlt: "Victor A., Operations & Finance Lead at the Chiggy Nsofor Foundation",
+        imageAlt: "Victor A., Operations & Finance Lead at the Chiggy Foundation for Opportunity",
         linkedin: "https://www.linkedin.com/in/victor-anyirigwo-b64788229",
     },
     {
@@ -88,7 +88,7 @@ const teamMembers: TeamMember[] = [
         role: "Communications",
         description: "Tells CFO's story across platforms, from impact reports and social media to partner communications, making sure the world knows what is being built in Nigeria.",
         image: "/assets/team/hajim.jpg",
-        imageAlt: "Hajimrea K., Communications at the Chiggy Nsofor Foundation",
+        imageAlt: "Hajimrea K., Communications at the Chiggy Foundation for Opportunity",
         linkedin: "https://www.linkedin.com/in/hajimrea-kawuwa-aa7392185",
     },
     {
@@ -96,7 +96,7 @@ const teamMembers: TeamMember[] = [
         role: "Programmes",
         description: "Dorothy ensures the Programme and community outreaches are delivered with consistency, care, and quality for every beneficiary.",
         image: "/assets/team/Dorothynew.jpg",
-        imageAlt: "Dorothy Uji, Programme Delivery at the Chiggy Nsofor Foundation",
+        imageAlt: "Dorothy Uji, Programme Delivery at the Chiggy Foundation for Opportunity",
         linkedin: "https://www.linkedin.com/in/dorothy-uji-b9b188220",
     },
     {
@@ -156,16 +156,16 @@ export default function AboutPage() {
             >
               How we started
             </h2>
-            <p className="mt-12 text-justify">Chiggy Foundation for Opportunity began in 2024 as the Chiggy Nsofor Foundation, born out of a deep conviction that every underserved Nigerian deserves action. It started as a heartfelt response to the growing needs of individuals and communities across Nigeria, beginning with food relief to families in Plateau State. What started as a personal mission quickly grew into a structured foundation, built on the belief that lasting change is possible when driven by purpose, integrity, and selfless service.
+            <p className="mt-12 text-justify">Chiggy Foundation for Opportunity began in 2024 as the Chiggy Foundation for Opportunity, born out of a deep conviction that every underserved Nigerian deserves action. It started as a heartfelt response to the growing needs of individuals and communities across Nigeria, beginning with food relief to families in Plateau State. What started as a personal mission quickly grew into a structured foundation, built on the belief that lasting change is possible when driven by purpose, integrity, and selfless service.
               </p>
               <p className="mt-12 text-justify">From our very first outreach, we set out to do more than provide temporary assistance. We set out to transform lives.</p>
-              <p className="mt-12 text-justify">A new name, the same mission. In 2026, as the work grew, the name grew with it. The Chiggy Nsofor Foundation became Chiggy Foundation for Opportunity, putting the mission itself in the name. The registration, the team, and the purpose remain exactly the same. Only the name now says out loud what we have believed from the first outreach: potential is everywhere, but opportunity is not.</p>
+              <p className="mt-12 text-justify">A new name, the same mission. In 2026, as the work grew, the name grew with it. The Chiggy Foundation for Opportunity became Chiggy Foundation for Opportunity, putting the mission itself in the name. The registration, the team, and the purpose remain exactly the same. Only the name now says out loud what we have believed from the first outreach: potential is everywhere, but opportunity is not.</p>
           </div>
 
           <div className="overflow-hidden bg-cnf-surface lg:col-start-2 lg:row-start-1">
             <CnfImage
               src={WHOWEARE.storyNow}
-              alt="Chiggy Nsofor Foundation team and volunteers gathered for a group photo"
+              alt="Chiggy Foundation for Opportunity team and volunteers gathered for a group photo"
               className="h-auto w-full object-cover"
               width={1200}
               height={800}
@@ -178,7 +178,7 @@ export default function AboutPage() {
           <div className="overflow-hidden bg-cnf-surface lg:col-start-1 lg:row-start-2">
             <CnfImage
               src={WHOWEARE.storyStart}
-              alt="Chiggy Nsofor Foundation volunteers in branded shirts at the training hub"
+              alt="Chiggy Foundation for Opportunity volunteers in branded shirts at the training hub"
               className="h-auto w-full object-cover"
               width={1200}
               height={800}

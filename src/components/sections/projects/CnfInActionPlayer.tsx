@@ -133,7 +133,7 @@ export function CnfInActionPlayer() {
         <div
             className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:gap-6"
             role="list"
-            aria-label="CNF videos"
+            aria-label="CFO videos"
         >
             {videos.map((video) => (
                 <div key={video.id} role="listitem" className="min-w-0">

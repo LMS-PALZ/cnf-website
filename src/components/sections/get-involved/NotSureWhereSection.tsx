@@ -9,7 +9,7 @@ export function NotSureWhereSection() {
           <span className="text-cnf-accent">You Fit In?</span>
         </>} description={<>
           Reach out directly and let&rsquo;s find the right way for you to be part
-          of what CNF is building. Every contribution, big or small, makes a
+          of what CFO is building. Every contribution, big or small, makes a
           difference.
         </>} actions={<>
           <ButtonLink href={`mailto:${site.contactEmail}`} variant="accent" size="lg">

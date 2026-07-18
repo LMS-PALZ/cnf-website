@@ -2,7 +2,7 @@ import { FORM_INBOX_ADDRESSES, type FormInbox } from "@/lib/email-inboxes";
 import { site } from "@/lib/site";
 
 const defaultFromAddress = `noreply@${site.emailSendingDomain}`;
-const defaultFrom = `CNF Website <${defaultFromAddress}>`;
+const defaultFrom = `CFO Website <${defaultFromAddress}>`;
 
 export type EmailPayload = {
     text: string;

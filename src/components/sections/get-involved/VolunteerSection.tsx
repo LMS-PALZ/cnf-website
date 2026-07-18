@@ -43,7 +43,7 @@ export function VolunteerSection() {
 
           <div className={formCardSurface}>
             <h3 className={`${fontDisplay.className} text-2xl font-semibold text-cnf-ink md:text-3xl`}>
-              Volunteer With CNF
+              Volunteer With CFO
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-cnf-muted">
               Complete the form below. We&rsquo;ll review applications and reach

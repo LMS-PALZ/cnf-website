@@ -1,6 +1,6 @@
-# Chiggy Nsofor Foundation: Website Build Instruction (for Cursor / Any Next.js Repo)
+# Chiggy Foundation for Opportunity: Website Build Instruction (for Cursor / Any Next.js Repo)
 
-**Purpose:** Hand this document to an AI or developer to **build a complete marketing + forms site** for the **Chiggy Nsofor Foundation (CNF)**. It is **not** tied to the Glantra e-commerce codebase; copy this file into a **new** Next.js project root (e.g. `BUILD.md` or `build.instruction.md`).
+**Purpose:** Hand this document to an AI or developer to **build a complete marketing + forms site** for the **Chiggy Foundation for Opportunity (CFO)**. It is **not** tied to the Glantra e-commerce codebase; copy this file into a **new** Next.js project root (e.g. `BUILD.md` or `build.instruction.md`).
 
 **Design source note:** Several **Claude artifact** links were provided as visual references. Automated fetching of those URLs only recovered **page titles and shell text**, not the full HTML/CSS of each artifact. This spec is therefore **scoped to match those titles** and a coherent nonprofit site structure. After the first build, **open the original artifact links in a browser** and adjust spacing, typography, and colors to match the designs pixel-for-pixel where they differ.
 
@@ -23,7 +23,7 @@
 
 | Field | Value |
 |--------|--------|
-| **Organization** | Chiggy Nsofor Foundation (short: **CNF** where it reads well) |
+| **Organization** | Chiggy Foundation for Opportunity (short: **CNF** where it reads well) |
 | **One-line promise** | A Nigerian nonprofit advancing **skills**, **education**, and **humanitarian aid** in communities. |
 | **Geography (copy)** | Nigeria (communities; align with real programme locations when you have them). |
 | **Tone** | Clear, dignified, hopeful, transparent. Avoid sensationalism. |
@@ -201,7 +201,7 @@ Since full artifact CSS was not extracted:
 ## 11. Environment variables (template)
 
 ```env
-NEXT_PUBLIC_SITE_NAME=Chiggy Nsofor Foundation
+NEXT_PUBLIC_SITE_NAME=Chiggy Foundation for Opportunity
 NEXT_PUBLIC_SITE_URL=https://chiggynsoforfoundation.org
 NEXT_PUBLIC_CONTACT_EMAIL=programmes@cnfhq.org
 
@@ -289,4 +289,4 @@ public/
 
 ---
 
-*End of Chiggy Nsofor Foundation build instruction. Copy this file into the target project and attach it to your Cursor / AI session as the primary spec.*
+*End of Chiggy Foundation for Opportunity build instruction. Copy this file into the target project and attach it to your Cursor / AI session as the primary spec.*

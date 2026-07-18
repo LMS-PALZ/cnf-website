@@ -15,7 +15,7 @@ export function PartnershipSection() {
         <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:items-start">
           <div>
             <h3 className="text-sm font-semibold text-cnf-ink">
-              What partnership with CNF looks like:
+              What partnership with CFO looks like:
             </h3>
             <ul className="mt-4 space-y-4">
               {partnershipTypes.map((p) => (<li key={p.id}>
@@ -33,7 +33,7 @@ export function PartnershipSection() {
 
           <div id="partner-with-cnf" className={`${formCardSurface} scroll-mt-24`}>
             <h3 className={`${fontDisplay.className} text-2xl font-semibold text-cnf-ink md:text-3xl`}>
-              Partner With CNF
+              Partner With CFO
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-cnf-muted">
               Fill in the form below and our partnerships team will be in touch

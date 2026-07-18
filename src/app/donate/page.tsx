@@ -10,7 +10,7 @@ import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata(
     "Donate \u2014 Your Gift Changes a Life",
-    "Support the Chiggy Nsofor Foundation \u2014 every naira goes directly into skills training, education, and humanitarian programmes across Nigeria.",
+    "Support the Chiggy Foundation for Opportunity \u2014 every naira goes directly into skills training, education, and humanitarian programmes across Nigeria.",
 );
 
 export default function DonatePage() {

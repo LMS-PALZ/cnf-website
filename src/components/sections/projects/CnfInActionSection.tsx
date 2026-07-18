@@ -17,7 +17,7 @@ export function CnfInActionSection() {
                     eyebrow="Watch our work"
                     title={
                         <>
-                            CNF in <span className="text-cnf-accent">Action</span>
+                            CFO in <span className="text-cnf-accent">Action</span>
                         </>
                     }
                     tone="light"

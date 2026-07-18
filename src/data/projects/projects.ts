@@ -1,7 +1,7 @@
 import type { ProjectImage } from "./project-image-catalog";
 import {
     aggsIwdOutreachProjectImages,
-    civicAwarenessProjectImages,
+    // civicAwarenessProjectImages,
     cohort1ProjectImages,
     cohort2GraduationProjectImages,
     cohort3ProjectImages,
@@ -40,7 +40,7 @@ export const filterTabs: {
     { id: "skills", label: "Skill Development" },
     { id: "education", label: "Education" },
     { id: "humanitarian", label: "Humanitarian Aid" },
-    { id: "civic", label: "Civic Awareness" },
+    // { id: "civic", label: "Civic Awareness" },
 ];
 
 export const projects: ProjectItem[] = [
@@ -51,7 +51,7 @@ export const projects: ProjectItem[] = [
         badge: "Skill Development",
         title: "Skill Scale-Up Cohort 3 Tech Batch Begins",
         description:
-            "A new chapter of impact, CNF opens its third cohort of the SSU Programme, welcoming the next generation of digital and vocational trainees.",
+            "A new chapter of impact, CFO opens its third cohort of the SSU Programme, welcoming the next generation of digital and vocational trainees.",
         mediaLabel: "SSU Cohort 3 tech batch",
         images: cohort3ProjectImages,
         href: "/programmes/skill-scale-up",
@@ -61,7 +61,7 @@ export const projects: ProjectItem[] = [
         pillar: "skills",
         theme: "skills",
         badge: "Skill Development",
-        title: "Graduation of CNF's Second Skill Scale-Up Cohort",
+        title: "Graduation of CFO's Second Skill Scale-Up Cohort",
         description:
             "Celebrating another set of young Nigerians who completed training and are now equipped to earn, lead, and give back.",
         mediaLabel: "Cohort 2 graduation",
@@ -72,9 +72,9 @@ export const projects: ProjectItem[] = [
         pillar: "skills",
         theme: "skills",
         badge: "Skill Development",
-        title: "CNF Launches the Skill Scale-Up Programme",
+        title: "CFO Launches the Skill Scale-Up Programme",
         description:
-            "The flagship SSU Programme launches in Abuja, CNF's boldest commitment to equipping underserved youth with skills for the modern economy.",
+            "The flagship SSU Programme launches in Abuja, CFO's boldest commitment to equipping underserved youth with skills for the modern economy.",
         mediaLabel: "SSU Cohort 1 launch",
         images: cohort1ProjectImages,
         href: "/programmes/skill-scale-up",
@@ -86,7 +86,7 @@ export const projects: ProjectItem[] = [
         badge: "Education",
         title: "International Women's Day at AGGS Gudu, Abuja",
         description:
-            "CNF marks International Women's Day by engaging female students at AGGS Gudu with sessions on leadership, confidence, and civic awareness.",
+            "CFO marks International Women's Day by engaging female students at AGGS Gudu with sessions on leadership, confidence, and civic awareness.",
         mediaLabel: "AGGS Gudu IWD outreach",
         images: aggsIwdOutreachProjectImages,
     },
@@ -97,7 +97,7 @@ export const projects: ProjectItem[] = [
         badge: "Education",
         title: "Educational Outreach at St. Phillips Academy",
         description:
-            "CNF covers outstanding school fees and exam costs for deserving students at St. Phillips Academy, removing financial barriers to education.",
+            "CFO covers outstanding school fees and exam costs for deserving students at St. Phillips Academy, removing financial barriers to education.",
         mediaLabel: "St. Phillips Academy outreach",
         images: stPhillipsAcademyProjectImages,
     },
@@ -108,7 +108,7 @@ export const projects: ProjectItem[] = [
         badge: "Humanitarian Aid",
         title: "Food Relief Outreach in Mangu, Plateau State",
         description:
-            "Essential food items distributed to underserved families in Mangu, Plateau State, part of CNF's ongoing commitment to communities across Nigeria.",
+            "Essential food items distributed to underserved families in Mangu, Plateau State, part of CFO's ongoing commitment to communities across Nigeria.",
         mediaLabel: "Mangu food relief outreach",
         images: manguOutreachProjectImages,
     },
@@ -119,7 +119,7 @@ export const projects: ProjectItem[] = [
         badge: "Humanitarian Aid",
         title: "Festive Food Relief Outreach, Gonin Gora, Kaduna",
         description:
-            "CNF brightens the festive season for families in Gonin Gora, Kaduna State, ensuring no one goes hungry during the holidays.",
+            "CFO brightens the festive season for families in Gonin Gora, Kaduna State, ensuring no one goes hungry during the holidays.",
         mediaLabel: "Gonin Gora festive food relief",
         images: festiveFoodReliefProjectImages,
     },
@@ -130,7 +130,7 @@ export const projects: ProjectItem[] = [
         badge: "Healthcare",
         title: "Drug Donations & Healthcare Access in Jikwoyi, Abuja",
         description:
-            "CNF donates essential medications to a community clinic in Jikwoyi, Abuja, improving access to basic healthcare for hundreds of residents.",
+            "CFO donates essential medications to a community clinic in Jikwoyi, Abuja, improving access to basic healthcare for hundreds of residents.",
         mediaLabel: "Jikwoyi drug donation outreach",
         images: jikwoyiDrugDonationProjectImages,
     },
@@ -141,7 +141,7 @@ export const projects: ProjectItem[] = [
         badge: "Healthcare",
         title: "Health Outreach, Whitedove & Kuje General Hospital",
         description:
-            "CNF visits patients at Kuje General Hospital, offsetting outstanding bills and bringing dignity to those who could not afford care.",
+            "CFO visits patients at Kuje General Hospital, offsetting outstanding bills and bringing dignity to those who could not afford care.",
         mediaLabel: "Kuje & Whitedove health outreach",
         images: kujeHealthOutreachProjectImages,
     },
@@ -163,20 +163,20 @@ export const projects: ProjectItem[] = [
         badge: "Healthcare",
         title: "Project WASH, Hygiene Education in Secondary Schools",
         description:
-            "CNF promotes hygiene and sanitation awareness among secondary school students, because health education is preventive healthcare.",
+            "CFO promotes hygiene and sanitation awareness among secondary school students, because health education is preventive healthcare.",
         mediaLabel: "Project WASH, Keffi",
         images: projectWashKeffiProjectImages,
     },
-    {
-        id: "civic-awareness",
-        pillar: "civic",
-        theme: "civic",
-        badge: "Civic Awareness",
-        title: "Civic Awareness",
-        description:
-            "The flagship SSU program educates young cohorts on the importance of civic awareness and civic literacy.",
-        mediaLabel: "Civic Awareness programme",
-        images: civicAwarenessProjectImages,
-        href: "/programmes/skill-scale-up",
-    },
+    // {
+    //     id: "civic-awareness",
+    //     pillar: "civic",
+    //     theme: "civic",
+    //     badge: "Civic Awareness",
+    //     title: "Civic Awareness",
+    //     description:
+    //         "The flagship SSU program educates young cohorts on the importance of civic awareness and civic literacy.",
+    //     mediaLabel: "Civic Awareness programme",
+    //     images: civicAwarenessProjectImages,
+    //     href: "/programmes/skill-scale-up",
+    // },
 ];

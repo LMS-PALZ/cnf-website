@@ -8,11 +8,11 @@ export const MAX_PROJECT_CARD_IMAGES = 8;
 
 const COHORT_1_BASE = "/assets/projects/COHORT%201";
 
-/** CNF Launches the Skill Scale-Up Programme - `public/assets/projects/COHORT 1/` */
+/** CFO Launches the Skill Scale-Up Programme - `public/assets/projects/COHORT 1/` */
 export const cohort1ProjectImages: ProjectImage[] = [
     {
         src: `${COHORT_1_BASE}/Screenshot%20From%202026-05-21%2022-04-36.png`,
-        alt: "CNF Skill Scale-Up Programme launch at the training hub in Kurudu",
+        alt: "CFO Skill Scale-Up Programme launch at the training hub in Kurudu",
     },
     {
         src: `${COHORT_1_BASE}/Screenshot%20From%202026-05-21%2022-04-41.png`,
@@ -20,11 +20,11 @@ export const cohort1ProjectImages: ProjectImage[] = [
     },
     {
         src: `${COHORT_1_BASE}/Screenshot%20From%202026-05-21%2022-04-48.png`,
-        alt: "CNF founder welcoming Skill Scale-Up Cohort 1 students",
+        alt: "CFO founder welcoming Skill Scale-Up Cohort 1 students",
     },
     {
         src: `${COHORT_1_BASE}/Screenshot%20From%202026-05-21%2022-04-54.png`,
-        alt: "Skill Scale-Up Programme launch day at CNF training hub",
+        alt: "Skill Scale-Up Programme launch day at CFO training hub",
     },
     {
         src: `${COHORT_1_BASE}/Screenshot%20From%202026-05-21%2022-05-00.png`,
@@ -32,7 +32,7 @@ export const cohort1ProjectImages: ProjectImage[] = [
     },
     {
         src: `${COHORT_1_BASE}/Screenshot%20From%202026-05-21%2022-05-06.png`,
-        alt: "CNF launches Skill Scale-Up with youth trainees in Abuja",
+        alt: "CFO launches Skill Scale-Up with youth trainees in Abuja",
     },
     {
         src: `${COHORT_1_BASE}/3M8A8657%203.JPEG`,
@@ -54,11 +54,11 @@ export const cohort3ProjectImages: ProjectImage[] = [
     },
     {
         src: `${COHORT_3_BASE}/DE8E3217-50A3-4574-BAA5-66B7E9974018_1_201_a.jpeg`,
-        alt: "Cohort 3 STARS at the CNF training hub",
+        alt: "Cohort 3 STARS at the CFO training hub",
     },
     {
         src: `${COHORT_3_BASE}/C26ECFBF-0FB9-424A-BC20-9FE41F96237C_1_201_a.jpeg`,
-        alt: "CNF founder addressing Skill Scale-Up Cohort 3",
+        alt: "CFO founder addressing Skill Scale-Up Cohort 3",
     },
     {
         src: `${COHORT_3_BASE}/2857FD26-3D02-4F83-A06F-BF795FED3E10_1_201_a.jpeg`,
@@ -84,11 +84,11 @@ export const cohort2GraduationProjectImages: ProjectImage[] = [
     },
     {
         src: `${COHORT_2_GRAD_BASE}/IMG_8130.JPG`,
-        alt: "Cohort 2 graduates at the CNF graduation ceremony",
+        alt: "Cohort 2 graduates at the CFO graduation ceremony",
     },
     {
         src: `${COHORT_2_GRAD_BASE}/IMG_8132%202.JPG`,
-        alt: "CNF team and Cohort 2 STARS celebrating graduation",
+        alt: "CFO team and Cohort 2 STARS celebrating graduation",
     },
     {
         src: `${COHORT_2_GRAD_BASE}/IMG_8135%202.JPG`,
@@ -104,7 +104,7 @@ export const cohort2GraduationProjectImages: ProjectImage[] = [
     },
     {
         src: `${COHORT_2_GRAD_BASE}/IMG_8252.JPG`,
-        alt: "CNF Skill Scale-Up Cohort 2 graduation day",
+        alt: "CFO Skill Scale-Up Cohort 2 graduation day",
     },
 ];
 
@@ -114,11 +114,11 @@ const ST_PHILLIPS_BASE = "/assets/projects/ST%20philip%20academy";
 export const stPhillipsAcademyProjectImages: ProjectImage[] = [
     {
         src: `${ST_PHILLIPS_BASE}/IMG_4327%203.JPG`,
-        alt: "St. Phillips Academy students during CNF outreach",
+        alt: "St. Phillips Academy students during CFO outreach",
     },
     {
         src: `${ST_PHILLIPS_BASE}/IMG_4331-1%203.JPG`,
-        alt: "CNF team engaging students at St. Phillips Academy",
+        alt: "CFO team engaging students at St. Phillips Academy",
     },
     {
         src: `${ST_PHILLIPS_BASE}/IMG_4138-2%203.JPG`,
@@ -126,7 +126,7 @@ export const stPhillipsAcademyProjectImages: ProjectImage[] = [
     },
     {
         src: `${ST_PHILLIPS_BASE}/IMG_4750-1%203.JPG`,
-        alt: "CNF founder with students at St. Phillips Academy",
+        alt: "CFO founder with students at St. Phillips Academy",
     },
     {
         src: `${ST_PHILLIPS_BASE}/20240430_141328-1%203.JPG`,
@@ -134,7 +134,7 @@ export const stPhillipsAcademyProjectImages: ProjectImage[] = [
     },
     {
         src: `${ST_PHILLIPS_BASE}/IMG_20240711_101701_024%202.JPG`,
-        alt: "Students at St. Phillips Academy supported by CNF",
+        alt: "Students at St. Phillips Academy supported by CFO",
     },
 ];
 
@@ -144,19 +144,19 @@ const AGGS_IWD_BASE = "/assets/projects/AGGS%20IWD%20OUTREACH";
 export const aggsIwdOutreachProjectImages: ProjectImage[] = [
     {
         src: `${AGGS_IWD_BASE}/ATT07852.jpg`,
-        alt: "CNF International Women's Day outreach at AGGS Gudu",
+        alt: "CFO International Women's Day outreach at AGGS Gudu",
     },
     {
         src: `${AGGS_IWD_BASE}/ATT07859.jpg`,
-        alt: "Female students at AGGS Gudu during CNF IWD session",
+        alt: "Female students at AGGS Gudu during CFO IWD session",
     },
     {
         src: `${AGGS_IWD_BASE}/ATT07866.jpg`,
-        alt: "CNF founder engaging students at AGGS Gudu on International Women's Day",
+        alt: "CFO founder engaging students at AGGS Gudu on International Women's Day",
     },
     {
         src: `${AGGS_IWD_BASE}/IMG_0392.jpg`,
-        alt: "AGGS Gudu students at CNF International Women's Day outreach",
+        alt: "AGGS Gudu students at CFO International Women's Day outreach",
     },
     {
         src: `${AGGS_IWD_BASE}/IMG_0454.jpg`,
@@ -170,19 +170,19 @@ const MANGU_OUTREACH_BASE = "/assets/projects/MANGU%20OUTREACH";
 export const manguOutreachProjectImages: ProjectImage[] = [
     {
         src: `${MANGU_OUTREACH_BASE}/IMG_3264.JPG`,
-        alt: "CNF food relief outreach in Mangu, Plateau State",
+        alt: "CFO food relief outreach in Mangu, Plateau State",
     },
     {
         src: `${MANGU_OUTREACH_BASE}/IMG_3263.JPG`,
-        alt: "Families receiving food supplies during CNF Mangu outreach",
+        alt: "Families receiving food supplies during CFO Mangu outreach",
     },
     {
         src: `${MANGU_OUTREACH_BASE}/IMG_3275%20%281%29.JPG`,
-        alt: "CNF team distributing food relief in Mangu community",
+        alt: "CFO team distributing food relief in Mangu community",
     },
     {
         src: `${MANGU_OUTREACH_BASE}/IMG_3280%20%281%29.JPG`,
-        alt: "Mangu outreach beneficiaries with CNF food relief packages",
+        alt: "Mangu outreach beneficiaries with CFO food relief packages",
     },
     {
         src: `${MANGU_OUTREACH_BASE}/IMG_3289%20%281%29.JPG`,
@@ -190,15 +190,15 @@ export const manguOutreachProjectImages: ProjectImage[] = [
     },
     {
         src: `${MANGU_OUTREACH_BASE}/IMG_3290.JPG`,
-        alt: "CNF humanitarian food outreach in Mangu",
+        alt: "CFO humanitarian food outreach in Mangu",
     },
     {
         src: `${MANGU_OUTREACH_BASE}/IMG_3291.JPG`,
-        alt: "Community members at CNF Mangu food relief outreach",
+        alt: "Community members at CFO Mangu food relief outreach",
     },
     {
         src: `${MANGU_OUTREACH_BASE}/IMG_3293.JPG`,
-        alt: "CNF food relief programme in Mangu, Plateau State",
+        alt: "CFO food relief programme in Mangu, Plateau State",
     },
 ];
 
@@ -208,19 +208,19 @@ const FESTIVE_FOOD_RELIEF_BASE = "/assets/projects/FESTIVE%20FOOD%20RELIEF";
 export const festiveFoodReliefProjectImages: ProjectImage[] = [
     {
         src: `${FESTIVE_FOOD_RELIEF_BASE}/1.jpg`,
-        alt: "CNF festive food relief outreach in Gonin Gora, Kaduna",
+        alt: "CFO festive food relief outreach in Gonin Gora, Kaduna",
     },
     {
         src: `${FESTIVE_FOOD_RELIEF_BASE}/3.jpg`,
-        alt: "Families receiving festive food packages from CNF in Gonin Gora",
+        alt: "Families receiving festive food packages from CFO in Gonin Gora",
     },
     {
         src: `${FESTIVE_FOOD_RELIEF_BASE}/5.jpg`,
-        alt: "CNF team distributing food relief during the festive season",
+        alt: "CFO team distributing food relief during the festive season",
     },
     {
         src: `${FESTIVE_FOOD_RELIEF_BASE}/6.jpg`,
-        alt: "Gonin Gora community members at CNF festive food outreach",
+        alt: "Gonin Gora community members at CFO festive food outreach",
     },
     {
         src: `${FESTIVE_FOOD_RELIEF_BASE}/7.jpg`,
@@ -228,11 +228,11 @@ export const festiveFoodReliefProjectImages: ProjectImage[] = [
     },
     {
         src: `${FESTIVE_FOOD_RELIEF_BASE}/8.jpg`,
-        alt: "CNF humanitarian food distribution in Gonin Gora",
+        alt: "CFO humanitarian food distribution in Gonin Gora",
     },
     {
         src: `${FESTIVE_FOOD_RELIEF_BASE}/10.jpg`,
-        alt: "CNF volunteers at Festive Food Relief outreach in Kaduna",
+        alt: "CFO volunteers at Festive Food Relief outreach in Kaduna",
     },
     {
         src: `${FESTIVE_FOOD_RELIEF_BASE}/11.jpg`,
@@ -246,7 +246,7 @@ const JIKWOYI_DRUG_BASE = "/assets/projects/DRUG%20DONATION%20OUTREACH%20JIKWOYI
 export const jikwoyiDrugDonationProjectImages: ProjectImage[] = [
     {
         src: `${JIKWOYI_DRUG_BASE}/3M8A9074%202.JPG`,
-        alt: "CNF team sorting donated medications at Jikwoyi outreach",
+        alt: "CFO team sorting donated medications at Jikwoyi outreach",
     },
     {
         src: `${JIKWOYI_DRUG_BASE}/3M8A9060.JPG`,
@@ -254,27 +254,27 @@ export const jikwoyiDrugDonationProjectImages: ProjectImage[] = [
     },
     {
         src: `${JIKWOYI_DRUG_BASE}/3M8A9063.JPG`,
-        alt: "CNF medical supplies donation in Jikwoyi, Abuja",
+        alt: "CFO medical supplies donation in Jikwoyi, Abuja",
     },
     {
         src: `${JIKWOYI_DRUG_BASE}/3M8A9068%202.JPG`,
-        alt: "Healthcare workers and CNF team at Jikwoyi clinic outreach",
+        alt: "Healthcare workers and CFO team at Jikwoyi clinic outreach",
     },
     {
         src: `${JIKWOYI_DRUG_BASE}/3M8A9180%202.JPG`,
-        alt: "Medication inventory donated by CNF to Jikwoyi community clinic",
+        alt: "Medication inventory donated by CFO to Jikwoyi community clinic",
     },
     {
         src: `${JIKWOYI_DRUG_BASE}/3M8A9183%202.JPG`,
-        alt: "CNF drug donation programme in Jikwoyi, Abuja",
+        alt: "CFO drug donation programme in Jikwoyi, Abuja",
     },
     {
         src: `${JIKWOYI_DRUG_BASE}/3M8A9208%20%281%29.JPG`,
-        alt: "Jikwoyi clinic staff receiving CNF medical donations",
+        alt: "Jikwoyi clinic staff receiving CFO medical donations",
     },
     {
         src: `${JIKWOYI_DRUG_BASE}/3M8A9212.JPG`,
-        alt: "CNF healthcare access outreach at Jikwoyi Primary Health Care",
+        alt: "CFO healthcare access outreach at Jikwoyi Primary Health Care",
     },
 ];
 
@@ -285,11 +285,11 @@ const KUJE_HEALTH_BASE =
 export const kujeHealthOutreachProjectImages: ProjectImage[] = [
     {
         src: `${KUJE_HEALTH_BASE}/IMG_4850.JPG`,
-        alt: "CNF health outreach at Kuje General Hospital",
+        alt: "CFO health outreach at Kuje General Hospital",
     },
     {
         src: `${KUJE_HEALTH_BASE}/IMG_4851.JPG`,
-        alt: "CNF team supporting patients at Kuje and Whitedove hospitals",
+        alt: "CFO team supporting patients at Kuje and Whitedove hospitals",
     },
     {
         src: `${KUJE_HEALTH_BASE}/IMG_4833-2.JPG`,
@@ -297,11 +297,11 @@ export const kujeHealthOutreachProjectImages: ProjectImage[] = [
     },
     {
         src: `${KUJE_HEALTH_BASE}/834A3071-DE0A-4EAA-B566-EFD2F9C9A9D5_1_201_a.jpeg`,
-        alt: "CNF offsetting hospital bills for patients in Kuje",
+        alt: "CFO offsetting hospital bills for patients in Kuje",
     },
     {
         src: `${KUJE_HEALTH_BASE}/7A891BA7-BF97-4B1E-8DC4-CCF078928A69_1_201_a.jpeg`,
-        alt: "Whitedove and Kuje General Hospital health outreach by CNF",
+        alt: "Whitedove and Kuje General Hospital health outreach by CFO",
     },
 ];
 
@@ -311,15 +311,15 @@ const KUCHINGORO_BASE = "/assets/projects/Outreach%20at%20New%20Kuchingoro";
 export const kuchingoroOutreachProjectImages: ProjectImage[] = [
     {
         src: `${KUCHINGORO_BASE}/_Y4B0747.JPG`,
-        alt: "CNF medical outreach at New Kuchingoro IDP Camp",
+        alt: "CFO medical outreach at New Kuchingoro IDP Camp",
     },
     {
         src: `${KUCHINGORO_BASE}/_Y4B0802.JPG`,
-        alt: "Displaced families at CNF Project HEEM outreach in Kuchingoro",
+        alt: "Displaced families at CFO Project HEEM outreach in Kuchingoro",
     },
     {
         src: `${KUCHINGORO_BASE}/Copy%20of%20_Y4B0785.JPG`,
-        alt: "CNF team providing medical care at New Kuchingoro IDP Camp",
+        alt: "CFO team providing medical care at New Kuchingoro IDP Camp",
     },
     {
         src: `${KUCHINGORO_BASE}/_Y4B0346.JPG`,
@@ -327,7 +327,7 @@ export const kuchingoroOutreachProjectImages: ProjectImage[] = [
     },
     {
         src: `${KUCHINGORO_BASE}/_Y4B0500%20%281%29.JPG`,
-        alt: "CNF humanitarian outreach with IDP camp residents in Kuchingoro",
+        alt: "CFO humanitarian outreach with IDP camp residents in Kuchingoro",
     },
     {
         src: `${KUCHINGORO_BASE}/Copy%20of%20_Y4B0355-1.JPG`,
@@ -335,11 +335,11 @@ export const kuchingoroOutreachProjectImages: ProjectImage[] = [
     },
     {
         src: `${KUCHINGORO_BASE}/_Y4B0319.JPG`,
-        alt: "CNF Project HEEM outreach at New Kuchingoro",
+        alt: "CFO Project HEEM outreach at New Kuchingoro",
     },
     {
         src: `${KUCHINGORO_BASE}/_Y4B0668%202.JPG`,
-        alt: "Community members at New Kuchingoro IDP Camp CNF outreach",
+        alt: "Community members at New Kuchingoro IDP Camp CFO outreach",
     },
 ];
 
@@ -349,7 +349,7 @@ const PROJECT_WASH_KEFFI_BASE = "/assets/projects/Project%20WASH-Keffi";
 export const projectWashKeffiProjectImages: ProjectImage[] = [
     {
         src: `${PROJECT_WASH_KEFFI_BASE}/Screenshot%20From%202026-05-21%2021-55-06.png`,
-        alt: "CNF Project WASH hygiene education at secondary schools in Keffi",
+        alt: "CFO Project WASH hygiene education at secondary schools in Keffi",
     },
     {
         src: `${PROJECT_WASH_KEFFI_BASE}/Screenshot%20From%202026-05-21%2021-56-56.png`,
@@ -365,7 +365,7 @@ export const projectWashKeffiProjectImages: ProjectImage[] = [
     },
     {
         src: `${PROJECT_WASH_KEFFI_BASE}/Screenshot%20From%202026-05-21%2021-57-13.png`,
-        alt: "CNF WASH programme activities at a secondary school in Keffi",
+        alt: "CFO WASH programme activities at a secondary school in Keffi",
     },
     {
         src: `${PROJECT_WASH_KEFFI_BASE}/Screenshot%20From%202026-05-21%2021-57-19.png`,
@@ -373,11 +373,11 @@ export const projectWashKeffiProjectImages: ProjectImage[] = [
     },
     {
         src: `${PROJECT_WASH_KEFFI_BASE}/Screenshot%20From%202026-05-21%2021-57-41.png`,
-        alt: "Secondary school hygiene education led by CNF",
+        alt: "Secondary school hygiene education led by CFO",
     },
     {
         src: `${PROJECT_WASH_KEFFI_BASE}/Screenshot%20From%202026-05-21%2021-57-55.png`,
-        alt: "CNF promoting sanitation awareness through Project WASH",
+        alt: "CFO promoting sanitation awareness through Project WASH",
     },
 ];
 
@@ -387,11 +387,11 @@ const CIVIC_AWARENESS_BASE = "/assets/projects/Civic%20Awareness";
 export const civicAwarenessProjectImages: ProjectImage[] = [
     {
         src: `${CIVIC_AWARENESS_BASE}/1.JPEG`,
-        alt: "CNF civic awareness session with Skill Scale-Up cohort participants",
+        alt: "CFO civic awareness session with Skill Scale-Up cohort participants",
     },
     {
         src: `${CIVIC_AWARENESS_BASE}/2.JPEG`,
-        alt: "Young cohort members learning about civic literacy at CNF",
+        alt: "Young cohort members learning about civic literacy at CFO",
     },
     {
         src: `${CIVIC_AWARENESS_BASE}/3.JPEG`,
@@ -399,7 +399,7 @@ export const civicAwarenessProjectImages: ProjectImage[] = [
     },
     {
         src: `${CIVIC_AWARENESS_BASE}/4.JPEG`,
-        alt: "CNF founder addressing cohort on civic awareness and engagement",
+        alt: "CFO founder addressing cohort on civic awareness and engagement",
     },
     {
         src: `${CIVIC_AWARENESS_BASE}/5.JPEG`,
@@ -415,38 +415,38 @@ export const projectImageCatalog = {
     },
     educationOutreach: {
         src: "/assets/ourWorkImgs/education%20outreach.jpg",
-        alt: "CNF education outreach with students",
+        alt: "CFO education outreach with students",
     },
     communityAid: {
         src: "/assets/ourWorkImgs/community%20aid.jpg",
-        alt: "CNF community aid and humanitarian outreach",
+        alt: "CFO community aid and humanitarian outreach",
     },
     howItStarted: {
         src: "/assets/howItStarted/howitstarted.jpg",
-        alt: "CNF foundation outreach and community engagement",
+        alt: "CFO foundation outreach and community engagement",
     },
     graduationCeremony: {
         src: "/assets/carouselImgs/3M8A8846.JPG",
-        alt: "CNF Skill Scale-Up graduation ceremony",
+        alt: "CFO Skill Scale-Up graduation ceremony",
     },
     cohortCelebration: {
         src: "/assets/carouselImgs/3M8A8624.JPEG",
-        alt: "CNF programme celebration with graduates and mentors",
+        alt: "CFO programme celebration with graduates and mentors",
     },
     programmeLaunch: {
         src: "/assets/carouselImgs/_Y4B0504.JPG",
-        alt: "CNF programme launch and orientation",
+        alt: "CFO programme launch and orientation",
     },
     communityGathering: {
         src: "/assets/carouselImgs/_Y4B0704.JPG",
-        alt: "CNF community gathering during an outreach",
+        alt: "CFO community gathering during an outreach",
     },
     clinicOutreach: {
         src: "/assets/carouselImgs/IMG_4340%203.JPG",
-        alt: "CNF healthcare and clinic outreach",
+        alt: "CFO healthcare and clinic outreach",
     },
     handsOnWorkshop: {
         src: "/assets/carouselImgs/DE8E3217-50A3-4574-BAA5-66B7E9974018_1_201_a.jpeg",
-        alt: "Hands-on skills workshop with CNF beneficiaries",
+        alt: "Hands-on skills workshop with CFO beneficiaries",
     },
 } as const satisfies Record<string, ProjectImage>;

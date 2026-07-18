@@ -50,7 +50,7 @@ export function CareersProfileForm() {
 
       <FormSelect id={`${idPrefix}-expertise`} label="Area of Expertise" required placeholder="Select" options={expertiseOptions} error={errors.areaOfExpertise?.message} {...register("areaOfExpertise")}/>
 
-      <FormTextarea id={`${idPrefix}-intro`} label="Brief Introduction" required rows={4} placeholder="Tell us a bit about yourself, what you do, and why CNF interests you." error={errors.briefIntroduction?.message} {...register("briefIntroduction")}/>
+      <FormTextarea id={`${idPrefix}-intro`} label="Brief Introduction" required rows={4} placeholder="Tell us a bit about yourself, what you do, and why CFO interests you." error={errors.briefIntroduction?.message} {...register("briefIntroduction")}/>
 
       <Button type="submit" variant="primary" size="lg" className="w-full" disabled={isSubmitting}>
         {isSubmitting ? "Sending…" : "Submit Your Profile"}

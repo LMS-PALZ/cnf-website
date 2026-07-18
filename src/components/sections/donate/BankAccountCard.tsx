@@ -31,7 +31,7 @@ export function BankAccountCard({ rows }: Props) {
     return (
         <div className="rounded-xl bg-cnf-night p-5 text-left text-sm text-white/85">
             <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-cnf-accent">
-                CNF Account Details
+                CFO Account Details
             </p>
             <dl className="mt-3 divide-y divide-white/10">
                 {rows.map((row) => {

@@ -10,7 +10,7 @@ export const site = {
     shortName: "CFO",
     tagline: "Skills, Education & Humanitarian Aid",
     description: "A Nigerian nonprofit advancing skills, education, and humanitarian aid in communities across Nigeria.",
-    footerTagline: "Turning potential into opportunity for underserved Nigerians",
+    footerTagline: "Turning potential into opportunity for underserved Nigerians.",
     url:
         process.env.NEXT_PUBLIC_SITE_URL ??
         (process.env.NODE_ENV === "production"
@@ -32,7 +32,7 @@ export const site = {
 
 export const donateConfig = {
     bank: {
-        accountName: process.env.NEXT_PUBLIC_DONATE_ACCOUNT_NAME ?? "Chiggy Nsofor Foundation",
+        accountName: process.env.NEXT_PUBLIC_DONATE_ACCOUNT_NAME ?? "Chiggy Foundation for Opportunity",
         accountNumber: process.env.NEXT_PUBLIC_DONATE_ACCOUNT_NUMBER ?? "Add Account No.",
         bankName: process.env.NEXT_PUBLIC_DONATE_BANK_NAME ?? "Add Bank Name",
     },

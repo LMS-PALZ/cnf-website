@@ -33,7 +33,7 @@ export function FollowOurJourneySection() {
                     See It <span className="text-cnf-accent">As It Happens</span>
                 </h2>
                 <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/70 md:text-base">
-                    Follow CNF on social media for live updates, behind-the-scenes moments, and the stories
+                    Follow CFO on social media for live updates, behind-the-scenes moments, and the stories
                     that don&apos;t make it into the reports.
                 </p>
 
@@ -44,7 +44,7 @@ export function FollowOurJourneySection() {
                                 href={s.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                aria-label={`CNF on ${s.label}`}
+                                aria-label={`CFO on ${s.label}`}
                                 className={cn(
                                     "inline-flex items-center rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-white transition-colors hover:border-white/30 hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-accent",
                                     accentTone[s.id],

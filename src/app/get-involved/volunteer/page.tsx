@@ -7,7 +7,7 @@ import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata(
     "Volunteer - Get Involved",
-    "Volunteer with the Chiggy Nsofor Foundation and use your time and skills to support communities across Nigeria.",
+    "Volunteer with the Chiggy Foundation for Opportunity and use your time and skills to support communities across Nigeria.",
 );
 
 export default function VolunteerPage() {

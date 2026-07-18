@@ -8,7 +8,7 @@ export function InspiredByWhatSection() {
           <span className="text-cnf-accent">You&rsquo;ve Read?</span>
         </>} description={<>
           Every story on this page was made possible by people who believed in
-          CNF&rsquo;s mission. You can be part of the next chapter.
+          CFO&rsquo;s mission. You can be part of the next chapter.
         </>} actions={<>
           <DonatePayButton variant="accent" size="lg" purpose="News CTA">
             Donate Today

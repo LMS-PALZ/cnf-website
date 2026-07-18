@@ -78,8 +78,8 @@ export const ourWorkPillars: PillarBlockData[] = [
         theme: "education",
         heading: "Education",
         subheading: "Access, Equity & Civic Learning",
-        lead: "Education is the foundation of everything else. For children in underserved communities, financial barriers too often make it an impossible dream, CNF works to change that.",
-        body: "Across Nigeria, thousands of children are out of school, not because they lack ability or ambition, but because their families cannot afford fees, uniforms, or exam costs. CNF's Education pillar removes these barriers directly: enrolling out-of-school children in secondary schools, tertiary institutions, covering school fees and examination costs, distributing academic resources, and delivering civic education workshops that build engaged, aware citizens. We believe that every child who gets back into a classroom is one less child left behind, and one more future leader the country can count on.",
+        lead: "Education is the foundation of everything else. For children in underserved communities, financial barriers too often make it an impossible dream, CFO works to change that.",
+        body: "Across Nigeria, thousands of children are out of school, not because they lack ability or ambition, but because their families cannot afford fees, uniforms, or exam costs. CFO's Education pillar removes these barriers directly: enrolling out-of-school children in secondary schools, tertiary institutions, covering school fees and examination costs, distributing academic resources, and delivering civic education workshops that build engaged, aware citizens. We believe that every child who gets back into a classroom is one less child left behind, and one more future leader the country can count on.",
         features: [
             {
                 title: "Out-of-School Re-enrolment",
@@ -102,8 +102,9 @@ export const ourWorkPillars: PillarBlockData[] = [
         mediaLabel: "Education outreach in partner schools",
         heroImageSrc: "/assets/ourWorkImgs/ourworkeducation.jpeg",
         smallStats: [
+            { value: "1,000+", label: "Students reached" },
             { value: "69+", label: "Scholarship beneficiaries funded" },
-            { value: "12 Months", label: "Renewable School enrolment support" },
+            { value: "12 mo", label: "Renewable enrolment support" },
         ],
         reversed: true,
     },
@@ -141,8 +142,7 @@ export const ourWorkPillars: PillarBlockData[] = [
         heroImageSrc: "/assets/ourWorkImgs/ourworkhumanitarian.jpeg",
         smallStats: [
             { value: "9", label: "Communities served" },
-            { value: "4", label: "States reached" },
-            { value: "FCT", label: "Nasarawa · Kaduna · Plateau" },
+            { value: "4", label: "States: FCT, Nasarawa, Kaduna, Plateau" },
             { value: "100%", label: "Free to all beneficiaries" },
         ],
     },

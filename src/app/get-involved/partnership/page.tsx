@@ -7,7 +7,7 @@ import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata(
     "Partnership - Get Involved",
-    "Partner with the Chiggy Nsofor Foundation to support evidence-based, community-centred impact across Nigeria.",
+    "Partner with the Chiggy Foundation for Opportunity to support evidence-based, community-centred impact across Nigeria.",
 );
 
 export default function PartnershipPage() {

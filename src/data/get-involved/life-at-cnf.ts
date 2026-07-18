@@ -9,7 +9,7 @@ export const lifeAtCnfCards: LifeAtCnfCard[] = [
         id: "purpose-driven",
         variant: "solid",
         title: "Purpose-Driven Work",
-        description: "Every role at CNF directly contributes to programmes that change lives. Your work has a clear, visible impact.",
+        description: "Every role at CFO directly contributes to programmes that change lives. Your work has a clear, visible impact.",
     },
     {
         id: "growth",
@@ -27,6 +27,6 @@ export const lifeAtCnfCards: LifeAtCnfCard[] = [
         id: "room-to-lead",
         variant: "solid",
         title: "Room to Lead",
-        description: "As CNF grows, so do the opportunities within it. Ambitious, driven individuals will find space to grow here.",
+        description: "As CFO grows, so do the opportunities within it. Ambitious, driven individuals will find space to grow here.",
     },
 ];

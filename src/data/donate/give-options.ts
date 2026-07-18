@@ -25,7 +25,7 @@ export const giveOptions: GiveOption[] = [
         bankRows: [
             { label: "Bank", value: "Zenith Bank" },
             { label: "Account Number", value: "1310103551", copyable: true },
-            { label: "Account Name", value: "Chiggy Nsofor Foundation" },
+            { label: "Account Name", value: "Chiggy Foundation for Opportunity" },
         ],
     },
     {
@@ -38,14 +38,14 @@ export const giveOptions: GiveOption[] = [
             { label: "Bank", value: "Providus Bank USD" },
             { label: "Account Number", value: "1305291764", copyable: true },
             { label: "Swift Code", value: "UMPLNGLA", copyable: true },
-            { label: "Account Name", value: "Chiggy Nsofor Foundation" },
+            { label: "Account Name", value: "Chiggy Foundation for Opportunity" },
         ],
     },
     {
         id: "abroad",
         title: "Giving From Abroad",
         description:
-            "Based outside Nigeria? You can still give directly to CNF. Reach out to us and we will provide the most convenient payment option for your location.",
+            "Based outside Nigeria? You can still give directly to CFO. Reach out to us and we will provide the most convenient payment option for your location.",
         action: "outline",
         ctaLabel: "Contact Us to Give",
     },
