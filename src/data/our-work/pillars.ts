@@ -77,7 +77,7 @@ export const ourWorkPillars: PillarBlockData[] = [
         pillarLabel: "Pillar two",
         theme: "education",
         heading: "Education",
-        subheading: "Access, Equity & Civic Learning",
+        subheading: "Access & Equity",
         lead: "Education is the foundation of everything else. For children in underserved communities, financial barriers too often make it an impossible dream, CFO works to change that.",
         body: "Across Nigeria, thousands of children are out of school, not because they lack ability or ambition, but because their families cannot afford fees, uniforms, or exam costs. CFO's Education pillar removes these barriers directly: enrolling out-of-school children in secondary schools, tertiary institutions, covering school fees and examination costs, distributing academic resources, and delivering civic education workshops that build engaged, aware citizens. We believe that every child who gets back into a classroom is one less child left behind, and one more future leader the country can count on.",
         features: [

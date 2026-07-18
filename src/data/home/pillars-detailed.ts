@@ -27,7 +27,7 @@ export const homePillars: HomePillar[] = [
         id: "education",
         badge: "Education",
         badgeTone: "education",
-        title: "Access, Equity & Civic Learning",
+        title: "Access & Equity",
         description: "We re-enrol out-of-school children, cover exam fees, and build civic awareness, laying the groundwork for educated, engaged citizens.",
         href: "/our-work#education",
         heroImageSrc: `${PILLARS_ONE_MISSION_BASE}/education.jpg`,
