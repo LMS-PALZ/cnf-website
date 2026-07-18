@@ -15,7 +15,7 @@ export function AboutAnnualReportSection() {
                                 Accountability &amp; Transparency
                             </p>
                             <h2 className="mt-4 text-3xl font-bold text-white">
-                                CNF 2025 Annual Report
+                                CFO 2025 Annual Report
                             </h2>
                             <p className="mt-4 text-base font-semibold leading-8 text-white">
                                 Full programme results, financials, and impact data, published openly for every
@@ -27,7 +27,7 @@ export function AboutAnnualReportSection() {
                                 href={site.annualReportUrl}
                                 external
                                 variant="ghost"
-                                ariaLabel="Download CNF 2025 Annual Report (opens in a new tab)"
+                                ariaLabel="Download CFO 2025 Annual Report (opens in a new tab)"
                                 className="!animate-none border-2 border-cnf-accent bg-cnf-accent text-white shadow-none transition-all duration-200 hover:!scale-[0.98] hover:!border-white/80 hover:!bg-transparent hover:!text-white"
                             >
                                 Download Report

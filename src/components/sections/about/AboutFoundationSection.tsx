@@ -7,12 +7,12 @@ const FOUNDATION_BG = "/assets/ourWorkImgs/community%20aid.jpg";
 const pillars = [
     {
         title: "Our Mission",
-        text: "To provide essential support and build capacity in individuals and communities.",
+        text: "We create opportunity for underserved Nigerians to reach their potential, through skills, education, and care.",
     },
     {
         title: "Our Vision",
         // headline: "A Nigeria Where No One Is Left Behind",
-        text: "To see underserved Nigerians given oppurtunities to have a better quality of life",
+        text: "A Nigeria where no one is held back by where they started.",
     },
 ] as const;
 

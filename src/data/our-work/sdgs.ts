@@ -22,6 +22,6 @@ export const sdgCards: SdgCard[] = [
         number: 8,
         theme: "skills",
         title: "Decent Work & Economic Growth",
-        description: "The SSU Programme's 86% economic activation rate is CNF's most direct contribution to youth employment, entrepreneurship, and inclusive growth.",
+        description: "The SSU Programme's 86% economic activation rate is cool, most direct contribution to youth employment, entrepreneurship, and inclusive growth.",
     },
 ];

@@ -9,4 +9,5 @@ export const impactStats: HeroStat[] = [
     { value: "4", label: "States reached" },
     { value: "9", label: "Communities" },
     { value: "7,000+", label: "Individuals reached" },
+    { value: "64", label: "Skill Scale-Up graduates" },
 ];

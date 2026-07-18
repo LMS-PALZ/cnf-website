@@ -16,10 +16,10 @@ export type HomePillar = {
 export const homePillars: HomePillar[] = [
     {
         id: "skills",
-        badge: "Skills development",
+        badge: "Economic Empowerment",
         badgeTone: "skills",
         title: "Skill Scale-Up & Mentorship",
-        description: "Cohort-based training for Nigerian youth, paired with mentorship, internship placement, and alumni support to bridge training and real-world opportunity.",
+        description: "Cohort based digital and vocational training, paired with mentorship for every graduate, and startup kits and support awarded to exceptional graduates, turning training into real income.",
         href: "/our-work#skills",
         heroImageSrc: `${PILLARS_ONE_MISSION_BASE}/skill%20scale%20up%20and%20community.jpeg`,
     },

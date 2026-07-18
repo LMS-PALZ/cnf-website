@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { IconType } from "react-icons";
 import { FaInstagram, FaLinkedin, FaTiktok, FaYoutube } from "react-icons/fa";
@@ -47,14 +46,15 @@ export function SiteFooter() {
                     <div className="max-w-xs">
                         <Link
                             href="/"
-                            className="block w-full max-w-[11rem] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-accent sm:max-w-[12rem]"
+                            className="inline-block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cnf-accent"
                         >
-                            <Image
-                                src="/Logo all white.png"
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                                src="/assets/logo/logo-footer.png"
                                 alt={site.name}
-                                width={304}
-                                height={132}
-                                className="h-auto w-full max-h-11 object-contain object-left sm:max-h-12"
+                                width={200}
+                                height={154}
+                                className="block h-12 w-auto sm:h-14"
                             />
                         </Link>
                         <p className="mt-4 whitespace-pre-line text-sm font-semibold leading-relaxed text-cnf-footer-heading/95">
@@ -134,7 +134,7 @@ export function SiteFooter() {
 
                 <div className="mt-12 border-t border-white/10 pt-8 text-xs font-semibold">
                     <p className={`mt-3 text-center text-sm ${footerLinkClassName}`}>
-                        © {new Date().getFullYear()} {site.name}. All rights reserved.{" "}
+                        © {new Date().getFullYear()} {site.name}. Formerly Chiggy Nsofor Foundation. All rights reserved.{" "}
                         {site.registrationLine}
                     </p>
                 </div>

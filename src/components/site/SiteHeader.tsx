@@ -34,11 +34,11 @@ export function SiteHeader() {
                 >
                     <span className="sr-only">{site.name}, home</span>
                     <Image
-                        src="/CNFLogo.png"
+                        src="/assets/logo/logo-color.png"
                         alt={site.name}
                         width={220}
-                        height={72}
-                        className="h-11 w-auto min-w-[10.5rem] max-w-[13.5rem] object-contain object-left sm:h-12 sm:min-w-[11.5rem] sm:max-w-[15rem]"
+                        height={168}
+                        className="h-11 w-auto min-w-[8.5rem] max-w-[11.5rem] object-contain object-left sm:h-12 sm:min-w-[9.5rem] sm:max-w-[13rem]"
                         priority
                     />
                 </Link>

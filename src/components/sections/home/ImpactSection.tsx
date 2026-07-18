@@ -1,5 +1,4 @@
 import { Card } from "@/components/ui/Card";
-import { cn } from "@/lib/cn";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
 import { SectionHeader } from "@/components/ui/SectionHeader";
@@ -38,15 +37,12 @@ export function ImpactSection() {
                     />
 
                     <div className="mt-10 grid grid-cols-2 gap-4 sm:gap-5">
-                        {impactStats.map((stat, index) => (
+                        {impactStats.map((stat) => (
                             <Card
                                 key={stat.label}
                                 tone="elevated"
                                 padding="lg"
-                                className={cn(
-                                    "text-center shadow-sm transition-shadow duration-300 hover:shadow-md",
-                                    index === impactStats.length - 1 && "col-span-2",
-                                )}
+                                className="text-center shadow-sm transition-shadow duration-300 hover:shadow-md"
                             >
                                 <div className="flex flex-col items-center gap-2">
                                     <Stat

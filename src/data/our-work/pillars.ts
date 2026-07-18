@@ -37,13 +37,11 @@ export const ourWorkPillars: PillarBlockData[] = [
         theme: "skills",
         heading: "Economic Empowerment",
         subheading: "Mentorship & Skill Scale-Up",
-        lead: "Our flagship Skill Scale-Up (SSU) Programme equips underserved Nigerian youth aged 15 to 30 with practical, future-ready skills, and the support to turn those skills into real income.",
+        lead: "Our flagship Skill Scale Up (SSU) Programme is a fully funded scholarship that equips underserved Nigerian youth aged 15 to 30 with practical, future ready skills, and the support to turn those skills into real income.",
         body: [
-            "Over 80% of Nigerian graduates enter the workforce without the digital skills today's economy demands. CNF's SSU Programme directly addresses this gap.",
-            "The programme is delivered through a highly subsidised in-person model, alongside an online SSU tier with an application fee ranging from ₦10,000 to ₦20,000, making quality skills training accessible to young Nigerians across the country.",
-            "Built around both technical and character development, SSU equips participants through three core tracks: Digital & Tech, Vocational Skills, and the Total Man Mentorship Programme. The goal is not only to prepare young people for employment, but to position them for sustainable livelihoods and long-term financial independence.",
-            "What sets SSU apart is its commitment beyond the classroom. Graduates gain access to post-training internship placements, startup support, and an alumni mentorship network designed to foster continuous growth and opportunity.",
-            "At SSU, our graduates do not just learn; they earn.",
+            "SSU exists for the young people the economy has overlooked: school leavers without work, graduates without digital skills, young women without income. Over 80% of Nigerian graduates enter the workforce without the digital skills today's economy demands, and for underserved youth the cost of quality training puts it permanently out of reach. SSU removes that barrier. Every learner's training is fully covered by the foundation. Our in person programme serves the most underserved, with a ₦10,000 application fee that is waived for anyone who cannot afford it, so no one is ever turned away. Our online track carries a one time application fee of ₦20,000. Training is delivered both virtually and at our hub and through our digital learning platform, reaching young Nigerians across the country.",
+            "This is economic empowerment, not just training. Built around both technical and character development, SSU runs three core tracks, and its commitment goes beyond the classroom. Every graduate joins our alumni mentorship network, and our most exceptional graduates, those who show real commitment and excel, earn internship placements, startup kits, and startup support, with their progress tracked after they receive it, because a skill only changes a life when it becomes an income.",
+            "At SSU, our graduates do not just learn. They earn.",
         ],
         features: [
             {
@@ -60,7 +58,7 @@ export const ourWorkPillars: PillarBlockData[] = [
             },
             {
                 title: "Post-Training Support",
-                description: "Internship placement, alumni peer mentorship, and startup capital support.",
+                description: "Alumni peer mentorship for every graduate. Internship placements, startup kits, and startup support awarded to exceptional graduates who show commitment and excel, with progress tracked after the award.",
             },
         ],
         cta: { label: "See more about SSU", href: "/programmes/skill-scale-up" },
@@ -68,8 +66,10 @@ export const ourWorkPillars: PillarBlockData[] = [
         mediaLabel: "SSU training and skills development",
         heroImageSrc: "/assets/ourWorkImgs/skill1.JPEG",
         smallStats: [
-            { value: "74+", label: "Youth trained across 3 cohorts" },
-            { value: "60%", label: "Women among SSU graduates" },
+            { value: "74", label: "Youth enrolled across 3 cohorts" },
+            { value: "86%", label: "Completion rate (64 graduates)" },
+            { value: "38%", label: "Of graduates now earning" },
+            { value: "60%", label: "Women among graduates" },
         ],
     },
     {
@@ -94,8 +94,8 @@ export const ourWorkPillars: PillarBlockData[] = [
                 description: "Textbooks, stationery, and learning materials shared across partner schools.",
             },
             {
-                title: "Civic Education Workshops",
-                description: "Building civic awareness, legal literacy, and community engagement.",
+                title: "Girls' Sessions & Learning Support",
+                description: "Sessions that build self belief, goal setting, and ambition, with a focus on keeping girls in school.",
             },
         ],
         cta: { label: "See us in action", href: "/projects#education" },
@@ -113,8 +113,8 @@ export const ourWorkPillars: PillarBlockData[] = [
         theme: "humanitarian",
         heading: "Humanitarian Aid",
         subheading: "Relief, Health & Community Care",
-        lead: "When people are in crisis, they cannot think about skills or education. CNF shows up first with food, medicine, and care, because meeting people where they are is where everything else begins.",
-        body: "No circumstance should determine whether a person eats today, receives medical attention, or has their child's hospital bill settled. CNF's Humanitarian Aid and Healthcare pillar delivers direct, tangible support to underserved individuals and families, from food relief and festive outreaches to full medical missions and hospital bill offset programmes. Our healthcare focus is particularly centred on those most at risk: pregnant women, young children, and communities with limited access to basic medical services. CNF brings healthcare directly into these communities, because access should never be a privilege.",
+        lead: "When people are in crisis, they cannot think about skills or education. CFO shows up first with food, medicine, and care, because meeting people where they are is where everything else begins.",
+        body: "No circumstance should determine whether a person eats today, receives medical attention, or has their child's hospital bill settled. This pillar delivers direct, tangible support, from food relief and festive outreaches to full medical missions and hospital bill offset. Our healthcare focus centres on those most at risk: pregnant women, young children, and communities with limited access to basic medical services. Access should never be a privilege.",
         features: [
             {
                 title: "Food Relief & Festive Outreaches",

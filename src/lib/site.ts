@@ -6,11 +6,11 @@ export const RESEND_SENDING_DOMAIN =
     process.env.RESEND_SENDING_DOMAIN?.trim() || "chiggynsoforfoundation.org";
 
 export const site = {
-    name: process.env.NEXT_PUBLIC_SITE_NAME ?? "Chiggy Nsofor Foundation",
-    shortName: "CNF",
+    name: process.env.NEXT_PUBLIC_SITE_NAME ?? "Chiggy Foundation for Opportunity",
+    shortName: "CFO",
     tagline: "Skills, Education & Humanitarian Aid",
     description: "A Nigerian nonprofit advancing skills, education, and humanitarian aid in communities across Nigeria.",
-    footerTagline: "Providing Opportunities, Impacting Lives.\nA Nigerian NGO building a future where no underserved person is left behind.",
+    footerTagline: "Turning potential into opportunity for underserved Nigerians",
     url:
         process.env.NEXT_PUBLIC_SITE_URL ??
         (process.env.NODE_ENV === "production"

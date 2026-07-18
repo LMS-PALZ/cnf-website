@@ -77,7 +77,7 @@ export function HomeHero({ eyebrow = "Est. 2024 · Abuja, Nigeria", title, title
                 {titleTrailing}
               </>) : null}
           </h1>
-          <p className="mt-8 max-w-md text-base leading-relaxed text-white/85 md:text-lg">
+          <p className="mt-8 max-w-xl text-base leading-relaxed text-white/85 md:max-w-2xl md:text-lg">
             {description}
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">

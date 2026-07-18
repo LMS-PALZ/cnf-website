@@ -30,14 +30,14 @@ export function WhoWeAreSection() {
                 <Reveal direction="right" delay={1} className="lg:col-span-7">
                     <div className="space-y-5 text-base leading-relaxed text-cnf-muted md:text-lg">
                         <p>
-                            The <strong className="text-cnf-ink">Chiggy Nsofor Foundation (CNF)</strong> is a
-                            Nigerian NGO founded in 2024 with one conviction: that every underserved person
-                            deserves the opportunity to live a better life.
+                            The <strong className="text-cnf-ink">Chiggy Foundation for Opportunity (CFO)</strong> is a
+                            Nigerian nonprofit founded in 2024 on one belief: potential is everywhere, but
+                            opportunity is not.
                         </p>
                         <p>
-                            We work across three pillars, Skills Development, Education, and Humanitarian
-                            Aid, delivering programmes that build lasting capacity in
-                            individuals and communities across Nigeria.
+                            We work across three pillars, Economic Empowerment, Education, and Humanitarian
+                            Aid, delivering programmes that build lasting capacity in individuals and
+                            communities across Nigeria.
                         </p>
                     </div>
                 </Reveal>

@@ -10,7 +10,7 @@ type Props = {
 };
 
 const labels: Record<string, string> = {
-    skills: "Skill Development",
+    skills: "Economic Empowerment",
     education: "Education",
     humanitarian: "Humanitarian Aid & Healthcare",
 };
@@ -28,7 +28,7 @@ export function OurWorkHero({ pillars }: Props) {
                     <span className="text-cnf-accent">One Mission.</span>
                 </>
             }
-            description="Everything CNF does sits under one of three interconnected pillars. Together, they form a holistic response to the challenges facing underserved Nigerians, equipping people with skills, knowledge, and the support they need to thrive."
+            description="Everything CFO does sits under one of three interconnected pillars. Together, they form a holistic response to the barriers facing underserved Nigerians, equipping people with skills, knowledge, and the support they need to thrive."
         >
             <ul className="flex flex-wrap gap-3">
                 {pillars.map((p) => (

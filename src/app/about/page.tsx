@@ -5,8 +5,6 @@ import { AboutCoreValuesSection } from "@/components/sections/about/AboutCoreVal
 import { AboutFoundationSection } from "@/components/sections/about/AboutFoundationSection";
 import { PageBanner } from "@/components/sections/PageBanner";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
-import { DonatePayButton } from "@/components/payments/DonatePayButton";
-import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Container } from "@/components/ui/Container";
 import { pageBannerImages } from "@/data/page-banners";
 import { fontDisplay } from "@/lib/fonts";
@@ -72,7 +70,7 @@ const teamMembers: TeamMember[] = [
     {
         name: "Pamela I",
         role: "Partnerships & Programs",
-        description: "Pamela drives CNF's partnership development and programme coordination, building the relationships and operational structures that keep every pillar running effectively. She also serves as Board Secretary.",
+        description: "Pamela drives CFO's partnership development and programme coordination, building the relationships and operational structures that keep every pillar running effectively. She also serves as Board Secretary.",
         image: "/assets/team/PAMELA%20Inew..png",
         imageAlt: "Pamela Ibemesi, Partnerships & Programs Officer at the Chiggy Nsofor Foundation",
         linkedin: "https://www.linkedin.com/in/pamela-ibemesi-9a7778373",
@@ -80,7 +78,7 @@ const teamMembers: TeamMember[] = [
     {
         name: "Victor A.",
         role: "Operations & Finance",
-        description: "Oversees CNF's day-to-day operations and financial management, ensuring every naira is tracked, every process is sound, and every programme is delivered on time and on budget.",
+        description: "Oversees CFO's day-to-day operations and financial management, ensuring every naira is tracked, every process is sound, and every programme is delivered on time and on budget.",
         image: "/assets/team/victor.jpg",
         imageAlt: "Victor A., Operations & Finance Lead at the Chiggy Nsofor Foundation",
         linkedin: "https://www.linkedin.com/in/victor-anyirigwo-b64788229",
@@ -88,7 +86,7 @@ const teamMembers: TeamMember[] = [
     {
         name: "Hajimrea K.",
         role: "Communications",
-        description: "Tells CNF's story across platforms, from impact reports and social media to partner communications, making sure the world knows what is being built in Nigeria.",
+        description: "Tells CFO's story across platforms, from impact reports and social media to partner communications, making sure the world knows what is being built in Nigeria.",
         image: "/assets/team/hajim.jpg",
         imageAlt: "Hajimrea K., Communications at the Chiggy Nsofor Foundation",
         linkedin: "https://www.linkedin.com/in/hajimrea-kawuwa-aa7392185",
@@ -111,7 +109,7 @@ const boardMembers = [
     {
         name: "Chiggy Nsofor",
         title: "Founder & CEO",
-        description: "Founder and executive lead. Responsible for CNF's strategic direction, partnerships, and programme development.",
+        description: "Founder and executive lead. Responsible for CFO's strategic direction, partnerships, and programme development.",
         role: "Founder",
         initials: "CN",
         tone: "bg-cnf-primary text-white",
@@ -119,7 +117,7 @@ const boardMembers = [
     {
         name: "Dickson Nsofor",
         title: "Trustee, Technology & Innovation",
-        description: "Founder of Kora Technologies. Provides strategic oversight on CNF's digital infrastructure and technology programmes.",
+        description: "Founder of Kora Technologies. Provides strategic oversight on CFO's digital infrastructure and technology programmes.",
         role: "Technology",
         initials: "DN",
         tone: "bg-cnf-pillar-skills text-white",
@@ -146,7 +144,7 @@ export default function AboutPage() {
             Why We <span className="text-cnf-accent">Exist</span>
           </>
         }
-        description="The Chiggy Nsofor Foundation was born from one simple belief: that where you start in life should never determine where you end up. We exist to close that gap, one skill, one community, one opportunity at a time."
+        description="Chiggy Foundation for Opportunity was born from one simple belief: potential is everywhere, but opportunity is not. Where you start in life should never determine where you end up. We exist to close that gap, one skill, one community, one opportunity at a time."
       />
 
       <section className="py-20 md:py-28">
@@ -158,16 +156,10 @@ export default function AboutPage() {
             >
               How we started
             </h2>
-            <p className="mt-12 text-justify">
-              The Chiggy Nsofor Foundation (CNF) was born out of a deep conviction that every
-              underserved Nigerian deserves action. Founded in 2024 by Chiggy Nsofor, it began as a
-              heartfelt response to the growing needs of individuals and communities across Nigeria.
-              What started as a personal passion to provide essential relief to families in need
-              quickly grew into a passionate foundation, built on the belief that lasting change is
-              possible when driven by purpose, integrity, and selfless service. From our very first
-              outreach, we set out to do more than provide temporary assistance; we set out to
-              transform lives.
-            </p>
+            <p className="mt-12 text-justify">Chiggy Foundation for Opportunity began in 2024 as the Chiggy Nsofor Foundation, born out of a deep conviction that every underserved Nigerian deserves action. It started as a heartfelt response to the growing needs of individuals and communities across Nigeria, beginning with food relief to families in Plateau State. What started as a personal mission quickly grew into a structured foundation, built on the belief that lasting change is possible when driven by purpose, integrity, and selfless service.
+              </p>
+              <p className="mt-12 text-justify">From our very first outreach, we set out to do more than provide temporary assistance. We set out to transform lives.</p>
+              <p className="mt-12 text-justify">A new name, the same mission. In 2026, as the work grew, the name grew with it. The Chiggy Nsofor Foundation became Chiggy Foundation for Opportunity, putting the mission itself in the name. The registration, the team, and the purpose remain exactly the same. Only the name now says out loud what we have believed from the first outreach: potential is everywhere, but opportunity is not.</p>
           </div>
 
           <div className="overflow-hidden bg-cnf-surface lg:col-start-2 lg:row-start-1">
@@ -201,15 +193,9 @@ export default function AboutPage() {
             >
               Where We Are Now
             </h2>
-            <p className="mt-12 text-justify">
-              Today, CNF is a growing force for good, actively reaching communities across Nigeria
-              through our three key programmes: Humanitarian Aid, Education, and Skill Acquisition. We
-              have provided food relief to families in crisis, offset medical bills for patients in
-              hospitals, enrolled out-of-school children back into education, empowered young people
-              with skills for financial independence and promoted civic engagement. Our team of
-              dedicated staff and volunteers continues to expand, and with our headquarters in Abuja,
-              and an ever-growing network of partners and supporters across the country, CNF remains
-              firmly committed to its mission: providing opportunities and impacting lives.
+            <p className="mt-12 text-justify">Today, CFO reaches communities across Nigeria through our three pillars: Economic Empowerment, Education, and Humanitarian Aid. 
+              We have trained young people into real income through our Skill Scale Up programme, enrolled out of school children back into education, covered exam fees for students in hardship, offset medical bills for mothers and children, and delivered food relief to families in crisis. 
+              With our headquarters in Abuja and a growing network of partners across the country, CFO has reached more than 7,000 people across four states, and we are only getting started.
             </p>
           </div>
         </Container>
@@ -225,7 +211,7 @@ export default function AboutPage() {
           <p className={primaryEyebrowClassName}>Governance</p>
           <h2 className={`${fontDisplay.className} mt-6 text-4xl font-semibold text-cnf-ink`}>Our Board of Trustees</h2>
           <p className="mt-4 max-w-3xl text-base leading-8 text-cnf-muted">
-            CNF is governed by a dedicated board that brings together expertise in technology, finance, and organisational development to ensure accountability and strategic oversight.
+            CFO is governed by a dedicated board that brings together expertise in technology, finance, and organisational development to ensure accountability and strategic oversight.
           </p>
 
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
@@ -260,13 +246,13 @@ export default function AboutPage() {
               <p className={primaryEyebrowClassName}>Meet the Founder</p>
               <h2 className={`${fontDisplay.className} mt-6 text-4xl font-semibold text-cnf-ink`}>Chiggy Nsofor, The Person Behind the Purpose</h2>
             <p className="mt-6 text-base leading-8 text-cnf-muted">
-              Chiggy Nsofor is the Founder and CEO of the Chiggy Nsofor Foundation.
+              Chiggy Nsofor is the Founder and Executive Director of Chiggy Foundation for Opportunity.
             </p>
             <p className="mt-5 text-base leading-8 text-cnf-muted">
-              She holds degrees from Covenant University, Nigeria, University of Sunderland England, completed a leadership programme at Harvard University, United States, and completed an executive program for non-profit at Stanford University, United States.
+              She holds degrees from Covenant University, Nigeria and the University of Sunderland, England, completed a leadership programme at Harvard University, and completed the Executive Program for Nonprofit Leaders at Stanford University.
             </p>
             <p className="mt-5 text-base leading-8 text-cnf-muted">
-              What Chiggy brings to CNF is not just her academic credentials, but an unwillingness to accept that youth unemployment, educational exclusion, and poverty are simply facts of Nigerian life. Under her leadership, CNF has grown from a personal conviction into a structured, data-driven organisation that has touched over 5,000 lives.
+              What Chiggy brings to CFO is not just her academic credentials, but an unwillingness to accept that youth unemployment, educational exclusion, and poverty are simply facts of Nigerian life. Under her leadership, CFO has grown from a personal conviction into a structured, data driven organisation that has reached more than 7,000 lives.
             </p>
           </div>
 
@@ -276,7 +262,7 @@ export default function AboutPage() {
                 <div className={founderPortraitFrameClass}>
                   <CnfImage
                     src="/assets/team/chiggy.jpg"
-                    alt="Chiggy Nsofor, Founder and CEO of the Chiggy Nsofor Foundation"
+                    alt="Chiggy Nsofor, Founder and Executive Director of Chiggy Foundation for Opportunity"
                     fill
                     className={portraitImageClass}
                     sizes="(max-width: 640px) 100vw, 512px"
@@ -291,7 +277,7 @@ export default function AboutPage() {
               </p>
               <p className="text-base italic leading-7 text-cnf-ink">That&apos;s Impact!”</p>
               <footer className="mt-4 text-sm font-semibold uppercase tracking-[0.25em] text-cnf-primary">
-                Chiggy Nsofor, Founder &amp; CEO
+                Chiggy Nsofor, Founder &amp; Executive Director
               </footer>
             </blockquote>
           </div>
@@ -304,7 +290,7 @@ export default function AboutPage() {
           <p className={primaryEyebrowClassName}>Our People</p>
           <h2 className={`${fontDisplay.className} mt-6 text-4xl font-semibold text-cnf-ink`}>The Team Making It Happen</h2>
           <p className="mt-4 max-w-3xl text-base leading-8 text-cnf-muted">
-            CNF is powered by a small, dedicated team of professionals committed to delivering high-quality programmes at the community level every single day.
+            CFO is powered by a small, dedicated team of professionals committed to delivering high-quality programmes at the community level every single day.
           </p>
 
           <div className="mt-10 grid justify-items-center gap-6 sm:grid-cols-2 lg:grid-cols-3">

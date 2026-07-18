@@ -13,8 +13,11 @@ export const metadata: Metadata = {
     },
     description: site.description,
     icons: {
-        icon: "/logotab.png",
-        apple: "/logotab.png",
+        icon: [
+            { url: "/assets/logo/Icon.svg", type: "image/svg+xml" },
+            { url: "/assets/logo/icon.png", type: "image/png" },
+        ],
+        apple: "/assets/logo/icon.png",
     },
     openGraph: {
         type: "website",
@@ -24,7 +27,7 @@ export const metadata: Metadata = {
         description: site.description,
         images: [
             {
-                url: "/CNFLogo.png",
+                url: "/assets/logo/og-image.png",
                 width: 1200,
                 height: 630,
                 alt: site.name,
