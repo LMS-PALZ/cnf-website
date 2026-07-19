@@ -133,7 +133,7 @@ export const ssuProgramsSection = {
                 "Learn practical culinary and catering skills for preparing, presenting, and serving food in professional and entrepreneurial settings.",
             icon: "catering",
             imageAlt: "Catering illustration",
-            cardClassName: "bg-cnf-accent/10",
+            cardClassName: "bg-sky-50",
         },
         {
             title: "Photography",
