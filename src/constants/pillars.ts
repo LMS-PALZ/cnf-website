@@ -15,7 +15,7 @@ export type Pillar = {
 export const pillars: Pillar[] = [
     {
         id: "skills",
-        title: "Skills",
+        title: "Economic Empowerment",
         shortLabel: "Skills & livelihoods",
         summary: "Employability programmes, digital literacy, and entrepreneurship support for young people.",
         body: "We invest in practical training, from digital tools to business basics, so participants can earn with dignity. Our flagship Skill Scale-Up programme expands access to free, structured learning in Nigerian communities.",

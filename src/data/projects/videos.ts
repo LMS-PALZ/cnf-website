@@ -46,7 +46,7 @@ export const videos: VideoItem[] = [
     },
     {
         id: "ssu-graduation",
-        badge: "Skill Development",
+        badge: "Economic Empowerment",
         theme: "skills",
         title: "Skill Scale-Up Graduation",
         videoUrl: "https://www.youtube.com/shorts/sXdL2XxHt6w",

@@ -12,7 +12,7 @@ import { FormPhoneInput } from "./FormPhoneInput";
 import { FormTextarea } from "./FormTextarea";
 
 const pillarOptions = [
-    { value: "skills", label: "Skill Development" },
+    { value: "skills", label: "Economic Empowerment" },
     { value: "education", label: "Education" },
     { value: "humanitarian", label: "Humanitarian Aid & Healthcare" },
     { value: "all", label: "All Pillars" },

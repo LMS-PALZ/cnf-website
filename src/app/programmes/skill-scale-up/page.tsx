@@ -9,7 +9,7 @@ import {
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata(
-    "Skill Scale-Up - free youth training",
+    "Economic Empowerment",
     "Join CFO's free Skill Scale-Up Programme: digital skills, vocational training, and life skills for underserved Nigerian youth aged 15–30.",
 );
 

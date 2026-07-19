@@ -70,7 +70,7 @@ const teamMembers: TeamMember[] = [
     {
         name: "Pamela I",
         role: "Partnerships & Programs",
-        description: "Pamela drives CFO's partnership development and programme coordination, building the relationships and operational structures that keep every pillar running effectively. She also serves as Board Secretary.",
+        description: "Pamela drives CFO's partnership development and programme coordination, building the relationships and operational structures that keep every pillar running effectively.",
         image: "/assets/team/PAMELA%20Inew..png",
         imageAlt: "Pamela Ibemesi, Partnerships & Programs Officer at the Chiggy Foundation for Opportunity",
         linkedin: "https://www.linkedin.com/in/pamela-ibemesi-9a7778373",
@@ -102,7 +102,7 @@ const teamMembers: TeamMember[] = [
     {
         name: "Marho I",
         role: "Teaching Assistant",
-        description: "An SSU Cohort graduate who returned to the classroom, this time as a teacher.",
+        description: "An SSU Cohort graduate who joined with no income, returned as a teacher, and is now on paid staff.",
     },
 ];
 const boardMembers = [
@@ -125,7 +125,7 @@ const boardMembers = [
     {
         name: "Afolabi Abiodun Ademola",
         title: "Trustee, Finance & Governance",
-        description: "Director of Finance & Accounts at NEITI. Fellow ICAN, Fellow CCSA, Associate ACCA. Two PhDs. Provides rigorous financial oversight and governance leadership.",
+        description: "Director of Finance & Accounts at NEITI. Fellow ICAN, Fellow CCSA, Associate ACCA. Provides rigorous financial oversight and governance leadership.",
         role: "Finance",
         initials: "AA",
         tone: "bg-cnf-accent text-cnf-accent-ink",
@@ -156,7 +156,7 @@ export default function AboutPage() {
             >
               How we started
             </h2>
-            <p className="mt-12 text-justify">Chiggy Foundation for Opportunity began in 2024 as the Chiggy Foundation for Opportunity, born out of a deep conviction that every underserved Nigerian deserves action. It started as a heartfelt response to the growing needs of individuals and communities across Nigeria, beginning with food relief to families in Plateau State. What started as a personal mission quickly grew into a structured foundation, built on the belief that lasting change is possible when driven by purpose, integrity, and selfless service.
+            <p className="mt-12 text-justify">Chiggy Foundation for Opportunity began in 2024 as the Chiggy Nsofor Foundation, born out of a deep conviction that every underserved Nigerian deserves action. It started as a heartfelt response to the growing needs of individuals and communities across Nigeria, beginning with food relief to families in Plateau State. What started as a personal mission quickly grew into a structured foundation, built on the belief that lasting change is possible when driven by purpose, integrity, and selfless service.
               </p>
               <p className="mt-12 text-justify">From our very first outreach, we set out to do more than provide temporary assistance. We set out to transform lives.</p>
               <p className="mt-12 text-justify">A new name, the same mission. In 2026, as the work grew, the name grew with it. The Chiggy Foundation for Opportunity became Chiggy Foundation for Opportunity, putting the mission itself in the name. The registration, the team, and the purpose remain exactly the same. Only the name now says out loud what we have believed from the first outreach: potential is everywhere, but opportunity is not.</p>
@@ -277,7 +277,7 @@ export default function AboutPage() {
               </p>
               <p className="text-base italic leading-7 text-cnf-ink">That&apos;s Impact!”</p>
               <footer className="mt-4 text-sm font-semibold uppercase tracking-[0.25em] text-cnf-primary">
-                Chiggy Nsofor, Founder &amp; Executive Director
+                Chiggy Nsofor, Founder and CEO
               </footer>
             </blockquote>
           </div>

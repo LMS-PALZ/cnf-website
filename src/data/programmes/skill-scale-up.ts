@@ -25,7 +25,7 @@ export const ssuIntro = {
     title: "Be part of the next generation of empowered Nigerian youth",
     subtitle: "Join the movement through our skill scale-up program.",
     highlights: [
-        "6 months on-hands virtual training",
+        "3-4 months hands-on or virtual training",
         "Final capstone project",
         "Certification upon successful completion",
     ],
@@ -83,9 +83,12 @@ export const ssuGainsSection = {
 export type SsuProgramItem = {
     title: string;
     description: string;
-    imageSrc: string;
     imageAlt: string;
     cardClassName: string;
+    /** Static asset for existing programme illustrations */
+    imageSrc?: string;
+    /** React SVG illustration when no static asset is used */
+    icon?: "catering" | "photography";
 };
 
 export const ssuProgramsSection = {
@@ -123,6 +126,22 @@ export const ssuProgramsSection = {
             imageSrc: "/assets/svg/dataanalisty.svg",
             imageAlt: "Data analysis illustration",
             cardClassName: "bg-cnf-pillar-humanitarian-soft",
+        },
+        {
+            title: "Catering",
+            description:
+                "Learn practical culinary and catering skills for preparing, presenting, and serving food in professional and entrepreneurial settings.",
+            icon: "catering",
+            imageAlt: "Catering illustration",
+            cardClassName: "bg-cnf-accent/10",
+        },
+        {
+            title: "Photography",
+            description:
+                "Build hands-on photography skills covering composition, lighting, and storytelling for personal, event, and commercial work.",
+            icon: "photography",
+            imageAlt: "Photography illustration",
+            cardClassName: "bg-sky-50",
         },
     ] satisfies SsuProgramItem[],
 };

@@ -31,7 +31,7 @@ export const newsFilterOptions: {
     label: string;
 }[] = [
     { id: "all", label: "All" },
-    { id: "skill-development", label: "Skill Development" },
+    { id: "skill-development", label: "Economic Empowerment" },
     { id: "education", label: "Education" },
     { id: "humanitarian-aid", label: "Humanitarian Aid" },
     { id: "healthcare", label: "Healthcare" },

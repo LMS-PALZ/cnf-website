@@ -13,7 +13,7 @@ export const programmeFunds: ProgrammeFundCard[] = [
         id: "skills",
         pillarLabel: "Pillar one",
         theme: "skills",
-        title: "Skill Development",
+        title: "Economic Empowerment",
         description: "Funds training materials, facilitator fees, internship placement support, and the Total Man Module for cohorts of young Nigerians aged 15 to 30.",
         imageSrc: "/assets/ourWorkImgs/skillaqc.jpeg",
         imageAlt: "Young people in a Skill Scale-Up training session",

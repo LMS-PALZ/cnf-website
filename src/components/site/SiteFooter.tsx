@@ -14,7 +14,7 @@ const socialIcons: Record<SocialLinkId, IconType> = {
     linkedin: FaLinkedin,
 };
 const workLinks = [
-    { href: "/our-work#skills", label: "Skill Development" },
+    { href: "/our-work#skills", label: "Economic Empowerment" },
     { href: "/our-work#education", label: "Education" },
     { href: "/our-work#humanitarian", label: "Humanitarian Aid" },
 ] as const;

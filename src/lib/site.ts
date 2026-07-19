@@ -8,7 +8,7 @@ export const RESEND_SENDING_DOMAIN =
 export const site = {
     name: process.env.NEXT_PUBLIC_SITE_NAME ?? "Chiggy Foundation for Opportunity",
     shortName: "CFO",
-    tagline: "Skills, Education & Humanitarian Aid",
+    tagline: "Economic Empowerment, Education & Humanitarian Aid",
     description: "A Nigerian nonprofit advancing skills, education, and humanitarian aid in communities across Nigeria.",
     footerTagline: "Turning potential into opportunity for underserved Nigerians.",
     url:

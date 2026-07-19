@@ -37,7 +37,7 @@ export const filterTabs: {
     label: string;
 }[] = [
     { id: "all", label: "All projects" },
-    { id: "skills", label: "Skill Development" },
+    { id: "skills", label: "Economic Empowerment" },
     { id: "education", label: "Education" },
     { id: "humanitarian", label: "Humanitarian Aid" },
     // { id: "civic", label: "Civic Awareness" },
@@ -48,7 +48,7 @@ export const projects: ProjectItem[] = [
         id: "ssu-cohort-3",
         pillar: "skills",
         theme: "skills",
-        badge: "Skill Development",
+        badge: "Economic Empowerment",
         title: "Skill Scale-Up Cohort 3 Tech Batch Begins",
         description:
             "A new chapter of impact, CFO opens its third cohort of the SSU Programme, welcoming the next generation of digital and vocational trainees.",
@@ -60,7 +60,7 @@ export const projects: ProjectItem[] = [
         id: "ssu-cohort-2-graduation",
         pillar: "skills",
         theme: "skills",
-        badge: "Skill Development",
+        badge: "Economic Empowerment",
         title: "Graduation of CFO's Second Skill Scale-Up Cohort",
         description:
             "Celebrating another set of young Nigerians who completed training and are now equipped to earn, lead, and give back.",
@@ -71,7 +71,7 @@ export const projects: ProjectItem[] = [
         id: "ssu-launch",
         pillar: "skills",
         theme: "skills",
-        badge: "Skill Development",
+        badge: "Economic Empowerment",
         title: "CFO Launches the Skill Scale-Up Programme",
         description:
             "The flagship SSU Programme launches in Abuja, CFO's boldest commitment to equipping underserved youth with skills for the modern economy.",
