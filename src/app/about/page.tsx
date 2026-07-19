@@ -102,7 +102,7 @@ const teamMembers: TeamMember[] = [
     {
         name: "Marho I",
         role: "Teaching Assistant",
-        description: "An SSU Cohort graduate who joined with no income, returned as a teacher, and is now on paid staff.",
+        description: "Marho is an SSU graduate who returned as a teacher.",
     },
 ];
 const boardMembers = [
