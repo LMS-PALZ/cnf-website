@@ -31,7 +31,7 @@ export const programmeFunds: ProgrammeFundCard[] = [
         id: "humanitarian",
         pillarLabel: "Pillar three",
         theme: "humanitarian",
-        title: "Humanitarian Aid & Healthcare",
+        title: "Humanitarian Aid",
         description: "Funds food relief packages, community medical missions, hospital bill offsets, and maternal and child health support across nine communities.",
         imageSrc: "/assets/ourWorkImgs/community%20aid.jpg",
         imageAlt: "Community aid and humanitarian outreach",

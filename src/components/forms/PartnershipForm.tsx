@@ -14,7 +14,7 @@ import { FormTextarea } from "./FormTextarea";
 const pillarOptions = [
     { value: "skills", label: "Economic Empowerment" },
     { value: "education", label: "Education" },
-    { value: "humanitarian", label: "Humanitarian Aid & Healthcare" },
+    { value: "humanitarian", label: "Humanitarian Aid" },
     { value: "all", label: "All Pillars" },
 ];
 

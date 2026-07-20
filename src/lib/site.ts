@@ -24,7 +24,7 @@ export const site = {
     mediaEmail: process.env.MEDIA_EMAIL ?? "media@cnfhq.org",
     emailSendingDomain: RESEND_SENDING_DOMAIN,
     phone: "+234 903 459 9227",
-    address: "16b Vaal Street, Maitama, Abuja",
+    address: "16b Vaal Street, Maitama, Abuja.",
     registrationLine: "CAC No. 7511818",
     annualReportUrl:
         "https://drive.google.com/file/d/1WCsx8huUwBrw4uAo1hr29DP9QlJCjqIw/view?usp=drive_link",

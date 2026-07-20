@@ -19,7 +19,7 @@ const WHOWEARE = {
     storyNow: "/assets/whoweare/whoweare1.jpg",
 } as const;
 
-export const metadata = pageMetadata("About: mission and impact", "Mission, vision, and values of the Chiggy Foundation for Opportunity, a Nigerian nonprofit advancing skills, education, and humanitarian aid.");
+export const metadata = pageMetadata("About", "Mission, vision, and values of the Chiggy Foundation for Opportunity, a Nigerian nonprofit advancing skills, education, and humanitarian aid.");
 
 type TeamMember = {
     name: string;
@@ -102,7 +102,7 @@ const teamMembers: TeamMember[] = [
     {
         name: "Marho I",
         role: "Teaching Assistant",
-        description: "Marho is an SSU graduate who returned as a teacher.",
+        description: "An SSU graduate who joined with no income. She is now on paid staff, training the next cohort. She is the pathway working, in person.",
     },
 ];
 const boardMembers = [
@@ -156,10 +156,14 @@ export default function AboutPage() {
             >
               How we started
             </h2>
-            <p className="mt-12 text-justify">Chiggy Foundation for Opportunity began in 2024 as the Chiggy Nsofor Foundation, born out of a deep conviction that every underserved Nigerian deserves action. It started as a heartfelt response to the growing needs of individuals and communities across Nigeria, beginning with food relief to families in Plateau State. What started as a personal mission quickly grew into a structured foundation, built on the belief that lasting change is possible when driven by purpose, integrity, and selfless service.
+            <p className="mt-12 text-justify">Chiggy Foundation for Opportunity began in 2024 as the Chiggy Nsofor Foundation, born out of a deep conviction that every underserved Nigerian deserves action. 
+              It started as a heartfelt response to the growing needs of individuals and communities across Nigeria, beginning with food relief to families in Plateau State. 
+              What started as a personal mission quickly grew into a structured foundation, built on the belief that lasting change is possible when driven by purpose, integrity, and selfless service.
+              From our very first outreach, we set out to do more than provide temporary assistance; We set out to transform lives.
               </p>
-              <p className="mt-12 text-justify">From our very first outreach, we set out to do more than provide temporary assistance. We set out to transform lives.</p>
-              <p className="mt-12 text-justify">A new name, the same mission. In 2026, as the work grew, the name grew with it. The Chiggy Foundation for Opportunity became Chiggy Foundation for Opportunity, putting the mission itself in the name. The registration, the team, and the purpose remain exactly the same. Only the name now says out loud what we have believed from the first outreach: potential is everywhere, but opportunity is not.</p>
+              <p className="mt-6 text-justify">A new name, the same mission. In 2026, as the work grew, the name grew with it. 
+              The Chiggy Nsofor Foundation became Chiggy Foundation for Opportunity, putting the mission itself in the name. 
+              The registration, the team, and the purpose remain exactly the same. Only the name now says out loud what we have believed from the first outreach: potential is everywhere, but opportunity is not.</p>
           </div>
 
           <div className="overflow-hidden bg-cnf-surface lg:col-start-2 lg:row-start-1">
@@ -194,7 +198,7 @@ export default function AboutPage() {
               Where We Are Now
             </h2>
             <p className="mt-12 text-justify">Today, CFO reaches communities across Nigeria through our three pillars: Economic Empowerment, Education, and Humanitarian Aid. 
-              We have trained young people into real income through our Skill Scale Up programme, enrolled out of school children back into education, covered exam fees for students in hardship, offset medical bills for mothers and children, and delivered food relief to families in crisis. 
+              We have trained young people into real income through our Skill Scale-Up programme, enrolled out of school children back into education, covered exam fees for students in hardship, offset medical bills for mothers and children, and delivered food relief to families in crisis. 
               With our headquarters in Abuja and a growing network of partners across the country, CFO has reached more than 7,000 people across four states, and we are only getting started.
             </p>
           </div>
@@ -246,7 +250,7 @@ export default function AboutPage() {
               <p className={primaryEyebrowClassName}>Meet the Founder</p>
               <h2 className={`${fontDisplay.className} mt-6 text-4xl font-semibold text-cnf-ink`}>Chiggy Nsofor, The Person Behind the Purpose</h2>
             <p className="mt-6 text-base leading-8 text-cnf-muted">
-              Chiggy Nsofor is the Founder and Executive Director of Chiggy Foundation for Opportunity.
+              Chiggy Nsofor is the Founder and CEO of Chiggy Foundation for Opportunity.
             </p>
             <p className="mt-5 text-base leading-8 text-cnf-muted">
               She holds degrees from Covenant University, Nigeria and the University of Sunderland, England, completed a leadership programme at Harvard University, and completed the Executive Program for Nonprofit Leaders at Stanford University.
@@ -262,7 +266,7 @@ export default function AboutPage() {
                 <div className={founderPortraitFrameClass}>
                   <CnfImage
                     src="/assets/team/chiggy.jpg"
-                    alt="Chiggy Nsofor, Founder and Executive Director of Chiggy Foundation for Opportunity"
+                    alt="Chiggy Nsofor, Founder and CEO of Chiggy Foundation for Opportunity"
                     fill
                     className={portraitImageClass}
                     sizes="(max-width: 640px) 100vw, 512px"
@@ -277,7 +281,7 @@ export default function AboutPage() {
               </p>
               <p className="text-base italic leading-7 text-cnf-ink">That&apos;s Impact!”</p>
               <footer className="mt-4 text-sm font-semibold uppercase tracking-[0.25em] text-cnf-primary">
-                Chiggy Nsofor, Founder and CEO
+                Chiggy Nsofor, Founder & CEO
               </footer>
             </blockquote>
           </div>

@@ -2,7 +2,7 @@ import { Container } from "@/components/ui/Container";
 import { fontDisplay } from "@/lib/fonts";
 import { pageMetadata } from "@/lib/metadata";
 import { site } from "@/lib/site";
-export const metadata = pageMetadata("Privacy policy", "How the Chiggy Foundation for Opportunity website collects, uses, and retains personal data submitted through forms.");
+export const metadata = pageMetadata("Privacy", "How the Chiggy Foundation for Opportunity website collects, uses, and retains personal data submitted through forms.");
 export default function PrivacyPage() {
     return (<section className="py-16 md:py-24">
       <Container className="max-w-3xl space-y-6 text-base leading-relaxed text-cnf-muted">

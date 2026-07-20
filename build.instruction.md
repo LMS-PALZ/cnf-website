@@ -112,7 +112,7 @@ The **Projects** and **Home** artifacts refer to **three pillars**. **Standardiz
 
 ### 5.5 Skill Scale-Up Programme (dedicated page)
 
-- Title from artifact 5: **Free Youth Training in Nigeria** (or equivalent).
+- Title from artifact 5: **Fully funded skill scale-up programme** (or equivalent).
 - Sections: **About the programme**, **Who it is for**, **What you learn** (placeholders: digital skills, entrepreneurship, etc. as TBC), **Locations / cohorts** (TBC), **How to apply** → button to `/get-involved#volunteer` or a dedicated `apply` anchor with **form** (server-handled).
 
 ### 5.6 News & Impact Stories (`/news`)

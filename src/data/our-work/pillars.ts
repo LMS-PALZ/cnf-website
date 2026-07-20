@@ -37,7 +37,7 @@ export const ourWorkPillars: PillarBlockData[] = [
         theme: "skills",
         heading: "Economic Empowerment",
         subheading: "Mentorship & Skill Scale-Up",
-        lead: "Our flagship Skill Scale Up (SSU) Programme is a fully funded scholarship that equips underserved Nigerian youth aged 15 to 30 with practical, future ready skills, and the support to turn those skills into real income.",
+        lead: "Our flagship Skill Scale-Up (SSU) Programme is a fully funded scholarship that equips underserved Nigerian youth aged 15 to 30 with practical, future ready skills, and the support to turn those skills into real income.",
         body: [
             "SSU exists for the young people the economy has overlooked: school leavers without work, graduates without digital skills, young women without income. Over 80% of Nigerian graduates enter the workforce without the digital skills today's economy demands, and for underserved youth the cost of quality training puts it permanently out of reach. SSU removes that barrier. Every learner's training is fully covered by the foundation. Our in person programme serves the most underserved, with a ₦10,000 application fee that is waived for anyone who cannot afford it, so no one is ever turned away. Our online track carries a one time application fee of ₦20,000. Training is delivered virtually through our digital learning platform and physically at our hub, reaching young Nigerians across the country.",
             "This is economic empowerment, not just training. Built around both technical and character development, SSU runs three core tracks, and its commitment goes beyond the classroom. Every graduate joins our alumni mentorship network, and our most exceptional graduates, those who show real commitment and excel, earn internship placements, startup kits, and startup support, with their progress tracked after they receive it, because a skill only changes a life when it becomes an income.",
@@ -113,7 +113,7 @@ export const ourWorkPillars: PillarBlockData[] = [
         pillarLabel: "Pillar three",
         theme: "humanitarian",
         heading: "Humanitarian Aid",
-        subheading: "Relief, Health & Community Care",
+        subheading: "Relief & Community Care",
         lead: "When people are in crisis, they cannot think about skills or education. CFO shows up first with food, medicine, and care, because meeting people where they are is where everything else begins.",
         body: "No circumstance should determine whether a person eats today, receives medical attention, or has their child's hospital bill settled. This pillar delivers direct, tangible support, from food relief and festive outreaches to full medical missions and hospital bill offset. Our healthcare focus centres on those most at risk: pregnant women, young children, and communities with limited access to basic medical services. Access should never be a privilege.",
         features: [

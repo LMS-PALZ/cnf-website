@@ -16,7 +16,7 @@ export function SsuIntroSection() {
                 >
                     {ssuIntro.title}
                 </h2>
-                <p className="mx-auto mt-4 max-w-2xl text-base text-cnf-muted md:text-lg">
+                <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-cnf-muted md:max-w-4xl md:text-lg">
                     {ssuIntro.subtitle}
                 </p>
                 <ul className="mt-10 flex flex-wrap items-center justify-center gap-3">

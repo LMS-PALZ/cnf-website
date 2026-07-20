@@ -31,7 +31,7 @@ const values = [
     {
         title: "Integrity",
         description:
-            "We do the right thing, always, with our resources, our people, and our beneficiaries.",
+            "We do the right thing, always, with our resources, our people, and our beneficiaries, especially in how we report results.",
     },
 ] as const;
 

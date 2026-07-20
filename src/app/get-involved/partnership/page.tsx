@@ -6,7 +6,7 @@ import { partnershipPageHero } from "@/data/get-involved/page-heroes";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata(
-    "Partnership - Get Involved",
+    "Partnership",
     "Partner with the Chiggy Foundation for Opportunity to support evidence-based, community-centred impact across Nigeria.",
 );
 

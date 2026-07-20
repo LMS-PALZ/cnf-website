@@ -12,7 +12,7 @@ type Props = {
 const labels: Record<string, string> = {
     skills: "Economic Empowerment",
     education: "Education",
-    humanitarian: "Humanitarian Aid & Healthcare",
+    humanitarian: "Humanitarian Aid",
 };
 
 export function OurWorkHero({ pillars }: Props) {

@@ -18,14 +18,14 @@ export const ssuHero = {
         accent: "future?",
     },
     description:
-        "Join our Skill Scale-Up Program. A tech, digital, vocational and core life skills training that enables individuals build sustainable livelihoods, and create opportunity.",
+        "Join our Skill Scale-Up Program. A tech, digital, vocational and core life skills training that enables individuals to build sustainable livelihoods, and create opportunity.",
 } as const;
 
 export const ssuIntro = {
     title: "Be part of the next generation of empowered Nigerian youth",
-    subtitle: "Join the movement through our skill scale-up program.",
+    subtitle: "Join the movement through our skill scale-up program. Every learner's training is fully covered by the foundation. In person applicants pay a ₦10,000 application fee, waived for anyone who cannot afford it, so no one is ever turned away. The online track carries a one time application fee of ₦20,000.",
     highlights: [
-        "3-4 months hands-on or virtual training",
+        "6 months hands-on or virtual training",
         "Final capstone project",
         "Certification upon successful completion",
     ],
@@ -80,6 +80,12 @@ export const ssuGainsSection = {
     ] satisfies SsuGainItem[],
 };
 
+export type SsuProgramIconId =
+    | "catering"
+    | "photography"
+    | "hair"
+    | "makeup";
+
 export type SsuProgramItem = {
     title: string;
     description: string;
@@ -88,62 +94,96 @@ export type SsuProgramItem = {
     /** Static asset for existing programme illustrations */
     imageSrc?: string;
     /** React SVG illustration when no static asset is used */
-    icon?: "catering" | "photography";
+    icon?: SsuProgramIconId;
+};
+
+export type SsuProgramGroup = {
+    id: "tech" | "vocational";
+    title: string;
+    items: SsuProgramItem[];
 };
 
 export const ssuProgramsSection = {
     title: "Programs Offered",
     subtitle: "Participants will be able to learn high-demand skills, such as;",
-    items: [
+    groups: [
         {
-            title: "Product Design",
-            description:
-                "Design digital products by understanding user needs and creating solutions that are useful, usable, and clear.",
-            imageSrc: "/assets/svg/product.svg",
-            imageAlt: "Product design illustration",
-            cardClassName: "bg-sky-50",
+            id: "tech",
+            title: "Tech Skills",
+            items: [
+                {
+                    title: "Product Design",
+                    description:
+                        "Design digital products by understanding user needs and creating solutions that are useful, usable, and clear.",
+                    imageSrc: "/assets/svg/product.svg",
+                    imageAlt: "Product design illustration",
+                    cardClassName: "bg-white",
+                },
+                {
+                    title: "Frontend Development",
+                    description:
+                        "Build user-facing interfaces for websites and applications, focusing on layout, interaction, and usability.",
+                    imageSrc: "/assets/svg/frontend.svg",
+                    imageAlt: "Frontend development illustration",
+                    cardClassName: "bg-white",
+                },
+                {
+                    title: "Backend Development",
+                    description:
+                        "Develop server-side systems that power applications, manage data, and handle logic securely and efficiently.",
+                    imageSrc: "/assets/svg/backend.svg",
+                    imageAlt: "Backend development illustration",
+                    cardClassName: "bg-white",
+                },
+                {
+                    title: "Data Analysis",
+                    description:
+                        "Analyze data to identify patterns, generate insights, and support informed decision-making on real-world problems.",
+                    imageSrc: "/assets/svg/dataanalisty.svg",
+                    imageAlt: "Data analysis illustration",
+                    cardClassName: "bg-white",
+                },
+            ],
         },
         {
-            title: "Frontend Development",
-            description:
-                "Build user-facing interfaces for websites and applications, focusing on layout, interaction, and usability.",
-            imageSrc: "/assets/svg/frontend.svg",
-            imageAlt: "Frontend development illustration",
-            cardClassName: "bg-cnf-pillar-skills-soft",
+            id: "vocational",
+            title: "Vocational Skills",
+            items: [
+                {
+                    title: "Catering",
+                    description:
+                        "Learn professional cooking, baking, and food business skills that turn a kitchen into a livelihood.",
+                    icon: "catering",
+                    imageAlt: "Catering illustration",
+                    cardClassName: "bg-white",
+                },
+                {
+                    title: "Photography & Videography",
+                    description:
+                        "Master the camera, editing, and client work, from events to content creation.",
+                    icon: "photography",
+                    imageAlt: "Photography and videography illustration",
+                    cardClassName: "bg-white",
+                },
+                {
+                    title: "Hair Styling",
+                    description:
+                        "Build professional styling skills and the client base to earn from them.",
+                    icon: "hair",
+                    imageAlt: "Hair styling illustration",
+                    cardClassName: "bg-white",
+                },
+                {
+                    title: "Makeup Artistry",
+                    description:
+                        "Train in professional makeup for events, media, and everyday clients.",
+                    icon: "makeup",
+                    imageAlt: "Makeup artistry illustration",
+                    cardClassName: "bg-white",
+                },
+            ],
         },
-        {
-            title: "Backend Development",
-            description:
-                "Develop server-side systems that power applications, manage data, and handle logic securely and efficiently.",
-            imageSrc: "/assets/svg/backend.svg",
-            imageAlt: "Backend development illustration",
-            cardClassName: "bg-cnf-primary-soft",
-        },
-        {
-            title: "Data Analysis",
-            description:
-                "Analyze data to identify patterns, generate insights, and support informed decision-making on real-world problems.",
-            imageSrc: "/assets/svg/dataanalisty.svg",
-            imageAlt: "Data analysis illustration",
-            cardClassName: "bg-cnf-pillar-humanitarian-soft",
-        },
-        {
-            title: "Catering",
-            description:
-                "Learn practical culinary and catering skills for preparing, presenting, and serving food in professional and entrepreneurial settings.",
-            icon: "catering",
-            imageAlt: "Catering illustration",
-            cardClassName: "bg-sky-50",
-        },
-        {
-            title: "Photography",
-            description:
-                "Build hands-on photography skills covering composition, lighting, and storytelling for personal, event, and commercial work.",
-            icon: "photography",
-            imageAlt: "Photography illustration",
-            cardClassName: "bg-sky-50",
-        },
-    ] satisfies SsuProgramItem[],
+    ] satisfies SsuProgramGroup[],
 };
 
 export const ssuCta = {
@@ -164,21 +204,21 @@ export const ssuFaqs: SsuFaqItem[] = [
     {
         question: "Do I need prior digital or tech knowledge?",
         answer:
-            "No. Prior digital knowledge is not required. You only need a willingness to learn and commitment to the program.",
+            "No. SSU starts from the basics. All you need is commitment and consistency, and we will take you the rest of the way.",
     },
     {
         question: "What are the basic requirements to participate?",
         answer:
-            "Participants must:\n– Have access to a functional laptop or PC\n– Have reliable internet\n– Be able to study in English",
+            "You must be aged 15 to 30 and resident in Nigeria. For the online track you need a smartphone or laptop with internet access. For the in person track you attend classes at our Abuja hub.",
     },
     {
         question: "How much time do I need to commit weekly?",
         answer:
-            "At least 10 hours per week for live classes, assignments, and projects.",
+            "Plan for scheduled classes plus personal practice time each week. The exact timetable is shared at orientation for each cohort.",
     },
     {
         question: "What happens if I miss classes or fail to submit assignments?",
         answer:
-            "Participants are expected to:\n– Attend a minimum of 80% of live sessions\n– Submit 100% of assignments and projects\nFailure to meet expectations may result in removal from the program.",
+            "SSU is commitment based. Repeated absence or unsubmitted work can cost you your place, because every seat is fully funded and another young person is waiting for it. If something serious comes up, speak to the team early and we will work with you.",
     },
 ];

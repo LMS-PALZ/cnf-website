@@ -6,7 +6,7 @@ import { volunteerPageHero } from "@/data/get-involved/page-heroes";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata(
-    "Volunteer - Get Involved",
+    "Volunteer",
     "Volunteer with the Chiggy Foundation for Opportunity and use your time and skills to support communities across Nigeria.",
 );
 

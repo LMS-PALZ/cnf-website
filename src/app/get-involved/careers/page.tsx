@@ -6,7 +6,7 @@ import { careersPageHero } from "@/data/get-involved/page-heroes";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata(
-    "Careers - Get Involved",
+    "Careers",
     "Explore careers at the Chiggy Foundation for Opportunity and join a team committed to purpose-driven work in Nigeria.",
 );
 

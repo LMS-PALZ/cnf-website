@@ -22,7 +22,7 @@ export const donationTiers: DonationTier[] = [
         title: "The Starter",
         description: "Your gift could:",
         bullets: [
-            "Cover transportation for 1 Skill Scale Up student during training for 6 weeks",
+            "Cover transportation for 1 Skill Scale-Up student during training for 6 weeks",
             "Kit 1 child with school uniform, school bag, and learning materials",
             "Or provide emergency food support for 1 underserved family of 5 for 1 week",
         ],
@@ -37,7 +37,7 @@ export const donationTiers: DonationTier[] = [
         title: "The Builder",
         description: "Your gift could:",
         bullets: [
-            "Cover 25% of the cost of training 1 Skill Scale Up student",
+            "Cover 25% of the cost of training 1 Skill Scale-Up student",
             "Or cover 1 student's SSCE examination registration fee",
             "Or provide menstrual hygiene support for 6 underserved girls",
         ],
@@ -53,7 +53,7 @@ export const donationTiers: DonationTier[] = [
         title: "The Changemaker",
         description: "Your gift could:",
         bullets: [
-            "Fully sponsor 1 Skill Scale Up student from training to graduation",
+            "Fully sponsor 1 Skill Scale-Up student from training to graduation",
             "Or keep 10 underserved children in school for 1 academic year by covering their school fees",
             "Or support 4 safe deliveries by providing essential maternal and newborn care",
         ],
@@ -66,7 +66,7 @@ export const donationTiers: DonationTier[] = [
         title: "Your Own Impact",
         description: "Give any amount. Change lives your way. Your gift could:",
         bullets: [
-            "Fund a small, shared, or full Skill Scale Up sponsorship",
+            "Fund a small, shared, or full Skill Scale-Up sponsorship",
             "Or support education at any level, from school supplies to scholarships",
             "Or strengthen health and humanitarian programmes serving underserved families and communities",
         ],

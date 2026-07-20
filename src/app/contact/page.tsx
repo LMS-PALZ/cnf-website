@@ -7,7 +7,7 @@ import {
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata(
-    "Contact Us",
+    "Contact",
     "Get in touch with the Chiggy Foundation for Opportunity. Visit our Abuja office, call, email, or send a message.",
 );
 

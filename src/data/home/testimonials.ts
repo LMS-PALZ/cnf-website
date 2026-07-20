@@ -36,7 +36,7 @@ export const testimonials: Testimonial[] = [
     },
     {
         id: "nana-firdausi",
-        quote: "Thank you so much CNF Captain and Army for impacting our lives, we really appreciate. If something comes up even if it’s not skill scale up and you need our assistance just call and we will turn up by God’s grace. We love you.",
+        quote: "Thank you so much CNF Captain and Army for impacting our lives, we really appreciate. If something comes up even if it’s not skill scale-up and you need our assistance just call and we will turn up by God’s grace. We love you.",
         name: "Nana Firdausi",
         role: "Skill Scale-Up Beneficiary",
         pillar: "education",

@@ -36,9 +36,9 @@ export function SiteHeader() {
                     <Image
                         src="/assets/logo/logo-color.png"
                         alt={site.name}
-                        width={220}
-                        height={168}
-                        className="h-11 w-auto min-w-[8.5rem] max-w-[11.5rem] object-contain object-left sm:h-12 sm:min-w-[9.5rem] sm:max-w-[13rem]"
+                        width={340}
+                        height={260}
+                        className="h-[4.5rem] w-auto min-w-[13rem] max-w-[17rem] object-contain object-left sm:h-20 sm:min-w-[15rem] sm:max-w-[20rem]"
                         priority
                     />
                 </Link>
