@@ -10,7 +10,7 @@ import { cn } from "@/lib/cn";
 import { BankAccountCard } from "./BankAccountCard";
 
 const hrefForOption: Record<string, string> = {
-    abroad: `mailto:${site.contactEmail}?subject=International donation enquiry`,
+    abroad: `mailto:${site.infoEmail}?subject=International donation enquiry`,
 };
 
 export function HowToGiveSection() {

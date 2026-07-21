@@ -12,7 +12,7 @@ export function NotSureWhereSection() {
           of what CFO is building. Every contribution, big or small, makes a
           difference.
         </>} actions={<>
-          <ButtonLink href={`mailto:${site.contactEmail}`} variant="accent" size="lg">
+          <ButtonLink href={`mailto:${site.infoEmail}`} variant="accent" size="lg">
             Contact Us Directly
           </ButtonLink>
           <DonatePayLinkButton size="lg" purpose="Get involved, donate instead">

@@ -1,17 +1,18 @@
 import Link from "next/link";
 import type { IconType } from "react-icons";
-import { FaInstagram, FaLinkedin, FaTiktok, FaYoutube } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedin, FaTiktok, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { Container } from "@/components/ui/Container";
 import { siteSocialLinks, type SocialLinkId } from "@/data/social-links";
 import { site } from "@/lib/site";
 
 const socialIcons: Record<SocialLinkId, IconType> = {
-    tiktok: FaTiktok,
     instagram: FaInstagram,
-    x: FaXTwitter,
-    youtube: FaYoutube,
+    facebook: FaFacebook,
     linkedin: FaLinkedin,
+    x: FaXTwitter,
+    tiktok: FaTiktok,
+    youtube: FaYoutube,
 };
 
 const workLinks = [
@@ -112,9 +113,9 @@ export function SiteFooter() {
                                 <li>
                                     <a
                                         className={`${footerLinkClassName} break-all`}
-                                        href={`mailto:${site.contactEmail}`}
+                                        href={`mailto:${site.infoEmail}`}
                                     >
-                                        {site.contactEmail}
+                                        {site.infoEmail}
                                     </a>
                                 </li>
                                 <li>

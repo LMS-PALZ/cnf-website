@@ -4,6 +4,7 @@ import { site } from "@/lib/site";
 /** Social platforms shown on the contact page (matches design). */
 export const contactSocialIds: SocialLinkId[] = [
     "instagram",
+    "facebook",
     "x",
     "linkedin",
     "youtube",
@@ -12,7 +13,7 @@ export const contactSocialIds: SocialLinkId[] = [
 export const contactInfo = {
     addressLine: "No. 16B, Vaal Street, Maitama, Abuja",
     phone: site.phone,
-    email: site.contactEmail,
+    email: site.infoEmail,
     officeHours: [
         { label: "Mon – Fri", value: "9 AM - 5 PM" },
         { label: "Sat – Sun", value: "Closed" },

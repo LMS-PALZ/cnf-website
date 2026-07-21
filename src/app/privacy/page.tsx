@@ -10,8 +10,8 @@ export default function PrivacyPage() {
         <p>
           This policy describes the personal data collected through {site.name}&apos;s website forms and
           how we use it. For questions, contact{" "}
-          <a className="font-semibold text-cnf-primary underline-offset-2 hover:underline" href={`mailto:${site.contactEmail}`}>
-            {site.contactEmail}
+          <a className="font-semibold text-cnf-primary underline-offset-2 hover:underline" href={`mailto:${site.infoEmail}`}>
+            {site.infoEmail}
           </a>
           .
         </p>

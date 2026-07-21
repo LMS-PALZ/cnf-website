@@ -4,11 +4,12 @@ import { pageContentWidthClass } from "@/lib/layout";
 import { siteSocialLinks, type SocialLinkId } from "@/data/social-links";
 
 const accentTone: Partial<Record<SocialLinkId, string>> = {
-    tiktok: "text-white",
     instagram: "text-[#e1306c]",
-    x: "text-white",
-    youtube: "text-[#ff0000]",
+    facebook: "text-[#1877f2]",
     linkedin: "text-[#0a66c2]",
+    x: "text-white",
+    tiktok: "text-white",
+    youtube: "text-[#ff0000]",
 };
 
 export function FollowOurJourneySection() {

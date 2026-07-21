@@ -1,5 +1,5 @@
 import type { IconType } from "react-icons";
-import { FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedin, FaTiktok, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { Container } from "@/components/ui/Container";
@@ -9,11 +9,12 @@ import { contactSocialIds } from "@/data/contact/contact";
 import { siteSocialLinks, type SocialLinkId } from "@/data/social-links";
 
 const socialIcons: Record<SocialLinkId, IconType> = {
-    tiktok: FaInstagram,
     instagram: FaInstagram,
-    x: FaXTwitter,
-    youtube: FaYoutube,
+    facebook: FaFacebook,
     linkedin: FaLinkedin,
+    x: FaXTwitter,
+    tiktok: FaTiktok,
+    youtube: FaYoutube,
 };
 
 const contactLinks = siteSocialLinks.filter((link) =>

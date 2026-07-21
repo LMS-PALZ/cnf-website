@@ -16,12 +16,11 @@ export const site = {
         (process.env.NODE_ENV === "production"
             ? SITE_PRODUCTION_URL
             : "http://localhost:3000"),
-    contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "Info@chiggynsoforfoundation.org",
-    /** Internal destination for contact form submissions (defaults to public contact email). */
-    infoEmail: process.env.INFO_EMAIL ?? (process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "Info@chiggynsoforfoundation.org"),
-    partnershipsEmail: process.env.PARTNERSHIPS_EMAIL ?? "partnerships@cnfhq.org",
-    programmesEmail: process.env.PROGRAMMES_EMAIL ?? "programmes@cnfhq.org",
-    mediaEmail: process.env.MEDIA_EMAIL ?? "media@cnfhq.org",
+    contactEmail: "info@cfhq.org",
+    infoEmail: "info@cfhq.org",
+    partnershipsEmail: "partnerships@cfhq.org",
+    programmesEmail: "programmes@cfhq.org",
+    mediaEmail: "media@cnfhq.org",
     emailSendingDomain: RESEND_SENDING_DOMAIN,
     phone: "+234 903 459 9227",
     address: "16b Vaal Street, Maitama, Abuja.",
