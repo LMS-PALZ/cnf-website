@@ -30,7 +30,7 @@ export async function POST(req: NextRequest) {
     };
     const payload = buildFormNotificationEmail(notificationContent);
     const emailError = await deliverInboxNotification(
-        "programmes",
+        "media",
         "Careers interest signup (CNF website)",
         payload,
         {

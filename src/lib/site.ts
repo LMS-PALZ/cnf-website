@@ -20,7 +20,7 @@ export const site = {
     infoEmail: "info@cfhq.org",
     partnershipsEmail: "partnerships@cfhq.org",
     programmesEmail: "programmes@cfhq.org",
-    mediaEmail: "media@cnfhq.org",
+    mediaEmail: "media@cfhq.org",
     emailSendingDomain: RESEND_SENDING_DOMAIN,
     phone: "+234 903 459 9227",
     address: "16b Vaal Street, Maitama, Abuja.",
