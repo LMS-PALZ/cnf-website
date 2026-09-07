@@ -8,7 +8,7 @@ import {
     HiShieldCheck,
 } from "react-icons/hi2";
 
-export const SSU_PORTAL_HREF = "https://portal.skillscaleup.org/";
+export const SSU_PORTAL_HREF = "https://docs.google.com/forms/d/e/1FAIpQLScBsfFxyVvIRCgeggbx3GYtwgYb2WF-JiPmPC-JdjdBI2pNlA/viewform";
 // Previous Google Form (kept for reference if we need to revert):
 // "https://docs.google.com/forms/d/e/1FAIpQLSdeXxDbU3wBzYy4Omzu3unPqew4rpwQ1ZeUp1LIXOoDVf6Pcg/viewform";
 
