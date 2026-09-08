@@ -14,7 +14,7 @@ export const SSU_PORTAL_HREF = "https://docs.google.com/forms/d/e/1FAIpQLScBsfFx
 
 export const ssuHero = {
     title: {
-        line1: "Ready to transform",
+        line1: "Ready to transform.",
         line2: "your",
         accent: "future?",
     },
