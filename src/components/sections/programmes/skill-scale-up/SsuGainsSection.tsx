@@ -18,6 +18,21 @@ export function SsuGainsSection() {
                     action={<SsuWaitlistButton size="md" />}
                 />
 
+                <section className="mt-10">
+                    <div className="flex flex-col md:flex-row gap-4 items-center">
+                        <img
+                            src="/assets/projects/flyer1.PNG"
+                            alt="Flyer 1"
+                            className="w-full md:w-1/2 object-contain"
+                        />
+                        <img
+                            src="/assets/projects/flyer2.PNG"
+                            alt="Flyer 2"
+                            className="w-full md:w-1/2 object-contain"
+                        />
+                    </div>
+                </section>
+
                 <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                     {ssuGainsSection.items.map((item) => {
                         const Icon = item.icon;

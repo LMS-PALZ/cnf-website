@@ -8,7 +8,7 @@ import {
     HiShieldCheck,
 } from "react-icons/hi2";
 
-export const SSU_PORTAL_HREF = "https://portal.skillscaleup.org/";
+export const SSU_PORTAL_HREF = "https://docs.google.com/forms/d/e/1FAIpQLScBsfFxyVvIRCgeggbx3GYtwgYb2WF-JiPmPC-JdjdBI2pNlA/viewform";
 // Previous Google Form (kept for reference if we need to revert):
 // "https://docs.google.com/forms/d/e/1FAIpQLSdeXxDbU3wBzYy4Omzu3unPqew4rpwQ1ZeUp1LIXOoDVf6Pcg/viewform";
 
@@ -24,7 +24,7 @@ export const ssuHero = {
 
 export const ssuIntro = {
     title: "Be part of the next generation of empowered Nigerian youth",
-    subtitle: "Join the movement through our skill scale-up program. Every learner's training is fully covered by the foundation. In person applicants pay a ₦10,000 application fee, waived for anyone who cannot afford it, so no one is ever turned away. The online track carries a one time application fee of ₦20,000.",
+    subtitle: "Join the movement through our skill scale up program. Every learner's training is covered by the foundation, however a registration fee of ₦10,000 is required.",
     highlights: [
         "6 months hands-on or virtual training",
         "Final capstone project",
@@ -39,8 +39,8 @@ export type SsuGainItem = {
 };
 
 export const ssuGainsSection = {
-    title: "What you will gain",
-    subtitle: "By completing the SSU program, participants gain",
+    title: "She Builds Application is Live!",
+    subtitle: "She Builds is an all-female, fully-funded tech training program by Chiggy Foundation in partnership with IHVN, designed to take women from zero tech experience to internship-ready skills in AI Automation, Frontend Development, Backend Development, and Product Design.",
     items: [
         {
             title: "Employable Skills",
@@ -137,11 +137,11 @@ export const ssuProgramsSection = {
                     cardClassName: "bg-white",
                 },
                 {
-                    title: "Data Analysis",
+                    title: "AI Automation",
                     description:
-                        "Analyze data to identify patterns, generate insights, and support informed decision-making on real-world problems.",
+                        "AI automation uses machine learning and related tech to let systems handle tasks requiring judgment. It cuts manual work and speeds things up.",
                     imageSrc: "/assets/svg/dataanalisty.svg",
-                    imageAlt: "Data analysis illustration",
+                    imageAlt: "AI Automation illustration",
                     cardClassName: "bg-white",
                 },
             ],

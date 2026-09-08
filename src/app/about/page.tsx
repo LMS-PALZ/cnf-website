@@ -105,32 +105,7 @@ const teamMembers: TeamMember[] = [
         description: "An SSU graduate who joined with no income. She is now on paid staff, training the next cohort. She is the pathway working, in person.",
     },
 ];
-const boardMembers = [
-    {
-        name: "Chiggy Nsofor",
-        title: "Founder & CEO",
-        description: "Founder and executive lead. Responsible for CFO's strategic direction, partnerships, and programme development.",
-        role: "Founder",
-        initials: "CN",
-        tone: "bg-cnf-primary text-white",
-    },
-    {
-        name: "Dickson Nsofor",
-        title: "Trustee, Technology & Innovation",
-        description: "Founder of Kora Technologies. Provides strategic oversight on CFO's digital infrastructure and technology programmes.",
-        role: "Technology",
-        initials: "DN",
-        tone: "bg-cnf-pillar-skills text-white",
-    },
-    {
-        name: "Afolabi Abiodun Ademola",
-        title: "Trustee, Finance & Governance",
-        description: "Director of Finance & Accounts at NEITI. Fellow ICAN, Fellow CCSA, Associate ACCA. Provides rigorous financial oversight and governance leadership.",
-        role: "Finance",
-        initials: "AA",
-        tone: "bg-cnf-accent text-cnf-accent-ink",
-    },
-];
+
 export default function AboutPage() {
     return (<>
       <PageBanner
@@ -210,36 +185,6 @@ export default function AboutPage() {
       <AboutCoreValuesSection />
 
 
-      <section className="bg-white py-20 md:py-28">
-        <Container>
-          <p className={primaryEyebrowClassName}>Governance</p>
-          <h2 className={`${fontDisplay.className} mt-6 text-4xl font-semibold text-cnf-ink`}>Our Board of Trustees</h2>
-          <p className="mt-4 max-w-3xl text-base leading-8 text-cnf-muted">
-            CFO is governed by a dedicated board that brings together expertise in technology, finance, and organisational development to ensure accountability and strategic oversight.
-          </p>
-
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
-            {boardMembers.map((member) => (
-              <div
-                key={member.name}
-                className="rounded-[2rem] border border-cnf-border bg-white p-7 shadow-sm"
-              >
-                <div
-                  className={`inline-flex h-12 w-12 items-center justify-center rounded-3xl ${member.tone} text-sm font-semibold`}
-                >
-                  {member.initials}
-                </div>
-                <h3 className="mt-5 text-xl font-semibold text-cnf-ink">{member.name}</h3>
-                <p className="mt-2 text-sm uppercase tracking-[0.22em] text-cnf-primary">{member.title}</p>
-                <p className="mt-4 text-sm leading-7 text-cnf-muted">{member.description}</p>
-                <span className="mt-4 inline-flex rounded-full bg-cnf-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-cnf-primary">
-                  {member.role}
-                </span>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
 
       <section className="bg-cnf-primary-soft py-20 md:py-28">
         <Container width="full">
